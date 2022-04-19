@@ -1,2 +1,2 @@
-# grupo_4_-entrelineas
+# grupo_4_entrelineas
 Proyecto integrador DH Grupo 4
