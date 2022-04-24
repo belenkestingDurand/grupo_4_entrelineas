@@ -8,6 +8,7 @@ sitio. También agregar una breve descripción del público al que apunta el sit
 
 ## Integrantes
 ● Una breve descripción de los integrantes del equipo.
+
 Lucas Esturi,
 Manuel Gago,
 Isolina Durand,
