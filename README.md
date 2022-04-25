@@ -3,7 +3,7 @@ Proyecto integrador DH Grupo 4
 
 ## Descripción
 
-La página web que realizará es un e-commerce destinado a comercializar libros físicos y digitales y productos relacionados con estos. La misma está destinada a lectores de todas las edades, buscando simplificar la compra para que cualquier lector pueda obtener sus libros de forma rápida y fácil.
+La página web que se realizará es un e-commerce destinado a la compra venta tanto de  libros físicos como digitales además de productos relacionados con estos. La misma está destinada a lectores de todas las edades, por lo que se buscará simplificar las transacciones y operatoria para que cualquier lector, ya sea un joven familiarizado al mundo digital como un adulto mayor puedan obtener sus libros de forma rápida y fácil.
 
 
 ## Integrantes
@@ -15,7 +15,7 @@ Belén Kesting Durand
 
 ## Referencias de mercado
 - https://www.abrecultura.com
-Abre cultura se la va a usar para tener de referencia para los productos que se van a ofrecer (libros, ebooks y merch) y la estética, es simple minimalista y fácil de usar. Vamos a aprovechar esta estética para que la página apunte a los lectores de todos las edades aprovechando la facilidad y simplicidad de compra.
+Esta página sera utilizada para tener de referencia de los productos que se van a ofrecer (libros, ebooks y merch) y también por su estética, ya que es simple minimalista y fácil de manejar. Vamos a aprovechar esta estética para que la página apunte a los lectores de todos las edades y su funcionalidad y simplicidad para realizar las compras.
  
 - https://play.cine.ar/buscar/INCAA/persona/6168/orden/desta
 Play Cine se la toma como referencia para copiar la forma en que se filtran y se ordenan los productos, para facilitar el customer journey.
@@ -27,4 +27,4 @@ Protest y lastbookstorela se utilizarán para tener como referencia el diseño d
 Cinemark, será utilizada como referencia para el formulario de registro dado que es muy simple.
  
 - https://www.native-instruments.com/es/shop/cart/*/
-La web fue elegida para copiar la estética del carrito de compras.
+Esta web fue elegida para copiar la estética del carrito de compras.
