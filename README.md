@@ -8,10 +8,15 @@ La página web que se realizará es un e-commerce destinado a la compra venta ta
 
 ## Integrantes
 
-Lucas Esturi,
-Manuel Gago,
-Isolina Durand,
-Belén Kesting Durand
+#### Lucas Esturi
+Trabajo actualmente en comercio exterior. Me gusta jugar al tenis y los deportes en general.
+#### Manuel Gago
+Tengo 25 años. Nací en Argentina. Estoy terminando una carrera de música. Soy fan de los videojuegos, de Youtube. Me gusta bailar y soy orgulloso platense.
+#### Isolina Durand
+La mas grande del grupo. 51 años. Soy de Salta. Estuidié Lic. en Sistemas y busco retormar mi carrera. Amo jugar al tenis.
+
+#### Belén Kesting Durand
+Actualmente trabajo en Lemon (soy fan del as crypto). Me encanta estudiar y aprender cosas nuevas. En mi tiempo libre pinto, cocino y hago ejercicio.
 
 ## Referencias de mercado
 - https://www.abrecultura.com
@@ -28,3 +33,5 @@ Cinemark, será utilizada como referencia para el formulario de registro dado qu
  
 - https://www.native-instruments.com/es/shop/cart/*/
 Esta web fue elegida para copiar la estética del carrito de compras.
+
+
