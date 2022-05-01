@@ -9,7 +9,7 @@ La página web que se realizará es un e-commerce destinado a la compra venta ta
 ## Integrantes
 
 #### Lucas Esturi
-Trabajo actualmente en comercio exterior. Me gusta jugar al tenis y los deportes en general.
+Soy licenciado en comercio exterior. Me gusta jugar al tenis y los deportes en general.
 #### Manuel Gago
 Tengo 25 años. Nací en Argentina. Estoy terminando una carrera de música. Soy fan de los videojuegos, de Youtube. Me gusta bailar y soy orgulloso platense.
 #### Isolina Durand
