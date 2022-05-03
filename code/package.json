@@ -1,0 +1,19 @@
+{
+  "name": "code",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/belenkestingDurand/grupo_4_entrelineas.git"
+  },
+  "author": "grupo_4",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/belenkestingDurand/grupo_4_entrelineas/issues"
+  },
+  "homepage": "https://github.com/belenkestingDurand/grupo_4_entrelineas#readme"
+}
