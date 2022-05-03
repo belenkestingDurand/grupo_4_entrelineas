@@ -34,4 +34,6 @@ Cinemark, será utilizada como referencia para el formulario de registro dado qu
 - https://www.native-instruments.com/es/shop/cart/*/
 Esta web fue elegida para copiar la estética del carrito de compras.
 
+## Tablero de Trabajo
 
+https://trello.com/b/VnTYcUTj/entre-lineas
