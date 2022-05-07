@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/belenkestingDurand/grupo_4_entrelineas/issues"
   },
-  "homepage": "https://github.com/belenkestingDurand/grupo_4_entrelineas#readme"
+  "homepage": "https://github.com/belenkestingDurand/grupo_4_entrelineas#readme",
+  "dependencies": {
+    "node_module": "^0.0.0"
+  }
 }
