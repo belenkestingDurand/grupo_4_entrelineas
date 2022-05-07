@@ -7,10 +7,11 @@ const path = require('path')
 const views = path.join(__dirname, 'views/')
 //public
 const public = path.join(__dirname, 'public/')
-const home_html = path.join(__dirname, 'views/home_html/home.html')
+const home_html = path.join(__dirname, 'views/home.html')
+const carrito = path.join(__dirname, 'views/carritoDeCompras.html')
 //html
 const htpptRaiz = '/'
-const htpptHome = ''
+const htpptCarrito = '/carrito'
 //html
 const homehtml = 'home.html'
 
@@ -22,4 +23,8 @@ app.listen(port, () => console.log('Example app listening at http://localhost:'+
 
 app.get(htpptRaiz, function(req, res){
     res.sendFile(home_html)
+})
+
+app.get(htpptCarrito, function(req, res){
+    res.sendFile(carrito)
 })
