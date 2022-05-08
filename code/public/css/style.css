@@ -63,7 +63,6 @@ main{
 }
 
 
-
 /*Footer*/
 footer{
     height: 25%;
@@ -221,16 +220,19 @@ footer{
     margin-bottom: 1%;
 }
 img{
-    height: 90%;
-    width: 90%;
+    height: 100%;
 }
 
 .line-height-letras{
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin-top: 0%;
+    margin-bottom: 0%;
     margin-left: 10%;
     margin-right: 10%;
 
+}
+.center-letras{
+    margin-top: 5%;
+    margin-bottom: 2%;
 }
 .center-media{
     margin-top:25%;
