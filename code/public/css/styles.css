@@ -11,14 +11,31 @@ h6 {
 }
 
 .login-body-background-img {
+    margin: 0;
     background-image: url('../img/img-fondo.jpg');
-    height: 100vh;
+    background-repeat: no-repeat;
+    min-height: 100vh;
     background-size: cover;
-    
+    background-position: center;
+    background-attachment: fixed;
 }
-.body-size-login{
-    height: 100%;
+
+.login-body-background-img:before {
+    content: "";
     width: 100%;
+    min-height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg,#52c4df, #ad55ad);
+    opacity: 0.6;
+    z-index: -1;
+}
+
+
+.body-size-login{
+    height: 100vh;
+    width: 100vw;
 }
 
 
@@ -93,7 +110,8 @@ main{
 .login-main {
     width: 90vw;
     height: 90vh;
-    margin:auto;
+    background-color: white;
+    margin: 10px;
     box-sizing: border-box;
 }
 .login-footer {
@@ -101,16 +119,22 @@ main{
 }
 .login-main-section {
     width: 90vw; 
+    height: 90vh;
     box-sizing: border-box;
-  /* display: flex;
+    margin: 10px;
+   display: flex;
     flex-direction: column;
-    justify-content: space-around; */
+    align-items: left;
+
+    justify-content: space-around; 
 }
 .login-logo {
     text-align: center;
+    margin-top: 5vh;
 }
 .login-logo-chico {
     width: 60%;
+   
   
     
 }
@@ -120,7 +144,7 @@ main{
 .box-ingrese-datos {
     margin: 0px;
     height: 25px;
-    width: 95%;
+    width: 80%;
     padding: 15px;
     background-color: #f1f1f1;
     text-align: left;
@@ -129,6 +153,7 @@ main{
 }
 .login-h5-centrado {
     text-align: center;
+  
 }
 .button-ingreso-google {
     border: 1px solid #f1f1f1;
