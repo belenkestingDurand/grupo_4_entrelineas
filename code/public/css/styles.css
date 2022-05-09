@@ -27,7 +27,7 @@ h6 {
     position: absolute;
     top: 0;
     left: 0;
-    background: linear-gradient(90deg,#52c4df, #ad55ad);
+    background: linear-gradient(45deg,#52c4df, #ad55ad);
     opacity: 0.6;
     z-index: -1;
 }
@@ -106,24 +106,27 @@ main{
 
 .login-header {
     width: 0px;
+    height: 0px;
 }
 .login-main {
     width: 90vw;
     height: 90vh;
     background-color: white;
     margin: 10px;
+    justify-self: center;
     box-sizing: border-box;
+    
 }
 .login-footer {
     width: 0px;
+    height: 0px;
 }
 .login-main-section {
     width: 90vw; 
     height: 90vh;
     box-sizing: border-box;
-    margin: 10px;
-   display: flex;
-    flex-direction: column;
+    margin: 20px;
+ 
     align-items: left;
 
     justify-content: space-around; 
@@ -139,13 +142,14 @@ main{
     
 }
 .titulo-box-izq-abajo {
-    margin-bottom: 0;
+    margin: 3px 0px 1px 5px;
+   
 }
 .box-ingrese-datos {
-    margin: 0px;
-    height: 25px;
+    margin: 1px 0px 1px 5px;
+    height: 20px;
     width: 80%;
-    padding: 15px;
+    padding: 10px;
     background-color: #f1f1f1;
     text-align: left;
     color: #938C8C;
@@ -237,6 +241,32 @@ margin-left: 50%;
 /*Desktop*/
 @media (min-width: 769px){
 /*Header*/
+.login-main {
+    width: 450px;
+    height: 800px;
+    background-color: white;
+    margin: 5px 10px 5px 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    box-sizing: border-box;
+    
+}
+
+.login-main-section {
+    width: 450px; 
+    height: 800px;
+    box-sizing: border-box;
+    margin: 20px;
+  
+    align-items: left;
+ 
+}
+
+
+
+
+
 header{
     height: 11.5%;
     width: 100%;
