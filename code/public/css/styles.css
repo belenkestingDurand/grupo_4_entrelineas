@@ -12,14 +12,15 @@ h6 {
 
 .login-body-background-img {
     background-image: url('../img/img-fondo.jpg') salmon;
+    height: 100vh;
     background-size: cover;
 }
 .login-header {
     width: 0px;
 }
 .login-main {
-    width: 90%;
-    height: 90%;
+    width: 90vw;
+    height: 90vh;
     margin:auto;
     box-sizing: border-box;
 }
@@ -27,11 +28,11 @@ h6 {
     width: 0px;
 }
 .login-main-section {
-    width: 90%; 
+    width: 90vw; 
     box-sizing: border-box;
-    display: flex;
+  /* display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-around; */
 }
 .login-logo {
     text-align: center;
@@ -91,4 +92,7 @@ h6 {
     font: 15px white;
     margin: 0px;
     cursor: pointer;
+}
+@media (min-with: 769px) {
+    
 }

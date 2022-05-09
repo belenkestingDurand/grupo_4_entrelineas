@@ -1,4 +1,20 @@
+body {
+    font-family: 'Arvo', serif;
+    
+}
+
+h5 {
+    font-size: 15px;
+}
+h6 {
+    font-size: 10px;
+}
+
+
+
+
 /*Header*/
+/*
 header{
     height: 7%;
     width: 100%;
@@ -6,6 +22,7 @@ header{
     flex-direction: row;
     flex-wrap: wrap;
 }
+*/
 .carrousel-size{
 box-sizing: border-box;
 width: 100%;
@@ -53,17 +70,22 @@ img{
 }
 
 
-/*Main*/
 
+
+
+
+/*Main*/
+/*
 main{
     height: 64%;
     width: 100%;
     padding: 100%;
 
 }
-
+*/
 
 /*Footer*/
+/*
 footer{
     height: 25%;
     width: 100%;
@@ -71,7 +93,7 @@ footer{
     flex-direction: row;
     flex-wrap: wrap;
 }
-
+*/
 .style-coppyright{
     color: #606665;
 }
@@ -111,6 +133,93 @@ footer{
 .margin-coppyright{
 margin-left: 50%;
 }
+
+
+.login-body-background-img {
+    background-image: url('../img/img-fondo.jpg') salmon;
+    background-size: cover;
+}
+.login-header {
+    width: 0px;
+}
+.login-main {
+    width: 90%;
+    height: 90%;
+    margin:auto;
+    box-sizing: border-box;
+}
+.login-footer {
+    width: 0px;
+}
+.login-main-section {
+    width: 90%; 
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.login-logo {
+    text-align: center;
+}
+.login-logo-chico {
+    width: 60%;
+  
+    
+}
+.titulo-box-izq-abajo {
+    margin-bottom: 0;
+}
+.box-ingrese-datos {
+    margin: 0px;
+    height: 25px;
+    width: 95%;
+    padding: 15px;
+    background-color: #f1f1f1;
+    text-align: left;
+    color: #938C8C;
+
+}
+
+.login-h5-centrado {
+    text-align: center;
+}
+.button-ingreso-google {
+    border: 1px solid #f1f1f1;
+   
+    border-radius: 10px;
+  /*color: #938C8C;*/
+  background-color: white;
+  box-shadow: 3px 5px #f1f1f1;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 0px;
+  cursor: pointer;
+}
+
+.tamaño-logo-google {
+    width: 25px;
+}
+.button-crear-cuenta {
+    margin: 5px 5px 5px 5px;
+    padding: 10px;
+    border: 1px solid #f1f1f1;
+    color: white;
+    border-radius: 10px;
+    background-color:black;
+    box-shadow: 3px 5px #f1f1f1;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font: 15px white;
+    margin: 0px;
+    cursor: pointer;
+}
+
+
+
 
 /*Desktop*/
 @media (min-width: 769px){
