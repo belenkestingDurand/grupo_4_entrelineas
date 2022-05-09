@@ -1,19 +1,91 @@
+/*Body*/
 body {
     font-family: 'Arvo', serif;
     
 }
-
 h5 {
     font-size: 15px;
 }
 h6 {
     font-size: 10px;
 }
-
-.login-body-background-img {
-    background-image: url('../img/img-fondo.jpg') salmon;
+.login-body-background-img{
+    background-image: url('../img/img-fondo.jpg');
+    background-color: salmon;
     background-size: cover;
+    
 }
+.body-size-login{
+    height: 100%;
+    width: 100%;
+}
+
+
+
+/*Header*/
+header{
+    height: 7%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.carrousel-size{
+box-sizing: border-box;
+width: 100%;
+height: 45%;
+align-self: center;
+text-align: center;
+}
+.carrousel-style{
+background-color: black;
+color: white
+}
+.desaparecerEnMobile{
+    display: none;
+}
+.sizing-menu-paty{
+    height: 65%;
+    width: 15%;
+}
+.sizing-carrito{
+    height: 65%;
+    width: 15%;
+}
+.sizing-logo{
+    height: 65%;
+    width: 70%;
+}
+.centrar-logo{
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+.centrar-icono{
+    width:60%;
+    margin:10%;
+}
+img{
+    height: 100%;
+    width: 100%;
+}
+.line-height{
+    margin: 2px;
+}
+.align-monedas{
+    margin-left: 80%;
+}
+
+
+/*Main*/
+
+main{
+    height: 64%;
+    width: 100%;
+}
+
+/*Main LogIn*/
+
 .login-header {
     width: 0px;
 }
@@ -54,7 +126,6 @@ h6 {
     color: #938C8C;
 
 }
-
 .login-h5-centrado {
     text-align: center;
 }
@@ -73,7 +144,6 @@ h6 {
   margin: 0px;
   cursor: pointer;
 }
-
 .tamaño-logo-google {
     width: 25px;
 }
@@ -92,3 +162,178 @@ h6 {
     margin: 0px;
     cursor: pointer;
 }
+
+
+/*Footer*/
+footer{
+    height: 25%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.style-coppyright{
+    color: #606665;
+}
+.center-logo-book{
+    height: 70%;
+    width: 60%;
+    padding-top: 15%;
+    padding-bottom: 15%;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+.sizing-box-logo{
+    width: 40%;
+    height: 20%;
+}
+.sizing-box-letras{
+    width: 60%;
+    height: 20%;
+}
+.center-letras{
+    margin-top: 20%;
+    margin-bottom: 20%;
+}
+.sizing-box-media{
+    height: 5%;
+    width: 30%;
+}
+.sizing-box-coppyright{
+    height: 5%;
+    width: 70%;
+    justify-self: end;
+}
+.margin-coppyright{
+margin-left: 50%;
+}
+
+/*Desktop*/
+@media (min-width: 769px){
+/*Header*/
+header{
+    height: 11.5%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    Justify-content: space-between;
+    box-shadow: 0 4px 2px -2px rgb(100, 100, 100);
+}
+.desaparecerEnMobile{
+    display: block;
+}
+
+.desaparecerDesktop{
+    display: none;
+}
+.sizing-logo{
+    height: 65%;
+    width: 30%;
+}
+.centrar-logo{
+    width: 60%;
+    margin-left: 10%;
+    margin-right: 20%;
+}
+.flex-box-texto{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    Justify-content: space-between;
+}
+
+.size-box-texto{
+    width: 40%;
+    text-align: center;
+}
+.margin-right-text{
+    margin-right: 5%;
+    margin-left: 5%;
+}
+.ordenar-carrito{
+    order: 1;
+}
+.sizing-carrito{
+    height: 65%;
+    width: 7%;
+}
+.align-monedas{
+    margin-left: 0%;
+}
+.sizing-monedas{
+    width: 10%;
+    
+}
+.line-height-desktop{
+    margin-top: 20%;
+    margin-bottom: 20%;
+
+}
+.centrar-icono{
+    width:50%;
+    margin:20%;
+}
+
+/*Footer*/
+footer{
+    height: 5%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    Justify-content: space-between;
+}
+.sizing-box-logo{
+    width: 10%;
+    height: 80%;
+}
+
+.sizing-box-letras{
+    width: 80%;
+    height: 80%;
+}
+.flex-box-letras{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    Justify-content: space-between;
+}
+.sizing-box-media{
+    height: 80%;
+    width: 10%;
+}
+.margin-coppyright{
+    margin-left: 90%;
+    }
+
+ .sizing-box-coppyright{
+    height: 3%;
+    width: 100%;
+}
+.line-height-coppyright{
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+img{
+    height: 100%;
+}
+
+.line-height-letras{
+    margin-top: 0%;
+    margin-bottom: 0%;
+    margin-left: 10%;
+    margin-right: 10%;
+
+}
+.center-letras{
+    margin-top: 5%;
+    margin-bottom: 2%;
+}
+.center-media{
+    margin-top:25%;
+}
+
+}
+
+
