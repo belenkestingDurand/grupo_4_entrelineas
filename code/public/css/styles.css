@@ -128,6 +128,27 @@ main {
     width: 100%;
 }
 
+/* Home.html */
+article.product {
+    /* border: red dotted 2px; */
+    width: 80%;
+    margin: 10px 0px;
+    display: flex;
+}
+article div {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+input.see-more {
+    align-self: flex-end;
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 15%;
+    margin-right: 15%;
+
+}
+
 /*Main LogIn*/
 
 .login-header {
