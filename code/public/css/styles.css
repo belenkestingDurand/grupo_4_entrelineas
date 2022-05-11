@@ -74,6 +74,7 @@ header {
 
 .bottom-bar{
     display: flex;
+    flex-wrap: nowrap;
     justify-content: space-around;
 }
 .desaparecerEnMobile {
