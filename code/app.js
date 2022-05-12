@@ -15,7 +15,7 @@ const detalleDeProducto = path.join(__dirname, 'views/detalleDeProducto.html')
 const htpptRaiz = '/'
 const htpptCarrito = '/carrito'
 const htpptLogin = '/login'
-const httpDetalleDeProducto = '/Detalle'
+const httpDetalleDeProducto = '/detalle'
 
 
 
