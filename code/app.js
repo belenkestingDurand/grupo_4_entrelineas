@@ -20,6 +20,7 @@ const htpptRaiz = '/'
 const htpptCarrito = '/carrito'
 const htpptLogin = '/login'
 const httpDetalleDeProducto = '/Detalle'
+const htpptRegister = '/Register'
 
 
 
@@ -30,7 +31,7 @@ app.use(express.static(publicPath));
 app.listen(port, () => console.log('Example app listening at http://localhost:'+port))
 
 app.get(htpptRaiz, function(req, res){
-    res.sendFile(home_html)
+    res.sendFile(homehtml)
 })
 
 app.get(htpptCarrito, function(req, res){
