@@ -165,6 +165,9 @@ input.see-more {
     margin: auto;
     justify-self: center;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 
 }
 
@@ -186,7 +189,7 @@ input.see-more {
 
 .login-logo {
     text-align: center;
-    margin-top: 5vh;
+    margin-top: 10px;
 }
 
 .login-logo-chico {
@@ -204,7 +207,7 @@ input.see-more {
 }
 
 .box-ingrese-datos {
-    margin: 1px 0px 1px 5px;
+    margin: 1px 0px 3px 0px;
     height: 20px;
     width: 80%;
     padding: 10px;
@@ -213,6 +216,7 @@ input.see-more {
     color: #938C8C;
 
 }
+
 
 .login-h5-centrado {
     text-align: center;
@@ -233,11 +237,8 @@ input.see-more {
 
 .button-ingreso-google {
     border: 1px solid #f1f1f1;
-
     border-radius: 10px;
-    /*color: #938C8C;*/
     background-color: white;
-   
     padding: 5px;
     text-align: center;
     text-decoration: none;
@@ -250,7 +251,9 @@ input.see-more {
 .tamaño-logo-google {
     width: 25px;
 }
-
+centrar-boton {
+    text-align: center;
+}
 .button-crear-cuenta {
     margin: 5px 5px 5px 5px;
     padding: 10px;
@@ -258,16 +261,34 @@ input.see-more {
     color: white;
     border-radius: 10px;
     background-color: black;
-   
-    text-align: center;
     text-decoration: none;
     display: inline-block;
     font: 15px white;
     margin: 0px;
     cursor: pointer;
 }
+/*Register*/
+.register-box-gral {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 
+}
+.etiq-contenedor {
+    margin-left:15px;
+}
+.register-cont-label-input {
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+}
 
+.register-cont-2box {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 10px;
+}
 /*Footer*/
 footer {
     height: 25%;
