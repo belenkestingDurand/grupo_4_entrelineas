@@ -10,10 +10,12 @@ const public = path.join(__dirname, 'public/')
 const home_html = path.join(__dirname, 'views/home.html')
 const carrito = path.join(__dirname, 'views/carritoDeCompras.html')
 const login = path.join(__dirname, 'views/login.html')
+const register = path.join(__dirname, 'views/register.html')
 //html
 const htpptRaiz = '/'
 const htpptCarrito = '/carrito'
 const htpptLogin = '/login'
+const htpptRegister = '/register'
 //html
 const homehtml = 'home.html'
 
@@ -34,4 +36,8 @@ app.get(htpptCarrito, function(req, res){
 
 app.get(htpptLogin, function(req, res){
     res.sendFile(login)
+})
+
+app.get(htpptRegister, function(req, res){
+    res.sendFile(register)
 })
