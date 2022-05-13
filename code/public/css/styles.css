@@ -289,6 +289,9 @@ flex-direction: column;
 .width-articulo-carrito{
     width: 60%;
 }
+.borde{
+    border: black 1px;
+}
 
 
 /*Footer*/
