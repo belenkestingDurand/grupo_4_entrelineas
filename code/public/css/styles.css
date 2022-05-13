@@ -5,7 +5,10 @@
 /*Body*/
 body {
     font-family: 'Arvo', serif;
+}
 
+.main-title{
+    display: none;
 }
 
 h5 {
@@ -399,20 +402,17 @@ footer {
 
 /* TABLETS*/
 @media (min-width: 480px){
-/*Header*/
-.login-main {
-   
-   margin-top: 30px;
-   margin-left: 50px;
-  
+    /*Header*/
+    .login-main {
     
-}
-.login-auth-page-card {
-   max-width: 450px;
-}
-
-
-
+    margin-top: 30px;
+    margin-left: 50px;
+    
+        
+    }
+    .login-auth-page-card {
+    max-width: 450px;
+    }
 }
 
 /*Desktop*/
