@@ -29,6 +29,7 @@ h6 {
     background-position: center;
     background-attachment: fixed;
 }
+
 /*#52c4df, #ad55ad*/
 .login-body-background-img:before {
     content: "";
@@ -37,13 +38,13 @@ h6 {
     position: absolute;
     top: 0;
     left: 0;
-    background: linear-gradient(10deg,#fafbfc, #929191 87%);
+    background: linear-gradient(10deg, #fafbfc, #929191 87%);
     opacity: 0.6;
     z-index: -1;
 }
 
 
-.body-size-login{
+.body-size-login {
     height: 100vh;
     width: 100%;
 }
@@ -72,11 +73,12 @@ header {
     color: white
 }
 
-.bottom-bar{
+.bottom-bar {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-around;
 }
+
 .desaparecerEnMobile {
     display: none;
 }
@@ -123,30 +125,64 @@ img {
 
 /*Main*/
 
-main {
+.home-main {
     height: 64%;
-    width: 100%;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 /* Home.html */
-article.product {
-    /* border: red dotted 2px; */
-    width: 80%;
+.product {
+    width: 100%;
     margin: 10px 0px;
     display: flex;
+    flex-direction: column;
+    justify-items: center;
 }
-article div {
+
+article .img-more {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     align-items: center;
+}
+
+.book-product-img {
+    width: 100%;
+    background-color:  #DBDBDB;
 }
 input.see-more {
     align-self: flex-end;
-    padding: 15px;
+    padding: 13px 21px;
     border-radius: 15px;
-    margin-bottom: 15%;
-    margin-right: 15%;
+    margin-bottom: 10%;
+    position: relative;
+    right: 110px;
+}
 
+.book-detail-home{
+    min-height: 31px;
+}
+
+.book-name-price{
+    /* margin-top: 5px; */
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    height: 30px;
+}
+
+article .add-cart-button{
+    padding: 10px;
+    width: 100%;
+    color: white;
+    background-color: black;
+    font-size: 15px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    letter-spacing: 0.5px;
 }
 
 /*Main LogIn*/
@@ -159,7 +195,7 @@ input.see-more {
 .login-main {
     width: 90%;
     height: 90%;
-    position:static;
+    position: static;
     max-width: 340px;
     background-color: white;
     margin: auto;
@@ -177,13 +213,11 @@ input.see-more {
 }
 
 .login-auth-page-card {
-    width: 90%; 
+    width: 90%;
     height: 90%;
     box-sizing: border-box;
     margin: auto;
-
     align-items: left;
-
     justify-content: space-around;
 }
 
@@ -203,7 +237,6 @@ input.see-more {
     margin: 10px 0px 1px 5px;
     padding-left: 2px;
     text-align: left;
-
 }
 
 .box-ingrese-datos {
@@ -214,7 +247,6 @@ input.see-more {
     background-color: #f1f1f1;
     text-align: left;
     color: #938C8C;
-
 }
 
 
@@ -222,6 +254,7 @@ input.see-more {
     text-align: center;
 
 }
+
 .button-ingresar {
     margin: 10px;
     padding: 8px 60px;
@@ -230,7 +263,7 @@ input.see-more {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    color:white;
+    color: white;
     margin: 0px;
     cursor: pointer;
 }
@@ -251,9 +284,11 @@ input.see-more {
 .tamaño-logo-google {
     width: 25px;
 }
+
 centrar-boton {
     text-align: center;
 }
+
 .button-crear-cuenta {
     margin: 5px 5px 5px 5px;
     padding: 10px;
@@ -267,17 +302,20 @@ centrar-boton {
     margin: 0px;
     cursor: pointer;
 }
+
 /*Register*/
 .register-box-gral {
-    
+
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 
 }
+
 .etiq-contenedor {
-    margin-left:15px;
+    margin-left: 15px;
 }
+
 .register-cont-label-input {
     margin-left: 15px;
     display: flex;
@@ -289,6 +327,7 @@ centrar-boton {
     justify-content: space-around;
     margin-left: 10px;
 }
+
 /*Footer*/
 footer {
     height: 25%;
@@ -341,118 +380,135 @@ footer {
 }
 
 /* TABLETS*/
-@media (min-width: 480px){
-/*Header*/
-.login-main {
-   max-width: 450px;
-    
-}
-.login-auth-page-card {
-   max-width: 450px;
-    
-}
+@media (min-width: 480px) {
+
+    /*Header*/
+    .login-main {
+        max-width: 450px;
+
+    }
+
+    .login-auth-page-card {
+        max-width: 450px;
+
+    }
 
 
 
 }
 
 /*Desktop*/
-@media (min-width: 769px){
+@media (min-width: 769px) {
 
-header{
-    height: 11.5%;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    Justify-content: space-between;
-    box-shadow: 0 4px 2px -2px rgb(100, 100, 100);
-}
-.desaparecerEnMobile{
-    display: block;
-}
+    header {
+        height: 11.5%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        Justify-content: space-between;
+        box-shadow: 0 4px 2px -2px rgb(100, 100, 100);
+    }
 
-.desaparecerDesktop{
-    display: none;
-}
-.sizing-logo{
-    height: 65%;
-    width: 30%;
-}
-.centrar-logo{
-    width: 60%;
-    margin-left: 10%;
-    margin-right: 20%;
-}
-.flex-box-texto{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    Justify-content: space-between;
-}
+    .desaparecerEnMobile {
+        display: block;
+    }
 
-.size-box-texto{
-    width: 40%;
-    text-align: center;
-}
-.margin-right-text{
-    margin-right: 5%;
-    margin-left: 5%;
-}
-.ordenar-carrito{
-    order: 1;
-}
-.sizing-carrito{
-    height: 65%;
-    width: 7%;
-}
-.align-monedas{
-    margin-left: 0%;
-}
-.sizing-monedas{
-    width: 10%;
-    
-}
-.line-height-desktop{
-    margin-top: 20%;
-    margin-bottom: 20%;
+    .desaparecerDesktop {
+        display: none;
+    }
 
-}
-.centrar-icono{
-    width:50%;
-    margin:20%;
-}
+    .sizing-logo {
+        height: 65%;
+        width: 30%;
+    }
 
-/*Footer*/
-footer{
-    height: 5%;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    Justify-content: space-between;
-}
-.sizing-box-logo{
-    width: 10%;
-    height: 80%;
-}
+    .centrar-logo {
+        width: 60%;
+        margin-left: 10%;
+        margin-right: 20%;
+    }
 
-.sizing-box-letras{
-    width: 80%;
-    height: 80%;
-}
-.flex-box-letras{
-    display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    Justify-content: space-between;
-}
-.sizing-box-media{
-    height: 80%;
-    width: 10%;
-}
-.margin-coppyright{
-    margin-left: 90%;
+    .flex-box-texto {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        Justify-content: space-between;
+    }
+
+    .size-box-texto {
+        width: 40%;
+        text-align: center;
+    }
+
+    .margin-right-text {
+        margin-right: 5%;
+        margin-left: 5%;
+    }
+
+    .ordenar-carrito {
+        order: 1;
+    }
+
+    .sizing-carrito {
+        height: 65%;
+        width: 7%;
+    }
+
+    .align-monedas {
+        margin-left: 0%;
+    }
+
+    .sizing-monedas {
+        width: 10%;
+
+    }
+
+    .line-height-desktop {
+        margin-top: 20%;
+        margin-bottom: 20%;
+
+    }
+
+    .centrar-icono {
+        width: 50%;
+        margin: 20%;
+    }
+
+    /*Footer*/
+    footer {
+        height: 5%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        Justify-content: space-between;
+    }
+
+    .sizing-box-logo {
+        width: 10%;
+        height: 80%;
+    }
+
+    .sizing-box-letras {
+        width: 80%;
+        height: 80%;
+    }
+
+    .flex-box-letras {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        Justify-content: space-between;
+    }
+
+    .sizing-box-media {
+        height: 80%;
+        width: 10%;
+    }
+
+    .margin-coppyright {
+        margin-left: 90%;
     }
 
     .login-main-section {
@@ -464,10 +520,6 @@ footer{
         align-items: left;
 
     }
-
-
-
-
 
     header {
         height: 11.5%;
