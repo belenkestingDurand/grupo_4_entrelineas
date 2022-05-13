@@ -36,6 +36,7 @@ h6 {
     background-attachment: fixed;
 }
 
+/*#52c4df, #ad55ad*/
 .login-body-background-img:before {
     content: "";
     width: 100%;
@@ -43,7 +44,7 @@ h6 {
     position: absolute;
     top: 0;
     left: 0;
-    background: linear-gradient(45deg, #52c4df, #ad55ad);
+    background: linear-gradient(10deg, #fafbfc, #929191 87%);
     opacity: 0.6;
     z-index: -1;
 }
@@ -51,7 +52,7 @@ h6 {
 
 .body-size-login {
     height: 100vh;
-    width: 100vw;
+    width: 100%;
 }
 
 
@@ -78,11 +79,12 @@ header {
     color: white
 }
 
-.bottom-bar{
+.bottom-bar {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-around;
 }
+
 .desaparecerEnMobile {
     display: none;
 }
@@ -129,30 +131,64 @@ img {
 
 /*Main*/
 
-main {
+.home-main {
     height: 64%;
-    width: 100%;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 /* Home.html */
-article.product {
-    /* border: red dotted 2px; */
-    width: 80%;
+.product {
+    width: 100%;
     margin: 10px 0px;
     display: flex;
+    flex-direction: column;
+    justify-items: center;
 }
-article div {
+
+article .img-more {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     align-items: center;
+}
+
+.book-product-img {
+    width: 100%;
+    background-color:  #DBDBDB;
 }
 input.see-more {
     align-self: flex-end;
-    padding: 15px;
+    padding: 13px 21px;
     border-radius: 15px;
-    margin-bottom: 15%;
-    margin-right: 15%;
+    margin-bottom: 10%;
+    position: relative;
+    right: 110px;
+}
 
+.book-detail-home{
+    min-height: 31px;
+}
+
+.book-name-price{
+    /* margin-top: 5px; */
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    height: 30px;
+}
+
+article .add-cart-button{
+    padding: 10px;
+    width: 100%;
+    color: white;
+    background-color: black;
+    font-size: 15px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    letter-spacing: 0.5px;
 }
 
 /*Main LogIn*/
@@ -163,12 +199,18 @@ input.see-more {
 }
 
 .login-main {
-    width: 90vw;
-    height: 90vh;
+    width: 90%;
+    height: 90%;
+    position: static;
+    max-width: 340px;
     background-color: white;
-    margin: auto;
+    margin: 20px;
     justify-self: center;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 15px;
 
 }
 
@@ -177,20 +219,18 @@ input.see-more {
     height: 0px;
 }
 
-.login-main-section {
-    width: 90vw;
-    height: 90vh;
+.login-auth-page-card {
+    width: 90%;
+    height: 90%;
     box-sizing: border-box;
     margin: auto;
-
     align-items: left;
-
     justify-content: space-around;
 }
 
 .login-logo {
     text-align: center;
-    margin-top: 5vh;
+    margin-top: 10px;
 }
 
 .login-logo-chico {
@@ -200,36 +240,47 @@ input.see-more {
 
 }
 
-h5.titulo-box-izq-abajo {
-    margin: 1px 0px 1px 5px;
-    padding-left: 15px;
+.h5-titulo-box {
+    margin: 10px 0px 1px 5px;
+    padding-left: 2px;
     text-align: left;
-
 }
 
 .box-ingrese-datos {
-    margin: 1px 0px 1px 5px;
-    height: 20px;
+    margin: 1px 0px 3px 0px;
+    height: 25px;
     width: 80%;
-    padding: 10px;
+    padding: 5px;
+    border-radius: 4px;
     background-color: #f1f1f1;
     text-align: left;
     color: #938C8C;
-
 }
+
 
 .login-h5-centrado {
     text-align: center;
+    font-size: 15px;
 
+}
+
+.button-ingresar {
+    margin: 10px;
+    padding: 8px 60px;
+    border-radius: 10px;
+    background-color: #4349b5;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    margin: 0px;
+    cursor: pointer;
 }
 
 .button-ingreso-google {
     border: 1px solid #f1f1f1;
-
     border-radius: 10px;
-    /*color: #938C8C;*/
     background-color: white;
-    box-shadow: 3px 5px #f1f1f1;
     padding: 5px;
     text-align: center;
     text-decoration: none;
@@ -243,6 +294,10 @@ h5.titulo-box-izq-abajo {
     width: 25px;
 }
 
+.centrar-boton {
+    text-align: center;
+}
+
 .button-crear-cuenta {
     margin: 5px 5px 5px 5px;
     padding: 10px;
@@ -250,8 +305,6 @@ h5.titulo-box-izq-abajo {
     color: white;
     border-radius: 10px;
     background-color: black;
-    box-shadow: 3px 5px #f1f1f1;
-    text-align: center;
     text-decoration: none;
     display: inline-block;
     font: 15px white;
@@ -259,40 +312,45 @@ h5.titulo-box-izq-abajo {
     cursor: pointer;
 }
 
-/*Main carrito de compras*/
-.text-align{
-    text-align: center;
-}
-
-.sizing-div-img-libro{
-    width: 40%;
-}
-
-.flex-box{
+/*Register*/
+.register-main {
+    width: 90%;
+    height: 90%;
+    position:static;
+    max-width: 340px;
+    background-color: white;
+    margin: 20px;
+    justify-self: center;
+    box-sizing: border-box;
     display: flex;
-    justify-content: space-between;
-    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 13px;
+}
+.register-box-gral {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
 }
 
-.flex-direction-row{
- flex-direction: row ;
+.etiq-contenedor {
+    margin-left: 15px;
 }
 
-.flex-direction-column{
-flex-direction: column;
+.register-cont-label-input {
+    margin-left: 15px;
+    margin-top: 3px;
+    display: flex;
+    flex-direction: column;
 }
 
-.margin-article{
-    margin-left: 5%;
-    margin-right: 5%;
+.register-cont-2box {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 10px;
 }
-.width-articulo-carrito{
-    width: 60%;
-}
-.borde{
-    border: black 1px;
-}
-
 
 /*Footer*/
 footer {
@@ -345,20 +403,136 @@ footer {
     margin-left: 50%;
 }
 
+/* TABLETS*/
+@media (min-width: 480px){
+/*Header*/
+.login-main {
+   
+   margin-top: 30px;
+   margin-left: 50px;
+  
+    
+}
+.login-auth-page-card {
+   max-width: 450px;
+}
+
+
+
+}
+
 /*Desktop*/
 @media (min-width: 769px) {
 
-    /*Header*/
-    .login-main {
-        width: 450px;
-        height: 800px;
-        background-color: white;
-        margin: 5px 10px 5px 600px;
+    header {
+        height: 11.5%;
+        width: 100%;
         display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        box-sizing: border-box;
+        flex-direction: row;
+        flex-wrap: wrap;
+        Justify-content: space-between;
+        box-shadow: 0 4px 2px -2px rgb(100, 100, 100);
+    }
 
+    .desaparecerEnMobile {
+        display: block;
+    }
+
+    .desaparecerDesktop {
+        display: none;
+    }
+
+    .sizing-logo {
+        height: 65%;
+        width: 30%;
+    }
+
+    .centrar-logo {
+        width: 60%;
+        margin-left: 10%;
+        margin-right: 20%;
+    }
+
+    .flex-box-texto {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        Justify-content: space-between;
+    }
+
+    .size-box-texto {
+        width: 40%;
+        text-align: center;
+    }
+
+    .margin-right-text {
+        margin-right: 5%;
+        margin-left: 5%;
+    }
+
+    .ordenar-carrito {
+        order: 1;
+    }
+
+    .sizing-carrito {
+        height: 65%;
+        width: 7%;
+    }
+
+    .align-monedas {
+        margin-left: 0%;
+    }
+
+    .sizing-monedas {
+        width: 10%;
+
+    }
+
+    .line-height-desktop {
+        margin-top: 20%;
+        margin-bottom: 20%;
+
+    }
+
+    .centrar-icono {
+        width: 50%;
+        margin: 20%;
+    }
+
+    /*Footer*/
+    footer {
+        height: 5%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        Justify-content: space-between;
+    }
+
+    .sizing-box-logo {
+        width: 10%;
+        height: 80%;
+    }
+
+    .sizing-box-letras {
+        width: 80%;
+        height: 80%;
+    }
+
+    .flex-box-letras {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        Justify-content: space-between;
+    }
+
+    .sizing-box-media {
+        height: 80%;
+        width: 10%;
+    }
+
+    .margin-coppyright {
+        margin-left: 90%;
     }
 
     .login-main-section {
@@ -370,10 +544,6 @@ footer {
         align-items: left;
 
     }
-
-
-
-
 
     header {
         height: 11.5%;
