@@ -198,12 +198,13 @@ article .add-cart-button{
     position: static;
     max-width: 340px;
     background-color: white;
-    margin: auto;
+    margin: 20px;
     justify-self: center;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    font-size: 15px;
 
 }
 
@@ -241,9 +242,10 @@ article .add-cart-button{
 
 .box-ingrese-datos {
     margin: 1px 0px 3px 0px;
-    height: 20px;
+    height: 25px;
     width: 80%;
-    padding: 10px;
+    padding: 5px;
+    border-radius: 4px;
     background-color: #f1f1f1;
     text-align: left;
     color: #938C8C;
@@ -252,6 +254,7 @@ article .add-cart-button{
 
 .login-h5-centrado {
     text-align: center;
+    font-size: 15px;
 
 }
 
@@ -285,7 +288,7 @@ article .add-cart-button{
     width: 25px;
 }
 
-centrar-boton {
+.centrar-boton {
     text-align: center;
 }
 
@@ -304,6 +307,20 @@ centrar-boton {
 }
 
 /*Register*/
+.register-main {
+    width: 90%;
+    height: 90%;
+    position:static;
+    max-width: 340px;
+    background-color: white;
+    margin: 20px;
+    justify-self: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 13px;
+}
 .register-box-gral {
 
     display: flex;
@@ -318,6 +335,7 @@ centrar-boton {
 
 .register-cont-label-input {
     margin-left: 15px;
+    margin-top: 3px;
     display: flex;
     flex-direction: column;
 }
@@ -380,18 +398,18 @@ footer {
 }
 
 /* TABLETS*/
-@media (min-width: 480px) {
-
-    /*Header*/
-    .login-main {
-        max-width: 450px;
-
-    }
-
-    .login-auth-page-card {
-        max-width: 450px;
-
-    }
+@media (min-width: 480px){
+/*Header*/
+.login-main {
+   
+   margin-top: 30px;
+   margin-left: 50px;
+  
+    
+}
+.login-auth-page-card {
+   max-width: 450px;
+}
 
 
 
