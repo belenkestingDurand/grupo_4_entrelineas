@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo&family=Lato:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -28,23 +31,55 @@
 
     </header>
     <main>
-        <h4 class="text-align">Carrito</h4>
+        <div calss="carrito-bottom-border"><h4 class="carrito-align-text-center carrito-bottom-border carrito-margin-titulo">Carrito</h4></div>
         <section>
-           <article class="flex-box flex-direction-row margin-article">
-               <div class="sizing-div-img-libro"><img src="" alt="Foto del producto"></div>
-               <div class="flex-box lex-direction-column" >
-                   <div><h5 >Nombre del libro</h5></div>
-                    <h6 class="borde">-</h6>
-                    <h6>n</h6>
-                    <h6>+</h6>
-                    <h5>precio</h5>
+           <article class="carrito-flex-box carrito-flex-direction-row carrito-margin-article carrito-sizing-article carrito-bottom-border">
+               <div class="sizing-div-img-libro"><img src="img/book-test.png" alt="Foto del producto"></div>
+               <div class="carrito-flex-box flex-direction-column carrito-sizing-div carrito-flex-align" >
+                   <div class="sizing-div-nombreDelLibro carrito-align-text-center"><h5 class="carrito-margin-NombreDelLibro">Nombre del libro</h5></div>
+                    <div class="carrito-flex-box carrito-flex-direction-row carrito-sizing-div-textos carrito-text-justify-center">
+                    <div class="carrito-border carrito-border-left carrito-recuadro-sizing carrito-align-text-center"><h6 class="carrito-margin-textos carrito-font-color">-</h6></div>
+                    <div class="carrito-border carrito-border-left carrito-border-right carrito-recuadro-sizing carrito-align-text-center"><h6 class="carrito-margin-textos">1</h6></div>
+                    <div class="carrito-border carrito-border-right carrito-recuadro-sizing carrito-align-text-center"><h6 class="carrito-margin-textos carrito-font-color">+</h6></div>
+                   </div>
+                    
+                    <div><h5>$0,000.0</h5></div>
                 </div>
-               
-
            </article>
-        </section>
-        <section>
 
+           <article class="carrito-flex-box carrito-flex-direction-row carrito-margin-article carrito-sizing-article carrito-bottom-border">
+            <div class="sizing-div-img-libro"><img src="img/book-test.png" alt="Foto del producto"></div>
+            <div class="carrito-flex-box flex-direction-column carrito-sizing-div carrito-flex-align" >
+                <div class="sizing-div-nombreDelLibro carrito-align-text-center"><h5 class="carrito-margin-NombreDelLibro">Nombre del libro</h5></div>
+                 <div class="carrito-flex-box carrito-flex-direction-row carrito-sizing-div-textos carrito-text-justify-center">
+                 <div class="carrito-border carrito-border-left carrito-recuadro-sizing carrito-align-text-center"><h6 class="carrito-margin-textos carrito-font-color">-</h6></div>
+                 <div class="carrito-border carrito-border-left carrito-border-right carrito-recuadro-sizing carrito-align-text-center"><h6 class="carrito-margin-textos">1</h6></div>
+                 <div class="carrito-border carrito-border-right carrito-recuadro-sizing carrito-align-text-center"><h6 class="carrito-margin-textos carrito-font-color">+</h6></div>
+                </div>
+                 
+                 <div><h5>$0,000.0</h5></div>
+             </div>
+        </article>
+    </article>
+
+    <article class="carrito-flex-box carrito-flex-direction-row carrito-margin-article carrito-sizing-article carrito-bottom-border">
+     <div class="sizing-div-img-libro"><img src="img/book-test.png" alt="Foto del producto"></div>
+     <div class="carrito-flex-box flex-direction-column carrito-sizing-div carrito-flex-align" >
+         <div class="sizing-div-nombreDelLibro carrito-align-text-center"><h5 class="carrito-margin-NombreDelLibro">Nombre del libro</h5></div>
+          <div class="carrito-flex-box carrito-flex-direction-row carrito-sizing-div-textos carrito-text-justify-center">
+          <div class="carrito-border carrito-border-left carrito-recuadro-sizing carrito-align-text-center"><h6 class="carrito-margin-textos carrito-font-color">-</h6></div>
+          <div class="carrito-border carrito-border-left carrito-border-right carrito-recuadro-sizing carrito-align-text-center"><h6 class="carrito-margin-textos">1</h6></div>
+          <div class="carrito-border carrito-border-right carrito-recuadro-sizing carrito-align-text-center"><h6 class="carrito-margin-textos carrito-font-color">+</h6></div>
+         </div>
+          
+          <div><h5>$0,000.0</h5></div>
+      </div>
+ </article>
+        </section>
+        <section class="carrito-flex-box carrito-text-justify-center">
+           <div class="carrito-flex-box carrito-flex-direction-row carrito-sizing-botton carrito-botton-style">
+               <h6 class="color-wite carrito-aling-item-center carrito-align-start">Ir a pagar</h6>
+               <h6 class="color-wite carrito-aling-item-center carrito-aling-end">Subtotal $0,000.00</h6> </div> 
         </section>
     </main>
     <footer>
