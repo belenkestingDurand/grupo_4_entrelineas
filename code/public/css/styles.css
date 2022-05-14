@@ -5,7 +5,10 @@
 /*Body*/
 body {
     font-family: 'Arvo', serif;
+}
 
+.main-title {
+    display: none;
 }
 
 h4 {
@@ -141,9 +144,18 @@ img {
 }
 
 /* Home.html */
+
+main .home-banner{
+    display: block;
+}
+.product-showcase {
+    display: block;
+}
 .product {
     width: 100%;
-    margin: 10px 0px;
+    max-width: 280px;
+    /* max-height: 470px; */
+    margin: 10px 13px;
     display: flex;
     flex-direction: column;
     justify-items: center;
@@ -157,8 +169,9 @@ article .img-more {
 
 .book-product-img {
     width: 100%;
-    background-color:  #DBDBDB;
+    /* background-color: #DBDBDB; */
 }
+
 input.see-more {
     align-self: flex-end;
     padding: 13px 21px;
@@ -168,11 +181,11 @@ input.see-more {
     right: 110px;
 }
 
-.book-detail-home{
+.book-detail-home {
     min-height: 31px;
 }
 
-.book-name-price{
+.book-name-price {
     /* margin-top: 5px; */
     display: flex;
     justify-content: space-between;
@@ -180,7 +193,7 @@ input.see-more {
     height: 30px;
 }
 
-article .add-cart-button{
+article .add-cart-button {
     padding: 10px;
     width: 100%;
     color: white;
@@ -194,22 +207,19 @@ article .add-cart-button{
 /*Main LogIn*/
 
 .login-header {
-    width: 0px;
-    height: 0px;
+    display: none;
 }
 
 .login-main {
     width: 90%;
     height: 90%;
+    border-radius: 8px;
     position: static;
     max-width: 340px;
     background-color: white;
     margin: 20px;
     justify-self: center;
     box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
     font-size: 15px;
 
 }
@@ -224,24 +234,29 @@ article .add-cart-button{
     height: 90%;
     box-sizing: border-box;
     margin: auto;
-    align-items: left;
-    justify-content: space-around;
+
 }
 
 .login-logo {
     text-align: center;
-    margin-top: 10px;
+    /*margin-top: 10px; */
 }
 
 .login-logo-chico {
     width: 60%;
+    margin-top: 3px;
 
 
 
 }
 
+.login-contenedor-email-pass {
+    text-align: center;
+
+}
+
 .h5-titulo-box {
-    margin: 10px 0px 1px 5px;
+    margin: 10px 0px 1px 25px;
     padding-left: 2px;
     text-align: left;
 }
@@ -261,20 +276,33 @@ article .add-cart-button{
 .login-h5-centrado {
     text-align: center;
     font-size: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 
 }
+
+.login-ajust-nuevo-cli {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.color-9F1F0E {
+    color: #9F1F0E;
+}
+
 
 .button-ingresar {
     margin: 10px;
     padding: 8px 60px;
     border-radius: 10px;
-    background-color: #4349b5;
+    background-color: #9f1f0e;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     color: white;
     margin: 0px;
     cursor: pointer;
+    box-shadow: 0px 5px 5px #606665;
 }
 
 .button-ingreso-google {
@@ -288,10 +316,12 @@ article .add-cart-button{
     font-size: 15px;
     margin: 0px;
     cursor: pointer;
+    box-shadow: 0px 5px 5px 0px #606665;
 }
 
 .tamaño-logo-google {
-    width: 25px;
+    width: 18px;
+    margin-top: 3px;
 }
 
 .centrar-boton {
@@ -301,7 +331,7 @@ article .add-cart-button{
 .button-crear-cuenta {
     margin: 5px 5px 5px 5px;
     padding: 10px;
-    border: 1px solid #f1f1f1;
+
     color: white;
     border-radius: 10px;
     background-color: black;
@@ -310,13 +340,14 @@ article .add-cart-button{
     font: 15px white;
     margin: 0px;
     cursor: pointer;
+    box-shadow: 0px 5px 5px 0px #606665;
 }
 
 /*Register*/
 .register-main {
     width: 90%;
     height: 90%;
-    position:static;
+    position: static;
     max-width: 340px;
     background-color: white;
     margin: 20px;
@@ -327,6 +358,7 @@ article .add-cart-button{
     justify-content: space-around;
     font-size: 13px;
 }
+
 .register-box-gral {
 
     display: flex;
@@ -509,21 +541,18 @@ footer {
 }
 
 /* TABLETS*/
-@media (min-width: 480px){
-/*Header*/
-.login-main {
-   
-   margin-top: 30px;
-   margin-left: 50px;
-  
-    
-}
-.login-auth-page-card {
-   max-width: 450px;
-}
+@media (min-width: 480px) {
 
+    /*Header*/
+    .login-main {
+        margin: auto;
+        margin-top: 30px;
+        margin-left: 50px;
+    }
 
-
+    .login-auth-page-card {
+        max-width: 450px;
+    }
 }
 
 /*Desktop*/
@@ -792,4 +821,20 @@ footer {
         margin-top: 25%;
     }
 
+    /* Home.html */
+    .product-showcase {
+        /* border: red 1px dotted; */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    main .home-banner{
+        display: block;
+        object-fit: cover;
+        width: 100%;
+        max-height: 300px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
 }
