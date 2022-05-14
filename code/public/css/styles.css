@@ -224,6 +224,53 @@ article .add-cart-button {
     letter-spacing: 0.5px;
 }
 
+/* Detalle.html */
+
+/* .send-mail-description{} */
+
+
+.icon-with-text{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.icon-deliver{
+    margin-top: 5px;
+    width: 50px;
+    max-height: 47px;
+}
+.icon-text{
+    margin-left: 10px;
+    width: 150px;
+}
+
+.detail-extra-info{
+    width: 100%;
+}
+
+.detail-extra-rect{
+    border-top: 1px solid #000;    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: stretch;
+}
+
+.detail-title-info{
+    font-size: 18px;
+    margin-top: 10px;
+    width: 200px;
+    position: relative;
+    top: 4px;
+}
+
+.detail-info-arrow{
+    width: 30px;
+    position: relative;
+    top: 6px;
+}
+
 /*Main LogIn*/
 
 .login-header {
