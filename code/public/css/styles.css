@@ -172,6 +172,25 @@ article .img-more {
     /* background-color: #DBDBDB; */
 }
 
+.img-more{
+    /* display: flex; */
+    position: relative;
+    justify-content: space-between;
+}
+
+.buy-item {
+    display: none;
+    background-color: black;
+    color: white;
+    align-self: flex-end;
+    padding: 13px 21px;
+    border-radius: 15px;
+    margin-bottom: 10%;
+    
+    position: absolute;
+    left: 14px;
+    order: 1;
+}
 input.see-more {
     align-self: flex-end;
     padding: 13px 21px;
@@ -179,6 +198,7 @@ input.see-more {
     margin-bottom: 10%;
     position: relative;
     right: 110px;
+    order: 2;
 }
 
 .book-detail-home {
@@ -731,5 +751,13 @@ footer {
         max-height: 300px;
         margin-top: 30px;
         margin-bottom: 30px;
+    }
+
+    /* !REVISAR */
+    article .home-prod-buttons{
+        display: none;
+    }
+    article .home-prod-buttons:hover{
+        display: block;
     }
 }
