@@ -156,7 +156,7 @@ main .home-banner{
     width: 100%;
     max-width: 280px;
     /* max-height: 470px; */
-    margin: 10px 13px;
+    margin: 25px 13px;
     display: flex;
     flex-direction: column;
     justify-items: center;
@@ -204,9 +204,27 @@ input.see-more {
     padding: 13px 21px;
     border-radius: 15px;
     margin-bottom: 10%;
+}
+.comprar{
+    display: none;
+    align-self: flex-end;
+    padding: 13px 21px;
+    border-radius: 15px;
+    margin-bottom: 10%;
+    background-color: black;
+    color: white;
+    
+}
+
+.position-ver-mas{
     position: absolute;
-    right: 3%;
-    order: 2;
+    right: 5%;
+    top: 90%;
+}
+.position-button-comprar{
+    position: absolute;
+    left: 5%;
+    top: 90%;
 }
 
 .book-detail-home {
@@ -981,12 +999,27 @@ h6 {
         height: 60%;
     }
 
-    /* !REVISAR */
+    .home-prod-btm{
+        display: none;
+        transition-duration: 8ms;
+    }
+
+   
+
+    .product :hover .home-prod-btm{
+        display: block;
+
+    }
+
     article .home-prod-buttons{
         display: none;
     }
     article .home-prod-buttons:hover{
         display: block;
+    }
+
+    .add-cart-button{
+        display: none
     }
 
     /*Carrito*/
