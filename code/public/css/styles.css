@@ -43,7 +43,7 @@ h6 {
 .login-body-background-img:before {
     content: "";
     width: 100%;
-    min-height: 100vh;
+    min-height: 125%;
     position: absolute;
     top: 0;
     left: 0;
@@ -412,8 +412,7 @@ article .add-cart-button {
 
 /*Register*/
 .register-main {
-    width: 90%;
-    height: 120%;
+  
     position: static;
     max-width: 340px;
     background-color: white;
@@ -426,16 +425,9 @@ article .add-cart-button {
     font-size: 13px;
 }
 
-.register-box-gral {
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-
-}
-
-.etiq-contenedor {
-    margin-left: 15px;
+.register-etiq-contenedor {
+    margin-left: 45px;
 }
 
 .register-cont-label-input {
@@ -451,7 +443,7 @@ article .add-cart-button {
     display: flex;
     justify-content: center;
 
-    margin-left: 5px;
+    margin-left: 25px;
     
 }
 .register-tipo-numero {
@@ -462,18 +454,18 @@ article .add-cart-button {
 }
 
 .register-condic-uso {
-    width: 180px;
+    width: 220px;
     padding: 10px;
     margin: auto;
 }
-.ya-tienes-cuenta {
-    
+.register-ya-tienes-cuenta {
+font-size: 13px;
+text-align: center;
 }
-.box-option {
-    margin: 1px 0px 3px 0px;
+.register-box-option {
+    margin: 1px 0px 5px 0px;
     height: 23px;
-    width: 60%;
-    padding: 5px;
+    padding: 2px;
     border-radius: 4px;
     background-color: #f1f1f1;
     text-align: left;
@@ -644,14 +636,14 @@ footer {
     .login-main {
         margin: auto;
         margin-top: 30px;
-        margin-left: 50px;
+        
     }
 
     .login-auth-page-card {
         max-width: 450px;
     }
-}
 
+}
 
 /*Desktop*/
 @media (min-width: 769px) {
@@ -743,6 +735,20 @@ h6 {
         margin: 20%;
     }
 
+
+    .register-main {
+  
+      
+       margin: auto;
+       margin-top: 30px;
+       max-width: 700px;
+      
+       font-size: 18px;
+      }
+  
+
+
+
     /*Footer*/
     footer {
         height: 5%;
@@ -779,15 +785,8 @@ h6 {
         margin-left: 90%;
     }
 
-    .login-main-section {
-        width: 450px;
-        height: 800px;
-        box-sizing: border-box;
-        margin: 20px;
+    
 
-        align-items: left;
-
-    }
 
     header {
         height: 11.5%;
