@@ -413,7 +413,7 @@ article .add-cart-button {
 /*Register*/
 .register-main {
     width: 90%;
-    height: 90%;
+    height: 120%;
     position: static;
     max-width: 340px;
     background-color: white;
@@ -439,16 +439,45 @@ article .add-cart-button {
 }
 
 .register-cont-label-input {
-    margin-left: 15px;
+    margin-left: 50px;
     margin-top: 3px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+
 }
 
 .register-cont-2box {
     display: flex;
-    justify-content: space-around;
-    margin-left: 10px;
+    justify-content: center;
+
+    margin-left: 5px;
+    
+}
+.register-tipo-numero {
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-right: 5px;
+  
+}
+
+.register-condic-uso {
+    width: 180px;
+    padding: 10px;
+    margin: auto;
+}
+.ya-tienes-cuenta {
+    
+}
+.box-option {
+    margin: 1px 0px 3px 0px;
+    height: 23px;
+    width: 60%;
+    padding: 5px;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+    text-align: left;
+    color: #938C8C;
 }
 
 /*Carrito*/

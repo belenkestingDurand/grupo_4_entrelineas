@@ -41,17 +41,17 @@
                     <div>
                         <div class="etiq-contenedor" ><label>Documento:</label></div>
                         <div class="register-cont-2box">
-                            <div class="register-cont-label-imput">
+                            <div class="register-tipo-numero">
                                 <div><label for="tipodoc">Tipo</label></div>
                                 <div>
-                                    <select class="box-ingrese-datos" name="tipodoc">
+                                    <select class="box-option" name="tipodoc">
                                          <option value="dni">Dni</option>
                                          <option value="dni">Pasaporte</option>
                                     </select>
                                 </div>
                             </div>
 
-                            <div class="register-cont-label-input">
+                            <div class="register-tipo-numero">
                                 <div><label for="documento">Número</label></div>
                                 <input class="box-ingrese-datos" type="number" name="documento" id="documento"
                                 placeholder="Ingrese el numero">
@@ -62,10 +62,10 @@
                     <div>
                         <div class="etiq-contenedor"><label>Teléfono:</label></div>
                         <div class="register-cont-2box">
-                            <div class="register-cont-label-imput">
+                            <div class="register-tipo-numero">
                                 <div><label>C.área</label></div>
                                 <div>
-                                    <select class="box-ingrese-datos" name="Área">
+                                    <select class="box-option" name="Área">
                                         <option value="011">BsAs</option>
                                             <option value="0387">Salta</option>
                                             <option value="0381">Tucumán</option>
@@ -74,7 +74,7 @@
                             </div>
                         
 
-                            <div class="register-cont-label-input">
+                            <div class="register-tipo-numero">
                                  <div><label for="nrotel">Número</label></div>
                                 <input class="box-ingrese-datos" type="number" name="nrotel" id="nrotel"
                                  placeholder="Ingrese el numero">
@@ -114,7 +114,13 @@
                 <button class="centrar-boton button-crear-cuenta">Crear nueva Cuenta</button>
             </div>
                            
-           
+           <div class="register-condic-uso">
+               <h6>Al crear una cuenta aceptas las 
+                   Condiciones de Uso y el Aviso de 
+                   Privacidad de Entre Líneas</h6>
+           </div>
+
+           <div class="ya-tienes-cuenta"><h5>¿Ya tienes una cuenta? <a href="/login.html">Iniciar sesión</a></h5></div>
         
     </main>
     <footer class="login-footer">
