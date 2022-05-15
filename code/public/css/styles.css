@@ -136,8 +136,9 @@ img {
 
 .home-main {
     height: 64%;
-    width: 80%;
-    margin: auto;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 0%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -164,11 +165,18 @@ main .home-banner{
 article .img-more {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
 }
 
 .book-product-img {
-    width: 100%;
+    width: 80%;
+    height: 100%;
+    padding-top: 3%;
+    padding-top: 3%;
+    padding-left: 5%;
+    padding-right: 5%;
     /* background-color: #DBDBDB; */
 }
 
@@ -196,8 +204,8 @@ input.see-more {
     padding: 13px 21px;
     border-radius: 15px;
     margin-bottom: 10%;
-    position: relative;
-    right: 110px;
+    position: absolute;
+    right: 3%;
     order: 2;
 }
 
@@ -271,6 +279,13 @@ article .add-cart-button {
     top: 6px;
 }
 
+.book-product-author{
+    color:rgb(100, 100, 100);
+}
+
+.book-product-name{
+    font-weight: bolder;
+}
 /*Main LogIn*/
 
 .login-header {
@@ -499,13 +514,13 @@ text-align: center;
     
 }
 .carrito-sizing-div{
-    width: 60%;
     height: 100%;
+    padding-top: 3%;
 }
 .sizing-div-img-libro{
     width: 30%;
     height: 90%;
-    margin: 8%;
+    margin: 2%;
 }
 .sizing-div-nombreDelLibro{
     width: 100%;
@@ -577,6 +592,9 @@ text-align: center;
 .carrito-aling-end{
     margin-left: 15%;
     margin-right: 8%;
+}
+.carrito-body-sizing{
+    width: 100%;
 }
 
 /*Footer*/
@@ -651,15 +669,15 @@ footer {
 
    /*Body*/
    h4 {
-    font-size: 32px;
+    font-size: 26px;
 }
 
 h5 {
-    font-size: 24px;
+    font-size: 20px;
 }
 
 h6 {
-    font-size: 18px;
+    font-size: 15px;
 }
     header {
         height: 11.5%;
@@ -874,6 +892,7 @@ h6 {
         flex-direction: row;
         flex-wrap: wrap;
         Justify-content: space-between;
+        border-top: solid gray 1px;
     }
 
     .sizing-box-logo {
@@ -939,15 +958,27 @@ h6 {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        margin-left: 10%;
+        margin-right: 10%;
     }
+    
 
     main .home-banner{
         display: block;
         object-fit: cover;
         width: 100%;
-        max-height: 300px;
-        margin-top: 30px;
+        max-height: 380px;
+        margin-top: 2px;
         margin-bottom: 30px;
+    }
+
+    .book-product-name{
+        margin-top: 13%;
+        font-size: 16px;
+    }
+
+    .img-more{
+        height: 60%;
     }
 
     /* !REVISAR */
@@ -1019,7 +1050,7 @@ h6 {
     }
 
     .carrito-sizing-div-textos{
-        width: 60%;
+        width: 40%;
         height: 30%;
     }
 }
