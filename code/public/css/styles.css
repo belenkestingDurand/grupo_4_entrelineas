@@ -181,7 +181,7 @@ article .img-more {
     border-radius: 100%;
     border: #000 3px solid;
 }
-.book-product-img {
+.home-book-product-img {
     width: 80%;
     height: 100%;
     padding-top: 3%;
@@ -1066,6 +1066,8 @@ h6 {
         min-height: 360px;
         min-width: 360px;
     }
+
+    
     
     .product.detail-second-column {
         justify-content: flex-start;
