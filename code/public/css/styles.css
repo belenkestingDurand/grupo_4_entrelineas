@@ -169,7 +169,18 @@ article .img-more {
     width: 100%;
     position: relative;
 }
-
+.nav-book-select{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+}
+.detail-book-select{
+    margin: 30px;
+    appearance: none;
+    border-radius: 100%;
+    border: #000 3px solid;
+}
 .book-product-img {
     width: 80%;
     height: 100%;
@@ -1047,26 +1058,34 @@ h6 {
     /* detalle.html */
 
     .detail-main{
+        /* width: auto; */
         justify-content: space-around;
     }
 
     .book-product-img {
-        width: 100%;
-        max-width: 360px;
-        max-height: 360px;
+        min-height: 360px;
+        min-width: 360px;
     }
-
-    .detail-main .product.detail-second-column {
+    
+    .product.detail-second-column {
         justify-content: flex-start;
-        width: 40%;
+        justify-content: center;
+        width: 100%;
+        min-width: 360px;
     }
-
-    .detail-main .product.detail-first-column {
+    
+    .product.detail-first-column {
         justify-content: center;
         align-items: center;
-        /* width: 40%; */
+        min-width: 360px;
     }
-
+    .send-mail-description{
+        align-items: flex-start;
+    }
+    .detail-extra-info{
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
    .product .img-more{
     height: 60%;
     max-width: 360px;
@@ -1082,13 +1101,14 @@ h6 {
         font-size: 16px;
     }
 
-  .book-product-price{
-      margin-top: 10%;
-  }
+    .book-product-price{
+        margin-top: 10%;
+        margin-left: 10px;
+    }
 
-  .book-product-author{
-      margin-top: 15px;
-  }
+    .book-product-author{
+        margin-top: 15px;
+    }
 
     .img-more{
         height: 60%;
