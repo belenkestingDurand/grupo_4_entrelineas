@@ -264,6 +264,17 @@ article .add-cart-button {
 
 /* Detalle.html */
 
+.detail-main {
+    height: 64%;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 0%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
 .go-back-arrow {
     height: 50%;
     width: 12%;
@@ -1035,6 +1046,26 @@ h6 {
         margin-bottom: 30px;
     }
 
+    /* detalle.html */
+
+    .detail-main .product.detail-second-column {
+        justify-content: flex-start;
+    }
+
+   .product .img-more{
+    height: 60%;
+    max-width: 360px;
+    max-height: 360px;
+    }
+
+    .detail-main .product.detail-first-column {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .add-cart-button{
+        max-width: 200px;
+    }
     .book-product-name{
         margin-top: 10%;
         font-size: 16px;
