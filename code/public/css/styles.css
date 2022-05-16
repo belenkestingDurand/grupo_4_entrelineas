@@ -177,7 +177,6 @@ article .img-more {
     padding-top: 3%;
     padding-left: 5%;
     padding-right: 5%;
-    /* background-color: #DBDBDB; */
 }
 
 .img-more{
@@ -232,11 +231,10 @@ input.see-more {
 }
 
 .book-name-price {
-    /* margin-top: 5px; */
     display: flex;
     justify-content: space-between;
     margin: auto;
-    height: 30px;
+    min-height: 30px;
 }
 
 article .add-cart-button {
@@ -259,7 +257,7 @@ article .add-cart-button {
 }
 
 .book-product-author{
-  margin-top: 10%;
+  margin-top: 10px;
 }
 
 /* Detalle.html */
@@ -1048,8 +1046,25 @@ h6 {
 
     /* detalle.html */
 
+    .detail-main{
+        justify-content: space-around;
+    }
+
+    .book-product-img {
+        width: 100%;
+        max-width: 360px;
+        max-height: 360px;
+    }
+
     .detail-main .product.detail-second-column {
         justify-content: flex-start;
+        width: 40%;
+    }
+
+    .detail-main .product.detail-first-column {
+        justify-content: center;
+        align-items: center;
+        /* width: 40%; */
     }
 
    .product .img-more{
@@ -1058,10 +1073,6 @@ h6 {
     max-height: 360px;
     }
 
-    .detail-main .product.detail-first-column {
-        justify-content: center;
-        align-items: center;
-    }
 
     .add-cart-button{
         max-width: 200px;
@@ -1076,7 +1087,7 @@ h6 {
   }
 
   .book-product-author{
-      margin-top: 15%;
+      margin-top: 15px;
   }
 
     .img-more{
@@ -1101,9 +1112,6 @@ h6 {
         display: block;
     }
 
-    .add-cart-button{
-        display: none
-    }
 
     /*Carrito*/
     
