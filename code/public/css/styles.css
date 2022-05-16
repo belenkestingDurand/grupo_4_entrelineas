@@ -72,7 +72,7 @@ header {
 .carrousel-size {
     box-sizing: border-box;
     width: 100%;
-    height: 45%;
+    max-height: 45%;
     align-self: center;
     text-align: center;
 }
@@ -264,6 +264,31 @@ article .add-cart-button {
 
 /* Detalle.html */
 
+.go-back-arrow {
+    height: 50%;
+    width: 12%;
+    transform: rotate(90deg);
+}
+
+.detail-description-text{
+    width: 80%;
+    margin: auto;
+}
+
+.hidden-until-click{
+    display: none;
+}
+
+/* 
+.detail-extra-info-ficha :click .display-more-info{
+    display: block;
+}
+
+.detail-extra-info-more :click .display-more-info{
+    display: block;
+} */
+
+
 /* .send-mail-description{} */
 
 
@@ -284,7 +309,7 @@ article .add-cart-button {
 }
 
 .detail-extra-info{
-    width: 100%;
+    width: 80%;
 }
 
 .detail-extra-rect{
@@ -672,6 +697,7 @@ footer {
     height: 5%;
     width: 70%;
     justify-self: end;
+    margin-right: 85px;
 }
 
 .margin-coppyright {
@@ -785,18 +811,17 @@ h6 {
     }
 
 
-    .register-main {
-  
-      
+    .register-main {      
        margin: auto;
        margin-top: 30px;
        max-width: 700px;
       
        font-size: 18px;
       }
-  .carrito-text-justify-center{
-      justify-content: flex-end;
-  }
+
+    .carrito-text-justify-center{
+        justify-content: flex-end;
+    }
 
 
 
@@ -873,6 +898,14 @@ h6 {
         flex-direction: row;
         flex-wrap: wrap;
         Justify-content: space-between;
+    }
+    
+    .flex-box-texto-detail{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
     }
 
     .size-box-texto {
@@ -1028,7 +1061,6 @@ h6 {
 
     .product :hover .home-prod-btm{
         display: block;
-
     }
 
     article .home-prod-buttons{
