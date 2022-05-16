@@ -250,6 +250,18 @@ article .add-cart-button {
     letter-spacing: 0.5px;
 }
 
+.book-product-name{
+    margin-top: 8%;
+}
+
+.book-product-price{
+  margin-top: 8%;
+}
+
+.book-product-author{
+  margin-top: 10%;
+}
+
 /* Detalle.html */
 
 /* .send-mail-description{} */
@@ -991,9 +1003,17 @@ h6 {
     }
 
     .book-product-name{
-        margin-top: 13%;
+        margin-top: 10%;
         font-size: 16px;
     }
+
+  .book-product-price{
+      margin-top: 10%;
+  }
+
+  .book-product-author{
+      margin-top: 15%;
+  }
 
     .img-more{
         height: 60%;
