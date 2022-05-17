@@ -1140,16 +1140,28 @@ h6 {
     
     
     .product.detail-second-column {
+        display: flex;
         justify-content: flex-start;
-        justify-content: center;
+        align-items: flex-start;
         width: 100%;
         min-width: 360px;
+        max-width: 400px;
+    }
+
+    .icon-with-text{
+        width: 100%;
+        margin-left: 0px;
+    }
+
+    .detail-description-text{
+        width: 100%;
     }
     
     .product.detail-first-column {
         justify-content: center;
         align-items: center;
         min-width: 360px;
+        max-width: 400px;
     }
     .send-mail-description{
         align-items: flex-start;
@@ -1164,10 +1176,13 @@ h6 {
     max-height: 360px;
     }
 
-
-    .add-cart-button{
-        max-width: 200px;
+    .book-detail-home {
+        display: flex;
+        flex-wrap: wrap;
+        /* justify-content: center;
+        align-items: center; */
     }
+
     .book-product-name{
         margin-top: 10%;
         font-size: 16px;
@@ -1177,10 +1192,17 @@ h6 {
         margin-top: 10%;
         margin-left: 10px;
     }
-
     .book-product-author{
         margin-top: 15px;
+        width: 100%;
     }
+    .add-cart-button{
+
+        align-self: center;
+        max-width: 200px;
+    }
+
+
 
     .img-more{
         height: 60%;
