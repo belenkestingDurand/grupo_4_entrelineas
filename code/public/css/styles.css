@@ -532,7 +532,7 @@ article .add-cart-button {
 
 .register-cont-2box {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 
     margin-left: 25px;
     
@@ -755,6 +755,8 @@ h5 {
 h6 {
     font-size: 15px;
 }
+
+/*Header*/
     header {
         height: 11.5%;
         width: 100%;
@@ -830,20 +832,91 @@ h6 {
         margin: 20%;
     }
 
-
-    .register-main {      
-       margin: auto;
-       margin-top: 30px;
-       max-width: 700px;
-      
-       font-size: 18px;
-      }
-
     .carrito-text-justify-center{
         justify-content: flex-end;
     }
 
+    /*Register*/
 
+    .register-main {      
+       width:90%;
+       height: 90%;
+       margin-top: 5%;
+       margin-bottom: 5%;
+       margin-left: 5%;
+       margin-right: 5%;
+       max-width: 90%;
+       max-height: 90%;
+       font-size: 18px;
+      }
+
+    .body-size-register-dektop{
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .register-logo-dektop{
+        height: 10%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+       
+    }
+    .login-logo-chico{
+        width: 23%;
+        margin-top: 3px;
+    }
+
+    .register-condic-uso{
+        text-align: center;
+        
+    }
+
+    .form-flex{
+        display: flex;
+        flex-direction: row;
+        height: 90%;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .column1{
+        width: 50%;
+       
+    }
+    .column2{
+        width: 50%;
+        padding-top: 5%;
+        padding-bottom: 5%;
+    }
+
+    .register-cont-label-input{
+        width: 85%;
+    }
+
+    .register-cont-label-input{
+        margin-top: 3%;
+    }
+
+    .box-ingrese-datos{
+        height: 30px;
+    }
+    .register-box-option{
+        height: 30px;
+    }
+    
+    .register-etiq-contenedor{
+        margin-top: 8%;
+    }
+    
+    .login-h5-centrado{
+        margin-top: 10%;
+    }
+
+    .register-tipo-numero{
+        width: 40%;
+    }
 
     /*Footer*/
     footer {
@@ -880,9 +953,6 @@ h6 {
     .margin-coppyright {
         margin-left: 90%;
     }
-
-    
-
 
     header {
         height: 11.5%;
@@ -1199,4 +1269,6 @@ h6 {
         width: 40%;
         height: 30%;
     }
+
+    
 }
