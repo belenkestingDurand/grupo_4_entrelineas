@@ -13,12 +13,13 @@
         <div class=" carrousel-size carrousel-style ">
             <h5 class="line-height"> carrousel con flechas </h5>
         </div>
-        <div class="go-back-arrow centrar-boton desaparecerDesktop"><img class="centrar-icono" src="img/arrow-down.png"
-                alt="Flecha para volver a menu principal"></div>
+        <div class="go-back-arrow centrar-boton desaparecerDesktop"><a href="/"><img class="centrar-icono" src="img/arrow-down.png" alt="Flecha para volver a menu principal"></a></div>
                 <div class="sizing-logo"><a href="/"><img class="centrar-logo" src="img/logo-entre-lineas.jpg" alt="entreLineasLogo"></a></div>
                 <div class="desaparecerEnMobile flex-box-texto-detail size-box-texto">
-                    <div class="go-back-arrow"><img class="centrar-icono" src="img/arrow-down.png" alt="Flecha para volver a menu principal"></div>
-                    <h6 class="margin-right-text">Volver a Tienda</h6>
+                    <a class="flex-box-texto-detail size-box-texto" href="/">
+                        <div class="go-back-arrow"><img class="centrar-icono" src="img/arrow-down.png" alt="Flecha para volver a menu principal"></div>
+                        <h6 class="margin-right-text">Volver a Tienda</h6>
+                    </a>
                 </div>
         <div class="sizing-carrito ordenar-carrito"><a href="/carrito"><img class="centrar-icono" src="img/carrito.jpg" alt="carrito"></a>
         </div>
@@ -46,11 +47,13 @@
         <article class="product detail-second-column">
             <section class="book-detail-home ">
                 <div class="book-name-price">
-                    <h5 class="book-product-name">Nombre del libro con titulo larguisimo osea recontra largo asjsf arrivederci saionra wtf</h5>
+                    <h5 class="book-product-name">Nombre del libro con titulo larguisimo recontra largo, demasiado para entrar bien</h5>
                     <h5 class="book-product-price">$1.000.000.000,00</h5>
                 </div>
                 <h6 class="book-product-author">Autor del libro</h6>
-                <input class="add-cart-button" type="button" value="Agregar al carrito">
+                <a href="/carrito">
+                    <input class="add-cart-button" type="button" value="Agregar al carrito">
+                </a>
             </section>
             <section class="send-mail-description">
                 <div class="icon-with-text">
@@ -70,19 +73,23 @@
                 <div class="detail-extra-rect detail-title-info-ficha">
                     <h4 class="detail-title-info ">Ficha Tecnica</h4>
                     <img class="detail-info-arrow" src="img/arrow-down.png" alt="Boton en forma de flecha hacia abajo">
-                    <p class="hidden-until-click display-more-tech">
-                        <strong>Genero</strong>: Informativo
-                        <strong>Tamaño</strong>: 12x21cm
-                        <strong>Páginas</strong>: 360
-                    </p>
+                    <div>
+                        <p class="hidden-until-click display-more-tech">
+                            <strong>Genero</strong>: Informativo
+                            <strong>Tamaño</strong>: 12x21cm
+                            <strong>Páginas</strong>: 360
+                        </p>
+                    </div>
                 </div>
                 <div class="detail-extra-rect detail-title-info-more">
                     <h4 class="detail-title-info ">Más Información</h4>
                     <img class="detail-info-arrow" src="img/arrow-down.png" alt="Boton en forma de flecha hacia abajo">
-                    <p class="hidden-until-click display-more-info">
-                        Aqui les traemos un ejemplar unico del autor BLA hablando sobre su inmensa obra a lo largo de los años, y le preguntamos
-                        sobre su impacto en la sociedad, por ejemplo.
-                    </p>
+                    <div>
+                        <p class="hidden-until-click display-more-info">
+                            Aqui les traemos un ejemplar unico del autor BLA hablando sobre su inmensa obra a lo largo de los años, y le preguntamos
+                            sobre su impacto en la sociedad, por ejemplo.
+                        </p>
+                    </div>
                 </div>
             </section>
         </article>

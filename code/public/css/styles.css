@@ -179,7 +179,7 @@ article .img-more {
     margin: 30px;
     appearance: none;
     border-radius: 100%;
-    border: #000 3px solid;
+    border: #000 10px solid;
 }
 .home-book-product-img {
     width: 80%;
@@ -286,7 +286,7 @@ article .add-cart-button {
 
 .go-back-arrow {
     height: 50%;
-    width: 12%;
+    width: 15%;
     transform: rotate(90deg);
 }
 
@@ -295,18 +295,21 @@ article .add-cart-button {
     margin: auto;
 }
 
-.hidden-until-click{
+.display-more-info{
     display: none;
 }
 
-/* 
-.detail-extra-info-ficha :click .display-more-info{
+.display-more-tech{
+    display: none;
+}
+
+.detail-extra-info-ficha :active .display-more-tech{
     display: block;
 }
 
-.detail-extra-info-more :click .display-more-info{
+.detail-extra-info-more :active .display-more-info{
     display: block;
-} */
+}
 
 
 /* .send-mail-description{} */
@@ -1146,6 +1149,7 @@ h6 {
         width: 100%;
         min-width: 360px;
         max-width: 400px;
+        margin-left: 10px;
     }
 
     .icon-with-text{
@@ -1162,6 +1166,7 @@ h6 {
         align-items: center;
         min-width: 360px;
         max-width: 400px;
+        margin-right: 10px;
     }
     .send-mail-description{
         align-items: flex-start;
@@ -1177,10 +1182,10 @@ h6 {
     }
 
     .book-detail-home {
-        display: flex;
+        /* display: flex; */
         flex-wrap: wrap;
-        /* justify-content: center;
-        align-items: center; */
+        justify-content: center;
+        /* align-items: center; */
     }
 
     .book-product-name{
@@ -1197,9 +1202,9 @@ h6 {
         width: 100%;
     }
     .add-cart-button{
-
         align-self: center;
         max-width: 200px;
+        /* margin: auto; */
     }
 
 
