@@ -405,9 +405,11 @@ article .add-cart-button {
 .login-logo-chico {
     width: 60%;
     margin-top: 3px;
+}
 
-
-
+.register-logo-chico {
+    width: 60%;
+    margin-top: 3px;
 }
 
 .login-contenedor-email-pass {
@@ -865,7 +867,7 @@ h6 {
         justify-content: center;
        
     }
-    .login-logo-chico{
+    .register-logo-chico{
         width: 23%;
         margin-top: 3px;
     }
