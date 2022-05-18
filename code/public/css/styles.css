@@ -259,6 +259,18 @@ article .add-cart-button {
     letter-spacing: 0.5px;
 }
 
+.home-add-cart-button{
+    padding: 10px;
+    width: 100%;
+    color: white;
+    background-color: black;
+    font-size: 15px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    letter-spacing: 0.5px;
+}
+}
+
 .book-product-name{
     margin-top: 8%;
 }
@@ -1209,7 +1221,9 @@ h6 {
         /* margin: auto; */
     }
 
-
+    .home-add-cart-button{
+        display: none;
+    }
 
     .img-more{
         height: 60%;
