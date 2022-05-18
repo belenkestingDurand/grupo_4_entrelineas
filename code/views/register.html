@@ -23,18 +23,18 @@
                 <img class="login-logo-chico" src="img/logo-entre-lineas.jpg" alt="logo">
             </div>
 
-            <form class="form-flex" action="" method="">
+            <form class="form-flex" action="login" method="post">
                 <div class="column1"><div class="register-cont-label-input">
                     <div><label for="nombre">Nombre:</label></div>
                     <input class="box-ingrese-datos" type="text" name="nombre" id="nombre" 
-                        placeholder="Ingrese su nombre">
+                        placeholder="Ingrese su nombre" required>
                     
                 </div>
                
                 <div class="register-cont-label-input">
                     <div><label for="nombre">Apellido:</label></div>
                     <input class="box-ingrese-datos" type="text" name="apellido" id="apellido"
-                         placeholder="Ingrese su apellido">
+                         placeholder="Ingrese su apellido"required>
                 </div>
                
                
@@ -54,7 +54,7 @@
                         <div class="register-tipo-numero">
                             <div><label for="documento">Número</label></div>
                             <input class="box-ingrese-datos" type="number" name="documento" id="documento"
-                            placeholder="Ingrese el numero">
+                            placeholder="Ingrese el numero" required>
                         </div>
                     </div> 
                 </div>
@@ -86,21 +86,21 @@
                 <div class="register-cont-label-input">
                     <div><label for="email">Email:</label></div>
                     <input class="box-ingrese-datos" type="email" name="email" id="email" 
-                        placeholder="Ingrese su nombre">    
+                        placeholder="Ingrese su nombre" required>    
                 </div>
         </div>
                 
         <div class="column2"><div class="register-cont-label-input">
             <div><label for="password">Ingrese contraseña:</label></div>
             <input class="box-ingrese-datos" type="password" name="passwordUsuario" id="password"
-                 placeholder="Ingrese su contraseña">
+                 placeholder="Min 8 caracteres" required minlength="8">
             
         </div>
 
         <div class="register-cont-label-input">
             <div><label for="confpass">Confirme contraseña</label></div>
             <input class="box-ingrese-datos" type="password" name="confpass" id="confpass"
-                 placeholder="Confirme su contraseña">
+                 placeholder="Min 8 caracteres"required minlength="8">
         </div>
         <div class="login-h5-centrado"> 
             <button class="centrar-boton button-crear-cuenta">Crear nueva Cuenta</button>
