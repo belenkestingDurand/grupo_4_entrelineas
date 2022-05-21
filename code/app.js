@@ -57,3 +57,7 @@ app.get(httpDetalleDeProducto, function(req, res){
 app.post(htpptLogin, (req, res) => {
     res.sendFile(path.join(home))
 })
+
+app.post(htpptRegister, (req, res) => {
+    res.sendFile(path.join(login))
+})
