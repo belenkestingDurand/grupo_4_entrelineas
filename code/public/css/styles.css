@@ -686,6 +686,7 @@ footer {
 
 .style-coppyright {
     color: #606665;
+    font-size: 1em;
 }
 
 .center-logo-book {
@@ -929,6 +930,7 @@ h6 {
         flex-direction: row;
         flex-wrap: wrap;
         Justify-content: space-between;
+        align-items: center;
     }
 
     .sizing-box-logo {
@@ -1096,7 +1098,6 @@ h6 {
         margin-bottom: 0%;
         margin-left: 10%;
         margin-right: 10%;
-
     }
 
     .center-letras {
