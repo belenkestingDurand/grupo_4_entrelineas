@@ -67,6 +67,8 @@ header {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .carrousel-size {
@@ -104,7 +106,7 @@ header {
 
 .sizing-logo {
     height: 65%;
-    width: 70%;
+    width: 60%;
 }
 
 .centrar-logo {
@@ -721,9 +723,10 @@ footer {
 }
 .sizing-box-user{
     width: 40px;
+    font-size: 10px;
 }
 .sizing-user{
-    width: 40px;
+    width: 3em;
 }
 
 .sizing-box-letras {
