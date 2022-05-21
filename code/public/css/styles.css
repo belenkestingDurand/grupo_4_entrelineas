@@ -719,6 +719,12 @@ footer {
     width: 40%;
     height: 20%;
 }
+.sizing-box-user{
+    width: 40px;
+}
+.sizing-user{
+    width: 40px;
+}
 
 .sizing-box-letras {
     width: 60%;
