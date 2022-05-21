@@ -126,6 +126,11 @@ img {
 .line-height {
     margin: 2px;
 }
+.line-height-letras{
+    position: relative;
+    bottom: 5px;
+    margin-bottom: 2%;
+}
 
 .align-monedas {
     margin-left: 80%;
@@ -268,7 +273,6 @@ article .add-cart-button {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 12px;
     letter-spacing: 0.5px;
-}
 }
 
 .book-product-name{
@@ -761,18 +765,18 @@ footer {
 /*Desktop*/
 @media (min-width: 769px) {
 
-   /*Body*/
-   h4 {
-    font-size: 26px;
-}
+    /*Body*/
+    h4 {
+        font-size: 26px;
+    }
 
-h5 {
-    font-size: 20px;
-}
+    h5 {
+        font-size: 20px;
+    }
 
-h6 {
-    font-size: 15px;
-}
+    h6 {
+        font-size: 15px;
+    }
 
 /*Header*/
     header {
@@ -842,7 +846,6 @@ h6 {
     .line-height-desktop {
         margin-top: 20%;
         margin-bottom: 20%;
-
     }
 
     .centrar-icono {
@@ -967,6 +970,7 @@ h6 {
     .sizing-box-media {
         height: 80%;
         width: 10%;
+        padding: auto;
     }
 
     .margin-coppyright {
@@ -1112,6 +1116,9 @@ h6 {
         margin-bottom: 0%;
         margin-left: 10%;
         margin-right: 10%;
+        font-size: 1em;
+        position: relative;
+        bottom: 20px;
     }
 
     .center-letras {
@@ -1120,7 +1127,7 @@ h6 {
     }
 
     .center-media {
-        margin-top: 25%;
+        margin: auto;
     }
 
     /* Home.html */
