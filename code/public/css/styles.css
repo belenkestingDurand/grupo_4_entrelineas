@@ -450,6 +450,7 @@ article .add-cart-button {
     background-color: #f1f1f1;
     text-align: left;
     color: #938C8C;
+    border: 1px;
 }
 
 
@@ -484,6 +485,7 @@ article .add-cart-button {
     cursor: pointer;
     box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
     font-family: 'Arvo';
+    border: 1px;
 }
 
 .button-ingreso-google {
@@ -522,6 +524,7 @@ article .add-cart-button {
     margin: 0px;
     cursor: pointer;
     box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    border: 1px;
 }
 
 /*Register*/
@@ -584,6 +587,7 @@ text-align: center;
     background-color: #f1f1f1;
     text-align: left;
     color: #938C8C;
+    border: 1px;
 }
 
 /*Carrito*/
@@ -931,6 +935,7 @@ footer {
 
     .box-ingrese-datos{
         height: 30px;
+
     }
     .register-box-option{
         height: 30px;

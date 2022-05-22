@@ -27,3 +27,30 @@ Seguir planeando las semanas para poder organizarnos.
 **Dejar de hacer:**
 
 Realizar las tareas teniendo en cuenta una visión futura entender para qué sirve y evitar cambios y errores. Evitar dejar las tareas pesadas y tediosas para el final así tenemos tiempo suficiente para realizarlas de la mejor manera.
+
+## 18/05/2022
+Retro Sprint 2
+
+**Comenzar a hacer:**
+
+Revisar el trabajo que estuvo haciendo mi compañero antes de empezar a hacer algo para evitar sobre escribir.
+
+
+**Hacer más:**
+
+Tenemos que hacer más commits para manejar mejor el control de cambios.
+Revisar detalles y cargarlos cómo tareas para hacer en Trello para que no queden en una charla en el aire.
+Revisar más las consignas para que las cosas que hacemos estén pensadas en función de lo que el usuario quiere.
+Revisar la funcionalidad de las paginas desde el punto de vista del usuario antes de las entregas.
+
+
+**Continuar haciendo:**
+
+Planificar y dividir el trabajo de manera clara y estricta.
+Comunicarnos y ayudarnos como grupo.
+
+
+**Dejar de hacer:**
+Sobre escribir el trabajo de los otros.
+
+
