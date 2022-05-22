@@ -14,8 +14,7 @@ const views = path.join(__dirname, 'views/')
     const carrito = path.join(__dirname, 'views/users/carritoDeCompras.html')
     const login = path.join(__dirname, 'views/users/login.html')
     const register = path.join(__dirname, 'views/users/register.html')
-    const detalleDeProducto = path.join(__dirname, 'views/users/detalleDeProducto.html')
-    const homehtml = 'home.html'
+    const detalleDeProducto = path.join(__dirname, 'views/products/detalleDeProducto.html')
 
 //http
     const htpptRaiz = '/'
@@ -23,7 +22,7 @@ const views = path.join(__dirname, 'views/')
     const htpptCarrito = '/carrito'
     const htpptLogin = '/login'
     const httpDetalleDeProducto = '/detalle'
-    const htpptRegister = '/Register'
+    const htpptRegister = '/register'
 
 
 
