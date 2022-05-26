@@ -15,6 +15,7 @@ const views = path.join(__dirname, 'views/')
     const login = path.join(__dirname, 'views/users/login.html')
     const register = path.join(__dirname, 'views/users/register.html')
     const detalleDeProducto = path.join(__dirname, 'views/products/detalleDeProducto.html')
+    const crearProducto = path.join(__dirname, 'views/products/crearProducto.html')
 
 //http
     const htpptRaiz = '/'
@@ -23,6 +24,7 @@ const views = path.join(__dirname, 'views/')
     const htpptLogin = '/login'
     const httpDetalleDeProducto = '/detalle'
     const htpptRegister = '/register'
+    const httptCrearProducto = '/crearProducto'
 
 
 
@@ -50,6 +52,9 @@ app.get(htpptRegister, function(req, res){
 })
 app.get(httpDetalleDeProducto, function(req, res){
     res.sendFile(detalleDeProducto)
+})
+app.get(httptCrearProducto, function(req, res){
+    res.sendFile(crearProducto)
 })
 
 app.post(htpptLogin, (req, res) => {

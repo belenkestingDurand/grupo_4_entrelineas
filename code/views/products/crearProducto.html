@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entre Lineas - Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="main-title">ENTRE LINEAS</h1>
+     
+        <div class="sizing-menu-paty desaparecerDesktop"><img class="centrar-icono" src="img/menu-paty.jpg"
+                alt="menu-paty"></div>
+        <div class="sizing-logo"><a href="/"><img class="centrar-logo" src="img/logo-entre-lineas.jpg" alt="entreLineasLogo"></a></div>
+
+        <div class="desaparecerEnMobile flex-box-texto size-box-texto">
+            <h6 class="margin-right-text"><a>Listar Productos</a></h6>
+            <h6 class="margin-right-text"><a>Crear Productos</a></h6>
+            <h6 class="margin-right-text"><a>Editar Productos</a></h6>
+        </div>
+
+       
+    </header>
+
+ 
+    <main>
+        <form class="" action="" method="get">
+                <div class="">
+                    <div class="">
+                    <div><label for="idProduct">Id del Producto:</label></div>
+                    <input class="box-ingrese-datos" type="text" name="idProduct" id="idProduct" 
+                        placeholder="Ingrese el id del producto" required>
+                    
+                </div>
+                <div class="">
+                    <div class="">
+                    <div><label for="productName">Nombre del producto:</label></div>
+                    <input class="box-ingrese-datos" type="text" name="productName" id="productName" 
+                        placeholder="Ingrese el nombre del producto" required>
+                    
+                </div>
+
+                <div>
+                    
+                    <p>Tipo de producto:</p>
+                      <input type="radio" id="book" name="productType" value="book">
+                      <label for="center-logo-book">Libro</label><br>
+                      <input type="radio" id="ebook" name="productType" value="ebook">
+                      <label for="ebook">Ebook</label><br>
+                      <input type="radio" id="varios" name="productType" value="varios">
+                      <label for="varios">Varios</label>
+
+                </div>
+
+                <div class="">
+                    <div class="">
+                    <div><label for="productName">Imagen del producto:</label></div>
+                    <input class="box-ingrese-datos" type="file" name="productImage" multiple accept=".jpg, .png" required>
+                </div>
+
+                <div class="">
+                    <div class="">
+                    <div><label for="author">Autor:</label></div>
+                    <input class="box-ingrese-datos" type="text" name="author" id="author" 
+                        placeholder="Ingrese el nombre del autor" >
+                </div>
+
+                <div class="">
+                    <div class="">
+                    <div><label for="price">Precio:</label></div>
+                    <input class="box-ingrese-datos" type="number" name="price" id="price" 
+                         required>
+                </div>
+                <div class="">
+                    <div class="">
+                    <div><label for="about">Reseña:</label></div>
+                    <textarea  name="about" id="about">Reseña</textarea> 
+                         
+                </div>
+
+                <div class="">
+                    <div class="">
+                    <div><label for="gener">Género:</label></div>
+                    <input class="box-ingrese-datos" type="text" name="gener" id="gener" 
+                    placeholder="Ingrese el género del libro" >
+                </div>
+
+
+
+               
+                <div class="login-h5-centrado"> 
+                    <button class="centrar-boton button-crear-cuenta">Crear Producto</button>
+                </div>
+        </form>
+               
+    </main>
+
+
+
+    <footer>
+        <div class="sizing-box-logo"><img class="center-logo-book" src="img/logo.jpg" alt="entreLineasLogo"></div>
+        <div class="center-letras sizing-box-letras flex-box-letras">
+            <h5 class="line-height line-height-letras"><a>Listar Productos</a></h5>
+            <h5 class="line-height line-height-letras"><a>Crear Productos</a></h5>
+            <h5 class="line-height line-height-letras"><a>Editar Productos</a></h5>
+        </div>
+        <div class="sizing-box-media"><img class="center-media" src="img/logos-redes.jpg" alt="logos-redes"></div>
+        <div class="sizing-box-coppyright">
+            <h6 class="margin-coppyright style-coppyright line-height-coppyright">ENTRELINEAS©2022</h6>
+        </div>
+
+    </footer>
+</body>
+
+</html>
