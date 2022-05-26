@@ -29,7 +29,9 @@ const views = path.join(__dirname, 'views/')
 
 
 //Definir las rutas
-app.listen(port, () => console.log('Example app listening at http://localhost:'+port))
+app.listen(process.env.PORT || port, () => console.log('Example app listening at http://localhost:'+port))
+
+app.set('view engine', 'ejs');
 
 app.get(htpptRaiz, function(req, res){
     res.sendFile(home)
