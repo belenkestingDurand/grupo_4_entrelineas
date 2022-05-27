@@ -759,6 +759,43 @@ footer {
     margin-left: 50%;
 }
 
+.creatprod-title {
+    font-size: 1.5 em;
+    text-align: center;
+}
+.creatpr-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fot-createpr-box-coppyright {
+    font-size: 0.7em;
+    margin: 3px;
+    
+
+}
+.createpr-label-font {
+    font-size: 14px;
+}
+
+.createpr-form-padding-left {
+    padding-left: 3%;
+}
+
+.creatpr-desap-Mobile {
+    display: none;
+}
+.creatProd-buttom {
+    text-align: center;
+    font-size: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+/* LISTAR PRODUCTOS*/
+
+.listarpr-desap-Mobile {
+    display: none;
+}
 /* TABLETS*/
 @media (min-width: 480px) {
 
@@ -777,6 +814,18 @@ footer {
 
 /*Desktop*/
 @media (min-width: 769px) {
+
+    /*createProduct header*/
+    header .createpr-header {
+        height: 8.5%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        Justify-content: space-between;
+        box-shadow: 0 4px 2px -2px rgb(100, 100, 100);
+
+    }
 
     /*Body*/
     h4 {
@@ -821,6 +870,22 @@ footer {
         margin-right: 20%;
     }
 
+    .crearpr-flex-box-texto {
+        flex-wrap: nowrap;
+       
+
+    }
+    .crearpr-desap-Desktop{
+        display: none;
+    }
+    .creatpr-desap-Mobile {
+        display: flex;
+
+    }
+    .grow {
+    flex-grow: 0.3 ;
+    margin: 15px;
+    }
     .flex-box-texto {
         display: flex;
         flex-direction: row;
@@ -1143,6 +1208,15 @@ footer {
     .center-media {
         margin: auto;
     }
+
+
+    /* crearProducto */
+    .creatpr-footer {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
 
     /* Home.html */
     .product-showcase {
