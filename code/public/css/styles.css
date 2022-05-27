@@ -286,7 +286,7 @@ article .add-cart-button {
 }
 
 .book-product-author{
-  margin-top: 10px;
+  margin-top: 3px;
 }
 
 /* Detalle.html */
@@ -1234,7 +1234,7 @@ footer {
         margin-left: 10px;
     }
     .book-product-author{
-        margin-top: 15px;
+        margin-top: 3px;
         width: 100%;
     }
     .add-cart-button{
