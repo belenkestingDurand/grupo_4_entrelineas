@@ -13,7 +13,7 @@ const path = require('path')
     const home = path.join(__dirname, 'views/products/home')
     // const carrito = path.join(__dirname, 'views/produts/carritoDeCompras')
     // const detalleDeProducto = path.join(__dirname, 'views/products/detalleDeProducto')
-    const crearProducto = path.join(__dirname, 'views/products/crearProducto')
+   // const crearProducto = path.join(__dirname, 'views/products/crearProducto')
     const login = path.join(__dirname, 'views/users/login')
     const register = path.join(__dirname, 'views/users/register')
 
@@ -30,7 +30,7 @@ const path = require('path')
 
 // ! AUN NO ARME ESA RUTA
 //* dispuestos en routes/admin.js
-    const httptCrearProducto = '/crearProducto'
+ //   const httptCrearProducto = '/crearProducto'
 
 
 
@@ -80,6 +80,6 @@ app.use('/', routesUsers)
     // })
 
 
-app.get(httptCrearProducto, function(req, res){
-    res.sendFile(crearProducto)
-})
+// app.get(httptCrearProducto, function(req, res){
+ //   res.sendFile(crearProducto)
+//})
