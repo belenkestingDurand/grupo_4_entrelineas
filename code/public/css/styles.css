@@ -791,6 +791,51 @@ footer {
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
+.createProd-buttom-centr {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5vw;
+    gap: 10px;
+    
+    margin: auto;
+    width: 11vw;
+   
+    left: 90%;
+    top: 4px;
+    
+    background: #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 45px;
+
+}
+
+.create-buttom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5vw;
+    gap: 10px;
+    
+    position: relative;
+    width: 10vw;
+   
+    left: 90%;
+    top: 4px;
+    
+    background: #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 45px;
+
+}
+.img-buttom {
+    border-radius: 45px;
+
+
+}
 /* LISTAR PRODUCTOS*/
 
 .listarpr-desap-Mobile {
