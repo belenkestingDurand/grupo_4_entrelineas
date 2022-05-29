@@ -31,6 +31,7 @@
 
  
     <main>
+        <h2 class="titulo-none"><%= about.books %></h2>
         <h3 class="creatprod-title">LISTADO DE PRODUCTOS</h3>
         <div class="creatProd-buttom"> 
             <a href ='/crearProducto'><button class="create-buttom"><img class="img-buttom" src="/img/agregar-nuevo.png" alt="icon"></button></a>
@@ -41,13 +42,37 @@
             <button type="submit" class="nav-search-btn" tabindex="3">
               <i class="fa-solid fa-magnifying-glass"></i>
             </button>
-
-        <article class="">
-
-
+        </form>
+    <section class="lp-product-section">
+        <% books.forEach(product => { %>
+        <article class="lp-article-sizig">
+            <div class="lp-div-titulo-producto">
+                <h5 class="lp-h5-titulo"> <%= product.name %></h5>
+            </div>
+            <div class="lp-div-img">
+                <img src="<%= product.picture %>" class="lp-img">
+            </div>
+            <div class="lp-div-textos">
+                <h5 class="lp-h5-etiquetas">Id:</h5><h5 class="lp-h5-contenido"><%= product.id %></h5>
+                <h5 class="lp-h5-etiquetas">Tipo:</h5><h5 class="lp-h5-contenido"><%= product.type %></h5>
+                <h5 class="lp-h5-etiquetas">Genero:</h5><h5 class="lp-h5-contenido"> <%= product.gender %></h5>
+                <h5 class="lp-h5-etiquetas">Autor:</h5><h5 class="lp-h5-contenido"> <%= product.author %></h5>
+                <h5 class="lp-h5-etiquetas">Precio:</h5><h5 class="lp-h5-contenido"> <%= product.price %></h5>
+            </div>
+            <div class="lp-div-textos-2">
+                <h5 class="lp-h5-etiquetas">Reseña:</h5><p class="lp-h5-contenido"> <%= product.opinion %></p>
+                <h5 class="lp-h5-etiquetas">Imágenes:</h5><h5 class="lp-h5-contenido"> <%= product.picture %></h5>
+            </div>
+            <div class="lp-div-buttoms">
+                <input class="lp-button" type="button" value="Editar" >
+                <input class="lp-button" type="button" value="Eliminar">
+            </div> 
+           
+           
 
         </article>    
-        
+        <% }) %>
+    </section>
     </main>
 
     <!-- Footer -->

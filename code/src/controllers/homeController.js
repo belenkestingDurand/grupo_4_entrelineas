@@ -4,10 +4,13 @@ const about = {
                 }
 const books = [{
               id: 1,
+              type: 'Libro',
               name: "La Cabeza de Macri",
+              gender:"Biografía",
               author: "Franco Linder",
               price: "$4000.00",
-              picture: "/img/book-la-cabeza-de-macri.webp"},
+              picture: "/img/book-la-cabeza-de-macri.webp",
+              opinion: "Este es un libro ... que tiene ... muy interesante..."},
 
               {
               id: 2,
@@ -69,7 +72,7 @@ const homeController =  {
     },
      //'listarProducto.ejs' IN 'views/products' FOLDER
      listarProducto: (req, res) => {
-        res.render('products/listarProducto')
+        res.render('products/listarProducto',{about: about, books: books})
     }
 }
 
