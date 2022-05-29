@@ -9,11 +9,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Arvo&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
     <header class="createpr-header">
+
+        <div class=" carrousel-size carrousel-style ">
+            <h5 class="line-height lp-color"> OFERTA: Envíos 50% OFF </h5>
+        </div>
             
         <div class="sizing-menu-paty crearpr-desap-Desktop"><img class="centrar-icono" src="img/menu-paty.jpg"
                 alt="menu-paty">
@@ -31,18 +36,23 @@
 
  
     <main>
-        <h2 class="titulo-none"><%= about.books %></h2>
-        <h3 class="creatprod-title">LISTADO DE PRODUCTOS</h3>
-        <div class="creatProd-buttom"> 
-            <a href ='/crearProducto'><button class="create-buttom"><img class="img-buttom" src="/img/agregar-nuevo.png" alt="icon"></button></a>
-        </div>
-     
-        <form class="nav-search" action="" method="GET" role="search" >
-            <input  class="box-ingrese-datos" type="text" placeholder="Filtrar">
+        
+        <section class="lp-header-section">
+            <h2 class="titulo-none"><%= about.books %></h2>
+        <div class="lp-div-titulo-gral"><h3 class="creatprod-title">LISTADO DE PRODUCTOS</h3></div>
+
+            <form class="nav-search" action="" method="GET" role="search" >
+            <input  class="box-ingrese-datos" type="text" placeholder="Buscar">
             <button type="submit" class="nav-search-btn" tabindex="3">
-              <i class="fa-solid fa-magnifying-glass"></i>
+                <span class="material-symbols-outlined">search</span>
             </button>
         </form>
+
+        <div class="creatProd-buttom"> 
+            <a href ='/crearProducto'><button class="create-buttom"><span class="material-symbols-outlined">add</span></button></a>
+        </div>
+        </section>
+        
     <section class="lp-product-section">
         <% books.forEach(product => { %>
         <article class="lp-article-sizig">
