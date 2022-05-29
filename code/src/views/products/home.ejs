@@ -23,97 +23,25 @@
     </div>
         
         <section class="product-showcase">
+            <h2 class="titulo-none"><%= about.books %></h2>
+            <% books.forEach(product => { %>
             <article class="product">
                 <div class="img-more">
-                    <img class="home-book-product-img" src="img\book-la-cabeza-de-macri.webp" alt="libro de prueba">
+                    <img class="home-book-product-img" src="<%= product.picture %>" alt="libro de prueba">
                     <div class="position-ver-mas"><a href="/detalle"><input class="see-more home-prod-btm" type="button" value="Ver más"></a></div>
                     <div class="position-button-comprar"><input class="comprar home-prod-btm" type="button" value="Comprar"></div>
                     <!-- <input class="buy-item home-prod-btm" type="button" value="Comprar"> -->
                 </div>
                 <section class="book-detail-home">
                     <div class="book-name-price">
-                        <h5 class="book-product-name">La Cabeza de Macri</h5>
-                        <h5 class="book-product-price">$4.000,00</h5>
+                        <h5 class="book-product-name"><%= product.name %></h5>
+                        <h5 class="book-product-price"><%= product.price %></h5>
                     </div>
-                    <h6 class="book-product-author">Franco Linder</h6>
+                    <h6 class="book-product-author"><%= product.author %></h6>
                 </section>
                 <input class="home-add-cart-button" type="button" value="Agregar al carrito">
             </article>
-            <article class="product">
-                <div class="img-more">
-                    <img class="home-book-product-img" src="img\book-matar-a-un-ruisenior.webp" alt="libro de prueba">
-                    <div class="position-ver-mas"><a href="/detalle"><input class="see-more home-prod-btm" type="button" value="Ver más"></a></div>
-                    <div class="position-button-comprar"><input class="comprar home-prod-btm" type="button" value="Comprar"></div>
-                </div>
-                <section class="book-detail-home">
-                    <div class="book-name-price">
-                        <h5 class="book-product-name">Matar a un Ruiseñor</h5>
-                        <h5 class="book-product-price">$3.260,00</h5>
-                    </div>
-                    <h6 class="book-product-author">Harper Lee</h6>
-                </section>
-                <input class="home-add-cart-button" type="button" value="Agregar al carrito">
-            </article>
-            <article class="product">
-                <div class="img-more">
-                    <img class="home-book-product-img" src="img\book-red-queen.webp" alt="libro de prueba">
-                    <div class="position-ver-mas"><a href="/detalle"><input class="see-more home-prod-btm" type="button" value="Ver más"></a></div>
-                    <div class="position-button-comprar"><input class="comprar home-prod-btm" type="button" value="Comprar"></div>
-                </div>
-                <section class="book-detail-home">
-                    <div class="book-name-price">
-                        <h5 class="book-product-name">Red Queen</h5>
-                        <h5 class="book-product-price">$2.600,00</h5>
-                    </div>
-                    <h6 class="book-product-author">Victoria Avyard</h6>
-                </section>
-                <input class="home-add-cart-button" type="button" value="Agregar al carrito">
-            </article>
-            <article class="product">
-                <div class="img-more">
-                    <img class="home-book-product-img" src="img\book-harry-potter.jpeg" alt="libro de prueba">
-                    <div class="position-ver-mas"><a href="/detalle"><input class="see-more home-prod-btm" type="button" value="Ver más"></a></div>
-                    <div class="position-button-comprar"><input class="comprar home-prod-btm" type="button" value="Comprar"></div>
-                </div>
-                <section class="book-detail-home">
-                    <div class="book-name-price">
-                        <h5 class="book-product-name">Harry Potter</h5>
-                        <h5 class="book-product-price">$5.200,00</h5>
-                    </div>
-                    <h6 class="book-product-author">J.K. Rowling</h6>
-                </section>
-                <input class="home-add-cart-button" type="button" value="Agregar al carrito">
-            </article>
-            <article class="product">
-                <div class="img-more">
-                    <img class="home-book-product-img" src="img\book-las-vidas-dentro-de-tu-cabeza.webp" alt="libro de prueba">
-                    <div class="position-ver-mas"><a href="/detalle"><input class="see-more home-prod-btm" type="button" value="Ver más"></a></div>
-                    <div class="position-button-comprar"><input class="comprar home-prod-btm" type="button" value="Comprar"></div>
-                </div>
-                <section class="book-detail-home">
-                    <div class="book-name-price">
-                        <h5 class="book-product-name">Las vidas dentro de tu cabeza</h5>
-                        <h5 class="book-product-price">$5.400,00</h5>
-                    </div>
-                    <h6 class="book-product-author">Carlos Sánchez</h6>
-                </section>
-                <input class="home-add-cart-button" type="button" value="Agregar al carrito">
-            </article>
-            <article class="product">
-                <div class="img-more">
-                    <img class="home-book-product-img" src="img\book-el-buen-cirujano.webp" alt="libro de prueba">
-                    <div class="position-ver-mas"><a href="/detalle"><input class="see-more home-prod-btm" type="button" value="Ver más"></a></div>
-                    <div class="position-button-comprar"><input class="comprar home-prod-btm" type="button" value="Comprar"></div>
-                </div>
-                <section class="book-detail-home">
-                    <div class="book-name-price">
-                        <h5 class="book-product-name">El Buen Cirujano</h5>
-                        <h5 class="book-product-price">$7.200,00</h5>
-                    </div>
-                    <h6 class="book-product-author">Ricardo Garcia</h6>
-                </section>
-                <input class="home-add-cart-button" type="button" value="Agregar al carrito">
-            </article>
+            <% }) %>
         </section>
         
     </main>
