@@ -479,7 +479,7 @@ article .add-cart-button {
 }
 
 .login-logo-chico {
-    width: 60%;
+    width: 80%;
     margin-top: 3px;
 }
 
@@ -1169,7 +1169,7 @@ footer {
     }
 
     .register-logo-dektop{
-        height: 10%;
+        /* height: 10%; */
         width: 100%;
         display: flex;
         justify-content: center;
@@ -1214,7 +1214,7 @@ footer {
 
     .box-ingrese-datos{
         height: 30px;
-        width: 60%;
+        /* width: 60%; */
 
     }
     .register-box-option{
