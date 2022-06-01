@@ -29,8 +29,6 @@ const path = require('path')
 //Definir las rutas
 app.listen(process.env.PORT || port, () => console.log('Example app listening at http://localhost:'+port))
 
-//! REACONDICINAR VISTAS hacia 'routes'
-
 // EJS incorporado + direccion de carpeta viewws
 app.set('views', path.join(__dirname,'views'))
 app.set('view engine', 'ejs')

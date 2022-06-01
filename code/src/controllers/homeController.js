@@ -73,6 +73,11 @@ const homeController =  {
      //'listarProducto.ejs' IN 'views/products' FOLDER
      listarProducto: (req, res) => {
         res.render('products/listarProducto',{about: about, books: books})
+    },
+    editarProducto: (req,res) => {
+        // let prodEditar = req.params.id
+        // let product = books[prodEditar]
+        res.render('products/editarProducto', {product: books[0]})
     }
 }
 

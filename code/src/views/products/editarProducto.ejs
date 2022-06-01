@@ -16,9 +16,9 @@
         <div class="sizing-logo"><a href="/"><img class="centrar-logo" src="img/logo-entre-lineas.jpg" alt="entreLineasLogo"></a></div>
 
         <div class="creatpr-desap-Mobile crearpr-flex-box-texto">
-            <div class = "grow"><h6><a href="/listarProducto">Listar Productos</a></h6></div>
-            <div class = "grow"><h6><a href="/crearProducto">Crear Productos</a></h6></div>
-            <div class = "grow"><h6><a href="/editarProducto">Editar Productos</a></h6></div>
+            <div class = "grow"><h6><a>Listar Productos</a></h6></div>
+            <div class = "grow"><h6><a>Crear Productos</a></h6></div>
+            <div class = "grow"><h6><a>Editar Productos</a></h6></div>
         </div>
         <div class="sizing-carrito ordenar-carrito"><a href="/home"><img class="centrar-icono" src="img/icono-home.png" alt="home"></a></div>
        
@@ -38,13 +38,13 @@
                     <div class="">
                     <div><label class="createpr-label-font" for="productName">Nombre del producto:</label></div>
                     <input class="box-ingrese-datos" type="text" name="productName" id="productName" 
-                        placeholder="Ingrese el nombre del producto" required>
-                    
+                        placeholder="Ingrese el nombre del producto" value="<%= product.name %>" required >
                 </div>
                 <div>
                     <p class="createpr-label-font">Tipo de producto:</p>
-                    <input type="radio" id="book" name="productType" value="book">
+                    <input type="radio" id="book" name="productType" value="book" checked>
                     <label class="createpr-label-font" for="center-logo-book">Libro</label><br>
+
                     <input type="radio" id="ebook" name="productType" value="ebook">
                     <label class="createpr-label-font" for="ebook">Ebook</label><br>
                     <input type="radio" id="varios" name="productType" value="varios">
@@ -54,54 +54,51 @@
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="productName">Imagen del producto:</label></div>
-                    <input class="box-ingrese-datos" type="file" name="productImage" multiple accept=".jpg, .png" required>
+                    <input class="box-ingrese-datos" type="file" name="productImage" multiple accept=".jpg, .png" required value="<%= product.picture %>">
                 </div>
 
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="author">Autor:</label></div>
                     <input class="box-ingrese-datos" type="text" name="author" id="author" 
-                        placeholder="Ingrese el nombre del autor" required>
+                        placeholder="Ingrese el nombre del autor" required value="<%= product.author %>">
                 </div>
 
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font"  for="price">Precio:</label></div>
-                    <input class="box-ingrese-datos" type="number" name="price" id="price" 
-                         required>
+                    <input class="box-ingrese-datos" type="number" name="price" id="price" required value="<%= product.price %>">
                 </div>
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="about">Reseña:</label></div>
-                    <textarea  name="about" id="about" placeholder="Agregue una breve descripcion del libro"></textarea> 
+                    <textarea  name="about" id="about" placeholder="Agregue una breve descripcion del libro" ></textarea> 
+                    <!-- CREAR CAMPO 'about' EN books para insertar aca <%= product.about %> -->
                 </div>
 
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="gender">Género:</label></div>
                     <input class="box-ingrese-datos" type="text" name="gender" id="gender" 
-                    placeholder="Ingrese el género del libro" required>
+                    placeholder="Ingrese el género del libro" required value="<%= product.gender %>">
                 </div>
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="bookSize">Tamaño:</label></div>
                     <input class="box-ingrese-datos" type="text" name="bookSize" id="bookSize" 
-                    placeholder="Ingrese el tamaño del libro (ancho x alto, en cm)" >
+                    placeholder="Ingrese el tamaño del libro (ancho x alto, en cm)" value="">
                 </div>
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="pages">Paginas:</label></div>
                     <input class="box-ingrese-datos" type="text" name="pages" id="pages" 
-                    placeholder="Ingrese el número de páginas que contiene el libro" >
+                    placeholder="Ingrese el número de páginas que contiene el libro" value="">
                 </div>
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="aboutExtra">"Mas Información":</label></div>
                     <textarea  name="aboutExtra" id="aboutExtra" placeholder="Agregue información adicional sobre el producto"></textarea> 
                 </div>
-
-
-
                
                 <div class="creatProd-buttom"> 
                     <button class="createProd-buttom-centr"><img class="img-buttom" src="/img/agregar-nuevo.png" alt="icon"></button>
