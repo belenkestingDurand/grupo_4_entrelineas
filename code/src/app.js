@@ -8,14 +8,7 @@ const path = require('path')
     app.use(express.static(publicPath));
 
 //views 
-    const views = path.join(__dirname, 'views/')
-
-    const home = path.join(__dirname, 'views/products/home')
-    // const carrito = path.join(__dirname, 'views/produts/carritoDeCompras')
-    // const detalleDeProducto = path.join(__dirname, 'views/products/detalleDeProducto')
-   // const crearProducto = path.join(__dirname, 'views/products/crearProducto')
-    const login = path.join(__dirname, 'views/users/login')
-    const register = path.join(__dirname, 'views/users/register')
+    // const views = path.join(__dirname, 'views/')
 
 //http
 //* dispuestas en routes/home.js
@@ -28,7 +21,6 @@ const path = require('path')
     // const htpptLogin = '/login'
     // const htpptRegister = '/register'
 
-// ! AUN NO ARME ESA RUTA
 //* dispuestos en routes/admin.js
  //   const httptCrearProducto = '/crearProducto'
 
@@ -48,38 +40,3 @@ const routesMain = require('./routes/home')
 app.use('/', routesMain)
 const routesUsers = require('./routes/user')
 app.use('/', routesUsers)
-
-
-    // app.get(htpptRaiz, function(req, res){
-    //     res.sendFile(home)
-    // })
-    // app.get(htpptHome, function(req, res){
-    //     res.sendFile(home)
-    // })
-    // app.get(htpptCarrito, function(req, res){
-    //     res.sendFile(carrito)
-    // })
-    // app.get(httpDetalleDeProducto, function(req, res){
-    //     res.sendFile(detalleDeProducto)
-    // })
-
-
-    // app.get(htpptLogin, function(req, res){
-    //     res.sendFile(login)
-    // })
-    // app.post(htpptLogin, (req, res) => {
-    //     res.sendFile(path.join(home))
-    // })
-
-    // app.get(htpptRegister, function(req, res){
-    //     res.sendFile(register)
-
-    // })
-    // app.post(htpptRegister, (req, res) => {
-    //     res.sendFile(path.join(login))
-    // })
-
-
-// app.get(httptCrearProducto, function(req, res){
- //   res.sendFile(crearProducto)
-//})
