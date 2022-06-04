@@ -1,0 +1,40 @@
+{
+    "users" : [
+        {
+            "id" : "1",
+            "firstName": "firstName",
+            "lastName": "lastName",
+            "email": "algo@yahoo.com",
+            "password": "secretPassword",
+            "category": "user",
+            "profilePic": ""
+        },
+        {
+            "id" : "2",
+            "firstName": "Juancito",
+            "lastName": "Papa",
+            "email": "juanci@papa.com",
+            "password": "secretPassword",
+            "category": "user",
+            "profilePic": ""
+        },
+        {
+            "id" : "3",
+            "firstName": "Josefina",
+            "lastName": "Garcia",
+            "email": "josef@garcia.com",
+            "password": "secretPassword",
+            "category": "user",
+            "profilePic": ""
+        },
+        {
+            "id" : "4",
+            "firstName": "Juana",
+            "lastName": "De Arco",
+            "email": "jjuana@arcode.com",
+            "password": "secretPassword",
+            "category": "user",
+            "profilePic": ""
+        }
+    ]
+}

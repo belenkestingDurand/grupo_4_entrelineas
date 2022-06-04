@@ -1,0 +1,69 @@
+{
+    "books" : [
+        {
+            "id": "1",
+            "name": "La Cabeza de Macri",
+            "type": "Libro",
+            "author": "Franco Linder",
+            "price": "$4000.00",
+            "gender":"Biografía",
+            "picture": "/img/book-la-cabeza-de-macri.webp",
+            "opinion": "Este es un libro ... que tiene ... muy interesante..."
+        },
+        
+        {
+            "id": "2",
+            "name": "Matar un Ruiseñor",
+            "type": "Libro",
+            "author": "Harper Lee",
+            "price": "$3260.00",
+            "gender": "",
+            "picture": "/img/book-matar-a-un-ruisenior.webp",
+            "opinion" : ""
+        },
+        
+        {
+            "id": "3",
+            "name": "Red Queen",
+            "type": "Libro",
+            "author": "Victoria Avyard",
+            "price": "$2600.00",
+            "gender": "",
+            "picture": "/img/book-red-queen.webp",
+            "opinion" : ""
+        },
+        
+        {
+            "id": "4",
+            "name": "Harry Potter",
+            "type": "Libro",
+            "author": "J.K.Rowling",
+            "price": "$5200.00",
+            "gender": "",
+            "picture": "/img/book-harry-potter.jpeg",
+            "opinion" : ""
+        },
+        
+        {
+            "id": "5",
+            "name": "Las Vidas dentro De tu cabeza",
+            "type": "Libro",
+            "author": "Franco Linder",
+            "price": "$5400.00",
+            "gender": "",
+            "picture": "/img/book-las-vidas-dentro-de-tu-cabeza.webp",
+            "opinion" : ""
+        },
+        
+        {
+            "id": "6",
+            "name": "El Buen Cirujano",
+            "type": "Libro",
+            "author": "Ricardo Garcia",
+            "price": "$7200.00",
+            "gender": "",
+            "picture": "/img/book-el-buen-cirujano.webp",
+            "opinion" : ""
+    }        
+  ]
+}
