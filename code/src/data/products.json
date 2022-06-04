@@ -1,7 +1,7 @@
 {
     "books" : [
         {
-            "id": "1",
+            "id": 1,
             "name": "La Cabeza de Macri",
             "type": "Libro",
             "author": "Franco Linder",
@@ -12,7 +12,7 @@
         },
         
         {
-            "id": "2",
+            "id": 2,
             "name": "Matar un Ruiseñor",
             "type": "Libro",
             "author": "Harper Lee",
@@ -23,7 +23,7 @@
         },
         
         {
-            "id": "3",
+            "id": 3,
             "name": "Red Queen",
             "type": "Libro",
             "author": "Victoria Avyard",
@@ -34,7 +34,7 @@
         },
         
         {
-            "id": "4",
+            "id": 4,
             "name": "Harry Potter",
             "type": "Libro",
             "author": "J.K.Rowling",
@@ -45,7 +45,7 @@
         },
         
         {
-            "id": "5",
+            "id": 5,
             "name": "Las Vidas dentro De tu cabeza",
             "type": "Libro",
             "author": "Franco Linder",
@@ -56,7 +56,7 @@
         },
         
         {
-            "id": "6",
+            "id": 6,
             "name": "El Buen Cirujano",
             "type": "Libro",
             "author": "Ricardo Garcia",
