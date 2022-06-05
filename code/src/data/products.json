@@ -8,7 +8,10 @@
             "price": "$4000.00",
             "gender":"Biografía",
             "picture": "/img/book-la-cabeza-de-macri.webp",
-            "opinion": "Este es un libro ... que tiene ... muy interesante..."
+            "opinion": "Este es un libro ... que tiene ... muy interesante...",
+            "size": "",
+            "pages": "",
+            "more": ""
         },
         
         {
@@ -19,7 +22,10 @@
             "price": "$3260.00",
             "gender": "",
             "picture": "/img/book-matar-a-un-ruisenior.webp",
-            "opinion" : ""
+            "opinion" : "",
+            "size": "",
+            "pages": "",
+            "more": ""
         },
         
         {
@@ -30,7 +36,10 @@
             "price": "$2600.00",
             "gender": "",
             "picture": "/img/book-red-queen.webp",
-            "opinion" : ""
+            "opinion" : "",
+            "size": "",
+            "pages": "",
+            "more": ""
         },
         
         {
@@ -41,7 +50,10 @@
             "price": "$5200.00",
             "gender": "",
             "picture": "/img/book-harry-potter.jpeg",
-            "opinion" : ""
+            "opinion" : "",
+            "size": "",
+            "pages": "",
+            "more": ""
         },
         
         {
@@ -52,7 +64,10 @@
             "price": "$5400.00",
             "gender": "",
             "picture": "/img/book-las-vidas-dentro-de-tu-cabeza.webp",
-            "opinion" : ""
+            "opinion" : "",
+            "size": "",
+            "pages": "",
+            "more": ""
         },
         
         {
@@ -63,7 +78,10 @@
             "price": "$7200.00",
             "gender": "",
             "picture": "/img/book-el-buen-cirujano.webp",
-            "opinion" : ""
+            "opinion" : "",
+            "size": "",
+            "pages": "",
+            "more": ""
     }        
   ]
 }
