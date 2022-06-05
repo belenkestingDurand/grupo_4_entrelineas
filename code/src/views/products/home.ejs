@@ -13,8 +13,8 @@
 
     <main class="home-main">
     <div class="div-banner">
-        <img class="home-banner" src="img/Banner.jpg" alt="Estanteria con Libros">
-        <img class="home-banner2" src="img/Banner2.jpeg" alt="Estanteria con Libros">
+        <img class="home-banner" src="/img/Banner.jpg" alt="Estanteria con Libros">
+        <img class="home-banner2" src="/img/Banner2.jpeg" alt="Estanteria con Libros">
     </div>
         
         <section class="product-showcase">
@@ -23,7 +23,7 @@
             <article class="product">
                 <div class="img-more">
                     <img class="home-book-product-img" src="<%= product.picture %>" alt="libro de prueba">
-                    <div class="position-ver-mas"><a href="/detalle"><input class="see-more home-prod-btm" type="button" value="Ver más"></a></div>
+                    <div class="position-ver-mas"><a href="/detalle/<%= product.id %>"><input class="see-more home-prod-btm" type="button" value="Ver más"></a></div>
                     <div class="position-button-comprar"><input class="comprar home-prod-btm" type="button" value="Comprar"></div>
                     <!-- <input class="buy-item home-prod-btm" type="button" value="Comprar"> -->
                 </div>
