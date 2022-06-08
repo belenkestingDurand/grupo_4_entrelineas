@@ -30,6 +30,8 @@ const homeController =  {
     },
      //'listarProducto.ejs' IN 'views/products' FOLDER
      listarProducto: (req, res) => {
+        let datos = fs.readFileSync('./data/products.json')
+        let books = JSON.parse(datos)
         res.render('products/listarProducto',{about: about, books: books})
     },
     editarProducto: (req,res) => {
