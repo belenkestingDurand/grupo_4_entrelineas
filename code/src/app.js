@@ -30,6 +30,10 @@ app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: false}))
 app.use(express.json())
 
+// para implementar metodos HTTP: Put & Delete
+const methodOverride = require('method-override')
+app.use(methodOverride('_method'))
+
 //- ROUTES FOLDER
 const routesMain = require('./routes/home')
 app.use('/', routesMain)
