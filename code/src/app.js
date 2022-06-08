@@ -37,5 +37,7 @@ app.use(methodOverride('_method'))
 //- ROUTES FOLDER
 const routesMain = require('./routes/home')
 app.use('/', routesMain)
+const routesProducts= require('./routes/products')
+app.use('/products', routesMain)
 const routesUsers = require('./routes/user')
-app.use('/', routesUsers)
+app.use('/users', routesUsers)
