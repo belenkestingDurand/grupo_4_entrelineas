@@ -9,8 +9,8 @@ const homeController =  {
     //'home.ejs' IN 'views/products' FOLDER
     home: (req, res) => {
         let datos = fs.readFileSync('./data/products.json')
-        let books = JSON.parse(datos)
-        res.render('products/home',{about: about, books: books})
+        let books = JSON.parse(datos);
+        return res.redirect('/',{about: about, books: books})
     },
     //'detalleDeProducto.ejs' IN 'views/products' FOLDER
     detalle: (req,res) => {

@@ -17,7 +17,7 @@ router.post('/', productsCtrl.productCreated)
 
 //- EDIT PRODUCT
 router.get('/:id/edit', productsCtrl.editarProducto) // cambiar a /products/:id/edit
-// router.put('/listarProducto', homeCtrl.{producto editado})
+// router.put('/', productsCtrl.productEdited)
 
 //- DELETE PRODUCT
 // router.delete('/', productsCtrl.{productoborrado})

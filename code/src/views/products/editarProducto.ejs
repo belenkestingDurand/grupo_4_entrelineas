@@ -42,19 +42,19 @@
                 </div>
                 <div>
                     <p class="createpr-label-font">Tipo de producto:</p>
-                    <input type="radio" id="book" name="productType" value="book" checked>
+                    <input type="radio" id="book" name="type" value="book" checked>
                     <label class="createpr-label-font" for="center-logo-book">Libro</label><br>
 
-                    <input type="radio" id="ebook" name="productType" value="ebook">
+                    <input type="radio" id="ebook" name="type" value="ebook">
                     <label class="createpr-label-font" for="ebook">Ebook</label><br>
-                    <input type="radio" id="varios" name="productType" value="varios">
+                    <input type="radio" id="varios" name="type" value="varios">
                     <label class="createpr-label-font" for="varios">Varios</label>
                 </div>
 
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="productName">Imagen del producto:</label></div>
-                    <input class="box-ingrese-datos" type="file" name="productImage" multiple accept=".jpg, .png" required value="<%= product.picture %>">
+                    <input class="box-ingrese-datos" type="file" name="picture" multiple accept=".jpg, .png" required value="<%= product.picture %>">
                 </div>
 
                 <div class="">
@@ -72,8 +72,7 @@
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="about">Reseña:</label></div>
-                    <textarea  name="about" id="about" placeholder="Agregue una breve descripcion del libro" ></textarea> 
-                    <!-- CREAR CAMPO 'about' EN books para insertar aca <%= product.about %> -->
+                    <textarea  name="about" id="about" placeholder="Agregue una breve descripcion del libro" ><%= product.about %></textarea> 
                 </div>
 
                 <div class="">
@@ -84,8 +83,8 @@
                 </div>
                 <div class="">
                     <div class="">
-                    <div><label class="createpr-label-font" for="bookSize">Tamaño:</label></div>
-                    <input class="box-ingrese-datos" type="text" name="bookSize" id="bookSize" 
+                    <div><label class="createpr-label-font" for="size">Tamaño:</label></div>
+                    <input class="box-ingrese-datos" type="text" name="size" id="bookSize" 
                     placeholder="Ingrese el tamaño del libro (ancho x alto, en cm)" value="">
                 </div>
                 <div class="">
@@ -96,8 +95,8 @@
                 </div>
                 <div class="">
                     <div class="">
-                    <div><label class="createpr-label-font" for="aboutExtra">"Mas Información":</label></div>
-                    <textarea  name="aboutExtra" id="aboutExtra" placeholder="Agregue información adicional sobre el producto"></textarea> 
+                    <div><label class="createpr-label-font" for="more">"Mas Información":</label></div>
+                    <textarea  name="aboutExtra" id="more placeholder="Agregue información adicional sobre el producto"></textarea> 
                 </div>
                
                 <div class="creatProd-buttom"> 

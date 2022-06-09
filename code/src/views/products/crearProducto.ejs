@@ -28,12 +28,6 @@
     <main>
         <h3 class="creatprod-title">CREAR PRODUCTO</h3>
         <form class="createpr-form-padding-left" action="" method="get">
-                <!-- <div class="">
-                    <div class="">
-                    <div><label class="createpr-label-font" for="idProduct">Id del Producto:</label></div>
-                    <input class="box-ingrese-datos" type="text" name="idProduct" id="idProduct" 
-                        placeholder="Ingrese el id del producto" required>
-                </div> -->
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="productName">Nombre del producto:</label></div>
@@ -43,18 +37,18 @@
                 </div>
                 <div>
                     <p class="createpr-label-font">Tipo de producto:</p>
-                    <input type="radio" id="book" name="productType" value="book">
+                    <input type="radio" id="book" name="type" value="book">
                     <label class="createpr-label-font" for="center-logo-book">Libro</label><br>
-                    <input type="radio" id="ebook" name="productType" value="ebook">
+                    <input type="radio" id="ebook" name="type" value="ebook">
                     <label class="createpr-label-font" for="ebook">Ebook</label><br>
-                    <input type="radio" id="varios" name="productType" value="varios">
+                    <input type="radio" id="varios" name="type" value="varios">
                     <label class="createpr-label-font" for="varios">Varios</label>
                 </div>
 
                 <div class="">
                     <div class="">
-                    <div><label class="createpr-label-font" for="productName">Imagen del producto:</label></div>
-                    <input class="box-ingrese-datos" type="file" name="productImage" multiple accept=".jpg, .png" required>
+                    <div><label class="createpr-label-font" for="name">Imagen del producto:</label></div>
+                    <input class="box-ingrese-datos" type="file" name="name" multiple accept=".jpg, .png" required>
                 </div>
 
                 <div class="">
@@ -85,7 +79,7 @@
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="bookSize">Tamaño:</label></div>
-                    <input class="box-ingrese-datos" type="text" name="bookSize" id="bookSize" 
+                    <input class="box-ingrese-datos" type="text" name="size" id="bookSize" 
                     placeholder="Ingrese el tamaño del libro (ancho x alto, en cm)" >
                 </div>
                 <div class="">
@@ -96,15 +90,17 @@
                 </div>
                 <div class="">
                     <div class="">
-                    <div><label class="createpr-label-font" for="aboutExtra">"Mas Información":</label></div>
-                    <textarea  name="aboutExtra" id="aboutExtra" placeholder="Agregue información adicional sobre el producto"></textarea> 
+                    <div><label class="createpr-label-font" for="more">"Mas Información":</label></div>
+                    <textarea  name="more" id="more" placeholder="Agregue información adicional sobre el producto"></textarea> 
                 </div>
 
 
 
                
                 <div class="creatProd-buttom"> 
-                    <button class="createProd-buttom-centr"><img class="img-buttom" src="/img/agregar-nuevo.png" alt="icon"></button>
+                    <a href="/">
+                        <button class="createProd-buttom-centr"><img class="img-buttom" src="/img/agregar-nuevo.png" alt="icon"></button>
+                    </a>
                 </div>
         </form>
                
