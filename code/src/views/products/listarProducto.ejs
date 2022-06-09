@@ -37,12 +37,12 @@
             <form class="nav-search" action="" method="GET" role="search" >
             <input  class="box-ingrese-datos" type="text" placeholder="Buscar">
             <button type="submit" class="nav-search-btn" tabindex="3">
-                <span class="material-symbols-outlined">search</span>
+                <span class="material-symbols-outlined"><img src="/img/outline_search_white_24dp.png" alt="search"></span>
             </button>
         </form>
 
         <div class="creatProd-buttom"> 
-            <a href ='/crearProducto'><button class="create-buttom"><span class="material-symbols-outlined">add</span></button></a>
+            <a href ='/crearProducto'><button class="create-buttom"><span class="material-symbols-outlined"><img class= "add-buttom" src="/img/outline_add_white_24dp.png" alt="add"></span></button></a>
         </div>
         </section>
         
@@ -67,8 +67,8 @@
                 <h5 class="lp-h5-etiquetas">Imágenes:</h5><h5 class="lp-h5-contenido"> <%= product.picture %></h5>
             </div>
             <div class="lp-div-buttoms">
-                <a href="/products/<% product.id %>/edit"><input class="lp-button" type="button" value="Editar" ></a>
-                <input class="lp-button" type="button" value="Eliminar">
+                <a href="/products/<% product.id %>/edit"><input class="edit-button" type="button" value="Editar" ></a>
+                <input class="delete-button" type="button" value="Eliminar">
             </div> 
            
            

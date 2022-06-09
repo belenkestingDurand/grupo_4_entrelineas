@@ -1041,6 +1041,26 @@ footer {
     background-color: #000;
     font-family: arvo;
 }
+
+.edit-button{
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    color: white;
+    background-color: #606665;
+    font-family: arvo;
+}
+.delete-button{
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    color: white;
+    background-color: #9F1F0E;
+    font-family: arvo;
+}
+.add-buttom {
+    width: 50%;
+}
 /* TABLETS*/
 @media (min-width: 480px) {
 
