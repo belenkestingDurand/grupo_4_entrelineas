@@ -80,5 +80,19 @@
             "size": "",
             "pages": "",
             "more": ""
-    }        
+    },
+    {
+        "id": 7,
+        "name": "El Buen Cirujano",
+        "type": "Libro",
+        "author": "Ricardo Garcia",
+        "price": "$7200.00",
+        "gender": "",
+        "picture": "/img/book-el-buen-cirujano.webp",
+        "opinion" : "",
+        "size": "",
+        "pages": "",
+        "more": ""
+}         
+
 ]

@@ -20,7 +20,7 @@ router.get('/:id/edit', productsCtrl.editarProducto) // cambiar a /products/:id/
 // router.put('/', productsCtrl.productEdited)
 
 //- DELETE PRODUCT
-// router.delete('/', productsCtrl.{productoborrado})
+router.delete('/delete/:id', productsCtrl.delete)
 
 
 // exports

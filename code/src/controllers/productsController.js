@@ -4,6 +4,7 @@ const about = {
     }
 const fs = require("fs")
 
+
 // OBJECT WITH DETAILED HTML DIRECTIONS
 const productsController =  {
     //'crearProducto.ejs' IN 'views/products' FOLDER
@@ -22,7 +23,7 @@ const productsController =  {
     res.render('products/editarProducto', {product: books[0]})
     },
 
-    // /products (POST)
+    // /products proceso de creación por (POST)
     productCreated: (req,res) =>{
         let datos = fs.readFileSync('./data/products.json')
         let books = JSON.parse(datos)
@@ -47,6 +48,21 @@ const productsController =  {
         fs.writeFileSync(datos, booksWithNewProduct, "utf-8")
         
         return res.redirect('/')
+    },
+    delete: (req, res) => {
+        // leer archivo
+        let datos = fs.readFileSync('./data/products.json')
+        let books = JSON.parse(datos)
+        // ubicar el libro a borrar y hacer un array con el resto mediante filter
+        let id = req.params.id;
+        let booksToKeep = books.filter((book) => book.id !=id);
+        //lo vuelvo a formato json
+        let jsonBooksToKeep = JSON.stringify(booksToKeep, null, 4);
+        // lo reescribo en el archivo
+        fs.writeFileSync(datos, jsonBooksToKeep, "utf-8");
+        //redirecciona a listado de libros
+        return res.redirect('/');
+
     }
 
 }
