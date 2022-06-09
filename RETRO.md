@@ -54,3 +54,27 @@ Comunicarnos y ayudarnos como grupo.
 Sobre escribir el trabajo de los otros.
 
 
+## 01/06/2022
+Retro Sprint 3
+
+**Comenzar a hacer:**
+
+Agregar comentarios para que el código sera mas entendible para el equipo.
+Pensar la estructura de datos y el customer journey de la aplicación para poder codear de una forma más ordenada.
+
+**Hacer más:**
+
+Seguir con el ritmo constante, anticipando y juntándonos.
+
+
+**Continuar haciendo:**
+
+Hacer un resumen en slack de lo que venimos haciendo para que nuestros compañeros sepan qué hicimos y lo que faltó para no pisarnos.
+Dividimos mejor las tareas y revisamos los cambios.
+
+**Hacer menos:**
+
+Describir las tareas de una manera puntual. Hacerlo con más descripción. Detallar cómo se solucionaron errores para que todo el grupo pueda comprenderlos y solucionarlos.
+
+
+
