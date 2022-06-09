@@ -4,9 +4,14 @@
 // OBJECT WITH DETAILED HTML DIRECTIONS
 const userController =  {
     //'login.ejs' IN 'views/users' FOLDER
-    login: (req, res) => {
-        res.render('users/login')
+    showLogin: (req, res) => {
+        return res.render('users/login')
     },
+    login: (req, res) => {
+        //validar login
+        return res.redirect('/');
+    },
+    
     //'register.ejs' IN 'views/users' FOLDER
     register: (req, res) => {
         res.render('users/register')
