@@ -10,12 +10,15 @@ router.get('/',homeCtrl.home)
 router.get('/home',homeCtrl.home)
 
 //- PRODUCT DETAIL
-router.get('/product/:bookId', homeCtrl.detalle) // cambiar a /products/:bookId
-//router.get('/detalle', homeCtrl.detalle)
+
+router.get('/detalle:bookId', homeCtrl.detalle)
 
 //- CARRITO
 router.get('/carrito', homeCtrl.carrito)
 
+//- LOGIN - REGISTRO
+router.get('/login',homeCtrl.login)
+router.get('/register',homeCtrl.register)
 
 
 
