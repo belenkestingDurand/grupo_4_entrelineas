@@ -1,40 +1,184 @@
 {
     "users" : [
         {
-            "id" : "1",
-            "firstName": "firstName",
-            "lastName": "lastName",
-            "email": "algo@yahoo.com",
-            "password": "secretPassword",
-            "category": "user",
-            "profilePic": ""
+            "userId":1,
+            "firstName":"Ashby",
+            "lastName":"Shearer",
+            "email":"ashearer0@bing.com",
+            "password":"uid98YtktVE",
+            "category":"user",
+            "profilePic":""
         },
-        {
-            "id" : "2",
-            "firstName": "Juancito",
-            "lastName": "Papa",
-            "email": "juanci@papa.com",
-            "password": "secretPassword",
-            "category": "user",
-            "profilePic": ""
-        },
-        {
-            "id" : "3",
-            "firstName": "Josefina",
-            "lastName": "Garcia",
-            "email": "josef@garcia.com",
-            "password": "secretPassword",
-            "category": "user",
-            "profilePic": ""
-        },
-        {
-            "id" : "4",
-            "firstName": "Juana",
-            "lastName": "De Arco",
-            "email": "jjuana@arcode.com",
-            "password": "secretPassword",
-            "category": "user",
-            "profilePic": ""
-        }
+    {
+        "userId":2,
+        "firstName":"Thomasin",
+        "lastName":"Chateau",
+        "email":"tchateau1@skype.com",
+        "password":"7RW3p6KUI",
+        "category":"user",
+        "profilePic":""
+    },
+    {
+        "userId":3,
+        "firstName":"Pat",
+        "lastName":"Mielnik",
+        "email":"pmielnik2@ustream.tv",
+        "password":"orWQaMpw",
+        "category":"user",
+        "profilePic":""
+    },
+    {
+        "userId":4,
+        "firstName":"Alfreda",
+        "lastName":"MacIlriach",
+        "email":"amacilriach3@youtube.com",
+        "password":"RpPRprjv",
+        "category":"user",
+        "profilePic":""
+    },
+    {
+        "userId":5,
+        "firstName":"Levi",
+        "lastName":"Wannell",
+        "email":"lwannell4@hugedomains.com",
+        "password":"pVarB6F",
+        "category":"user",
+        "profilePic":""
+    },
+    {
+        "userId":6,
+        "firstName":"Charmaine",
+        "lastName":"Paddell",
+        "email":"cpaddell5@photobucket.com",
+        "password":"OiKY7Jad5Kk",
+        "category":"user",
+        "profilePic":""
+    },
+    {
+        "userId":7,
+        "firstName":"Cathleen",
+        "lastName":"Whittaker",
+        "email":"cwhittaker6@joomla.org",
+        "password":"f7XVSyX43aZR",
+        "category":"user",
+        "profilePic":""
+    },
+    {
+        "userId":8,
+        "firstName":"Moishe",
+        "lastName":"Burnsides",
+        "email":"mburnsides7@artisteer.com",
+        "password":"7IxD2bBVbu5f",
+        "category":"user",
+        "profilePic":""
+    },
+    {
+        "userId":9,
+        "firstName":"Olin",
+        "lastName":"Dallin",
+        "email":"odallin8@bloomberg.com",
+        "password":"JYLKS7LGcbtq",
+        "category":"user",
+        "profilePic":""
+    },
+    {
+        "userId":10,
+        "firstName":"Otis",
+        "lastName":"Crewes",
+        "email":"ocrewes9@squarespace.com",
+        "password":"UDLYmnA6BC",
+        "category":"user",
+        "profilePic":""
+    },
+    {
+        "userId":11,
+        "firstName":"Madelle",
+        "lastName":"Wreath",
+        "email":"mwreatha@dmoz.org",
+        "password":"IgZo1l",
+        "category":"user",
+        "profilePic":""
+    },
+    {
+        "userId":12,
+        "firstName":"Teirtza",
+        "lastName":"Brookshaw",
+        "email":"tbrookshawb@hibu.com",
+        "password":"WIwF3R",
+        "category":"user",
+        "profilePic":""
+    },
+    {
+        "userId":13,
+        "firstName":"Tine",
+        "lastName":"Stubbley",
+        "email":"tstubbleyc@cornell.edu",
+        "password":"xEZNFky",
+        "category":"user",
+        "profilePic":""
+    },
+    {
+        "userId":14,
+        "firstName":"Clarie",
+        "lastName":"Buck",
+        "email":"cbuckd@topsy.com",
+        "password":"o487Z4",
+        "category":"user",
+        "profilePic":""
+    },
+    {
+        "userId":15,
+        "firstName":"Trude",
+        "lastName":"Handaside",
+        "email":"thandasidee@wordpress.com",
+        "password":"O8pHlrK",
+        "category":"user",
+        "profilePic":""
+    },
+    {
+        "userId":16,
+        "firstName":"Tabbie",
+        "lastName":"Kermit",
+        "email":"tkermitf@privacy.gov.au",
+        "password":"iU6Xdx3",
+        "category":"user",
+        "profilePic":""
+    },
+    {
+        "userId":17,
+        "firstName":"Bertha",
+        "lastName":"Dougher",
+        "email":"bdougherg@shareasale.com",
+        "password":"6LJGfGqFBP",
+        "category":"user",
+        "profilePic":""
+    },
+    {
+        "userId":18,
+        "firstName":"Helyn",
+        "lastName":"Buey",
+        "email":"hbueyh@live.com",
+        "password":"nZ38QYl9",
+        "category":"user",
+        "profilePic":""
+    },
+    {
+        "userId":19,
+        "firstName":"Barri",
+        "lastName":"Bourgour",
+        "email":"bbourgouri@nba.com",
+        "password":"zZ9NR0",
+        "category":"user",
+        "profilePic":""
+    },
+    {
+        "userId":20,
+        "firstName":"Elberta",
+        "lastName":"Blakey",
+        "email":"eblakeyj@booking.com",
+        "password":"KsTbss9hy",
+        "category":"user",
+        "profilePic":""
+    }
     ]
 }
