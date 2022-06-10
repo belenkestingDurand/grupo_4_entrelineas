@@ -25,45 +25,25 @@ const productsController =  {
     
     productoEditado:(req,res) => {
         let books = JSON.parse(datos)
-        // recibir por req.body
-        // meter en obejto lireal temporario
-        let editValues = {
-            id: req.body.id,
-            name: req.body.name,
-            type: req.body.type,
-            author: req.body.author,
-            price: req.body.price,
-            gender: req.body.gender,
-            // ! MULTER
-            picture: '',
-            opinion: req.body.opinion,
-            size: req.body.size,
-            pages: req.body.pages,
-            more: req.body.more,
-        }
-        // recorrer el array y actualizar datos
-        books = books.forEach(element => {
-            if (element.id == editValues.id){
-                element.name = editValues.name
-                element.type = editValues.type
-                element.author = editValues.author
-                element.price = editValues.price
-                element.gender = editValues.gender
-                // element.gender = editValues.picture
-                element.opinion = editValues.opinion
-                element.size = editValues.size
-                element.pages= editValues.pages
-                element.more= editValues.more                
+
+        req.body.id = req.params.id;
+        // req.body.imagen = req.file ? req.file.filename : req.body.oldImagen;
+        let booksUpdate = books.map((libro) => {
+            if (libro.id == req.body.id) {
+                return (libro = req.body);
             }
-            // redireccionar a '/'
-        fs.writeFileSync(datos, JSON.stringify(books))
+            return libro;
+        })
+        let booksActualizar = JSON.stringify(booksUpdate, null, 2);
+        
+        // redireccionar a '/productos'
+        fs.writeFileSync(datos,booksActualizar)
         res.redirect('/products')
-        });
-    },
+        },
     
 
     // /products proceso de creación por (POST)
-    productCreated: (req,res) =>{
+    productoCreado: (req,res) =>{
         let books = JSON.parse(datos)
 
         let newProduct = {

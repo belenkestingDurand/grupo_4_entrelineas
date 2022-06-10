@@ -13,11 +13,11 @@ router.get('/', productsCtrl.listarProducto)
 
 //- CREATE PRODUCT 
 router.get('/create', productsCtrl.crearProducto)
-router.post('/', productsCtrl.productCreated)
+router.post('/create', productsCtrl.productoCreado)
 
 //- EDIT PRODUCT
 router.get('/:id/edit', productsCtrl.editarProducto)
-// router.put('/', productsCtrl.productoEditado)
+router.put('/:id/edit', productsCtrl.productoEditado)
 
 //- DELETE PRODUCT
 router.delete('/delete/:id', productsCtrl.delete)
