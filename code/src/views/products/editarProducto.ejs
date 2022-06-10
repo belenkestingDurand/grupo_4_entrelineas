@@ -27,7 +27,7 @@
  
     <main>
         <h3 class="creatprod-title">CREAR PRODUCTO</h3>
-        <form class="createpr-form-padding-left" action="/?_method=PUT" method="post">
+        <form class="createpr-form-padding-left" action="/products?_method=PUT" method="post">
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="productName">Nombre del producto:</label></div>
@@ -45,11 +45,11 @@
                     <label class="createpr-label-font" for="varios">Varios</label>
                 </div>
 
-                <div class="">
+                <!-- <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="productName">Imagen del producto:</label></div>
                     <input class="box-ingrese-datos" type="file" name="picture" multiple accept=".jpg, .png" required value="<%= product.picture %>">
-                </div>
+                </div> -->
 
                 <div class="">
                     <div class="">
@@ -61,12 +61,12 @@
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font"  for="price">Precio:</label></div>
-                    <input class="box-ingrese-datos" type="number" name="price" id="price" required value="<%= product.price %>">
+                    <input class="box-ingrese-datos" type="text" name="price" id="price" value="<%= product.price %>" required>
                 </div>
                 <div class="">
                     <div class="">
-                    <div><label class="createpr-label-font" for="about">Reseña:</label></div>
-                    <textarea  name="about" id="about" placeholder="Agregue una breve descripcion del libro" ><%= product.about %></textarea> 
+                    <div><label class="createpr-label-font" for="opinon">Reseña:</label></div>
+                    <textarea  name="opinon" id="opinon" placeholder="Agregue una breve descripcion del libro" ><%= product.opinion %></textarea> 
                 </div>
 
                 <div class="">
