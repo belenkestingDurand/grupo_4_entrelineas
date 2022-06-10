@@ -63,7 +63,9 @@ const productsController =  {
         let books = JSON.parse(datos)
         // ubicar el libro a borrar y hacer un array con el resto mediante filter
         let id = req.params.id;
+        console.log(id);
         let booksToKeep = books.filter((book) => book.id !=id);
+        console.log(bookToKeep);
         //lo vuelvo a formato json
         let jsonBooksToKeep = JSON.stringify(booksToKeep, null, 4);
         // lo reescribo en el archivo
