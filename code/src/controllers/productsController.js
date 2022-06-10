@@ -19,18 +19,48 @@ const productsController =  {
 
     editarProducto: (req,res) => {
     let books = JSON.parse(datos)
-    // let product = books.find(product => product.id == req.params.bookId)
-    res.render('products/editarProducto', {product: books[0]})
+    let product = books.find(product => product.id == req.params.id)
+    res.render('products/editarProducto', {product: product})
     },
     
-    /*
     productoEditado:(req,res) => {
-        recibir por req.body
-        meter en obejto lireal temporario
-        recorrer el array y cuando se encuentre el ID que matchea actualizar datos
-        redireccionar a '/'
-    }
-    */
+        let books = JSON.parse(datos)
+        // recibir por req.body
+        // meter en obejto lireal temporario
+        let editValues = {
+            id: req.body.id,
+            name: req.body.name,
+            type: req.body.type,
+            author: req.body.author,
+            price: req.body.price,
+            gender: req.body.gender,
+            // ! MULTER
+            picture: '',
+            opinion: req.body.opinion,
+            size: req.body.size,
+            pages: req.body.pages,
+            more: req.body.more,
+        }
+        // recorrer el array y actualizar datos
+        books = books.forEach(element => {
+            if (element.id == editValues.id){
+                element.name = editValues.name
+                element.type = editValues.type
+                element.author = editValues.author
+                element.price = editValues.price
+                element.gender = editValues.gender
+                // element.gender = editValues.picture
+                element.opinion = editValues.opinion
+                element.size = editValues.size
+                element.pages= editValues.pages
+                element.more= editValues.more                
+            }
+            // redireccionar a '/'
+        fs.writeFileSync(datos, JSON.stringify(books))
+        res.redirect('/products')
+        });
+    },
+    
 
     // /products proceso de creación por (POST)
     productCreated: (req,res) =>{
