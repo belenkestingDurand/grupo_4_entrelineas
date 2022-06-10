@@ -4,28 +4,36 @@ const about = {
     }
 const fs = require("fs")
 
+let datos = fs.readFileSync('./data/products.json')
 
 // OBJECT WITH DETAILED HTML DIRECTIONS
 const productsController =  {
-    //'crearProducto.ejs' IN 'views/products' FOLDER
     crearProducto: (req, res) => {
-    return res.redirect('/create')
+    return res.render('products/crearProducto')
     },
-    //'listarProducto.ejs' IN 'views/products' FOLDER
+
     listarProducto: (req, res) => {
-    let datos = fs.readFileSync('./data/products.json')
     let books = JSON.parse(datos)
     res.render('products/listarProducto',{about: about, books: books})
     },
+
     editarProducto: (req,res) => {
-    let datos = fs.readFileSync('./data/products.json')
     let books = JSON.parse(datos)
+    // let product = books.find(product => product.id == req.params.bookId)
     res.render('products/editarProducto', {product: books[0]})
     },
+    
+    /*
+    productoEditado:(req,res) => {
+        recibir por req.body
+        meter en obejto lireal temporario
+        recorrer el array y cuando se encuentre el ID que matchea actualizar datos
+        redireccionar a '/'
+    }
+    */
 
     // /products proceso de creación por (POST)
     productCreated: (req,res) =>{
-        let datos = fs.readFileSync('./data/products.json')
         let books = JSON.parse(datos)
 
         let newProduct = {

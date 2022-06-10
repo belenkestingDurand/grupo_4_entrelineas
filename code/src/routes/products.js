@@ -12,12 +12,12 @@ const productsCtrl = require('../controllers/productsController')
 router.get('/', productsCtrl.listarProducto)
 
 //- CREATE PRODUCT 
-router.get('/create', productsCtrl.crearProducto) // cambiar a /products/create"
+router.get('/create', productsCtrl.crearProducto)
 router.post('/', productsCtrl.productCreated)
 
 //- EDIT PRODUCT
-router.get('/:id/edit', productsCtrl.editarProducto) // cambiar a /products/:id/edit
-// router.put('/', productsCtrl.productEdited)
+router.get('/:id/edit', productsCtrl.editarProducto)
+// router.put('/', productsCtrl.productoEditado)
 
 //- DELETE PRODUCT
 router.delete('/delete/:id', productsCtrl.delete)

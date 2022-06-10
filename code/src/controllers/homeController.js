@@ -24,25 +24,6 @@ const homeController =  {
     carrito: (req,res) => {
         res.render('products/carritoDeCompras')
     },
-    /*-
-    // 'crearProducto.ejs' IN 'views/products' FOLDER
-    crearProducto: (req, res) => {
-        res.render('products/crearProducto')
-    },
-     //'listarProducto.ejs' IN 'views/products' FOLDER
-     listarProducto: (req, res) => {
-        let datos = fs.readFileSync('./data/products.json')
-        let books = JSON.parse(datos)
-        res.render('products/listarProducto',{about: about, books: books})
-    },
-    editarProducto: (req,res) => {
-        // let prodEditar = req.params.id
-        // let product = books[prodEditar]
-        let datos = fs.readFileSync('./data/products.json')
-        let books = JSON.parse(datos)
-        res.render('products/editarProducto', {product: books[0]})
-    } 
-    */
     login: (req, res) => {
         res.render('users/login')
     },
