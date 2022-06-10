@@ -18,17 +18,17 @@
                 <img class="register-logo-chico" src="img/logo-entre-lineas.jpg" alt="logo">
             </div>
 
-            <form class="form-flex" action="login" method="get">
+            <form class="form-flex" action="/users/register" method="POST" enctype="multipart/form-data">
                 <div class="column1"><div class="register-cont-label-input">
-                    <div><label for="nombre">Nombre:</label></div>
-                    <input class="box-ingrese-datos" type="text" name="nombre" id="nombre" 
+                    <div><label for="name">Nombre:</label></div>
+                    <input class="box-ingrese-datos" type="text" name="name" id="name" 
                         placeholder="Ingrese su nombre" required>
                     
                 </div>
                
                 <div class="register-cont-label-input">
-                    <div><label for="nombre">Apellido:</label></div>
-                    <input class="box-ingrese-datos" type="text" name="apellido" id="apellido"
+                    <div><label for="lastname">Apellido:</label></div>
+                    <input class="box-ingrese-datos" type="text" name="lastname" id="lastname"
                          placeholder="Ingrese su apellido"required>
                 </div>
                
@@ -47,8 +47,8 @@
                         </div>
                         <br>
                         <div class="register-tipo-numero">
-                            <div><label for="documento">Número</label></div>
-                            <input class="box-ingrese-datos-corto" type="number" name="documento" id="documento"
+                            <div><label for="document">Número</label></div>
+                            <input class="box-ingrese-datos-corto" type="number" name="document" id="document"
                             placeholder="Ingrese el numero" required>
                         </div>
                     </div> 
@@ -60,7 +60,7 @@
                         <div class="register-tipo-numero-camp ">
                             <div><label>C.área</label></div>
                             <div>
-                                <select class="register-box-option" name="Área">
+                                <select class="register-box-option" name="area">
                                     <option value="011">BsAs</option>
                                         <option value="0387">Salta</option>
                                         <option value="0381">Tucumán</option>
@@ -86,8 +86,8 @@
         </div>
                 
         <div class="column2"><div class="register-cont-label-input">
-            <div><label for="password">Ingrese contraseña:</label></div>
-            <input class="box-ingrese-datos" type="password" name="passwordUsuario" id="password"
+            <div><label for="passwordUser">Ingrese contraseña:</label></div>
+            <input class="box-ingrese-datos" type="password" name="passwordUser" id="passwordUser"
                  placeholder="Min 8 caracteres" required minlength="8">
             
         </div>
@@ -98,7 +98,7 @@
                  placeholder="Min 8 caracteres"required minlength="8">
         </div>
         <div class="login-h5-centrado"> 
-            <button class="centrar-boton button-crear-cuenta">Crear nueva Cuenta</button>
+            <button type="submit" class="centrar-boton button-crear-cuenta">Crear nueva Cuenta</button>
         </div>
                        
        <div class="register-condic-uso">

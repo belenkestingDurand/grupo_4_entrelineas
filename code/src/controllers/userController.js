@@ -1,7 +1,16 @@
 // LUGAR PARA FUTURAS BASES DE DATOS
 
 
+const bcryptjs = require('bcryptjs')
+const databaseJson = require('../data/databaseJson')
+
+const databaseFilename = '../data/users.json';
+
+
+
 // OBJECT WITH DETAILED HTML DIRECTIONS
+
+
 const userController =  {
     //'login.ejs' IN 'views/users' FOLDER
     showLogin: (req, res) => {
@@ -9,13 +18,44 @@ const userController =  {
     },
     login: (req, res) => {
         //validar login
-        return res.redirect('/');
+
+        
+        
+
+        return res.redirect('/products');
     },
     
     //'register.ejs' IN 'views/users' FOLDER
-    register: (req, res) => {
+    showRegister: (req, res) => {
         res.render('users/register')
     },
+    register: (req, res) =>{
+        const users = databaseJson.readJson(databaseFilename) 
+
+        const idCalculated = databaseJson.lastElementId(users) + 1
+        console.log(idCalculated);
+        //si hay imagen
+        let image = '';
+        if (req.file) {
+            //le saco la palabra public para que sea a partir
+            image = req.file.filename;
+        }
+
+        //para mayor seguridad guardo el password de manera encriptada
+        // spoiler alert bcryptjs
+        const pass = bcryptjs.hashSync(req.body.password, 10)
+        
+        //guardo el nuevo usuario con la estructura
+        users.push({ userId: idCalculated, firstName: req.body.name, lastName: req.body.lastname, email: req.body.email, password: req.body.confpass, category: "user", profilePic: image })
+
+        //reescribo el json
+        databaseJson.writeJson(users, databaseFilename)
+
+        //luego a donde redirijo?
+        return res.redirect('/login')
+
+
+    }
 }
 
 // exports
