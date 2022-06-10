@@ -11,7 +11,7 @@ router.get('/home',homeCtrl.home)
 
 //- PRODUCT DETAIL
 
-router.get('/detalle:bookId', homeCtrl.detalle)
+router.get('/detalle/:bookId', homeCtrl.detalle)
 
 //- CARRITO
 router.get('/carrito', homeCtrl.carrito)
