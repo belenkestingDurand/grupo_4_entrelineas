@@ -3,8 +3,12 @@ const about = {
     books: "Libros"
     }
 const fs = require("fs")
+const path = require("path");
 
-let datos = fs.readFileSync('./data/products.json')
+//variable con la ruta del archivo products.json
+let productosFilePath = path.join(__dirname, '../data/products.json');
+
+let datos = fs.readFileSync(productosFilePath, "utf-8")
 
 // OBJECT WITH DETAILED HTML DIRECTIONS
 const productsController =  {
@@ -69,19 +73,19 @@ const productsController =  {
     },
     delete: (req, res) => {
         // leer archivo
-        let datos = fs.readFileSync('./data/products.json')
+        let datos = fs.readFileSync(productosFilePath, "utf-8")
         let books = JSON.parse(datos)
+        console.log('voy por acá');
         // ubicar el libro a borrar y hacer un array con el resto mediante filter
         let id = req.params.id;
-        console.log(id);
+
         let booksToKeep = books.filter((book) => book.id !=id);
-        console.log(bookToKeep);
         //lo vuelvo a formato json
-        let jsonBooksToKeep = JSON.stringify(booksToKeep, null, 4);
+        let jsonBooksToKeep = JSON.stringify(booksToKeep, null, 2);
         // lo reescribo en el archivo
-        fs.writeFileSync(datos, jsonBooksToKeep, "utf-8");
+        fs.writeFileSync(productosFilePath, jsonBooksToKeep, "utf-8");
         //redirecciona a listado de libros
-        return res.redirect('/');
+        return res.redirect('/products');
 
     }
 
