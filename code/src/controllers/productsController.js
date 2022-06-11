@@ -38,10 +38,11 @@ const productsController =  {
             }
             return libro;
         })
+
         let booksActualizar = JSON.stringify(booksUpdate, null, 2);
         
         // redireccionar a '/productos'
-        fs.writeFileSync(datos,booksActualizar)
+        fs.writeFileSync(productosFilePath,booksActualizar,"utf-8")
         res.redirect('/products')
         },
     
