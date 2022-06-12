@@ -30,8 +30,9 @@ const userController =  {
         res.render('users/register')
     },
     register: (req, res) =>{
+        // leer el json
         const users = databaseJson.readJson(databaseFilename) 
-
+        console.log(users)
         const idCalculated = databaseJson.lastElementId(users) + 1
         console.log(idCalculated);
         //si hay imagen
@@ -39,14 +40,16 @@ const userController =  {
         if (req.file) {
             //le saco la palabra public para que sea a partir
             image = req.file.filename;
+            console.log(image)
+        
         }
 
         //para mayor seguridad guardo el password de manera encriptada
         // spoiler alert bcryptjs
-        const pass = bcryptjs.hashSync(req.body.password, 10)
+        const pass = bcryptjs.hashSync(req.body.confpass, 10)
         
         //guardo el nuevo usuario con la estructura
-        users.push({ userId: idCalculated, firstName: req.body.name, lastName: req.body.lastname, email: req.body.email, password: req.body.confpass, category: "user", profilePic: image })
+        users.push({ userId: idCalculated, firstName: req.body.name, lastName: req.body.lastname, email: req.body.email, password: pass, category: "user", profilePic: image })
 
         //reescribo el json
         databaseJson.writeJson(users, databaseFilename)

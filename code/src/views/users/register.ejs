@@ -15,7 +15,7 @@
     <main class="register-main" >
          
             <div class="login-logo register-logo-dektop">
-                <img class="register-logo-chico" src="img/logo-entre-lineas.jpg" alt="logo">
+                <img class="register-logo-chico" src="/img/logo-entre-lineas.jpg" alt="logo">
             </div>
 
             <form class="form-flex" action="/users/register" method="POST" enctype="multipart/form-data">
@@ -32,8 +32,8 @@
                          placeholder="Ingrese su apellido"required>
                 </div>
                
-               
-                <div>
+           
+            <!--  <div> 
                     <div class="register-etiq-contenedor" ><label>Documento:</label></div>
                     <div class="register-cont-2box">
                         <div class="register-tipo-numero-camp">
@@ -52,7 +52,7 @@
                             placeholder="Ingrese el numero" required>
                         </div>
                     </div> 
-                </div>
+                </div> 
 
                 <div>
                     <div class="register-etiq-contenedor"><label>Teléfono:</label></div>
@@ -76,6 +76,10 @@
                         </div>
                     </div>
             
+                </div> -->
+                <div class="register-cont-label-input">
+                    <div><label for="img">Imagen:</label></div>
+                    <input class="box-ingrese-datos" type="file" name="img" id="img">
                 </div>
 
                 <div class="register-cont-label-input">
