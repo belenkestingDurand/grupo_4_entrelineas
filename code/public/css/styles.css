@@ -901,7 +901,7 @@ footer {
 }
 
 .createpr-form-padding-left {
-    padding-left: 3%;
+    padding-left: 20%;
 }
 
 .creatpr-desap-Mobile {
@@ -915,7 +915,9 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-
+    margin-left: 35%;
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
 .lp-header-section{
     display: flex;
@@ -926,7 +928,10 @@ footer {
 .lp-div-titulo-gral{
     width: 100%;
 }
-
+.texarea-saizing{
+    width: 75%;
+    height: 90px;
+}
 .nav-search{
     width: 85%;
     margin-top: 5px;
@@ -971,6 +976,8 @@ footer {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 .lp-article-sizig{
     height: 450px;
@@ -1049,6 +1056,16 @@ footer {
     color: white;
     background-color: #606665;
     font-family: arvo;
+    border: none;
+}
+.create-button{
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    color: white;
+    background-color: #606665;
+    font-family: arvo;
+    border: none;
 }
 .delete-button{
     width: 100px;
@@ -1679,6 +1696,4 @@ footer {
         width: 40%;
         height: 30%;
     }
-
-    
 }
