@@ -21,6 +21,5 @@ router.get('/login',homeCtrl.login)
 router.get('/register',homeCtrl.register)
 
 
-
 // exports
 module.exports = router

@@ -49,26 +49,35 @@ const productsController =  {
 
     // /products proceso de creación por (POST)
     productoCreado: (req,res) =>{
+        let datos = fs.readFileSync(productosFilePath)
         let books = JSON.parse(datos)
+
+        let image = '';
+        if (req.file) {
+            //le saco la palabra public para que sea a partir
+          image = req.file.filename;
+        
+        }
+        console.log(req.file)
 
         let newProduct = {
             id: books[books.length -1].id + 1,
-            name: req.body.name,
+            name: req.body.productName,
             type: req.body.type,
             author: req.body.author,
             price: req.body.price,
             gender: req.body.gender,
-            //! MULTER
-            picture: '',
+            picture: "/img/products/"+image,
             opinion: req.body.opinion,
             size: req.body.size,
             pages: req.body.pages,
             more: req.body.more
         };
+        console.log(newProduct)
         books.push(newProduct)
 
-        let booksWithNewProduct = JSON.stringify(books, null, 2)
-        fs.writeFileSync(datos, booksWithNewProduct, "utf-8")
+        let newbooks = JSON.stringify(books)
+        fs.writeFileSync(productosFilePath, newbooks)
         
         return res.redirect('/')
     },

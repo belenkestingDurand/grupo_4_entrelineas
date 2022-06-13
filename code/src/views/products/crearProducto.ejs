@@ -14,7 +14,7 @@
  
     <main>
         <h3 class="creatprod-title">CREAR PRODUCTO</h3>
-        <form class="createpr-form-padding-left" action="" method="get">
+        <form class="createpr-form-padding-left" action="/products/create" method="POST" enctype="multipart/form-data">
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="productName">Nombre del producto:</label></div>
@@ -35,7 +35,7 @@
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="name">Imagen del producto:</label></div>
-                    <input class="box-ingrese-datos" type="file" name="name" multiple accept=".jpg, .png" required>
+                    <input class="box-ingrese-datos" type="file" name="productImg" multiple accept=".jpg, .png" required>
                 </div>
 
                 <div class="">
@@ -54,7 +54,7 @@
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="about">Reseña:</label></div>
-                    <textarea  name="about" id="about" placeholder="Agregue una breve descripcion del libro"></textarea> 
+                    <textarea  name="opinion" id="about" placeholder="Agregue una breve descripcion del libro"></textarea> 
                 </div>
 
                 <div class="">
