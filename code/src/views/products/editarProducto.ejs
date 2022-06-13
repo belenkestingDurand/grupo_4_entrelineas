@@ -4,7 +4,7 @@
 <head>
     <!-- Head -->
     <%- include('../partials/head.ejs') %>
-    <title>Entre Lineas - Crear Producto</title>
+    <title>Entre Lineas - Editar Producto</title>
 </head>
 
 <body>
@@ -14,7 +14,7 @@
  
     <main>
         <h3 class="creatprod-title">EDITAR PRODUCTO</h3>
-        <form class="createpr-form-padding-left" action="/products/:id/edit?_method=PUT" method="post">
+        <form class="createpr-form-padding-left" action="/products/<%= product.id %>/edit?_method=PUT" method="post">
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="name">Nombre del producto:</label></div>
@@ -52,7 +52,7 @@
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="opinion">Reseña:</label></div>
-                    <textarea  name="opinon" id="opinion" placeholder="Agregue una breve descripcion del libro" ><%= product.opinion %></textarea> 
+                    <textarea  name="opinion" id="opinion" placeholder="Agregue una breve descripcion del libro" ><%= product.opinion %></textarea> 
                 </div>
 
                 <div class="">
@@ -64,19 +64,19 @@
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="size">Tamaño:</label></div>
-                    <input class="box-ingrese-datos" type="text" name="size" id="bookSize" 
+                    <input class="box-ingrese-datos" type="text" name="size" id="size" 
                     placeholder="Ingrese el tamaño del libro (ancho x alto, en cm)" value="<%= product.size %>">
                 </div>
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="pages">Paginas:</label></div>
                     <input class="box-ingrese-datos" type="text" name="pages" id="pages" 
-                    placeholder="Ingrese el número de páginas que contiene el libro" value="">
+                    placeholder="Ingrese el número de páginas que contiene el libro" value="<%= product.pages %>">
                 </div>
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="more">"Mas Información":</label></div>
-                    <textarea  name="aboutExtra" id="more" placeholder="Agregue información adicional sobre el producto"></textarea> 
+                    <textarea  name="more" id="more" placeholder="Agregue información adicional sobre el producto"><%= product.more %></textarea> 
                 </div>
                
                 <div class="creatProd-buttom"> 
