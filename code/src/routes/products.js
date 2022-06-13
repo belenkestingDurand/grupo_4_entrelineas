@@ -30,7 +30,7 @@ router.post('/create', upload.single('productImg'), productsCtrl.productoCreado)
 
 //- EDIT PRODUCT
 router.get('/:id/edit', productsCtrl.editarProducto)
-router.put('/:id/edit', productsCtrl.productoEditado)
+router.put('/:id/edit', upload.single('productImg'), productsCtrl.productoEditado)
 
 //- DELETE PRODUCT
 router.delete('/delete/:id', productsCtrl.delete)

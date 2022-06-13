@@ -28,13 +28,27 @@ const productsController =  {
     },
     
     productoEditado:(req,res) => {
+        let datos = fs.readFileSync(productosFilePath)
         let books = JSON.parse(datos)
 
+        
         req.body.id = req.params.id;
-        // req.body.imagen = req.file ? req.file.filename : req.body.oldImagen;
         let booksUpdate = books.map((libro) => {
             if (libro.id == req.body.id) {
-                return (libro = req.body);
+                let image = libro.picture;
+                if (req.file) {
+                    image = req.file.filename;
+                }
+                libro.name = req.body.name;
+                libro.type = req.body.type,
+                libro.author = req.body.author,
+                libro.price = req.body.price,
+                libro.gender = req.body.gender,
+                libro.picture = image,
+                libro.opinion = req.body.opinion,
+                libro.size = req.body.size,
+                libro.pages = req.body.pages,
+                libro.more = req.body.more
             }
             return libro;
         })
@@ -42,8 +56,8 @@ const productsController =  {
         let booksActualizar = JSON.stringify(booksUpdate, null, 2);
         
         // redireccionar a '/productos'
-        fs.writeFileSync(productosFilePath,booksActualizar,"utf-8")
-        res.redirect('/products')
+        fs.writeFileSync(productosFilePath,booksActualizar)
+        return res.redirect('/products')
         },
     
 
