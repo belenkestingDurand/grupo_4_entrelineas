@@ -1078,6 +1078,12 @@ footer {
 .add-buttom {
     width: 50%;
 }
+
+/* form de editar un producto */
+.editproduct-img {
+    width: 20%;
+}
+
 /* TABLETS*/
 @media (min-width: 480px) {
 

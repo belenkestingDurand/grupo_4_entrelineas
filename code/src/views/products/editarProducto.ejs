@@ -14,7 +14,9 @@
  
     <main>
         <h3 class="creatprod-title">EDITAR PRODUCTO</h3>
-        <form class="createpr-form-padding-left" action="/products/<%= product.id %>/edit?_method=PUT" method="post">
+        <form class="createpr-form-padding-left" 
+            action="/products/<%= product.id %>/edit?_method=PUT" 
+            method="post" enctype="multipart/form-data" >
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="name">Nombre del producto:</label></div>
@@ -36,6 +38,17 @@
                     <div><label class="createpr-label-font" for="productImg">Imagen del producto:</label></div>
                     <input class="box-ingrese-datos" type="file" name="productImg" multiple accept=".jpg, .png" required value="<%= product.picture %>">
                 </div> -->
+
+                <!--Aquí solicito la imagen-->
+                <div class="">
+                    <figure class="">
+                      <img class="editproduct-img" src="../../../<%= product.picture%>"
+                       alt="libro <%= product.name%>">
+                    </figure>
+                    <input type="file" name="productImg" value="<%= product.picture%>" />
+                    
+  
+                  </div>
 
                 <div class="">
                     <div class="">

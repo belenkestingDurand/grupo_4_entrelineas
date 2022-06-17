@@ -36,6 +36,8 @@ const productsController =  {
         let booksUpdate = books.map((libro) => {
             if (libro.id == req.body.id) {
                 let image = libro.picture;
+                console.log(req.body.productImg)
+                console.log('req.file ',req.file)
                 if (req.file) {
                     image = req.file.filename;
                 }
@@ -44,7 +46,7 @@ const productsController =  {
                 libro.author = req.body.author,
                 libro.price = req.body.price,
                 libro.gender = req.body.gender,
-                libro.picture = image,
+                libro.picture = '/img/products/'+image,
                 libro.opinion = req.body.opinion,
                 libro.size = req.body.size,
                 libro.pages = req.body.pages,
@@ -52,11 +54,11 @@ const productsController =  {
             }
             return libro;
         })
-
+       
         let booksActualizar = JSON.stringify(booksUpdate, null, 2);
-        
-        // redireccionar a '/productos'
         fs.writeFileSync(productosFilePath,booksActualizar)
+       
+        // redireccionar a '/productos'
         return res.redirect('/products')
         },
     
@@ -72,7 +74,7 @@ const productsController =  {
           image = req.file.filename;
         
         }
-        console.log(req.file)
+        console.log('req.file',req.file)
 
         let newProduct = {
             id: books[books.length -1].id + 1,
@@ -93,13 +95,13 @@ const productsController =  {
         let newbooks = JSON.stringify(books)
         fs.writeFileSync(productosFilePath, newbooks)
         
-        return res.redirect('/')
+        return res.redirect('/products')
     },
     delete: (req, res) => {
         // leer archivo
         let datos = fs.readFileSync(productosFilePath, "utf-8")
         let books = JSON.parse(datos)
-        console.log('voy por acá');
+
         // ubicar el libro a borrar y hacer un array con el resto mediante filter
         let id = req.params.id;
 
@@ -108,6 +110,7 @@ const productsController =  {
         let jsonBooksToKeep = JSON.stringify(booksToKeep, null, 2);
         // lo reescribo en el archivo
         fs.writeFileSync(productosFilePath, jsonBooksToKeep, "utf-8");
+        
         //redirecciona a listado de libros
         return res.redirect('/products');
 
