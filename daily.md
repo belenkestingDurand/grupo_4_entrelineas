@@ -26,3 +26,11 @@
 2.- Chequeo de tareas pendientes de sprints anteriores.
 3.- Consultas de dudas
 4.- Nueva lista de pendientes con distribución de tareas a revisar en próxima daily.
+
+## Reunión 15/06/2022
+
+**Resumen**
+1. Se revisó el tablero trello con el listado de tareas del sprint y los pendientes.
+2. Cada uno mostró rápidamente sus tareas realizadas.
+3. Se revisó detalles de diseño y presentación.
+4. Se distribuyeron los detalles finales para la presentación final del sprint.

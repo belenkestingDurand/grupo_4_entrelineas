@@ -37,3 +37,10 @@ Esta web fue elegida para copiar la estética del carrito de compras.
 ## Tablero de Trabajo
 
 https://trello.com/b/VnTYcUTj/entre-lineas
+
+## Accesos
+Para acceder al listado de productos se puede llegar tipeando http://localhost:3000/products y también por ahora el logín te lleva a la misma página.
+Desde el listado de productos se puede editar o eliminar un libro en particular y a su vez crear un producto nuevo.
+
+
+
