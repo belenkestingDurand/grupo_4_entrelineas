@@ -1,11 +1,5 @@
-// LUGAR PARA FUTURAS BASES DE DATOS
 
-
-const bcryptjs = require('bcryptjs')
-const databaseJson = require('../data/databaseJson')
-
-const databaseFilename = '../data/users.json';
-
+const User = require('../models/User');
 
 
 // OBJECT WITH DETAILED HTML DIRECTIONS
@@ -30,30 +24,30 @@ const userController =  {
         res.render('users/register')
     },
     register: (req, res) =>{
-        // leer el json
-        const users = databaseJson.readJson(databaseFilename) 
-        console.log(users)
-        const idCalculated = databaseJson.lastElementId(users) + 1
-        console.log(idCalculated);
+        // validaciones de datos
+       
+        
         //si hay imagen
         let image = '';
         if (req.file) {
             //le saco la palabra public para que sea a partir
             image = req.file.filename;
-            console.log(image)
+        
         
         }
+        let userToCreate = {
+			firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            email: req.body.email,
+			password: req.body.confpass,
+            category: "user",
+			profilePic: req.file.filename
+		}
+		
 
-        //para mayor seguridad guardo el password de manera encriptada
-        // spoiler alert bcryptjs
-        const pass = bcryptjs.hashSync(req.body.confpass, 10)
-        
-        //guardo el nuevo usuario con la estructura
-        users.push({ userId: idCalculated, firstName: req.body.name, lastName: req.body.lastname, email: req.body.email, password: pass, category: "user", profilePic: image })
-
-        //reescribo el json
-        databaseJson.writeJson(users, databaseFilename)
-
+		let userCreated = User.create(userToCreate);
+		return res.redirect('/login');
+       
         //luego a donde redirijo?
         return res.redirect('/login')
 
