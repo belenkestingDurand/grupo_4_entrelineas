@@ -34,3 +34,13 @@
 2. Cada uno mostró rápidamente sus tareas realizadas.
 3. Se revisó detalles de diseño y presentación.
 4. Se distribuyeron los detalles finales para la presentación final del sprint.
+
+## Reunión 20/06/2022
+
+**Resumen**
+1. Realización de la Retro.
+2. Lectura de consignas del 5to sprint.
+3. Interpretación de consignas.
+3. Organización de tablero Trello.
+4. 1era distribución de tareas de acuerdo a la disponibilidad de tiempo.
+5. Programación de próxima reunión.

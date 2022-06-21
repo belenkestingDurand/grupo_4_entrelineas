@@ -76,5 +76,28 @@ Dividimos mejor las tareas y revisamos los cambios.
 
 Describir las tareas de una manera puntual. Hacerlo con más descripción. Detallar cómo se solucionaron errores para que todo el grupo pueda comprenderlos y solucionarlos.
 
+## 20/06/2022
+Retro Sprint 4
 
+**Comenzar a hacer:**
+
+Pensar la estructura de datos y el customer journey de la aplicación para poder codear de una forma más ordenada.
+
+**Hacer más:**
+
+Agregar los comentarios necesarios en el código a fin de hacerlo entendible para el equipo.
+
+
+**Continuar haciendo:**
+
+Continuar haciendo resúmenes en slack de lo que venimos haciendo para que nuestros compañeros sepan qué hicimos y lo que faltó para no pisarnos.
+Continuar con buenas divisiones del trabajo revisando cambios.
+Seguir con un ritmo constante y mantener el ritmo de reuniones.
+Describir las tareas de manera detallada y los erores que surgieron para que todo el equipo esté al tanto.
+Apoyar a los miembros del equipo con divisiones de trabajo acorde a las tareas personales a fin de poder llevarlas a cabo también.
+
+
+**Hacer menos:**
+
+No dejar cambios sin comentar.
 
