@@ -541,6 +541,9 @@ article .add-cart-button {
     color: #938C8C;
     border: 1px;
 }
+box-ingrese-datos.is-invalid {
+    border-color: #9F1F0E;
+}
 .nav-search-btn{
     width: 40px;
     height: 30px;

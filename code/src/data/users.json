@@ -205,5 +205,41 @@
   "password": "simba1234",
   "category": "user",
   "profilePic": "img-1656038262099-540252374.jpg"
+ },
+ {
+  "userId": 26,
+  "firstName": "Sofia",
+  "lastName": "Kesting",
+  "email": "sofi.kesting@gmail.com",
+  "password": "sofia12345",
+  "category": "user",
+  "profilePic": "img-1656070340737-79779032.jpg"
+ },
+ {
+  "userId": 27,
+  "firstName": "Parde",
+  "lastName": "Kesting",
+  "email": "parde@gmail.com",
+  "password": "parde12345",
+  "category": "user",
+  "profilePic": "img-1656070860709-611138295.jpg"
+ },
+ {
+  "userId": 28,
+  "firstName": "CLARA",
+  "lastName": "KESTING",
+  "email": "clari@gmail.com",
+  "password": "clarita123",
+  "category": "user",
+  "profilePic": "img-1656072513166-43700376.jpg"
+ },
+ {
+  "userId": 29,
+  "firstName": "MATEO",
+  "lastName": "KESTING",
+  "email": "mateokesting@gmail.com",
+  "password": "mateo123",
+  "category": "user",
+  "profilePic": "img-1656073346301-489170590.jpg"
  }
 ]

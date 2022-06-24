@@ -22,10 +22,10 @@
                 <div class="column1"><div class="register-cont-label-input">
                     <div><label for="firstName">Nombre:</label></div>
                     <input 
-                        class="box-ingrese-datos"
-                         type="text" 
-                         name="firstName" 
-                         id="name" 
+                        class="box-ingrese-datos <%= locals.errors && errors.firstName ? 'is-invalid' : null %>"
+                        type="text" 
+                        name="firstName" 
+                        id="name" 
                         placeholder="Ingrese su nombre"
                         value="<%= locals.oldData ? oldData.firstName : null %>"
                     />
@@ -109,6 +109,7 @@
                         type="file" 
                         name="img" 
                         id="img"
+                        value="<%= locals.oldData ? oldData.img : null %>"
                     >
                     <% if (locals.errors && errors.img) { %>
                         <div class="text-red">

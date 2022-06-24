@@ -25,17 +25,18 @@ const userController =  {
     },
     register: (req, res) =>{
         // validaciones de datos
-        console.log("entre por register");
+        
        const resultValidation = validationResult(req);
-    
+        // si hay errores recargar la pag con datos cargados correctos
        if (resultValidation.errors.length > 0) {
-            console.log('resultValidation', resultValidation);
+           console.log(req.body);
             return res.render('users/register', {
                  errors: resultValidation.mapped(),
                 oldData: req.body
             });
         }
         let existUser = User.findByField('email', req.body.email);
+        // chequeo que no se registre dos veces el mismo email
         if (existUser) {
             console.log('el usuario ya existia');
             return res.render('users/register', {
@@ -48,17 +49,8 @@ const userController =  {
             });
 
         }
-        
-        //si hay imagen
-        let image = '';
-        if (req.file) {
-            //le saco la palabra public para que sea a partir
-            image = req.file.filename;
-        
-        
-        }
-        console.log('req.body',req.body);
-        console.log('req.file',req.file);
+        // asigno los datos cargados por el usuario en register y validados
+        // a variable userToCreate
         let userToCreate = {
 			firstName: req.body.firstName,
             lastName: req.body.lastName,
@@ -68,12 +60,12 @@ const userController =  {
 			profilePic: req.file.filename
 		}
 		
-        console.log('userToCreate');
+        // guardo el usuario nuevo en el archivo users.json
 		let userCreated = User.create(userToCreate);
-        console.log('userCreated', userCreated)
+        console.log('usuario correctamente grabado en json', userCreated)
 		return res.redirect('/login');
        
-        //luego a donde redirijo?
+        //redirijo a logín para que usuario nuevo pueda acceder
         return res.redirect('/login')
 
 
