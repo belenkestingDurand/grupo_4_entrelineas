@@ -21,15 +21,40 @@
             <form class="form-flex" action="/users/register" method="POST" enctype="multipart/form-data">
                 <div class="column1"><div class="register-cont-label-input">
                     <div><label for="firstName">Nombre:</label></div>
-                    <input class="box-ingrese-datos" type="text" name="firstName" id="name" 
-                        placeholder="Ingrese su nombre" required>
+                    <input 
+                        class="box-ingrese-datos"
+                         type="text" 
+                         name="firstName" 
+                         id="name" 
+                        placeholder="Ingrese su nombre"
+                        value="<%= locals.oldData ? oldData.firstName : null %>"
+                    />
+                    <% if (locals.errors && errors.firstName) { %>
+                        <div class="text-red">
+                            <%= errors.firstName.msg %>
+                        </div>
+                    
+                    <% } %>
                     
                 </div>
                
                 <div class="register-cont-label-input">
                     <div><label for="lastName">Apellido:</label></div>
-                    <input class="box-ingrese-datos" type="text" name="lastName" id="lastName"
-                         placeholder="Ingrese su apellido"required>
+                        <input 
+                            class="box-ingrese-datos" 
+                            type="text" 
+                            name="lastName" 
+                            id="lastName"
+                            placeholder="Ingrese su apellido"
+                            value="<%= locals.oldData ? oldData.lastName : null %>"
+                        />
+                        <% if (locals.errors && errors.lastName) { %>
+                            <div class="text-red">
+                                <%= errors.lastName.msg %>
+                            </div>
+                        
+                        <% } %>
+
                 </div>
                
            
@@ -79,27 +104,71 @@
                 </div> -->
                 <div class="register-cont-label-input">
                     <div><label for="img">Imagen:</label></div>
-                    <input class="box-ingrese-datos" type="file" name="img" id="img">
+                    <input 
+                        class="box-ingrese-datos" 
+                        type="file" 
+                        name="img" 
+                        id="img"
+                    >
+                    <% if (locals.errors && errors.img) { %>
+                        <div class="text-red">
+                            <%= errors.img.msg %>
+                        </div>
+                    <% } %>
                 </div>
+
 
                 <div class="register-cont-label-input">
                     <div><label for="email">Email:</label></div>
-                    <input class="box-ingrese-datos" type="email" name="email" id="email" 
-                        placeholder="Ingrese su nombre" required>    
+                    <input 
+                        class="box-ingrese-datos"
+                        type="email" 
+                        name="email" 
+                        id="email" 
+                        placeholder="Ingrese su email" 
+                        value="<%= locals.oldData ? oldData.email : null %>"
+                    />    
+                    <% if (locals.errors && errors.email) { %>
+                        <div class="text-red">
+                            <%= errors.email.msg %>
+                        </div>
+                    <% } %>
                 </div>
         </div>
                 
         <div class="column2"><div class="register-cont-label-input">
-            <div><label for="passwordUser">Ingrese contraseña:</label></div>
-            <input class="box-ingrese-datos" type="password" name="passwordUser" id="passwordUser"
-                 placeholder="Min 8 caracteres" required minlength="8">
-            
+            <div><label for="password">Ingrese contraseña:</label></div>
+            <input 
+                class="box-ingrese-datos" 
+                type="password"
+                 name="password" 
+                 id="password"
+                 placeholder="Min 8 caracteres" 
+                 minlength="8"
+                 
+            />
+            <% if (locals.errors && errors.password) { %>
+                <div class="text-red">
+                    <%= errors.password.msg %>
+                </div>
+            <% } %>
         </div>
 
         <div class="register-cont-label-input">
             <div><label for="confpass">Confirme contraseña</label></div>
-            <input class="box-ingrese-datos" type="password" name="confpass" id="confpass"
-                 placeholder="Min 8 caracteres"required minlength="8">
+            <input 
+                class="box-ingrese-datos" 
+                type="password"
+                name="confpass" 
+                id="confpass"
+                placeholder="Min 8 caracteres"
+                minlength="8" 
+            />
+            <% if (locals.errors && errors.confpass) { %>
+                <div class="text-red">
+                    <%= errors.confpass.msg %>
+                </div>
+            <% } %>
         </div>
         <div class="login-h5-centrado"> 
             <button type="submit" class="centrar-boton button-crear-cuenta">Crear nueva Cuenta</button>

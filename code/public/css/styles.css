@@ -705,6 +705,9 @@ text-align: center;
     color: #938C8C;
     border: 1px;
 }
+.text-red {
+    color:#9F1F0E;
+}
 
 /*Carrito*/
 .carrito-border{
@@ -1264,6 +1267,7 @@ footer {
     }
 
     .register-condic-uso{
+        font-size: 15px;
         text-align: center;
         
     }

@@ -189,21 +189,21 @@
   "profilePic": "img-1655843454796-532673609.jpg"
  },
  {
-  "userId": 22,
-  "firstName": "María Isolina",
-  "lastName": "Durand Figueroa",
-  "email": "isolinadurand@gmail.com",
-  "password": "$2a$10$pU4Tdt7evPiCwwTUztRs0uQIWpNCw8nmRARAMGz3SLYeIK9yGGvcK",
+  "userId": 24,
+  "firstName": "Jorge Pablo ",
+  "lastName": "Kesting",
+  "email": "jorge@asdf.com",
+  "password": "jorge123",
   "category": "user",
-  "profilePic": "img-1655843632476-789406200.jpg"
+  "profilePic": "img-1656026801655-962903478.jpg"
  },
  {
-  "userId": 23,
-  "firstName": "María Isolina",
-  "lastName": "Durand Figueroa",
-  "email": "isolinadurand@gmail.com",
-  "password": "isolina123",
+  "userId": 25,
+  "firstName": "Simba",
+  "lastName": "Kesting",
+  "email": "simba@gmail.com",
+  "password": "simba1234",
   "category": "user",
-  "profilePic": "img-1655844161410-954926145.jpg"
+  "profilePic": "img-1656038262099-540252374.jpg"
  }
 ]

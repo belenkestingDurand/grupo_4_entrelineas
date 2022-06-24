@@ -30,6 +30,7 @@ const User = {
         let allUsers = this.findAll();
         let newUser = {
             userId: this.generateId(),
+        
             ... userData
         }
         console.log(newUser);
