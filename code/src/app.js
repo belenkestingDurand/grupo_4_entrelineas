@@ -1,7 +1,15 @@
-const express = require('express')
-const app = express()
-const port = 3000
-const path = require('path')
+const express = require('express');
+const session = require('express-session');
+const app = express();
+const port = 3000;
+const path = require('path');
+
+// middleware de session
+app.use(session({ 
+    secret: 'Secreto',
+    resave: false,
+    saveUninitialized: false,
+}));
 
 //public
     const publicPath = path.resolve(__dirname,'../public');
