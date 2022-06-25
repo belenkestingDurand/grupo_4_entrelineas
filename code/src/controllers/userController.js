@@ -29,13 +29,14 @@ const userController =  {
 
             //verificar las contraseñas (modificar con bcrypt)
             if (req.body.password === userToLogin.password){
-
+// por ahora va a listado de prod pero debe ir a userprofile 
+// cuando esté hecha la vista
             return res.redirect('/products');
             }
             return res.render('users/login',{
                 errors: {
-                    password: {
-                        msg: 'Contraseña inválida'
+                    email: {
+                        msg: 'Credenciales inválidas'
                     }
                 }
             })

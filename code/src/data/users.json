@@ -250,5 +250,14 @@
   "password": "belen123",
   "category": "user",
   "profilePic": "img-1656112525931-486523646.jpg"
+ },
+ {
+  "userId": 31,
+  "firstName": "Lucas",
+  "lastName": "DANTUR",
+  "email": "lugas@gmail.com",
+  "password": "LUCAS123",
+  "category": "user",
+  "profilePic": "img-1656185627711-221126597.jpg"
  }
 ]
