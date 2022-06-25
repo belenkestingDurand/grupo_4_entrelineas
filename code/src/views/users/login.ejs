@@ -23,15 +23,39 @@
                     <div class="login-contenedor-email-pass">
                         <div >
                             <h5 class="h5-titulo-box"><label  for="email">Email:</label></h5>
-                            <div ><input class="box-ingrese-datos"  type="email" name="emailUsuario" id="email"
-                                 placeholder="Ingrese su email"  required>
+                            <div >
+                                <input 
+                                    class="box-ingrese-datos" 
+                                    type="email" 
+                                    name="email"
+                                    id="email"
+                                    placeholder="Ingrese su email"
+                                />
+                                <% if (locals.errors && errors.email) { %>
+                                    <div class="text-red">
+                                        <%= errors.email.msg %>
+                                    </div>
+                                
+                                <% } %>
                             </div>
                         </div>
                     
                         <div>
                             <h5 class="h5-titulo-box"><label for="password">Contraseña</label></h5>
-                            <div><input class="box-ingrese-datos" type="password" name="passwordUsuario" id="password"
-                                placeholder="Ingrese su contraseña" required >
+                            <div>
+                                <input
+                                    class="box-ingrese-datos" 
+                                    type="password" 
+                                    name="password" 
+                                    id="password"
+                                    placeholder="Ingrese su contraseña" 
+                                />
+                                <% if (locals.errors && errors.password) { %>
+                                    <div class="text-red">
+                                        <%= errors.password.msg %>
+                                    </div>
+                                
+                                <% } %>
                             </div>
                         </div>
                     </div>

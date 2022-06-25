@@ -11,17 +11,51 @@ const userController =  {
         return res.render('users/login')
     },
     login: (req, res) => {
-        //validar login
+        //validar login a traves de express-validator 
+        const resValidation = validationResult(req);
 
-        
-        
+        if (resValidation.errors.length > 0) {
+            return res.render('users/login', {
+                // resValidation.mapped() devuelve en vez de array, un obj literal
+                errors: resValidation.mapped(),
 
-        return res.redirect('/products');
+            });
+        }
+        // busco el email en la base de datos
+        let userToLogin = User.findByField('email', req.body.email);
+         
+        if(userToLogin) {
+            //acciones a seguir si si lo encontro al mail en la base
+
+            //verificar las contraseñas (modificar con bcrypt)
+            if (req.body.password === userToLogin.password){
+
+            return res.redirect('/products');
+            }
+            return res.render('users/login',{
+                errors: {
+                    password: {
+                        msg: 'Contraseña inválida'
+                    }
+                }
+            })
+    
+
+        }
+        return res.render('users/login',{
+            errors: {
+                email: {
+                    msg: 'Email no registrado, crear cuenta'
+                }
+            }
+        })
+
+    
     },
     
     //'register.ejs' IN 'views/users' FOLDER
     showRegister: (req, res) => {
-        res.render('users/register')
+        return res.render('users/register')
     },
     register: (req, res) =>{
         // validaciones de datos
