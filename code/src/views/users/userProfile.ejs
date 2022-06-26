@@ -2,21 +2,37 @@
 <html lang="es">
 <%- include('../partials/head.ejs'); %>
 <body>
-	
-	
-	<!-- Container -->
-	<div class="" >
-		<div class="">
-			<div class="">
-				<h2>Hi User</h2>
-				<img src="/img/users/default.png" alt="imagen usario">
-				<br>
-				<br>
-				<div class="">user@email.com</div>
-			</div>
-		</div>
+	<!-- Header-->
+	<%- include('../partials/header.ejs'); %>
+<main class="up-main">
+	<!-- main -->
+	<div class="up-colorBackgrownd-style">
 	</div>
-	<!-- //Container -->
+	<section>	
+	<section class="up-profilePicture">
+		<div class = "up-porfilePicture-div">
+			<img class = "up-porfilePicture-img" src="/img/users/img-1656072513166-43700376.jpg" alt="profile picture" >
+		</div>
+	</section>
+	<section class = "up-data">
+		<h2 class="up-email-style">ejemplo@ejemplo.com</h2>
+		<div class = "up-colorBackgrownd-gris up-personali">
+			<h6 class="up-100">Información personal</h6>
+			<h4 class="up-100">Nombre Apellido</h4>
+		</div>
+		<div class = "up-colorBackgrownd-gris up-direction">
+			<h6 class="up-100">Dirección de envio</h6>
+			<h4 class="up-100">calle</h4>
+			<h4 class="up-0-5">nro</h4>
+			<h4 class="up-0-5">cp</h4>
+			<h4 class="up-0-5">provincia</h4>
+			<h4 class="up-0-5">pais</h4>
+		</div>
+	</section>
+	</section>
+	<!-- //main -->
+</main>
+	
 	
 
 	<%- include('../partials/footer.ejs'); %>
