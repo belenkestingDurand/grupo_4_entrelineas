@@ -16,10 +16,5 @@ router.get('/detalle/:bookId', homeCtrl.detalle)
 //- CARRITO
 router.get('/carrito', homeCtrl.carrito)
 
-//- LOGIN - REGISTRO
-router.get('/login',homeCtrl.login)
-router.get('/register',homeCtrl.register)
-
-
 // exports
 module.exports = router

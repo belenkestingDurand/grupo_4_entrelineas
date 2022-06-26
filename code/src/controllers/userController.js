@@ -10,6 +10,7 @@ const userController =  {
     showLogin: (req, res) => {
         return res.render('users/login')
     },
+
     login: (req, res) => {
         //validar login a traves de express-validator 
         const resValidation = validationResult(req);
@@ -66,7 +67,7 @@ const userController =  {
         // si hay errores recargar la pag con datos cargados correctos
        if (resultValidation.errors.length > 0) {
            console.log(req.body);
-            return res.render('users/register', {
+            return res.render('register', {
                  errors: resultValidation.mapped(),
                 oldData: req.body
             });
@@ -75,7 +76,7 @@ const userController =  {
         // chequeo que no se registre dos veces el mismo email
         if (existUser) {
             console.log('el usuario ya existia');
-            return res.render('users/register', {
+            return res.render('register', {
                 errors:{
                     email: {
                         msg: 'Este email ya está registrado'
@@ -102,7 +103,7 @@ const userController =  {
 	
        
         //redirijo a logín para que usuario nuevo pueda acceder
-        return res.redirect('/login')
+        return res.redirect('users/login')
 
 
     },

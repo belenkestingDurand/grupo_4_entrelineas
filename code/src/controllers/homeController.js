@@ -23,14 +23,7 @@ const homeController =  {
     //'carritoDeCompras.ejs' IN 'views/prodcuts' FOLDER
     carrito: (req,res) => {
         res.render('products/carritoDeCompras')
-    },
-    login: (req, res) => {
-        res.render('users/login')
-    },
-    //'register.ejs' IN 'views/users' FOLDER
-    register: (req, res) => {
-        res.render('users/register')
-    },
+    }
 }
 
 // exports
