@@ -11,14 +11,14 @@
 	<section>	
 	<section class="up-profilePicture">
 		<div class = "up-porfilePicture-div">
-			<img class = "up-porfilePicture-img" src="/img/users/img-1656072513166-43700376.jpg" alt="profile picture" >
+			<img class = "up-porfilePicture-img" src="/img/users/<%= user.profilePic %>" alt="profile picture" >
 		</div>
 	</section>
 	<section class = "up-data">
-		<h2 class="up-email-style">ejemplo@ejemplo.com</h2>
+		<h2 class="up-email-style"><%= user.email %> </h2>
 		<div class = "up-colorBackgrownd-gris up-personali">
 			<h6 class="up-100">Información personal</h6>
-			<h4 class="up-100">Nombre Apellido</h4>
+			<h4 class="up-100"><%= user.firstName %>  <%= user.lastName %></h4>
 		</div>
 		<div class = "up-colorBackgrownd-gris up-direction">
 			<h6 class="up-100">Dirección de envio</h6>

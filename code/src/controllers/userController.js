@@ -32,7 +32,8 @@ const userController =  {
             if (req.body.password === userToLogin.password){
 // por ahora va a listado de prod pero debe ir a userprofile 
 // cuando esté hecha la vista
-
+                delete userToLogin.password
+                req.session.userLogged = userToLogin
             return res.redirect('userProfile');
             }
             return res.render('users/login',{
@@ -108,7 +109,9 @@ const userController =  {
 
     },
     profile: (req, res) => {
-		return res.render('users/userProfile');
+		return res.render('users/userProfile', {
+            user: req.session.userLogged
+        });
 	},
 }
 
