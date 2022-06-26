@@ -259,5 +259,14 @@
   "password": "LUCAS123",
   "category": "user",
   "profilePic": "img-1656185627711-221126597.jpg"
+ },
+ {
+  "userId": 32,
+  "firstName": "bebe",
+  "lastName": "lopez",
+  "email": "bebe@gmail.com",
+  "password": "bebe1234",
+  "category": "user",
+  "profilePic": "img-1656198665142-920599971.jpg"
  }
 ]

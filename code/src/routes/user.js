@@ -17,5 +17,6 @@ router.post('/login',valLogM,userCtrl.login)
 router.get('/register',userCtrl.showRegister)
 router.post('/register',upload.single('img'),valRegM,userCtrl.register)
 
+router.get('/userProfile', userCtrl.profile)
 // exports
 module.exports = router

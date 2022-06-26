@@ -20,7 +20,7 @@ app.use(session({
     //  '/' '/home' '/detalle' '/carrito'
     
 //* dispuestas en routes/user.js
-    // '/login' '/register'
+    // '/login' '/register' '/userProfile'
 
 //* dispuestos en routes/admin.js
     // '/crearProducto'

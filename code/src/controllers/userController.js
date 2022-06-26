@@ -31,7 +31,8 @@ const userController =  {
             if (req.body.password === userToLogin.password){
 // por ahora va a listado de prod pero debe ir a userprofile 
 // cuando esté hecha la vista
-            return res.redirect('/products');
+
+            return res.redirect('users/userProfile');
             }
             return res.render('users/login',{
                 errors: {
@@ -98,13 +99,16 @@ const userController =  {
         // guardo el usuario nuevo en el archivo users.json
 		let userCreated = User.create(userToCreate);
         console.log('usuario correctamente grabado en json', userCreated)
-		return res.redirect('/login');
+	
        
         //redirijo a logín para que usuario nuevo pueda acceder
         return res.redirect('/login')
 
 
     },
+    profile: (req, res) => {
+		return res.render('users/userProfile');
+	},
 }
 
 // exports
