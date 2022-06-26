@@ -32,7 +32,7 @@ const userController =  {
 // por ahora va a listado de prod pero debe ir a userprofile 
 // cuando esté hecha la vista
 
-            return res.redirect('users/userProfile');
+            return res.redirect('userProfile');
             }
             return res.render('users/login',{
                 errors: {
