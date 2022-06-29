@@ -1,6 +1,6 @@
 const { validationResult} = require('express-validator');
 const User = require('../models/User');
-
+const bcrypt = require('bcryptjs')
 
 // OBJECT WITH DETAILED HTML DIRECTIONS
 
@@ -99,7 +99,7 @@ const userController =  {
 	
        
         //redirijo a logín para que usuario nuevo pueda acceder
-        return res.redirect('users/login')
+        return res.redirect('/users/login')
 
 
     },
