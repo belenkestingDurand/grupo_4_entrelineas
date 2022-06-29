@@ -27,14 +27,12 @@ const userController =  {
          
         if(userToLogin) {
             //acciones a seguir si si lo encontro al mail en la base
-
-            //verificar las contraseñas (modificar con bcrypt)
-            if (req.body.password === userToLogin.password){
-// por ahora va a listado de prod pero debe ir a userprofile 
-// cuando esté hecha la vista
+            if (bcrypt.compareSync(req.body.password, userToLogin.password)){
+                // por ahora va a listado de prod pero debe ir a userprofile 
+                // cuando esté hecha la vista
                 delete userToLogin.password
                 req.session.userLogged = userToLogin
-            return res.redirect('userProfile');
+                return res.redirect('userProfile');
             }
             return res.render('users/login',{
                 errors: {
@@ -43,9 +41,8 @@ const userController =  {
                     }
                 }
             })
-    
 
-        }
+        };
         return res.render('users/login',{
             errors: {
                 email: {
@@ -53,8 +50,6 @@ const userController =  {
                 }
             }
         })
-
-    
     },
     
     //'register.ejs' IN 'views/users' FOLDER
@@ -93,7 +88,7 @@ const userController =  {
 			firstName: req.body.firstName,
             lastName: req.body.lastName,
             email: req.body.email,
-			password: req.body.confpass,
+            password: bcrypt.hashSync(req.body.confpass,10),
             category: "user",
 			profilePic: req.file.filename
 		}
