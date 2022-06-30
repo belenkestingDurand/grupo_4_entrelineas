@@ -63,7 +63,7 @@ const userController =  {
         // si hay errores recargar la pag con datos cargados correctos
        if (resultValidation.errors.length > 0) {
            console.log(req.body);
-            return res.render('register', {
+            return res.render('users/register', {
                  errors: resultValidation.mapped(),
                 oldData: req.body
             });
@@ -72,7 +72,7 @@ const userController =  {
         // chequeo que no se registre dos veces el mismo email
         if (existUser) {
             console.log('el usuario ya existia');
-            return res.render('register', {
+            return res.render('users/register', {
                 errors:{
                     email: {
                         msg: 'Este email ya está registrado'
