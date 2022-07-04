@@ -2,8 +2,10 @@
 const express = require('express')
 const router = express.Router()
 
-//! implementar multer 
+//Middlewares
 const uploadProd = require('../middlewares/multerProdM');
+const authMiddleware = require('../middlewares/authMiddleware');
+
 
 // CONTROLLER
 const productsCtrl = require('../controllers/productsController')
@@ -11,7 +13,7 @@ const productsCtrl = require('../controllers/productsController')
 //* USER: ADMIN
 
 //- LISTAR PRODUCTO
-router.get('/', productsCtrl.listarProducto)
+router.get('/',authMiddleware, productsCtrl.listarProducto)
 
 //- CREATE PRODUCT 
 router.get('/create', productsCtrl.crearProducto)

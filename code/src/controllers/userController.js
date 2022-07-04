@@ -32,7 +32,7 @@ const userController =  {
                 // cuando esté hecha la vista
                 delete userToLogin.password
                 req.session.userLogged = userToLogin
-                return res.redirect('userProfile');
+                return res.redirect('/');
             }
             return res.render('users/login',{
                 errors: {
@@ -108,6 +108,11 @@ const userController =  {
             user: req.session.userLogged
         });
 	},
+
+    logout: (req, res) => {
+            req.session.destroy();
+        return res.redirect('/'); 
+    }
 }
 
 // exports

@@ -30,6 +30,26 @@ a{
     color: black;
 }
 
+
+/*navvar */
+
+.header-navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.header-navbar a {
+text-decoration: none;
+color: #222222;
+display: inline-block;
+
+}
+.login-img {
+    border-radius: 100%;
+     width: 10%;
+}
+
+
 input{
     border: none;
 }

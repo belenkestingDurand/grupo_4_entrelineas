@@ -4,6 +4,9 @@ const app = express();
 const port = 3000;
 const path = require('path');
 
+//middleware de a nivel de app para chequear usuario logueado
+const userLoggedMiddleware = require('./middlewares/userLogedMiddleware');
+
 // middleware de session
 app.use(session({ 
     secret: 'Secreto',
@@ -11,6 +14,7 @@ app.use(session({
     saveUninitialized: false,
 }));
 
+app.use(userLoggedMiddleware);
 //public
     const publicPath = path.resolve(__dirname,'../public');
     app.use(express.static(publicPath));
