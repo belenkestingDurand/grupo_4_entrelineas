@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head.ejs'); %>
+<body>
+	<!-- Header-->
+	<%- include('../partials/header.ejs'); %>
+<main class="up-main">
+	<div class="up-colorBackgrownd-style"></div>
+    <form class="createpr-form-padding-left"
+    action="/users/<%= user.userId %>/edit?_method=PUT" 
+    method="post" enctype="multipart/form-data" >
+            <div class="">
+                <figure class="">
+                    <img 
+                    class="up-porfilePicture-img" 
+                    src="/img/users/<%= user.profilePic %>""
+                    alt="profile picture">
+                </figure>
+                <input type="file" name="profilePic" value="<%= user.profilePic %>" />
+            </div>
+            <div class="">
+                <label for="userFirstname">Nombre
+                    <input class="box-ingrese-datos" type="text" name="userFirstName" id="userFirstName" value="<%= user.firstName %>">
+                </label>
+            </div>
+            <div class="">
+                <label for="userFirstname">Apellido
+                    <input class="box-ingrese-datos" type="text" name="userLastName" id="userLastName" value="<%= user.lastName %>">
+                </label>
+            </div>
+            <!-- DIRECCION DE ENVIO -->
+            <!--
+            <div class="">
+                <label for="userFirstname">Calle
+                    <input class="box-ingrese-datos" type="text" name="userSreet" id="userSreet">
+                </label>
+            </div>
+            <div class="">
+                <label for="userFirstname">Numero
+                    <input class="box-ingrese-datos" type="number" name="userAdressNumber" id="userAdressNumber">
+                </label>
+            </div>
+            <div class="">
+                <label for="userFirstname">Codigo Postal
+                    <input class="box-ingrese-datos" type="text" name="userCP" id="userCP">
+                </label>
+            </div>
+            <div class="">
+                <label for="userFirstname">Pais de residencia
+                    <input class="box-ingrese-datos" type="text" name="userCountry" id="userCountry">
+                </label>
+            </div> -->
+            <div class="creatProd-buttom">
+                <button type="submit">Editar datos</button>
+            </div>
+    </form>
+</main>
+	<%- include('../partials/footer.ejs'); %>
+</body>
+</html>

@@ -108,7 +108,15 @@ const userController =  {
             user: req.session.userLogged
         });
 	},
-
+    profileEdit: (req,res) => {
+        return res.render('users/editProfile', {user: req.session.userLogged})
+    },
+    profleEdited: (req,res) => {
+        let userToLogin = User.findByField('email', req.body.email);
+        return res.render('users/userProfile', {
+            user: req.session.userLogged
+        });
+    },
     logout: (req, res) => {
             req.session.destroy();
         return res.redirect('/'); 

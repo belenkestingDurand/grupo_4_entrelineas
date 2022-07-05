@@ -268,5 +268,14 @@
   "password": "$2a$10$hp5ztx.IxeN1Snf29ic.dOUUDJIbNov4Qx1Vc2oJT32rj/oIWIzJG",
   "category": "user",
   "profilePic": "img-1656894481277-785793624.jpg"
+ },
+ {
+  "userId": 34,
+  "firstName": "Manuel",
+  "lastName": "Gago",
+  "email": "manuelmeg96@gmail.com",
+  "password": "$2a$10$u76NAPtWZbuvPTVjXHJtke6L0wy5gi0/cGRYphp0xu3f98AtswuGS",
+  "category": "user",
+  "profilePic": "img-1657054974695-787462444.jpg"
  }
 ]

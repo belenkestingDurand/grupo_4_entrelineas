@@ -9,28 +9,28 @@
 	<div class="up-colorBackgrownd-style">
 	</div>
 	<section>	
-	<section class="up-profilePicture">
-		<div class = "up-porfilePicture-div">
-			<img class = "up-porfilePicture-img" src="/img/users/<%= user.profilePic %>" alt="profile picture" >
-		</div>
+		<section class="up-profilePicture">
+			<div class = "up-porfilePicture-div">
+				<img class = "up-porfilePicture-img" src="/img/users/<%= user.profilePic %>" alt="profile picture" >
+			</div>
+		</section>
+		<section class = "up-data">
+			<h2 class="up-email-style"><%= user.email %> </h2>
+			<div class = "up-colorBackgrownd-gris up-personali">
+				<h6 class="up-100">Información personal</h6>
+				<h4 class="up-100"><%= user.firstName %>  <%= user.lastName %></h4>
+			</div>
+			<div class = "up-colorBackgrownd-gris up-direction">
+				<h6 class="up-100">Dirección de envio</h6>
+				<h4 class="up-100">calle</h4>
+				<h4 class="up-0-5">nro</h4>
+				<h4 class="up-0-5">cp</h4>
+				<h4 class="up-0-5">provincia</h4>
+				<h4 class="up-0-5">pais</h4>
+			</div>
+		</section>
+		<a href="/users/userProfile/<%= user.userId %>/edit"><input class="edit-button" type="button" value="Editar" ></a>
 	</section>
-	<section class = "up-data">
-		<h2 class="up-email-style"><%= user.email %> </h2>
-		<div class = "up-colorBackgrownd-gris up-personali">
-			<h6 class="up-100">Información personal</h6>
-			<h4 class="up-100"><%= user.firstName %>  <%= user.lastName %></h4>
-		</div>
-		<div class = "up-colorBackgrownd-gris up-direction">
-			<h6 class="up-100">Dirección de envio</h6>
-			<h4 class="up-100">calle</h4>
-			<h4 class="up-0-5">nro</h4>
-			<h4 class="up-0-5">cp</h4>
-			<h4 class="up-0-5">provincia</h4>
-			<h4 class="up-0-5">pais</h4>
-		</div>
-	</section>
-	</section>
-	<!-- //main -->
 </main>
 	
 	
