@@ -11,18 +11,16 @@
 
     <div class="sizing-carrito ordenar-carrito"><a href="/home"><img class="centrar-icono" src="/img/icono-home.png" alt="home"></a></div>
    
-    <nav class="header-navbar">
+    <nav class="header-navbar flex-box-texto" >
         <ul class="">
            
                  <li class="">
-                     <a class="" href="/users/login" id="dropUser" role="button"
+                     <a class="" href="/users/userProfile" id="dropUser" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
                          <img class= "login-img" src="/img/users/<%=locals.userLogged.profilePic %>">
                             <%= locals.userLogged.firstName %>
                      </a>
-                 <li class="" >
-                    <a class="" href="/users/userProfile">profile</a>
-                 </li>
+                
                 <li class="">
                      <a class="" href="/users/logout">Logout</a>
                 </li>

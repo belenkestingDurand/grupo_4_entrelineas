@@ -44,3 +44,13 @@
 3. Organización de tablero Trello.
 4. 1era distribución de tareas de acuerdo a la disponibilidad de tiempo.
 5. Programación de próxima reunión.
+
+## Reunión 29/06/2022
+1.Breve exposición de lo realizado por cada uno.
+2.Se trató la necesidad de corregir los headers para poder completar el login.
+3. Revisión y actualización de trello con distribución de lo pendiente.
+
+## Reunión 06/07/2022
+1. Breve exposición sobre lo adelantado de cada uno.
+2. Control del funcionamiento de los middlewares para cada caso.
+3. Actualización y distribución de los pendientes que ya en este caso, son opciónales.

@@ -23,17 +23,17 @@
     <nav class="header-navbar">
         <ul class="">
             <% if (locals.isLogged) { %>
-                 <li class="">
-                     <a class="" href="/users/login" id="dropUser" role="button">
-                         <img class= "login-img" src="/img/users/<%=locals.userLogged.profilePic %>">
-                            <%= locals.userLogged.firstName %>
-                     </a>
-                 <li class="" >
-                    <a class="" href="/users/userProfile">profile</a>
-                 </li>
-                <li class="">
-                     <a class="" href="/users/logout">Logout</a>
-                </li>
+                <div class="flex-box-texto">
+                    <li class="cont-pic-name">
+                        <a class="" href="/users/userProfile" >
+                            <img class= "login-img" src="/img/users/<%=locals.userLogged.profilePic %>">
+                                <%= locals.userLogged.firstName %>
+                        </a>
+                    </li>
+                    <li class="">
+                         <a class="" href="/users/logout">Logout</a>
+                    </li>
+                </div>
             <% } else { %>    
        
                 <li class=""><a class="nav-link" href="/users/register">Register</a></li>

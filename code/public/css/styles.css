@@ -32,6 +32,17 @@ a{
 
 
 /*navvar */
+.header-navbar {
+    font-size: 15px;
+    
+}
+.cont-pic-name{
+    width: 35%;
+}
+.header-pic-name {
+    margin: 0;
+    padding: 0;
+}
 
 .header-navbar ul {
     list-style: none;
@@ -1303,9 +1314,9 @@ text-align: center;
         margin-left: 5%;
     }
 
-    .ordenar-carrito {
+   /* .ordenar-carrito {
         order: 1;
-    }
+    }*/
 
     .sizing-carrito {
         height: 65%;
@@ -1510,10 +1521,10 @@ text-align: center;
         margin-right: 5%;
         margin-left: 5%;
     }
-
+/*
     .ordenar-carrito {
         order: 1;
-    }
+    }*/
 
     .sizing-carrito {
         height: 65%;
