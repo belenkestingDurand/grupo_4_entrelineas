@@ -1,5 +1,6 @@
 const express = require('express');
 const session = require('express-session');
+const cookieParser = require('cookie-parser');
 const app = express();
 const port = 3000;
 const path = require('path');
@@ -41,6 +42,8 @@ app.set('view engine', 'ejs')
 // para implementar metodo HTTP: Post
 app.use(express.urlencoded({ extended: false}))
 app.use(express.json())
+app.use(cookieParser());
+
 
 // para implementar metodos HTTP: Put & Delete
 const methodOverride = require('method-override')
