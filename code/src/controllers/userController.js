@@ -113,18 +113,23 @@ const userController =  {
     },
     profileEdited: (req,res) => {
         let errors = validationResult(req);
+      
         // 1er intento de devolver en caso de errores
         
-        let userToEdit = User.findByField('userId', req.params.id);
+        let userToEdit = User.findByPk(req.params.id);
+        
         let userChanges = {
-            firstName: req.body.firstName,
-            lastName: req.body.lastName,
+            firstName: req.body.userFirstName,
+            lastName: req.body.userLastName,
             oldEmail: req.body.userEmail, 
             newEmail: req.body.userNewEmail, 
             oldPassword: bcrypt.hashSync(req.body.userPassword,10),
             newpassword: bcrypt.hashSync(req.body.userNewPassword,10),
         }
-        // SI se agrego una imagen =>
+        console.log('errors, ', errors);
+        console.log('userToEdit', userToEdit);
+       
+    
         // if (req.file.profilePic){
         //     userChanges["profilePic"] = req.file.profilePic
         // }

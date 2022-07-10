@@ -10,13 +10,19 @@
     action="/users/userProfile/<%= user.userId %>/edit?_method=PUT" 
     method="post" enctype="multipart/form-data" >
             <div class="">
-                <figure class="">
+                <section class="up-profilePicture">
+                    <div class = "up-porfilePicture-div">
+                        <img class = "up-porfilePicture-img" src="/img/users/<%= user.profilePic %>" alt="profile picture" >
+                    </div>
+                    <input type="file" name="profilePic" value="<%= user.profilePic%>" />
+                </section>
+               <!-- <figure class="">
                     <img 
                     class="up-porfilePicture-img" 
                     src="/img/users/<%= user.profilePic %>""
                     alt="profile picture">
                 </figure>
-                <br>
+                <br>-->
                 <!-- <label for="profilePic">Cambiar imagen de perfil:
                     <input type="file" name="profilePic" value="<%= user.profilePic %>" />
                 </label> -->

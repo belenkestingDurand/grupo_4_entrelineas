@@ -17,16 +17,28 @@ const User = {
 
     findAll: function () {
         let parsedData = JSON.parse(fs.readFileSync(this.fileName, 'utf-8'));
+       
         return parsedData;
     },
 
     findByField: function (field, text) {
         let allUsers = this.findAll();
         let userFound = allUsers.find(user => user[field] === text);
+    
+        
         return userFound;
     },
 
-    create: function (userData) {
+    findByPk: function(key) {
+        let allUsers = this.findAll();
+       let userFound = allUsers.find(user => user.userId == key);
+        
+       
+        return userFound;
+
+    },
+
+    create: function(userData) {
         let allUsers = this.findAll();
         let newUser = {
             userId: this.generateId(),
@@ -46,5 +58,5 @@ const User = {
         return true;
     }
 }
-
+console.log(User.findByPk(35));
 module.exports = User;

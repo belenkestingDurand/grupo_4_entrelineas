@@ -76,5 +76,18 @@
     "size": "",
     "pages": "",
     "more": ""
+  },
+  {
+    "id": 7,
+    "name": "Como educar a tu bebe",
+    "type": "Libro",
+    "author": "Doctora Fany Lopez",
+    "price": "10000",
+    "gender": "Medicina autoayuda",
+    "picture": "/img/products/productImg-1657459177808.jpg",
+    "opinion": "ta bueno",
+    "size": "10 x 30",
+    "pages": "150",
+    "more": "BUEN LIBRO"
   }
 ]
