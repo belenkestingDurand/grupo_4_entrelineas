@@ -12,7 +12,7 @@ const valRegM = require('../middlewares/valRegM');
 const valLogM = require('../middlewares/valLogM');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
-const userController = require('../controllers/userController');
+const valEditProfM = require('../middlewares/valEditProfM');
 
 //- LOGIN DE USUARIO
 router.get('/login',guestMiddleware, userCtrl.showLogin)
@@ -27,7 +27,7 @@ router.get('/userProfile',authMiddleware ,userCtrl.profile)
 
 //- EDICION DEL PERFIL DE USUARIO
 router.get('/userProfile/:id/edit', authMiddleware, userCtrl.profileEdit)
-router.put('/userProfile/:id/edit', upload.single('profilePic'),  authMiddleware, userCtrl.profleEdited)
+router.put('/userProfile/:id/edit', authMiddleware, valEditProfM, upload.single('profilePic'), userCtrl.profileEdited)
 
 //Logout
 router.get('/logout', userCtrl.logout)

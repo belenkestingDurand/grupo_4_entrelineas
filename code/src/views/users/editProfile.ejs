@@ -7,7 +7,7 @@
 <main class="up-main">
 	<div class="up-colorBackgrownd-style"></div>
     <form class="createpr-form-padding-left"
-    action="/users/<%= user.userId %>/edit?_method=PUT" 
+    action="/users/userProfile/<%= user.userId %>/edit?_method=PUT" 
     method="post" enctype="multipart/form-data" >
             <div class="">
                 <figure class="">
@@ -16,18 +16,71 @@
                     src="/img/users/<%= user.profilePic %>""
                     alt="profile picture">
                 </figure>
-                <input type="file" name="profilePic" value="<%= user.profilePic %>" />
+                <br>
+                <!-- <label for="profilePic">Cambiar imagen de perfil:
+                    <input type="file" name="profilePic" value="<%= user.profilePic %>" />
+                </label> -->
             </div>
+            <br>
             <div class="">
-                <label for="userFirstname">Nombre
+                <label for="userFirstName">Cambiar Nombre:
                     <input class="box-ingrese-datos" type="text" name="userFirstName" id="userFirstName" value="<%= user.firstName %>">
                 </label>
             </div>
             <div class="">
-                <label for="userFirstname">Apellido
+                <label for="userLastName">Cambiar Apellido:
                     <input class="box-ingrese-datos" type="text" name="userLastName" id="userLastName" value="<%= user.lastName %>">
                 </label>
             </div>
+            <br>
+            <p>Para cambiar el email, primero ingrear la actual y luego el nuevo email deseado</p>
+            <div class="">
+                <label for="userEmail">Email actual:
+                    <input class="box-ingrese-datos" type="text" name="userEmail" id="userEmail" 
+                    placeholder="Ingrese su email actual">
+                </label>
+                <% if (locals.errors && errors.userEmail) { %>
+                    <div class="text-red">
+                        <%= errors.userEmail.msg %>
+                    </div>
+                <% } %>
+            </div>
+            <div class="">
+                <label for="userNewEmail">Email nuevo:
+                    <input class="box-ingrese-datos" type="text" name="userNewEmail" id="userNewEmail" 
+                    placeholder="Ingrese el nuevo email que desee utilizar">
+                </label>
+                <% if (locals.errors && errors.userNewEmail) { %>
+                    <div class="text-red">
+                        <%= errors.userNewEmail.msg %>
+                    </div>
+                <% } %>
+            </div>
+            <br>
+            <p>Para cambiar la contraseña, primero ingresar la actual y luego la nueva contraseña deseada</p>
+            <div class="">
+                <label for="userPassword">Contraseña actual:
+                    <input class="box-ingrese-datos" type="text" name="userPassword" id="userPassword" 
+                    placeholder="Ingrese su contraeña actual">
+                </label>
+                <% if (locals.errors && errors.userPassword) { %>
+                    <div class="text-red">
+                        <%= errors.userPassword.msg %>
+                    </div>
+                <% } %>
+            </div>
+            <div class="">
+                <label for="userNewPassword">Contraseña nueva:
+                    <input class="box-ingrese-datos" type="text" name="userNewPassword" id="userNewPassword"
+                    placeholder="Ingrese la nueva contraseña que desea utilizar">
+                </label>
+                <% if (locals.errors && errors.userNewPassword) { %>
+                    <div class="text-red">
+                        <%= errors.userNewPassword.msg %>
+                    </div>
+                <% } %>
+            </div>
+
             <!-- DIRECCION DE ENVIO -->
             <!--
             <div class="">
@@ -36,17 +89,17 @@
                 </label>
             </div>
             <div class="">
-                <label for="userFirstname">Numero
+                <label for="userAdressNumber">Numero
                     <input class="box-ingrese-datos" type="number" name="userAdressNumber" id="userAdressNumber">
                 </label>
             </div>
             <div class="">
-                <label for="userFirstname">Codigo Postal
+                <label for="userCP">Codigo Postal
                     <input class="box-ingrese-datos" type="text" name="userCP" id="userCP">
                 </label>
             </div>
             <div class="">
-                <label for="userFirstname">Pais de residencia
+                <label for="userCountry">Pais de residencia
                     <input class="box-ingrese-datos" type="text" name="userCountry" id="userCountry">
                 </label>
             </div> -->
