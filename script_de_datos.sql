@@ -1,0 +1,1 @@
+--Aca vamos a crear todas las tablas con CREATE TABLE
