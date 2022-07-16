@@ -4,9 +4,15 @@ const cookieParser = require('cookie-parser');
 const app = express();
 const port = 3000;
 const path = require('path');
+const routesMain = require('./routes/home')
+const routesProducts = require('./routes/products')
+const routesUsers = require('./routes/users')
+const publicPath = path.resolve(__dirname,'../public');
+const methodOverride = require('method-override')
 
 //middleware de a nivel de app para chequear usuario logueado
 const userLoggedMiddleware = require('./middlewares/userLogedMiddleware');
+const recodameMiddleware = require('./middlewares/rememberme');
 
 // middleware de session
 app.use(session({ 
@@ -15,20 +21,10 @@ app.use(session({
     saveUninitialized: false,
 }));
 
-app.use(userLoggedMiddleware);
+
 //public
-    const publicPath = path.resolve(__dirname,'../public');
-    app.use(express.static(publicPath));
-
-//http
-//* dispuestas en routes/home.js
-    //  '/' '/home' '/detalle' '/carrito'
     
-//* dispuestas en routes/user.js
-    // '/login' '/register' '/userProfile'
-
-//* dispuestos en routes/admin.js
-    // '/crearProducto'
+    app.use(express.static(publicPath));
 
 
 
@@ -43,16 +39,16 @@ app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: false}))
 app.use(express.json())
 app.use(cookieParser());
+app.use(userLoggedMiddleware);
+app.use(recodameMiddleware)
 
 
 // para implementar metodos HTTP: Put & Delete
-const methodOverride = require('method-override')
+
 app.use(methodOverride('_method'))
 
 //- ROUTES FOLDER
-const routesMain = require('./routes/home')
-const routesProducts = require('./routes/products')
-const routesUsers = require('./routes/users')
+
 
 app.use('/', routesMain)
 app.use('/products', routesProducts)

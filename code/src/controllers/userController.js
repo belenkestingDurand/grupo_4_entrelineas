@@ -2,6 +2,7 @@ const { validationResult} = require('express-validator');
 const User = require('../models/User');
 const bcrypt = require('bcryptjs')
 
+
 // OBJECT WITH DETAILED HTML DIRECTIONS
 
 
@@ -24,15 +25,13 @@ const userController =  {
         }
         // busco el email en la base de datos
         let userToLogin = User.findByField('email', req.body.email);
-         
         if(userToLogin) {
             //acciones a seguir si si lo encontro al mail en la base
             if (bcrypt.compareSync(req.body.password, userToLogin.password)){
-                // por ahora va a listado de prod pero debe ir a userprofile 
-                // cuando esté hecha la vista
                 delete userToLogin.password
                 req.session.userLogged = userToLogin
-                return res.redirect('/');
+
+                return res.redirect('/users/userProfile');
             }
             return res.render('users/login',{
                 errors: {
@@ -50,7 +49,10 @@ const userController =  {
                 }
             }
         })
+       
     },
+
+
     
     //'register.ejs' IN 'views/users' FOLDER
     showRegister: (req, res) => {
