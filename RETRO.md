@@ -101,3 +101,29 @@ Apoyar a los miembros del equipo con divisiones de trabajo acorde a las tareas p
 
 No dejar cambios sin comentar.
 
+
+## 13/07/2022
+Retro Sprint 5
+
+**Comenzar a hacer:**
+
+Repartir las tareas que quedaron viejas (OPCIONALES), tareas de mejora de sprints.
+Comenzar a usar más git como herramienta de consulta de cambios y empezar a usar branches para trabajar, así podemos sacar mas jugo a la herramienta.
+
+**Hacer más: **
+Empezar a pensar customer journey de la aplicación para poder codear de una forma mas ordenada.
+Seguir con un ritmo constante y juntarnos.
+
+**Continuar haciendo: **
+Poner comentarios para que el código sea más entendible para el equipo.
+Apoyar a los miembros del equipo y dividir el trabajo para que todos puedan llevar sus tareas y sus cosas personales.
+Hacer un resumen en slack de lo que venimos haciendo para que nuestros compañeros sepan qué hicimos y no hacemos nos pisamos. Dividimos mejor las tareas y revisamos los cambios. Describir las tareas de manera detallada y los errores que surgieron para que todo el equipo este al tanto.
+Usar Tello para la organización de tareas, seguir subdividiendo las tareas en tareas chicas pequeñas.
+
+
+**Dejar de hacer: **
+Patear los cambios que tenemos que hacer de CSS.
+
+**Cometarios extra: **
+Notamos que mejoramos mucho en las reuniones, vamos al punto, las hacemos más cortas. Aprendimos a usar Slack como herramienta de apoyo y comunicación y nos sirve mucho.
+Trello está siendo una herramienta funcional, sobre todo subdividir las tareas.

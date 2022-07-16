@@ -54,3 +54,19 @@
 1. Breve exposición sobre lo adelantado de cada uno.
 2. Control del funcionamiento de los middlewares para cada caso.
 3. Actualización y distribución de los pendientes que ya en este caso, son opciónales.
+
+## Reunión 13/07/2022
+
+**Resumen**
+1. Realización de la Retro.
+2. Lectura de consignas del 6to sprint.
+3. Interpretación de consignas.
+3. Organización de tablero Trello.
+4. Se dispuso que cada uno realizara el diseño de las entidades con sus relaciones, campos y claves a fin de comprender bien su estructura para ser corregido y puesto a punto en la próxima reunión.
+5. Programación de próxima reunión para 15/07/2022.
+
+## Reunión 15/07/2022
+1.Corrección del diseño en drawio.
+2. Repartición de las entidades a crear mediante  mysql workbench.
+3. Actualización de tablero trello.
+4. Fijación de próxima reunión para lunes 18 donde se explicará brevemente lo realizado y se reasignaran tareas futuras.
