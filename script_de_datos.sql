@@ -130,3 +130,40 @@ CREATE TABLE 'shippings' (
     PRIMARY KEY (id),
     FOREIGN KEY (id_order) REFERENCES orders(id)
 )
+-- Table structure for table 'userCategories'
+DROP TABLE IF EXISTS entrelineas.userCategory;
+CREATE TABLE entrelineas.userCategory (
+    id INT UNSIGNED  NOT NULL auto_increment,
+    name VARCHAR(100),
+     PRIMARY KEY (id));
+
+
+-- Table structure for table 'users'
+DROP TABLE IF EXISTS entrelineas.users;
+CREATE TABLE entrelineas.users (
+    id INT UNSIGNED  NOT NULL auto_increment,
+    firstName VARCHAR(100) NOT NULL,
+    lastName VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    password VARCHAR(50) NOT NULL,
+    profilePic VARCHAR(100),
+    id_userCategory int UNSIGNED,
+    PRIMARY KEY (id),
+    FOREIGN KEY (id_userCategory) REFERENCES userCategory(id)
+);
+-- Table structure for table 'usersAdress'
+DROP TABLE IF EXISTS entrelineas.usersAdress;
+CREATE TABLE entrelineas.usersAdress (
+    id INT UNSIGNED  NOT NULL auto_increment,
+    county VARCHAR(100) NOT NULL,
+    province VARCHAR(100) NOT NULL,
+    city VARCHAR(100) NOT NULL,
+    street VARCHAR(50) NOT NULL,
+    number VARCHAR(100) NOT NULL,
+    flor INTEGER,
+    dto VARCHAR(100),
+    id_user int UNSIGNED,
+    PRIMARY KEY (id),
+    FOREIGN KEY (id_user) REFERENCES users(id)
+);
+
