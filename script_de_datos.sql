@@ -70,3 +70,63 @@ CREATE TABLE 'products'(
 --
 -- Dumping data for table 'products'
 --
+-- Table structure for table 'orders'
+DROP TABLE IF EXISTS 'orders'
+CREATE TABLE 'orders' (
+    id INT UNSIGNED  NOT NULL AUTO INCREMENT,
+    createdAt DATETIME NOT NULL,
+    total INT NOT NULL
+    -- aca faltaria la tabla de 'payments'
+    id_payment INT UNSIGNED,
+    id_user INT UNSIGNED,
+    PRIMARY KEY (id),
+    FOREIGN KEY (id_user) REFERENCES users(id)
+)
+
+-- Table structure for table 'orderDetails'
+DROP TABLE IF EXISTS 'orderDetails'
+CREATE TABLE 'orderDetails' (
+    id INT UNSIGNED  NOT NULL AUTO INCREMENT,
+    id_product INT UNSIGNED,
+    item VARCHAR(200) NOT NULL,
+    description TEXT ,
+    price INT NOT NULL,
+    id_order INT UNSIGNED,
+    PRIMARY KEY (id),
+    FOREIGN KEY (id_order) REFERENCES orders(id)
+)
+
+-- Table structure for table 'cartsDetails'
+DROP TABLE IF EXISTS 'cartsDetails'
+CREATE TABLE 'cartsDetails' (
+    id INT UNSIGNED  NOT NULL AUTO INCREMENT,
+    id_product INT UNSIGNED,
+    item VARCHAR(200) NOT NULL,
+    description TEXT,
+    price INT NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (id_product) REFERENCES carts(id)
+)
+
+-- Table structure for table 'carts
+DROP TABLE IF EXISTS 'cartsDetails'
+CREATE TABLE 'cartsDetails' (
+    id INT UNSIGNED  NOT NULL AUTO INCREMENT,
+    id_user INT UNSIGNED,
+    id_cartDetails INT UNSIGNED,
+    PRIMARY KEY (id),
+    FOREIGN KEY (id_user) REFERENCES users(id)
+    FOREIGN KEY (id_cartDetails) REFERENCES cartsDetails(id)
+)
+
+-- Table structure for table 'shippings'
+DROP TABLE IF EXISTS 'shippings'
+CREATE TABLE 'shippings' (
+    id INT UNSIGNED  NOT NULL AUTO INCREMENT,
+    id_order INT UNSIGNED,
+    createdAt DATETIME NOT NULL,
+    status VARCHAR(20) NOT NULL,
+    updatedAt DATETIME,
+    PRIMARY KEY (id),
+    FOREIGN KEY (id_order) REFERENCES orders(id)
+)
