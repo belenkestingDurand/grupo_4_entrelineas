@@ -70,3 +70,9 @@
 2. Repartición de las entidades a crear mediante  mysql workbench.
 3. Actualización de tablero trello.
 4. Fijación de próxima reunión para lunes 18 donde se explicará brevemente lo realizado y se reasignaran tareas futuras.
+
+## Reunión 18/07/2022
+1.Corrección de entidades creadas mediante mysql workbench.
+2. Se reparten modelos para su creación
+3. Actualización de tablero trello.
+4. Fijación de próxima reunión para viernes 22 donde se explicará brevemente lo realizado y se reasignaran tareas futuras.
