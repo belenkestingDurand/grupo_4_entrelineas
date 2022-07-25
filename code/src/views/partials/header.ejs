@@ -16,32 +16,31 @@
         <h6 class="margin-right-text"><a>E-books</a></h6>
         <h6 class="margin-right-text"><a>Productos</a></h6>
     </div>
+
+    <div class="head_logos_login">
+
     <div class="sizing-carrito ordenar-carrito">
         <a href="/carrito"><img class="centrar-icono" src="/img/carrito.jpg" 
             alt="carrito"></a>
     </div>
-    <nav class="header-navbar">
-        <ul class="">
+   
+     
             <% if (locals.isLogged) { %>
-                <div class="flex-box-texto">
-                    <li class="cont-pic-name">
-                        <a class="" href="/users/userProfile" >
+              
+                    <div class="cont-pic-name">
+                        <a class="user_profile_picture_nav" href="/users/userProfile" >
                             <img class= "login-img" src="/img/users/<%=locals.userLogged.profilePic %>">
-                                <%= locals.userLogged.firstName %>
                         </a>
-                    </li>
-                    <li class="">
-                         <a class="" href="/users/logout">Logout</a>
-                    </li>
-                </div>
+                    </div>
+                    <div class="nav-bot-header">
+                        <a class="nav-link" href="/users/logout">Logout</a>
+                   </div>
+                   
             <% } else { %>    
-       
-                <li class=""><a class="nav-link" href="/users/register">Register</a></li>
-                <li class=""><a class="nav-link" href="/users/login">Login</a></li>
+                <div class="nav-bot-header"><a class="nav-link" href="/users/login">Login</a></div>
             <% } %>
-        </ul>
-    </nav>
-
+    
+        </div>
     
       
     

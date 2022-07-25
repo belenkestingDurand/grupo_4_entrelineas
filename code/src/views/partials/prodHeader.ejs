@@ -8,25 +8,40 @@
             alt="menu-paty">
     </div>
     <div class="sizing-logo"><a href="/"><img class="centrar-logo" src="/img/logo-entre-lineas.jpg" alt="entreLineasLogo"></a></div>
+    
+    <div class="lp-div-titulo-gral"><h3 class="creatprod-title">LISTADO DE PRODUCTOS</h3></div>
+    <section class="lp-header-section">
 
-    <div class="sizing-carrito ordenar-carrito"><a href="/home"><img class="centrar-icono" src="/img/icono-home.png" alt="home"></a></div>
+        <form class="nav-search" action="" method="GET" role="search" >
+        <input  class="box-ingrese-datos" type="text" placeholder="Buscar">
+        <button type="submit" class="nav-search-btn" tabindex="3">
+            <span class="material-symbols-outlined"><img src="/img/outline_search_white_24dp.png" alt="search"></span>
+        </button>
+    </form>
+
+    <div class="creatProd-buttom"> 
+        <a href ='/products/create'><button class="create-buttom"><span class="material-symbols-outlined"><img class= "add-buttom" src="/img/outline_add_white_24dp.png" alt="add"></span></button></a>
+    </div>
+    </section>
    
-    <nav class="header-navbar flex-box-texto" >
-        <ul class="">
-           
-                 <li class="">
-                     <a class="" href="/users/userProfile" id="dropUser" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                         <img class= "login-img" src="/img/users/<%=locals.userLogged.profilePic %>">
-                            <%= locals.userLogged.firstName %>
-                     </a>
-                
-                <li class="">
-                     <a class="" href="/users/logout">Logout</a>
-                </li>
-            
-        </ul>
-    </nav>
+    <div class="head_logos_login">
+         
+                <% if (locals.isLogged) { %>
+                  
+                        <div class="cont-pic-name">
+                            <a class="user_profile_picture_nav" href="/users/userProfile" >
+                                <img class= "login-img" src="/img/users/<%=locals.userLogged.profilePic %>">
+                            </a>
+                        </div>
+                        <div class="nav-bot-header">
+                            <a class="nav-link" href="/users/logout">Logout</a>
+                       </div>
+                       
+                <% } else { %>    
+                    <div class="nav-bot-header"><a class="nav-link" href="/users/login">Login</a></div>
+                <% } %>
+        
+    </div>
 
 
 </header>
