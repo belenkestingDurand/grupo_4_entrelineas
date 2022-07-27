@@ -1,43 +1,40 @@
 
 module.exports = (sequelize, dataTypes) => {
 
-    let alias = 'UsersAdress';
+    let alias = 'Users';
     let cols = {
         id: {
             autoIncrement: true,
             primaryKey: true,
             type: dataTypes.INTEGER,
         },
-        country: { 
+        firstName: { 
             type: dataTypes.VARCHAR(100),
         },
-        province: { 
+        lastName: { 
             type: dataTypes.VARCHAR(100),
         },
-        city: { 
+        email: { 
             type: dataTypes.VARCHAR(100),
         },
-        street: { 
+        password: { 
             type: dataTypes.VARCHAR(50),
         },
-        number: { 
-            type: dataTypes.VARCHAR(100),
-        },
-        flor: { 
-            type: dataTypes.INTEGER,
-        },
-        dto: { 
+        profilePic: { 
             type: dataTypes.VARCHAR(100),
         }
     };
     let config = {
-        tableName: "userAdress"
+        tableName: "users"
     
     };
     
-    const UserAdress = sequelize.define(alias, cols, config);
+    const Users = sequelize.define(alias, cols, config);
 
-    UserAdress.belongsTo(Users, {as: "Users", foreignKey: "id_user"})
+    Users.hasMany(userAdress, {as: "Adress", foreignKey: "id_user"})
+    Users.belongsTo(userCategory, {as: "UserCategory", foreignKey: "id_userCategory"})
     
     return UserAdress;
     }
+
+    
