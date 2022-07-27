@@ -1,6 +1,7 @@
 const { validationResult} = require('express-validator');
 const User = require('../models/User');
-const bcrypt = require('bcryptjs')
+const bcrypt = require('bcryptjs');
+const db = require('../database/models');
 
 
 // OBJECT WITH DETAILED HTML DIRECTIONS
@@ -9,6 +10,7 @@ const bcrypt = require('bcryptjs')
 const userController =  {
     //'login.ejs' IN 'views/users' FOLDER
     showLogin: (req, res) => {
+        db.Users.findAll
         return res.render('users/login')
     },
 

@@ -11,6 +11,7 @@ const homeController =  {
     //'home.ejs' IN 'views/products' FOLDER
     home: (req, res) => {
         let books = JSON.parse(datos)
+        
         return res.render('products/home',{books: books})
     },
     //'detalleDeProducto.ejs' IN 'views/products' FOLDER
