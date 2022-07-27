@@ -18,7 +18,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.VARCHAR(100),
         },
         password: { 
-            type: dataTypes.VARCHAR(50),
+            type: dataTypes.VARCHAR(200),
         },
         profilePic: { 
             type: dataTypes.VARCHAR(100),
@@ -37,4 +37,3 @@ module.exports = (sequelize, dataTypes) => {
     return UserAdress;
     }
 
-    
