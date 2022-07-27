@@ -9,7 +9,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER,
         },
         name: { 
-            type: dataTypes.STRING(100),
+            type: dataTypes.VARCHAR(100),
         }
     };
     let config = {
