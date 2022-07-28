@@ -58,7 +58,7 @@ CREATE TABLE entrelineas.users (
     firstName VARCHAR(100) NOT NULL,
     lastName VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL,
-    password VARCHAR(50) NOT NULL,
+    password VARCHAR(200) NOT NULL,
     profilePic VARCHAR(100),
     id_userCategory int UNSIGNED,
     PRIMARY KEY (id),
@@ -85,7 +85,7 @@ DROP TABLE IF EXISTS products;
 CREATE TABLE products(
     id INT UNSIGNED  NOT NULL AUTO_INCREMENT,
     name VARCHAR(50) NOT NULL,
-    price DECIMAL (5,2) UNSIGNED,
+    price DECIMAL (11,2) UNSIGNED,
     size VARCHAR(29),
     pages SMALLINT UNSIGNED,
     opinion VARCHAR(500),
