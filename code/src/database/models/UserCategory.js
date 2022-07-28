@@ -9,7 +9,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER,
         },
         name: { 
-            type: dataTypes.VARCHAR(100),
+            type: dataTypes.STRING(100),
         }
     };
     let config = {
@@ -18,9 +18,13 @@ module.exports = (sequelize, dataTypes) => {
     };
     
     const UserCategory = sequelize.define(alias, cols, config);
-
-    UserCategory.hasMany(Users, {as: "users", foreignKey: "id_userCategory"})
+    UserCategory.associate = function(models) {  
+        UserCategory.hasMany(models.User, {
+            as: "users", 
+            foreignKey: "id_userCategory"
+        })
     
-    return UserCategory;
+    
     }
-
+    return UserCategory;
+}

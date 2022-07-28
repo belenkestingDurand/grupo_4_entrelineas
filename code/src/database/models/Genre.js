@@ -4,12 +4,12 @@ module.exports = (sequelize, dataTypes) => {
     let cols = {
         id:{
             type: dataTypes.INTEGER.UNSIGNED,
-            primariyKey: true,
+            primaryKey: true,
             allowNull: false,
             autoIncrement: true
         },
         name: {
-            type: dataTypes.VARCHAR(40),
+            type: dataTypes.STRING(40),
             allowNull: false
         }
     };

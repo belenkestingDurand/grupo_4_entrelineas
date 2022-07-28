@@ -4,12 +4,12 @@ module.exports = (sequelize, dataTypes) => {
     let cols = {
         id:{
             type: dataTypes.INTEGER.UNSIGNED,
-            primariyKey: true,
+            primaryKey: true,
             allowNull: false,
             autoIncrement: true
         },
         title: {
-            type: dataTypes.VARCHAR(40),
+            type: dataTypes.STRING(40),
             allowNull: false
         }
     };
@@ -18,7 +18,7 @@ module.exports = (sequelize, dataTypes) => {
             timestamps: false
     };
     const Editorial = sequelize.define(alias, cols, config);
-    Editorial.associate = function (models) {
+    Editorial.associate = function(models) {
         Editorial.hasMany(models.Product, { 
             as: "products",
             foreignKey: 'id_editorial',    

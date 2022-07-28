@@ -1,43 +1,49 @@
 
 module.exports = (sequelize, dataTypes) => {
 
-    let alias = 'UsersAdress';
+    let alias = 'UserAdress';
     let cols = {
         id: {
-            autoIncrement: true,
-            primaryKey: true,
             type: dataTypes.INTEGER,
+            autoIncrement: true,
+            primaryKey: true
         },
         country: { 
-            type: dataTypes.VARCHAR(100),
+            type: dataTypes.STRING(100),
         },
         province: { 
-            type: dataTypes.VARCHAR(100),
+            type: dataTypes.STRING(100),
         },
         city: { 
-            type: dataTypes.VARCHAR(100),
+            type: dataTypes.STRING(100),
         },
         street: { 
-            type: dataTypes.VARCHAR(50),
+            type: dataTypes.STRING(50),
         },
         number: { 
-            type: dataTypes.VARCHAR(100),
+            type: dataTypes.STRING(100),
         },
         flor: { 
             type: dataTypes.INTEGER,
         },
         dto: { 
-            type: dataTypes.VARCHAR(100),
+            type: dataTypes.STRING(100),
         }
     };
     let config = {
-        tableName: "userAdress"
+        tableName: "usersAdress",
+        timestamps:false
     
     };
     
     const UserAdress = sequelize.define(alias, cols, config);
-
-    UserAdress.belongsTo(Users, {as: "Users", foreignKey: "id_user"})
+    UserAdress.associate = function(models) {
+        UserAdress.belongsTo(models.User, {
+            as: "Users", 
+            foreignKey: "id_user"
+        })
+    }
+    
     
     return UserAdress;
     }
