@@ -1,4 +1,4 @@
-const User = require('../models/User');
+const User = require('../modelo/User');
 
 function recordameMiddleware(req, res, next){
     if(req.body.recuerdame == "on"){
