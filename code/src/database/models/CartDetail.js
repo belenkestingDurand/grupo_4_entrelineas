@@ -2,13 +2,13 @@ module.exports = (sequelize, dataTypes) => {
     let alias = 'CartDetail';
     let cols = {
         id:{
-            type: dataTypes.INTEGER.UNSGINED,
+            type: dataTypes.INTEGER,
             primaryKey:true,
             allowNull:false,
             autoIncrement: true
         },
         id_product:{
-            type: dataTypes.INTEGER.UNSGINED,
+            type: dataTypes.INTEGER,
         },
         item:{
             type: dataTypes.STRING(200),

@@ -2,7 +2,7 @@ module.exports = (sequelize, dataTypes) => {
     let alias = 'Order'
     let cols = {
         id:{
-            type: dataTypes.INTEGER.UNSGINED,
+            type: dataTypes.INTEGER,
             primaryKey:true,
             allowNull:false,
             autoIncrement: true
@@ -12,10 +12,10 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         },
         id_user:{
-            type: dataTypes.INTEGER.UNSGINED,
+            type: dataTypes.INTEGER,
         },
         id_payment: {
-            type: dataTypes.INTEGER.UNSGINED,
+            type: dataTypes.INTEGER,
         },
         created_at:{
             type: dataTypes.DATE,
