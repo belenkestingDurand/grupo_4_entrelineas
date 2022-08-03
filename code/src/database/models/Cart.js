@@ -17,9 +17,9 @@ module.exports = (sequelize, dataTypes) => {
     let config = {
         tableName: 'carts',
         timestamps: false
-    }
+    };
 
-    const Cart = sequelize.define(alias,cols,config)
+    const Cart = sequelize.define(alias, cols, config)
 
     // Asociaciones
     Cart.associate = (models) => {
