@@ -2,16 +2,16 @@ module.exports = (sequelize, dataTypes) => {
     let alias = 'Cart'
     let cols = {
         id:{
-            type: dataTypes.INTEGER.UNSGINED,
+            type: dataTypes.INTEGER,
             primaryKey:true,
             allowNull:false,
             autoIncrement: true
         },
         id_user:{
-            type: dataTypes.INTEGER.UNSGINED,
+            type: dataTypes.INTEGER,
         },
         id_cartDetails: {
-            type: dataTypes.INTEGER.UNSGINED,
+            type: dataTypes.INTEGER,
         }
     }
     let config = {
