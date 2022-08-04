@@ -72,39 +72,39 @@ const userController =  {
                 oldData: req.body
             });
         }
-        let existUser = User.findByField('email', req.body.email);
-        // chequeo que no se registre dos veces el mismo email
-        if (existUser) {
-            console.log('el usuario ya existia');
-            return res.render('users/register', {
-                errors:{
-                    email: {
-                        msg: 'Este email ya está registrado'
-                    }
-                },
-                oldData: req.body
-            });
-
-        }
-        // asigno los datos cargados por el usuario en register y validados
-        // a variable userToCreate
-        let userToCreate = {
-			firstName: req.body.firstName,
-            lastName: req.body.lastName,
-            email: req.body.email,
-            password: bcrypt.hashSync(req.body.confpass,10),
-            category: "user",
-			profilePic: req.file.filename
-		}
-		
-        // guardo el usuario nuevo en el archivo users.json
-		let userCreated = User.create(userToCreate);
-        console.log('usuario correctamente grabado en json', userCreated)
-	
-       
-        //redirijo a logín para que usuario nuevo pueda acceder
-        return res.redirect('/users/login')
-
+        db.User.findOne({where: {email: req.body.email}})
+        .then(function(existUser){
+            // chequeo que no se registre dos veces el mismo email
+                if (existUser) {
+                    console.log('el usuario ya existia');
+                    return res.render('users/register', {
+                        errors:{
+                            email: {
+                                msg: 'Este email ya está registrado'
+                            }
+                        },
+                        oldData: req.body
+                    })
+                }
+                else{
+                    // asigno los datos cargados por el usuario en register y validados
+                // a variable userToCreate
+                let userToCreate = {
+                    firstName: req.body.firstName,
+                    lastName: req.body.lastName,
+                    email: req.body.email,
+                    password: bcrypt.hashSync(req.body.confpass,10),
+                    profilePic: req.file.filename
+                }
+                
+                // guardo el usuario nuevo en el archivo users.json
+                db.User.create(userToCreate)
+                .then(function(resp){
+                    //redirijo a logín para que usuario nuevo pueda acceder
+                    return res.render('users/login')
+                })
+                }
+    }) 
 
     },
     profile: (req, res) => {
