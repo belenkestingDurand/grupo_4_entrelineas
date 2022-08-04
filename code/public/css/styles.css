@@ -590,7 +590,7 @@ article .add-cart-button {
 .box-ingrese-datos {
     margin: 1px 0px 3px 10px;
     height: 30px;
-    width: 75%;
+    width: 70%;
     padding: 5px;
     border-radius: 4px;
     background-color: #f1f1f1;
@@ -976,15 +976,13 @@ footer {
 }
 .creatProd-buttom {
     font-size: 15px;
-    width: 10%;
+    width: 30px;
+    height: 40px;
     margin-right: 10px;
     margin-left: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 35%;
-    margin-top: 30px;
-    margin-bottom: 20px;
 }
 .lp-header-section{
     display: flex;
@@ -993,19 +991,21 @@ footer {
     justify-content: space-between;
 }
 .lp-div-titulo-gral{
-    width: 100%;
+    width: 40%;
+    display: none;
 }
 .texarea-saizing{
     width: 75%;
     height: 90px;
 }
 .nav-search{
-    width: 85%;
+    width: 100vw;
     margin-top: 5px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    order: 2;
 }
 
 .create-buttom {
@@ -1054,6 +1054,8 @@ footer {
     flex-wrap: wrap;
     margin-bottom: 5px;
     margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
     border: solid 1px #EEEEEE ;
 }
 .lp-div-titulo-producto{
@@ -1143,7 +1145,8 @@ footer {
     font-family: arvo;
 }
 .add-buttom {
-    width: 50%;
+    width: 30px;
+    height: 25px;
 }
 
 /* form de editar un producto */
@@ -1164,6 +1167,9 @@ footer {
 
     .login-auth-page-card {
         max-width: 450px;
+    }
+    .nav-search{
+       
     }
 
 }
@@ -1243,6 +1249,12 @@ footer {
 .up-0-5{
 width: 45%;
 text-align: center;
+}
+.listarProducts-section{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 /*Desktop*/
@@ -1348,6 +1360,11 @@ text-align: center;
         width:250px;
         align-items: center;
         justify-content: space-around;
+    }
+
+    .nav-search{
+        width: 40%;
+        order: 0;
     }
 
    /* .ordenar-carrito {

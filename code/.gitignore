@@ -9,3 +9,6 @@ node_modules
 
 #Igonre file related to API keys
 .env
+
+#Igonre dtabase config file
+ database/config/config.js

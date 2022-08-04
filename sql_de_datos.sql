@@ -1,4 +1,3 @@
-
 -- LOCK TABLES `actor_episode` WRITE;
 -- UNLOCK TABLES;
 -- INSERT INTO `actors` VALUES (1,NULL,NULL,'Sam','Worthington',7.5,1),(2,NULL,NULL,'Zoe','Saldana',5.5,2),
@@ -44,11 +43,11 @@ INSERT INTO entrelineas.genres VALUES
 
 -- Data for table 'products'
 INSERT INTO entrelineas.products VALUES
-(default,'La Cabeza de Macri',4000,'','','Este es un libro ... que tiene ... muy interesante...','','/img/products/book-la-cabeza-de-macri.webp',9,1,2,1,null),
-(default,'Matar un Ruiseñor',3260,'','','','','/img/products/book-matar-a-un-ruisenior.webp',9,2,1,1,null),
-(default,'Red Queen',2600,'','','','','/img/products/book-harry-potter.jpeg',9,4,1,1,null),
-(default,'Harry Potter',5200,'','','','','/img/products/book-red-queen.webp',9,3,1,1,null),
-(default,'Las Vidas dentro De tu cabeza',5400,'','','','','/img/products/book-las-vidas-dentro-de-tu-cabeza.webp',9,1,1,1,null),
-(default,'El Buen Cirujano',5400,'','','','','/img/products/book-el-buen-cirujano.webp',9,5,1,1,null),
-(default,'Como educar a tu bebe',10000,'10 x 30',150,'ta bueno','BUEN LIBRO','/img/products/productImg-1657459177808.jpg',9,6,3,1,null);
--- id,name.price,size,pages,opinion,more,picture,stock,idAu,idGen,idProdT,idEdit
+(default,'La Cabeza de Macri',4000,'',null,'Este es un libro ... que tiene ... muy interesante...','','/img/products/book-la-cabeza-de-macri.webp',9,1,2,1,null),
+(default,'Matar un Ruiseñor',3260,'',null,'','','/img/products/book-matar-a-un-ruisenior.webp',9,2,1,1,null),
+(default,'Red Queen',2600,'',null,'','','/img/products/book-harry-potter.jpeg',9,4,1,1,null),
+(default,'Harry Potter',5200,'',null,'','','/img/products/book-red-queen.webp',9,3,1,1,null),
+(default,'Las Vidas dentro De tu cabeza',5400,'',null,'','','/img/products/book-las-vidas-dentro-de-tu-cabeza.webp',9,1,1,1,null),
+(default,'El Buen Cirujano',5400,'',null,'','','/img/products/book-el-buen-cirujano.webp',9,5,1,1,null),
+(default,'Como educar a tu bebe',10000,'10 x 30',150productTypes,'ta bueno','BUEN LIBRO','/img/products/productImg-1657459177808.jpg',9,6,3,1,null);
+-- id,name.price,size,pages,opinion,more,picture,stock,idAu,idGen,idProdT,idEditproducts
