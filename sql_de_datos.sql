@@ -49,5 +49,5 @@ INSERT INTO entrelineas.products VALUES
 (default,'Harry Potter',5200,'',null,'','','/img/products/book-red-queen.webp',9,3,1,1,null),
 (default,'Las Vidas dentro De tu cabeza',5400,'',null,'','','/img/products/book-las-vidas-dentro-de-tu-cabeza.webp',9,1,1,1,null),
 (default,'El Buen Cirujano',5400,'',null,'','','/img/products/book-el-buen-cirujano.webp',9,5,1,1,null),
-(default,'Como educar a tu bebe',10000,'10 x 30',150productTypes,'ta bueno','BUEN LIBRO','/img/products/productImg-1657459177808.jpg',9,6,3,1,null);
+(default,'Como educar a tu bebe',10000,'10 x 30',150,'ta bueno','BUEN LIBRO','/img/products/productImg-1657459177808.jpg',9,6,3,1,null);
 -- id,name.price,size,pages,opinion,more,picture,stock,idAu,idGen,idProdT,idEditproducts
