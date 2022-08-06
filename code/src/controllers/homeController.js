@@ -2,6 +2,8 @@
 const about = {
                 books: "Libros"
                 }
+const db = require('../database/models');
+const sequelize = require('sequelize')
 const fs = require("fs")
 let datos = fs.readFileSync('./data/products.json')
         
@@ -16,9 +18,15 @@ const homeController =  {
     },
     //'detalleDeProducto.ejs' IN 'views/products' FOLDER
     detalle: (req,res) => {
-        let books = JSON.parse(datos)
-        let product = books.find(product => product.id == req.params.bookId)
-        res.render('products/detalleDeProducto',{product: product})
+        /* //* VERSION ANTERIOR
+        let books = JSON.parse(datos) 
+        let product = books.find(product => product.id == req.params.bookId) 
+        res.render('products/detalleDeProducto',{product: product})  
+        */
+        db.Product.findByPk(req.params.bookId)
+            .then( resultado => {
+                res.render('products/detalleDeProducto',{product: resultado})
+            })
     },
 
     //'carritoDeCompras.ejs' IN 'views/prodcuts' FOLDER
