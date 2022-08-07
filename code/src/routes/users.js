@@ -27,8 +27,9 @@ router.post('/register',upload.single('img'),valRegM,userCtrl.register)
 router.get('/userProfile',authMiddleware ,userCtrl.profile)
 
 //- EDICION DEL PERFIL DE USUARIO
-router.get('/userProfile/:id/edit', authMiddleware, userCtrl.profileEdit)
-router.put('/userProfile/:id/edit', authMiddleware, valEditProfM, upload.single('profilePic'), userCtrl.profileEdited)
+router.get('/userProfile/edit/:field', authMiddleware, userCtrl.profileEdit)
+// dentro del MW preguntar por el req.params.field para saber QUE VALIDAR
+router.put('/userProfile/edit/:field', authMiddleware, valEditProfM, /*upload.single('profilePic'),*/ userCtrl.profileEdited)
 
 //Logout
 router.get('/logout', userCtrl.logout)

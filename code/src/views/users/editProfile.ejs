@@ -1,119 +1,123 @@
 <!DOCTYPE html>
 <html lang="es">
 <%- include('../partials/head.ejs'); %>
-<body>
-	<!-- Header-->
-	<%- include('../partials/header.ejs'); %>
-<main class="up-main">
-	<div class="up-colorBackgrownd-style"></div>
-    <form class="createpr-form-padding-left"
-    action="/users/userProfile/<%= user.userId %>/edit?_method=PUT" 
-    method="post" enctype="multipart/form-data" >
-            <div class="">
-                <section class="up-profilePicture">
+
+    <body>
+        <!-- Header-->
+        <%- include('../partials/header.ejs'); %>
+            <main class="up-main">
+                <div class="up-colorBackgrownd-style"></div>
+                <form class="createpr-form-padding-left" action="/users/userProfile/<%= user.userId %>/edit?_method=PUT"
+                    method="post" enctype="multipart/form-data">
+                    <div class="">
+                    <!-- IF nuevaVariable == NAME >> mostrar campos de name para validar -->
+                    <% if (field == 'name'){ %>
+                        <form class="createpr-form-padding-left" action="/userProfile/:id/edit/name?_method=PUT"
+                            method="post" ">
+                            <br>
+                            <!-- ? mostrar form de NOMBRE Y APELLIDO -->
+                            <p>Ingrese en los campos los datos que desee ver en su perfil</p>
+                            <label for=" userFirstName">Nombre:
+                                <input class="box-ingrese-datos" type="text" name="userFirstName" id="userFirstName" value="<%= user.firstName %>">
+                            </label>
+                            <label for="userLastName">Apellido:
+                                    <input class="box-ingrese-datos" type="text" name="userLastName" id="userLastName" value="<%= user.lastName %>">
+                            </label>
+                    <% } else if (field=='email' ){ %>
+                        <form class="createpr-form-padding-left" action="/userProfile/:id/edit/email?_method=PUT"
+                            method="post" ">
+                            <br>
+                            <!-- ? mostar form de EMAIL -->
+                            <p>Para cambiar el email, primero ingrear la actual y luego el nuevo email deseado</p>
+                            <label for="userEmail">Email actual:
+                                <input class="box-ingrese-datos" type="text" name="userEmail" id="userEmail" value="<%= user.email %>">
+                            </label>
+                            <% if (locals.errors && errors.userEmail) { %>
+                                <div class="text-red">
+                                    <%= errors.userEmail.msg %>
+                                </div>
+                            <% } %>
+                            <br>
+                            <label for="userNewEmail">Email nuevo:
+                                <input class="box-ingrese-datos" type="text" name="userNewEmail" id="userNewEmail" 
+                                placeholder="Ingrese el nuevo email que desee utilizar">
+                            </label>
+                            <% if (locals.errors && errors.userNewEmail) { %>
+                                <div class="text-red">
+                                    <%= errors.userNewEmail.msg %>
+                                </div>
+                            <% } %>
+
+                    <% } else if (field=='password' ){ %>
+                        <form class="createpr-form-padding-left" action="/userProfile/:id/edit/password?_method=PUT"
+                            method="post" ">
+                            <br>
+                        <!-- ? mostar form de PASSWORD -->
+                        <p>Para cambiar la contraseña, primero ingresar la actual y luego la nueva contraseña deseada</p>
+                        <label for="userPassword">Contraseña actual:
+                            <input class="box-ingrese-datos" type="text" name="userPassword" id="userPassword" placeholder="Ingrese su contraeña actual">
+                        </label>
+                        <% if (locals.errors && errors.userPassword) { %>
+                            <div class="text-red">
+                                <%= errors.userPassword.msg %>
+                            </div>
+                            <% } %>
+                        <label for="userNewPassword">Contraseña nueva:
+                            <input class="box-ingrese-datos" type="text" name="userNewPassword" id="userNewPassword" placeholder="Ingrese la nueva contraseña que desea utilizar">
+                        </label>
+                            <% if (locals.errors && errors.userNewPassword) { %>
+                                <div class="text-red">
+                                    <%= errors.userNewPassword.msg %>
+                                </div>
+                                <% } %>
+                    <% } else if (field=='adress' ){ %>
+                        <form class="createpr-form-padding-left" action="/userProfile/:id/edit/adress?_method=PUT"
+                            method="post" ">
+                            <br>
+                        <!-- ! DIRECCION DE ENVIO -->
+                        <!-- - enlazar el CRUD con la base de datos -->
+                            <!-- <label for="userFirstname">Calle
+                                <input class="box-ingrese-datos" type="text" name="userSreet" id="userSreet">
+                            </label> <br>
+                            <label for="userAdressNumber">Numero
+                                <input class="box-ingrese-datos" type="number" name="userAdressNumber" id="userAdressNumber">
+                            </label> <br>
+                            <label for="userCP">Codigo Postal
+                                <input class="box-ingrese-datos" type="text" name="userCP" id="userCP">
+                            </label> <br>
+                            <label for="userCountry">Pais de residencia
+                                <input class="box-ingrese-datos" type="text" name="userCountry" id="userCountry">
+                            </label> -->
+                    <% } %>
+                    <div class="creatProd-buttom">
+                        <button type="submit">Editar datos</button>
+                    </div>
+                </form>
+                <br>
+                <a href="/users/userProfile"><input class="edit-button" type="button" value="Volver al perfil"></a>
+
+                        <!-- - CAMBIAR IMAGEN? -->
+                        <!-- <section class="up-profilePicture">
                     <div class = "up-porfilePicture-div">
                         <img class = "up-porfilePicture-img" src="/img/users/<%= user.profilePic %>" alt="profile picture" >
                     </div>
                     <input type="file" name="profilePic" value="<%= user.profilePic%>" />
                 </section>
-               <!-- <figure class="">
-                    <img 
+               <!-- <figure class=""> -->
+                        <!-- <img 
                     class="up-porfilePicture-img" 
                     src="/img/users/<%= user.profilePic %>""
                     alt="profile picture">
                 </figure>
-                <br>-->
-                <!-- <label for="profilePic">Cambiar imagen de perfil:
+                <br>--> 
+                        <!-- <label for="profilePic">Cambiar imagen de perfil:
                     <input type="file" name="profilePic" value="<%= user.profilePic %>" />
                 </label> -->
-            </div>
-            <br>
-            <div class="">
-                <label for="userFirstName">Cambiar Nombre:
-                    <input class="box-ingrese-datos" type="text" name="userFirstName" id="userFirstName" value="<%= user.firstName %>">
-                </label>
-            </div>
-            <div class="">
-                <label for="userLastName">Cambiar Apellido:
-                    <input class="box-ingrese-datos" type="text" name="userLastName" id="userLastName" value="<%= user.lastName %>">
-                </label>
-            </div>
-            <br>
-            <p>Para cambiar el email, primero ingrear la actual y luego el nuevo email deseado</p>
-            <div class="">
-                <label for="userEmail">Email actual:
-                    <input class="box-ingrese-datos" type="text" name="userEmail" id="userEmail" 
-                    placeholder="Ingrese su email actual">
-                </label>
-                <% if (locals.errors && errors.userEmail) { %>
-                    <div class="text-red">
-                        <%= errors.userEmail.msg %>
-                    </div>
-                <% } %>
-            </div>
-            <div class="">
-                <label for="userNewEmail">Email nuevo:
-                    <input class="box-ingrese-datos" type="text" name="userNewEmail" id="userNewEmail" 
-                    placeholder="Ingrese el nuevo email que desee utilizar">
-                </label>
-                <% if (locals.errors && errors.userNewEmail) { %>
-                    <div class="text-red">
-                        <%= errors.userNewEmail.msg %>
-                    </div>
-                <% } %>
-            </div>
-            <br>
-            <p>Para cambiar la contraseña, primero ingresar la actual y luego la nueva contraseña deseada</p>
-            <div class="">
-                <label for="userPassword">Contraseña actual:
-                    <input class="box-ingrese-datos" type="text" name="userPassword" id="userPassword" 
-                    placeholder="Ingrese su contraeña actual">
-                </label>
-                <% if (locals.errors && errors.userPassword) { %>
-                    <div class="text-red">
-                        <%= errors.userPassword.msg %>
-                    </div>
-                <% } %>
-            </div>
-            <div class="">
-                <label for="userNewPassword">Contraseña nueva:
-                    <input class="box-ingrese-datos" type="text" name="userNewPassword" id="userNewPassword"
-                    placeholder="Ingrese la nueva contraseña que desea utilizar">
-                </label>
-                <% if (locals.errors && errors.userNewPassword) { %>
-                    <div class="text-red">
-                        <%= errors.userNewPassword.msg %>
-                    </div>
-                <% } %>
-            </div>
 
-            <!-- DIRECCION DE ENVIO -->
-            <!--
-            <div class="">
-                <label for="userFirstname">Calle
-                    <input class="box-ingrese-datos" type="text" name="userSreet" id="userSreet">
-                </label>
-            </div>
-            <div class="">
-                <label for="userAdressNumber">Numero
-                    <input class="box-ingrese-datos" type="number" name="userAdressNumber" id="userAdressNumber">
-                </label>
-            </div>
-            <div class="">
-                <label for="userCP">Codigo Postal
-                    <input class="box-ingrese-datos" type="text" name="userCP" id="userCP">
-                </label>
-            </div>
-            <div class="">
-                <label for="userCountry">Pais de residencia
-                    <input class="box-ingrese-datos" type="text" name="userCountry" id="userCountry">
-                </label>
-            </div> -->
-            <div class="creatProd-buttom">
-                <button type="submit">Editar datos</button>
-            </div>
-    </form>
-</main>
-	<%- include('../partials/footer.ejs'); %>
+                    
+                    
+    </main>
+    <%- include('../partials/footer.ejs'); %>
 </body>
+
 </html>
