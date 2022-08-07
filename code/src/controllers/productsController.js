@@ -22,6 +22,8 @@ const ProductType= require("../database/models/ProductType");
 const about = {
     books: "Libros"
     }
+const db = require('../database/models');
+const sequelize = require('sequelize')
 const fs = require("fs")
 
 
@@ -58,8 +60,8 @@ const productsController =  {
         let datos = fs.readFileSync(productosFilePath)
         let books = JSON.parse(datos)
 
-        
         req.body.id = req.params.id;
+        
         let booksUpdate = books.map((libro) => {
             if (libro.id == req.body.id) {
                 let image = libro.picture;
@@ -68,6 +70,73 @@ const productsController =  {
                 if (req.file) {
                     image = req.file.filename;
                 }
+                db.Product.update({
+                    name : req.body.name,
+                    price : req.body.price,
+                    picture : '/img/products/' + image, 
+                    opinion : req.body.opinion,
+                    // stock: req.body.stock,
+                    size : req.body.size,
+                    pages : req.body.pages,
+                    more : req.body.more,
+                    // _ProductsType SE ASIGNA AL PRODUCTO UN ID DE TIPO
+                    id_productType: req.body.type
+                },{
+                    where: {id : req.body.id}
+                })
+                // TABLA Author PUEDE CAMBIAR SI NO EXISTE EL AUTOR
+                db.Author.findOne({
+                    where: {
+                        fullName: req.body.author
+                    }
+                })  .then (resultado => {
+                    // si NO encontro resultado = no existe el registro
+                        if (!resultado == req.body.author){
+                            // nuevo registro
+                            db.Author.create({
+                                fullName: req.body.author
+                            })
+                            // luego se lo vuelve a buscar para usar el id para 'id_author'
+                            db.Author.findOne({
+                                where: {
+                                    fullName: req.body.author
+                                }
+                                }).then(nuevo => {
+                                    db.Product.update({
+                                        id_author: nuevo.id
+                                    },{
+                                        where: {id: req.body.id}
+                                    })
+                                })
+                            }
+                    })
+                
+                // TABLA Gender PUEDE CAMBIAR SI NO EXISTE EL GENERO 
+                db.Genre.findOne({
+                    where: {
+                        name: req.body.genre
+                    }
+                })  .then (resultado => {
+                        if (!resultado == req.body.genre){
+                            db.Genre.create({
+                                name: req.body.genre
+                            })
+                            db.Genre.findOne({
+                                where: {
+                                    name: req.body.genre
+                                }
+                                }).then(nuevo => {
+                                    db.Product.update({
+                                        id_genre: nuevo.id
+                                    },{
+                                        where: {id: req.body.id}
+                                    })
+                                })
+                            }
+                    })
+
+
+                /*
                 libro.name = req.body.name;
                 libro.type = req.body.type,
                 libro.author = req.body.author,
@@ -78,12 +147,14 @@ const productsController =  {
                 libro.size = req.body.size,
                 libro.pages = req.body.pages,
                 libro.more = req.body.more
+                */
             }
             return libro;
         })
+
        
-        let booksActualizar = JSON.stringify(booksUpdate, null, 2);
-        fs.writeFileSync(productosFilePath,booksActualizar)
+        // let booksActualizar = JSON.stringify(booksUpdate, null, 2);
+        // fs.writeFileSync(productosFilePath,booksActualizar)
        
         // redireccionar a '/productos'
         return res.redirect('/products')
