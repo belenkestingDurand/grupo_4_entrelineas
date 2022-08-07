@@ -26,35 +26,36 @@ const userController =  {
             });
         }
         // busco el email en la base de datos
-        let userToLogin = User.findByField('email', req.body.email);
-        if(userToLogin) {
-            //acciones a seguir si si lo encontro al mail en la base
-            if (bcrypt.compareSync(req.body.password, userToLogin.password)){
-                delete userToLogin.password
-                req.session.userLogged = userToLogin
-
-                return res.redirect('/users/userProfile');
-            }
+        //let userToLogin = User.findByField('email', req.body.email);
+        db.User.findOne({where: {email: req.body.email}})
+        .then(function(userToLogin){
+            if(userToLogin) {
+                //acciones a seguir si si lo encontro al mail en la base
+                if (bcrypt.compareSync(req.body.password, userToLogin.password)){
+                    delete userToLogin.password
+                    req.session.userLogged = userToLogin
+    
+                    return res.redirect('/users/userProfile');
+                }
+                return res.render('users/login',{
+                    errors: {
+                        email: {
+                            msg: 'Credenciales inválidas'
+                        }
+                    }
+                })
+    
+            };
             return res.render('users/login',{
                 errors: {
                     email: {
-                        msg: 'Credenciales inválidas'
+                        msg: 'Email no registrado, crear cuenta'
                     }
                 }
             })
-
-        };
-        return res.render('users/login',{
-            errors: {
-                email: {
-                    msg: 'Email no registrado, crear cuenta'
-                }
-            }
         })
        
     },
-
-
     
     //'register.ejs' IN 'views/users' FOLDER
     showRegister: (req, res) => {
