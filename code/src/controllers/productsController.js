@@ -48,8 +48,7 @@ const productsController =  {
         let booksUpdate = books.map((libro) => {
             if (libro.id == req.body.id) {
                 let image = libro.picture;
-                console.log(req.body.productImg)
-                console.log('req.file ',req.file)
+
                 if (req.file) {
                     image = req.file.filename;
                 }
@@ -155,7 +154,6 @@ const productsController =  {
           image = req.file.filename;
         
         }
-        console.log('req.file',req.file)
 
         let newProduct = {
             id: books[books.length -1].id + 1,
@@ -170,7 +168,6 @@ const productsController =  {
             pages: req.body.pages,
             more: req.body.more
         };
-        console.log(newProduct)
         books.push(newProduct)
 
         let newbooks = JSON.stringify(books)

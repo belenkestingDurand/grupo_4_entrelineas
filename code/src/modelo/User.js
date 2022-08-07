@@ -45,7 +45,7 @@ const User = {
         
             ... userData
         }
-        console.log(newUser);
+    //    console.log(newUser);
         allUsers.push(newUser);
         fs.writeFileSync(this.fileName, JSON.stringify(allUsers, null, ' '));
         return newUser;
@@ -58,5 +58,5 @@ const User = {
         return true;
     }
 }
-console.log(User.findByPk(35));
+// console.log(User.findByPk(35));
 module.exports = User;

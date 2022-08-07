@@ -66,7 +66,7 @@ const userController =  {
        const resultValidation = validationResult(req);
         // si hay errores recargar la pag con datos cargados correctos
        if (resultValidation.errors.length > 0) {
-           console.log(req.body);
+
             return res.render('users/register', {
                  errors: resultValidation.mapped(),
                 oldData: req.body
@@ -76,7 +76,7 @@ const userController =  {
         .then(function(existUser){
             // chequeo que no se registre dos veces el mismo email
                 if (existUser) {
-                    console.log('el usuario ya existia');
+ 
                     return res.render('users/register', {
                         errors:{
                             email: {
@@ -130,8 +130,7 @@ const userController =  {
             oldPassword: bcrypt.hashSync(req.body.userPassword,10),
             newpassword: bcrypt.hashSync(req.body.userNewPassword,10),
         }
-        console.log('errors, ', errors);
-        console.log('userToEdit', userToEdit);
+  
        
     
         // if (req.file.profilePic){
@@ -143,7 +142,7 @@ const userController =  {
             userToEdit.email = userChanges.newEmail
         } else {
             // SI los mails no coinciden =>
-            console.log('Error de EMAIL de controlador');
+
             return res.render('users/editProfile', {
                 errors:{
                     userEmail: {
@@ -158,7 +157,7 @@ const userController =  {
         if (userChanges.oldPassword != "" && bcrypt.compareSync(userChanges.oldPassword, userToEdit.password)){
             userToEdit.password = userChanges.newpassword
         } else {
-            console.log("error de PASSWORD en controlador");
+ 
             // SI las contraseñas no coinciden =>
             return res.render('users/editProfile', {
                 errors:{
