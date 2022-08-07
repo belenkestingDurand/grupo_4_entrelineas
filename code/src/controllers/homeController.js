@@ -19,6 +19,25 @@ const homeController =  {
      });  
      
     },
+
+    listarLibros: function(req,res){
+        db.Product.findAll({ include: ["authors", "genres", "editorials", "productsTypes"],
+                             where: {id_productType: 1 }
+                          })
+     .then((productos) => {
+        res.render('products/home',{books: productos})
+     });  
+    },
+
+    listarEbooks: function(req,res){
+        db.Product.findAll({ include: ["authors", "genres", "editorials", "productsTypes"],
+                             where: {id_productType: 2 }
+                          })
+     .then((productos) => {
+        res.render('products/home',{books: productos})
+     });  
+    },
+
     //'detalleDeProducto.ejs' IN 'views/products' FOLDER
     detalle: (req,res) => {
         /* //* VERSION ANTERIOR

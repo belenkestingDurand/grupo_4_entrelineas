@@ -8,6 +8,8 @@ const homeCtrl = require('../controllers/homeController')
 //- HOME PAGE
 router.get('/',homeCtrl.home)
 router.get('/home',homeCtrl.home)
+router.get('/books', homeCtrl.listarLibros)
+router.get('/ebooks', homeCtrl.listarEbooks)
 
 //- PRODUCT DETAIL
 
