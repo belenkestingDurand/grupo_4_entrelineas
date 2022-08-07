@@ -26,6 +26,9 @@ router.put('/:id/edit', uploadProd.single('productImg'), productsCtrl.productoEd
 //- DELETE PRODUCT
 router.delete('/delete/:id', productsCtrl.delete)
 
+//- SEARCH PRODUCT
+router.post('/search', productsCtrl.search)
+
 
 // exports
 module.exports = router

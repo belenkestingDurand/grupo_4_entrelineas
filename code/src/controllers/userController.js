@@ -26,7 +26,6 @@ const userController =  {
             });
         }
         // busco el email en la base de datos
-        //let userToLogin = User.findByField('email', req.body.email);
         db.User.findOne({where: {email: req.body.email}})
         .then(function(userToLogin){
             if(userToLogin) {

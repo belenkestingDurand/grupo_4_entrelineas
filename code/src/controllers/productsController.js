@@ -206,6 +206,16 @@ const productsController =  {
             // })
         
             res.redirect("/products");
+          },
+
+          search: function(req, res){
+            //db.Movie.findOne({where: {title: {[Op.like]:'%'+req.body.titulo+'%'} }})
+            db.Product.findAll({ include: ["authors", "genres", "editorials", "productsTypes"],
+                                 where: {name: {[Op.like]:'%'+req.body.search+'%'} }})
+            .then((productos) => {
+
+            res.render("products/listarProducto", { books: productos });
+            });
           }
         }
     
