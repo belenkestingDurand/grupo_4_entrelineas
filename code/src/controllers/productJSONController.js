@@ -1,29 +1,9 @@
-const path = require("path");
-const db = require("../database/models");
-const sequelize = db.sequelize;
-const { Op } = require("sequelize");
-const Product = require("../database/models/Product");
-const Author = require("../database/models/Author");
-const Editorial = require("../database/models/Editorial");
-const Genre= require("../database/models/Genre");
-const ProductType= require("../database/models/ProductType");
-//Aqui tienen una forma de llamar a cada uno de los modelos
-
-
-
-  
-
-
-
-
-
-
 // LUGAR PARA FUTURAS BASES DE DATOS
 const about = {
     books: "Libros"
     }
 const fs = require("fs")
-
+const path = require("path");
 
 //variable con la ruta del archivo products.json
 let productosFilePath = path.join(__dirname, '../data/products.json');
@@ -37,16 +17,9 @@ const productsController =  {
     },
 
     listarProducto: (req, res) => {
-
-        db.Product.findAll({ include: ["authors", "genres", "editorials", "productsTypes"] })
-            .then((productos) => {
-
-            res.render("products/listarProducto", { books: productos });
-            });
-        
-    // let books = JSON.parse(datos)
-    // res.render('products/listarProducto',{about: about, books: books})
-     },
+    let books = JSON.parse(datos)
+    res.render('products/listarProducto',{about: about, books: books})
+    },
 
     editarProducto: (req,res) => {
     let books = JSON.parse(datos)
@@ -124,42 +97,26 @@ const productsController =  {
         
         return res.redirect('/products')
     },
-    // delete: (req, res) => {
-    //     // leer archivo
-    //     let datos = fs.readFileSync(productosFilePath, "utf-8")
-    //     let books = JSON.parse(datos)
+    delete: (req, res) => {
+        // leer archivo
+        let datos = fs.readFileSync(productosFilePath, "utf-8")
+        let books = JSON.parse(datos)
 
-    //     // ubicar el libro a borrar y hacer un array con el resto mediante filter
-    //     let id = req.params.id;
+        // ubicar el libro a borrar y hacer un array con el resto mediante filter
+        let id = req.params.id;
 
-    //     let booksToKeep = books.filter((book) => book.id !=id);
-    //     //lo vuelvo a formato json
-    //     let jsonBooksToKeep = JSON.stringify(booksToKeep, null, 2);
-    //     // lo reescribo en el archivo
-    //     fs.writeFileSync(productosFilePath, jsonBooksToKeep, "utf-8");
+        let booksToKeep = books.filter((book) => book.id !=id);
+        //lo vuelvo a formato json
+        let jsonBooksToKeep = JSON.stringify(booksToKeep, null, 2);
+        // lo reescribo en el archivo
+        fs.writeFileSync(productosFilePath, jsonBooksToKeep, "utf-8");
         
-    //     //redirecciona a listado de libros
-    //     return res.redirect('/products');
-        // delete: async function (req, res) {
-        //     let productoABorrar = await db.Product.findByPk(req.params.id);
-        //     res.render("moviesDelete", { Movie });
-        //   },
-        
-          delete: async function (req, res) {
-             db.Product.destroy({
-                where: {id: req.params.id}
-            });
-        
-            // await db.Movie.destroy({
-            //     where:{id:req.params.id,force:true}
-            // })
-        
-            res.redirect("/products");
-          }
-        }
-    
+        //redirecciona a listado de libros
+        return res.redirect('/products');
 
+    }
 
+}
 
 // exports
 module.exports = productsController
