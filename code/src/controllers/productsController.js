@@ -7,26 +7,10 @@ const Author = require("../database/models/Author");
 const Editorial = require("../database/models/Editorial");
 const Genre= require("../database/models/Genre");
 const ProductType= require("../database/models/ProductType");
-//Aqui tienen una forma de llamar a cada uno de los modelos
-
-
-
-  
-
-
-
-
-
-
-// LUGAR PARA FUTURAS BASES DE DATOS
+const fs = require("fs")
 const about = {
     books: "Libros"
     }
-const db = require('../database/models');
-const sequelize = require('sequelize')
-const fs = require("fs")
-
-
 //variable con la ruta del archivo products.json
 let productosFilePath = path.join(__dirname, '../data/products.json');
 
@@ -46,8 +30,7 @@ const productsController =  {
             res.render("products/listarProducto", { books: productos });
             });
         
-    // let books = JSON.parse(datos)
-    // res.render('products/listarProducto',{about: about, books: books})
+    
      },
 
     editarProducto: (req,res) => {

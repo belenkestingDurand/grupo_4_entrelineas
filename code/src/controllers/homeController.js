@@ -12,9 +12,12 @@ let datos = fs.readFileSync('./data/products.json')
 const homeController =  {
     //'home.ejs' IN 'views/products' FOLDER
     home: (req, res) => {
-        let books = JSON.parse(datos)
-        
-        return res.render('products/home',{books: books})
+
+     db.Product.findAll({ include: ["authors", "genres", "editorials", "productsTypes"] })
+     .then((productos) => {
+        res.render('products/home',{books: productos})
+     });  
+     
     },
     //'detalleDeProducto.ejs' IN 'views/products' FOLDER
     detalle: (req,res) => {
