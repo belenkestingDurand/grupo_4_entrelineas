@@ -39,6 +39,8 @@ const productsController =  {
     },
     
     productoEditado:(req,res) => {
+        console.log(req.params.id);
+        
         db.Product.update({
             name : req.body.name,
             price : req.body.price,
