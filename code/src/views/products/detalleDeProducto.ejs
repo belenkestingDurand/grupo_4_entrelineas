@@ -27,7 +27,7 @@
                     <h5 class="book-product-name"><%= product.name %></h5>
                     <h5 class="book-product-price">$<%= product.price %></h5>
                 </div>
-                <h6 class="book-product-author"><%= product.author %></h6>
+                <h6 class="book-product-author"><%= product.authors.fullName %></h6>
                 <a href="/carrito">
                     <input class="add-cart-button" type="button" value="Agregar al carrito">
                 </a>
@@ -52,7 +52,7 @@
                     <img class="detail-info-arrow" src="/img/arrow-down.png" alt="Boton en forma de flecha hacia abajo">
                     <div>
                         <p class="hidden-until-click display-more-tech">
-                            <strong>Genero</strong>: <%= product.gender %>
+                            <strong>Genero</strong>: <%= product.genres.name %>
                             <br>
                             <strong>Tamaño</strong>: <%= product.size %>
                             <br>

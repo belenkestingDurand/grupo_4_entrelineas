@@ -13,6 +13,7 @@
 
  
     <main>
+        <br>
         <h3 class="creatprod-title">EDITAR PRODUCTO</h3>
         <form class="createpr-form-padding-left" 
             action="/products/<%= product.id %>/edit?_method=PUT" 
@@ -43,7 +44,7 @@
                 <div class="">
                     <figure class="">
                       <img class="editproduct-img" src="../../../<%= product.picture%>"
-                       alt="libro <%= product.name%>">
+                       alt="libro <%= product.name %>">
                     </figure>
                     <input type="file" name="productImg" value="<%= product.picture%>" />
                 </div>
@@ -52,7 +53,7 @@
                     <div class="">
                     <div><label class="createpr-label-font" for="author">Autor:</label></div>
                     <input class="box-ingrese-datos" type="text" name="author" id="author" 
-                        placeholder="Ingrese el nombre del autor" required value="<%= product.authors.fullname %>">
+                        placeholder="Ingrese el nombre del autor" required value="<%= product.authors.fullName %>">
                 </div>
 
                 <div class="">

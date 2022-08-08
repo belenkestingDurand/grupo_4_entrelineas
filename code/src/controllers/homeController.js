@@ -45,7 +45,8 @@ const homeController =  {
         let product = books.find(product => product.id == req.params.bookId) 
         res.render('products/detalleDeProducto',{product: product})  
         */
-        db.Product.findByPk(req.params.bookId)
+        db.Product.findOne({include: ["authors",'genres'],
+                            where: {id:req.params.bookId}})
             .then( resultado => {
                 res.render('products/detalleDeProducto',{product: resultado})
             })
