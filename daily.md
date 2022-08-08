@@ -76,3 +76,12 @@
 2. Se reparten modelos para su creación
 3. Actualización de tablero trello.
 4. Fijación de próxima reunión para viernes 22 donde se explicará brevemente lo realizado y se reasignaran tareas futuras.
+
+## Reunión 22/07/2022
+1. Se mostró lo trabajado en creación de modelos.
+2. Sugerencias y correcciones.
+
+## REunión 27/07/2022
+1. Se mostró lo que se hizo.
+2. División de Cruds.
+3. Actualización de Trello.
