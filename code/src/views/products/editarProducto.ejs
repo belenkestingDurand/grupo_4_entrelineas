@@ -52,7 +52,7 @@
                     <div class="">
                     <div><label class="createpr-label-font" for="author">Autor:</label></div>
                     <input class="box-ingrese-datos" type="text" name="author" id="author" 
-                        placeholder="Ingrese el nombre del autor" required value="<%= product.author %>">
+                        placeholder="Ingrese el nombre del autor" required value="<%= product.authors.fullname %>">
                 </div>
 
                 <div class="">
@@ -70,7 +70,7 @@
                     <div class="">
                     <div><label class="createpr-label-font" for="gender">Género:</label></div>
                     <input class="box-ingrese-datos" type="text" name="gender" id="gender" 
-                    placeholder="Ingrese el género del libro" required value="<%= product.gender %>">
+                    placeholder="Ingrese el género del libro" required value="<%= product.genres.name %>">
                 </div>
                 <div class="">
                     <div class="">
