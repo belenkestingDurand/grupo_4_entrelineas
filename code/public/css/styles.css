@@ -1118,8 +1118,13 @@ footer {
     font-family: arvo;
 }
 
+.user-edits-buttons{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
 .edit-button{
-    width: 100px;
+    min-width: 100px;
     height: 40px;
     border-radius: 10px;
     color: white;

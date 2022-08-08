@@ -108,12 +108,16 @@ const userController =  {
 
     },
     profile: (req, res) => {
-		return res.render('users/userProfile', {
+        return res.render('users/userProfile', {
             user: req.session.userLogged
         });
 	},
     profileEdit: (req,res) => {
-        return res.render('users/editProfile', {user: req.session.userLogged})
+        // recibir el parametro para saber que debe renderizar el EJS╬
+        return res.render('users/editProfile', {
+            user: req.session.userLogged,
+            field: req.params.field //este campo indicara que formulario se mostrara
+        })
     },
     profileEdited: (req,res) => {
         let errors = validationResult(req);
