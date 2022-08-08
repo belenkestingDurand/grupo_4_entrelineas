@@ -65,7 +65,18 @@
                         </select>
                     </p>
                  </div>
-
+                 <div class="">
+                    <div class="">
+                    <div><label class="createpr-label-font" for="editorial">Editorial: </label></div>
+                    <p>
+                        <select name="genre" id="genre" required>
+                            <option value="" disabled selected>- select Editorial - </option>
+                            <% allEditorials.forEach(editorial => { %>
+                            <option value="<%= editorial.id %>"><%= editorial.title %></option>
+                            <% }); %>
+                        </select>
+                    </p>
+                 </div>
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font"  for="price">Precio:</label></div>

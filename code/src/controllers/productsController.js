@@ -184,7 +184,8 @@ const productsController =  {
             stock: req.body.stock,
             id_author: req.body.author,
             id_genre: req.body.genre,
-            id_productType: req.body.id_productType
+            id_productType: req.body.id_productType,
+            id_editorial: req.body.id_editorial
             
         };
         console.log(newProduct);
