@@ -30,9 +30,14 @@ const productsController =  {
      },
 
     editarProducto: (req,res) => {
-    let books = JSON.parse(datos)
-    let product = books.find(product => product.id == req.params.id)
-    res.render('products/editarProducto', {product: product})
+    //let books = JSON.parse(datos)
+    //let product = books.find(product => product.id == req.params.id)
+    db.Product.findOne( {include: ["authors", "genres", "editorials", "productsTypes"],
+                        where: {id: req.params.id}})
+    .then(function(prductToShow){
+        res.render('products/editarProducto', {product: prductToShow})
+    })
+    
     },
     
     productoEditado:(req,res) => {
