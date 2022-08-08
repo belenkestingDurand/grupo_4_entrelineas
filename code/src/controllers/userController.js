@@ -121,37 +121,28 @@ const userController =  {
         })
     },
     profileEdited: (req,res) => {
+        console.log('EN CONTROLLER');
         let errors = validationResult(req);
+        let user = req.session.userLogged 
         
-        let loggedUser = req.session.userLogged
-
-        let userChanges = {
-            firstName: req.body.userFirstName,
-            lastName: req.body.userLastName,
-            oldEmail: req.body.userEmail, 
-            newEmail: req.body.userNewEmail, 
-            oldPassword: bcrypt.hashSync(req.body.userPassword,10),
-            newpassword: bcrypt.hashSync(req.body.userNewPassword,10),
-        }
-  
         // PREGUNTAR POR FIELD Y SEGUN ESO QUE UPDATEO DE DB.USUARIO BLA BLA
         
         if (req.params.field == 'name'){
             //- update de NAME
-            db.Usuario.update({
+            db.User.update({
                 firstName: req.body.userFirstName,
-                firstName: req.body.userLastName
+                lastName: req.body.userLastName
             },{
-                where: {id: loggedUser.id}
+                where: {email: user.email}
             })
         } else if (req.params.field == 'email'){
             //- update de EMAIL
-            if (req.body.userEmail == loggedUser.email){
+            if (req.body.userEmail == user.email){
                 //* ALL OK
-                db.Usuario.update({
+                db.User.update({
                     email: req.body.userNewEmail
                 },{
-                    where: {id: loggedUser.id}
+                    where: {email: user.email}
                 })
             } else {
                 // SI los mails no coinciden =>
@@ -166,12 +157,12 @@ const userController =  {
             }
         } else if (req.params.field == 'password'){
             //- update de PASSWORD
-            if (req.body.oldPassword != "" && bcrypt.compareSync(req.body.oldPassword, loggedUser.password)){
+            if (req.body.userPassword != "" && bcrypt.compareSync(req.body.userPassword, user.password)){
                 //* ALL OK
-                db.Usuario.update({
+                db.User.update({
                     password: bcrypt.hashSync(req.body.userNewPassword,10)
                 },{
-                    where: {id: loggedUser.id}
+                    where: {email: user.email}
                 })
             } else {
                 // SI las contraseñas no coinciden =>
@@ -185,30 +176,12 @@ const userController =  {
                 })
             }
         }
-        
-        // * VIEJARDO
-        let userToEdit = db.Usuario.findByPk(req.params.id);
-       
+        // * VIEJO
     
         // if (req.file.profilePic){
         //     userChanges["profilePic"] = req.file.profilePic
         // }
 
-        // SI la contraseña ya existente coincide con la casilla de 'Contraseña actual' =>
-        if (userChanges.oldPassword != "" && bcrypt.compareSync(userChanges.oldPassword, userToEdit.password)){
-            userToEdit.password = userChanges.newpassword
-        } else {
- 
-            // SI las contraseñas no coinciden =>
-            return res.render('users/editProfile', {
-                errors:{
-                    userPassword: {
-                        msg: 'Campo completado incorrectamente. '
-                    }
-                },
-                user: req.session.userLogged
-            })
-        }
         
         //? userToEdit.profilePic = userChanges.profilePic
 

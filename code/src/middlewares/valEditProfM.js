@@ -4,10 +4,8 @@ const { body } = require('express-validator');
 function validationMW(req, res, next) {
     // preguntar por parametro field y de ahi ver que IF usar
     const validationErrors = []
-
-    if (req.params.field == 'name') {
-        next()
-    } else if (req.paramas.field == 'email') {
+    console.log('EN MIDDLEWARE');
+    if (req.params.field == 'email') {
         if (body('userEmail') != "") {
             validationErrors.push(
                 body('userEmail').isEmail().withMessage('Campo completado incorrectamente. ')
@@ -17,7 +15,7 @@ function validationMW(req, res, next) {
                 body('userNewEmail').notEmpty().withMessage('Campo incompleto')
             )
         }
-    } else if (req.paramas.field == 'password') {
+    } else if (req.params.field == 'password') {
         if (body('userPassword') != "") {
             validationErrors.push(
                 body('userPassword').notEmpty().withMessage('Campo completado incorrectamente. ')
@@ -29,7 +27,7 @@ function validationMW(req, res, next) {
         }
     }
     // else if (req.paramas.field == 'adress')
-
+    console.log(validationErrors);
     next()
 }
 module.exports = validationMW

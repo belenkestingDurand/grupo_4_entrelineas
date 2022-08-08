@@ -9,20 +9,20 @@
             <div class="up-colorBackgrownd-style"></div>
                 <!-- IF nuevaVariable == NAME >> mostrar campos de name para validar -->
                 <% if (field == 'name'){ %>
-                    <form class="createpr-form-padding-left" action="/userProfile/edit/name?_method=PUT"
-                        method="post" ">
+                    <form class="createpr-form-padding-left" action="/users/userProfile/edit/name?_method=PUT"
+                        method="post" >
                         <br>
                         <!-- ? mostrar form de NOMBRE Y APELLIDO -->
                         <p>Ingrese en los campos los datos que desee ver en su perfil</p>
-                        <label for=" userFirstName">Nombre:
+                        <label for="userFirstName">Nombre:
                             <input class="box-ingrese-datos" type="text" name="userFirstName" id="userFirstName" value="<%= user.firstName %>">
                         </label>
                         <label for="userLastName">Apellido:
                                 <input class="box-ingrese-datos" type="text" name="userLastName" id="userLastName" value="<%= user.lastName %>">
                         </label>
-                <% } else if (field=='email' ){ %>
-                    <form class="createpr-form-padding-left" action="/userProfile/edit/email?_method=PUT"
-                        method="post" ">
+                <% } else if (field == 'email'){ %>
+                    <form class="createpr-form-padding-left" action="/users/userProfile/edit/email?_method=PUT"
+                        method="post" >
                         <br>
                         <!-- ? mostar form de EMAIL -->
                         <p>Para cambiar el email, primero ingrear la actual y luego el nuevo email deseado</p>
@@ -45,14 +45,14 @@
                             </div>
                         <% } %>
 
-                <% } else if (field=='password' ){ %>
-                    <form class="createpr-form-padding-left" action="/userProfile/edit/password?_method=PUT"
-                        method="post" ">
+                <% } else if (field== 'password'){ %>
+                    <form class="createpr-form-padding-left" action="/users/userProfile/edit/password?_method=PUT"
+                        method="post">
                         <br>
                     <!-- ? mostar form de PASSWORD -->
                     <p>Para cambiar la contraseña, primero ingresar la actual y luego la nueva contraseña deseada</p>
                     <label for="userPassword">Contraseña actual:
-                        <input class="box-ingrese-datos" type="text" name="userPassword" id="userPassword" placeholder="Ingrese su contraeña actual">
+                        <input class="box-ingrese-datos" type="password" name="userPassword" id="userPassword" placeholder="Ingrese su contraeña actual">
                     </label>
                     <% if (locals.errors && errors.userPassword) { %>
                         <div class="text-red">
@@ -60,7 +60,7 @@
                         </div>
                         <% } %>
                     <label for="userNewPassword">Contraseña nueva:
-                        <input class="box-ingrese-datos" type="text" name="userNewPassword" id="userNewPassword" placeholder="Ingrese la nueva contraseña que desea utilizar">
+                        <input class="box-ingrese-datos" type="password" name="userNewPassword" id="userNewPassword" placeholder="Ingrese la nueva contraseña que desea utilizar">
                     </label>
                         <% if (locals.errors && errors.userNewPassword) { %>
                             <div class="text-red">
