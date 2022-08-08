@@ -40,12 +40,12 @@ const productsController =  {
     
     productoEditado:(req,res) => {
         console.log(req.params.id);
-        
+
         db.Product.update({
             name : req.body.name,
             price : req.body.price,
             opinion : req.body.opinion,
-            // stock: req.body.stock,
+            stock: req.body.stock,
             size : req.body.size,
             pages : req.body.pages,
             more : req.body.more,
@@ -63,6 +63,7 @@ const productsController =  {
             })
             
         }
+        // ! AGREGAR DB.EDITORIAL
         // TABLA Author PUEDE CAMBIAR SI NO EXISTE EL AUTOR
         db.Author.findOne({
             where: {
