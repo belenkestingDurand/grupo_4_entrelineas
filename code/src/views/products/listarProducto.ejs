@@ -24,9 +24,9 @@
             </div>
             <div class="lp-div-textos">
                 <h5 class="lp-h5-etiquetas">Id:</h5><h5 class="lp-h5-contenido"><%= product.id %></h5>
-                <h5 class="lp-h5-etiquetas">Tipo:</h5><h5 class="lp-h5-contenido"><%= product.type %></h5>
+                <h5 class="lp-h5-etiquetas">Tipo:</h5><h5 class="lp-h5-contenido"><%= product.productsTypes.title %></h5>
                 <h5 class="lp-h5-etiquetas">Genero:</h5><h5 class="lp-h5-contenido"> <%= product.genres.name %></h5>
-                <h5 class="lp-h5-etiquetas">Autor:</h5><h5 class="lp-h5-contenido"> <%= product.author %></h5>
+                <h5 class="lp-h5-etiquetas">Autor:</h5><h5 class="lp-h5-contenido"> <%= product.authors.fullName %></h5>
                 <h5 class="lp-h5-etiquetas">Precio:</h5><h5 class="lp-h5-contenido">$ <%= product.price %></h5>
             </div>
             <div class="lp-div-textos-2">

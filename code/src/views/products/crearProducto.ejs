@@ -24,12 +24,15 @@
                 </div>
                 <div>
                     <p class="createpr-label-font">Tipo de producto:</p>
-                    <input type="radio" id="book" name="type" value="book">
-                    <label class="createpr-label-font" for="center-logo-book">Libro</label><br>
-                    <input type="radio" id="ebook" name="type" value="ebook">
-                    <label class="createpr-label-font" for="ebook">Ebook</label><br>
-                    <input type="radio" id="varios" name="type" value="varios">
-                    <label class="createpr-label-font" for="varios">Varios</label>
+                    <p>
+                        <select name="id_productType" id="" required>
+                            <option value="" disabled selected>- Tipo de producto - </option>
+                            <% allProductsTypes.forEach(tipoProducto => { %>
+                            <option value="<%= tipoProducto.id %>"><%= tipoProducto.title %></option>
+                            <% }); %>
+                        </select>
+                    </p>
+
                 </div>
 
                 <div class="">
@@ -41,9 +44,27 @@
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="author">Autor:</label></div>
-                    <input class="box-ingrese-datos" type="text" name="author" id="author" 
-                        placeholder="Ingrese el nombre del autor" required>
+                    <p>
+                        <select name="author" id="author" required>
+                            <option value="" disabled selected>- select Autor - </option>
+                            <% allAuthors.forEach(autor => { %>
+                            <option value="<%= autor.id %>"><%= autor.fullName %></option>
+                            <% }); %>
+                        </select>
+                    </p>
                 </div>
+                <div class="">
+                    <div class="">
+                    <div><label class="createpr-label-font" for="genre">Género:</label></div>
+                    <p>
+                        <select name="genre" id="genre" required>
+                            <option value="" disabled selected>- select Genre - </option>
+                            <% allGenres.forEach(genero => { %>
+                            <option value="<%= genero.id %>"><%= genero.name %></option>
+                            <% }); %>
+                        </select>
+                    </p>
+                 </div>
 
                 <div class="">
                     <div class="">
@@ -57,12 +78,8 @@
                     <textarea class="texarea-saizing" name="opinion" id="about" placeholder="Agregue una breve descripcion del libro"></textarea> 
                 </div>
 
-                <div class="">
-                    <div class="">
-                    <div><label class="createpr-label-font" for="gender">Género:</label></div>
-                    <input class="box-ingrese-datos" type="text" name="gender" id="gender" 
-                    placeholder="Ingrese el género del libro" required>
-                </div>
+              
+
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="bookSize">Tamaño:</label></div>
@@ -80,7 +97,11 @@
                     <div><label class="createpr-label-font" for="more">"Mas Información":</label></div>
                     <textarea class="texarea-saizing" name="more" id="more" placeholder="Agregue información adicional sobre el producto"></textarea> 
                 </div>
-
+                <div class="">
+                    <div class="">
+                    <div><label class="createpr-label-font" for="stock">"stock":</label></div>
+                    <input class="box-ingrese-datos" type="number" name="stock" id="stock" placeholder="Ingrese stock"></input> 
+                </div>
 
 
                

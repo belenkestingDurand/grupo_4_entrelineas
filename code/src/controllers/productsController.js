@@ -18,11 +18,7 @@ let datos = fs.readFileSync(productosFilePath, "utf-8")
 
 // OBJECT WITH DETAILED HTML DIRECTIONS
 const productsController =  {
-    crearProducto: (req, res) => {
-    return res.render('products/crearProducto')
-    },
-
-    listarProducto: (req, res) => {
+       listarProducto: (req, res) => {
 
         db.Product.findAll({ include: ["authors", "genres", "editorials", "productsTypes"] })
             .then((productos) => {
@@ -141,12 +137,33 @@ const productsController =  {
         // redireccionar a '/productos'
         return res.redirect('/products')
         },
-    
+// products creación po get
+    crearProducto: (req, res) => {
+         db.Genre.findAll()
+            .then(function(todosLosGeneros){
+                let allGenres = todosLosGeneros
+                db.Author.findAll()
+                    .then(function(todosLosAutores){
+                        let allAuthors = todosLosAutores
+                        db.Editorial.findAll()
+                        .then(function(todasLasEditoriales){
+                            let allEditorials = todasLasEditoriales
+                            db.ProductType.findAll()
+                            .then(function(todosLosProductTypes){
+                                let allProductsTypes = todosLosProductTypes
+                                res.render("products/crearProducto", { allGenres, allAuthors, allEditorials, allProductsTypes});
+                            })
+                        })
+                    })
+            });
+       
+            },
+        
 
     // /products proceso de creación por (POST)
     productoCreado: (req,res) =>{
-        let datos = fs.readFileSync(productosFilePath)
-        let books = JSON.parse(datos)
+        // let datos = fs.readFileSync(productosFilePath)
+        // let books = JSON.parse(datos)
 
         let image = '';
         if (req.file) {
@@ -156,24 +173,28 @@ const productsController =  {
         }
 
         let newProduct = {
-            id: books[books.length -1].id + 1,
+ 
             name: req.body.productName,
-            type: req.body.type,
-            author: req.body.author,
             price: req.body.price,
-            gender: req.body.gender,
-            picture: "/img/products/"+image,
-            opinion: req.body.opinion,
             size: req.body.size,
             pages: req.body.pages,
-            more: req.body.more
+            opinion: req.body.opinion,
+            more: req.body.more,
+            picture: "/img/products/"+image,
+            stock: req.body.stock,
+            id_author: req.body.author,
+            id_genre: req.body.genre,
+            id_productType: req.body.id_productType
+            
         };
-        books.push(newProduct)
-
-        let newbooks = JSON.stringify(books)
-        fs.writeFileSync(productosFilePath, newbooks)
-        
-        return res.redirect('/products')
+        console.log(newProduct);
+ //       books.push(newProduct)
+        // let newbooks = JSON.stringify(books)
+        // fs.writeFileSync(productosFilePath, newbooks)
+        db.Product.create(newProduct)
+            .then(function(creada){
+                res.redirect('/products')
+            })
     },
     // delete: (req, res) => {
     //     // leer archivo

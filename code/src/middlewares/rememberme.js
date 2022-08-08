@@ -1,4 +1,5 @@
 const User = require('../modelo/User');
+const db = require('../database/models')
 
 function recordameMiddleware(req, res, next){
     if(req.body.recuerdame == "on"){
@@ -9,8 +10,9 @@ function recordameMiddleware(req, res, next){
 
     //Leo los usuairos lo recorro con el array y encuentro el usuario.
     //Despues redireccionamos al usuario al inicio Sin que tenga que poner su usuario y contraseña.
-    let userToLogin = User.findByField('email', req.cookies.recuerdame);  
-
+    db.User.findOne({where: {email: req.cookies.recuerdame}})
+    .then(function(existUser){  
+        let userToLogin = existUser
         if(userToLogin){
         
                  req.session.userLogged = userToLogin
@@ -19,9 +21,11 @@ function recordameMiddleware(req, res, next){
 
                     }
 
-            }
-            next();
-        }
-    
-
+            
+            
+        
+    })
+}
+    next();  
+    }
 module.exports = recordameMiddleware
