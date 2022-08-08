@@ -113,7 +113,8 @@ const userController =  {
         });
 	},
     profileEdit: (req,res) => {
-        // recibir el parametro para saber que debe renderizar el EJS╬
+        // recibir el parametro para saber que debe renderizar el EJS
+        console.log(req.session.userLogged);
         return res.render('users/editProfile', {
             user: req.session.userLogged,
             field: req.params.field //este campo indicara que formulario se mostrara
@@ -121,11 +122,9 @@ const userController =  {
     },
     profileEdited: (req,res) => {
         let errors = validationResult(req);
-      
-        // 1er intento de devolver en caso de errores
         
-        let userToEdit = User.findByPk(req.params.id);
-        
+        let loggedUser = req.session.userLogged
+
         let userChanges = {
             firstName: req.body.userFirstName,
             lastName: req.body.userLastName,
@@ -135,28 +134,66 @@ const userController =  {
             newpassword: bcrypt.hashSync(req.body.userNewPassword,10),
         }
   
+        // PREGUNTAR POR FIELD Y SEGUN ESO QUE UPDATEO DE DB.USUARIO BLA BLA
+        
+        if (req.params.field == 'name'){
+            //- update de NAME
+            db.Usuario.update({
+                firstName: req.body.userFirstName,
+                firstName: req.body.userLastName
+            },{
+                where: {id: loggedUser.id}
+            })
+        } else if (req.params.field == 'email'){
+            //- update de EMAIL
+            if (req.body.userEmail == loggedUser.email){
+                //* ALL OK
+                db.Usuario.update({
+                    email: req.body.userNewEmail
+                },{
+                    where: {id: loggedUser.id}
+                })
+            } else {
+                // SI los mails no coinciden =>
+                return res.render('users/editProfile', {
+                    errors:{
+                        userEmail: {
+                            msg: 'Campo completado incorrectamente. '
+                        }
+                    },
+                    user: req.session.userLogged
+                })
+            }
+        } else if (req.params.field == 'password'){
+            //- update de PASSWORD
+            if (req.body.oldPassword != "" && bcrypt.compareSync(req.body.oldPassword, loggedUser.password)){
+                //* ALL OK
+                db.Usuario.update({
+                    password: bcrypt.hashSync(req.body.userNewPassword,10)
+                },{
+                    where: {id: loggedUser.id}
+                })
+            } else {
+                // SI las contraseñas no coinciden =>
+                return res.render('users/editProfile', {
+                    errors:{
+                        userPassword: {
+                            msg: 'Campo completado incorrectamente. '
+                        }
+                    },
+                    user: req.session.userLogged
+                })
+            }
+        }
+        
+        // * VIEJARDO
+        let userToEdit = db.Usuario.findByPk(req.params.id);
        
     
         // if (req.file.profilePic){
         //     userChanges["profilePic"] = req.file.profilePic
         // }
 
-        // SI el mail ya existente coincide con la casilla de 'Email actual' =>
-        if (userChanges.oldEmail == userToEdit.email){
-            userToEdit.email = userChanges.newEmail
-        } else {
-            // SI los mails no coinciden =>
-
-            return res.render('users/editProfile', {
-                errors:{
-                    userEmail: {
-                        msg: 'Campo completado incorrectamente. '
-                    }
-                },
-                user: req.session.userLogged
-            })
-        }
-        
         // SI la contraseña ya existente coincide con la casilla de 'Contraseña actual' =>
         if (userChanges.oldPassword != "" && bcrypt.compareSync(userChanges.oldPassword, userToEdit.password)){
             userToEdit.password = userChanges.newpassword
@@ -173,10 +210,7 @@ const userController =  {
             })
         }
         
-        // se agregan Nombre, Apellido e Imagen sin chistar
-        userToEdit.firstName = userChanges.firstName
-        userToEdit.lastName = userChanges.lastName
-        // userToEdit.profilePic = userChanges.profilePic
+        //? userToEdit.profilePic = userChanges.profilePic
 
         if (errors.errors.length > 0) {
             return res.render('users/editProfile', {errors: errors.mapped(), user: req.session.userLogged})

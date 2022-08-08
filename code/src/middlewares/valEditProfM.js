@@ -1,20 +1,39 @@
 const path = require('path');
 const { body } = require('express-validator');
 
-const validationEditProfile = []
+function validationMW(req, res, next) {
+    // preguntar por parametro field y de ahi ver que IF usar
+    const validationErrors = []
 
-if (body('userEmail') != "" || body('userNewEmail') != ""){
-    validationEditProfile.push(
-        body('userEmail').isEmail().withMessage('Campo completado incorrectamente. '),
-        body('userNewEmail').notEmpty().withMessage('Campo incompleto')
-    )
-}
-if ((body('userPassword') != "" || body('userNewPassword') != "")){
-    validationEditProfile.push(
-        body('userPassword').notEmpty().withMessage('Campo completado incorrectamente. '),    
-        body('userNewPassword').notEmpty().withMessage('Tienes que ingresar la nueva contraseña')       
-        )
+    if (req.params.field == 'name') {
+        next()
+    } else if (req.paramas.field == 'email') {
+        if (body('userEmail') != "") {
+            validationErrors.push(
+                body('userEmail').isEmail().withMessage('Campo completado incorrectamente. ')
+            )
+        } else if (body('userNewEmail') != "") {
+            validationErrors.push(
+                body('userNewEmail').notEmpty().withMessage('Campo incompleto')
+            )
+        }
+    } else if (req.paramas.field == 'password') {
+        if (body('userPassword') != "") {
+            validationErrors.push(
+                body('userPassword').notEmpty().withMessage('Campo completado incorrectamente. ')
+            )
+        } else if (body('userNewPassword') != "") {
+            validationErrors.push(
+                body('userNewPassword').notEmpty().withMessage('Tienes que ingresar la nueva contraseña')
+            )
+        }
     }
+    // else if (req.paramas.field == 'adress')
+
+    next()
+}
+module.exports = validationMW
+
 /*
     OPCIONAL: campo extra de 'Confirmar nueva contraseña
 body('userNewPasswordConfirm').custom((value, {req}) => {
@@ -24,5 +43,3 @@ body('userNewPasswordConfirm').custom((value, {req}) => {
     return true;
 })
 */
-
-module.exports = [ validationEditProfile ]
