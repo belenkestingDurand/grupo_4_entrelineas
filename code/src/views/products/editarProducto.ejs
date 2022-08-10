@@ -25,6 +25,18 @@
                 </div>
                 <div>
                     <!-- ! CAMBIAR A SELECT/OPTION -->
+                    <!--  <div>
+                        <p class="createpr-label-font">Tipo de producto:</p>
+                        <p>
+                            <select name="id_productType" id="" required>
+                                <option value="" disabled selected>- Tipo de producto - </option>
+                                <% allProductsTypes.forEach(tipoProducto => { %>
+                                <option value="<%= tipoProducto.id %>"><%= tipoProducto.title %></option>
+                                <% }); %>
+                            </select>
+                        </p>
+    
+                    </div> -->
                     <p class="createpr-label-font">Tipo de producto:</p>
                     <input type="radio" id="Libro" name="type" value="1">
                     <label class="createpr-label-font" for="center-logo-book">Libro</label><br>
