@@ -12,9 +12,9 @@ const about = {
     books: "Libros"
     }
 //variable con la ruta del archivo products.json
-let productosFilePath = path.join(__dirname, '../data/products.json');
+//let productosFilePath = path.join(__dirname, '../data/products.json');
 
-let datos = fs.readFileSync(productosFilePath, "utf-8")
+//let datos = fs.readFileSync(productosFilePath, "utf-8")
 
 // OBJECT WITH DETAILED HTML DIRECTIONS
 const productsController =  {

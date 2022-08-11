@@ -5,7 +5,7 @@ const about = {
 const db = require('../database/models');
 const sequelize = require('sequelize')
 const fs = require("fs")
-let datos = fs.readFileSync('./data/products.json')
+//let datos = fs.readFileSync('./data/products.json')
         
 
 // OBJECT WITH DETAILED HTML DIRECTIONS
