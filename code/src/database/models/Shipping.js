@@ -32,10 +32,11 @@ module.exports = (sequelize, dataTypes) => {
     const Shipping = sequelize.define(alias,cols,config)
 
     // FOREIGN KEY (id_order) REFERENCES orders(id)
-    Shipping.associate = (models) => {
+   Shipping.associate = function(models) {
         Shipping.belongsTo(models.Order, {
             as: 'orders',
             foreignKey: 'id_order'
         })
     }
+    return Shipping
 }
