@@ -13,6 +13,7 @@
 
  
     <main>
+        <br>
         <h3 class="creatprod-title">EDITAR PRODUCTO</h3>
         <form class="createpr-form-padding-left" 
             action="/products/<%= product.id %>/edit?_method=PUT" 
@@ -23,8 +24,21 @@
                     <input class="box-ingrese-datos" type="text" name="name" id="name" value="<%= product.name %>" required >
                 </div>
                 <div>
+                    <!-- ! CAMBIAR A SELECT/OPTION -->
+                    <!--  <div>
+                        <p class="createpr-label-font">Tipo de producto:</p>
+                        <p>
+                            <select name="id_productType" id="" required>
+                                <option value="" disabled selected>- Tipo de producto - </option>
+                                <% allProductsTypes.forEach(tipoProducto => { %>
+                                <option value="<%= tipoProducto.id %>"><%= tipoProducto.title %></option>
+                                <% }); %>
+                            </select>
+                        </p>
+    
+                    </div> -->
                     <p class="createpr-label-font">Tipo de producto:</p>
-                    <input type="radio" id="Libro" name="type" value="1" checked>
+                    <input type="radio" id="Libro" name="type" value="1">
                     <label class="createpr-label-font" for="center-logo-book">Libro</label><br>
 
                     <input type="radio" id="Ebook" name="type" value="2">
@@ -43,7 +57,7 @@
                 <div class="">
                     <figure class="">
                       <img class="editproduct-img" src="../../../<%= product.picture%>"
-                       alt="libro <%= product.name%>">
+                       alt="libro <%= product.name %>">
                     </figure>
                     <input type="file" name="productImg" value="<%= product.picture%>" />
                 </div>
@@ -52,7 +66,7 @@
                     <div class="">
                     <div><label class="createpr-label-font" for="author">Autor:</label></div>
                     <input class="box-ingrese-datos" type="text" name="author" id="author" 
-                        placeholder="Ingrese el nombre del autor" required value="<%= product.authors.fullname %>">
+                        placeholder="Ingrese el nombre del autor" required value="<%= product.authors.fullName %>">
                 </div>
 
                 <div class="">
@@ -68,10 +82,22 @@
 
                 <div class="">
                     <div class="">
-                    <div><label class="createpr-label-font" for="gender">Género:</label></div>
-                    <input class="box-ingrese-datos" type="text" name="gender" id="gender" 
+                    <div><label class="createpr-label-font" for="genre">Género:</label></div>
+                    <input class="box-ingrese-datos" type="text" name="genre" id="genre" 
                     placeholder="Ingrese el género del libro" required value="<%= product.genres.name %>">
                 </div>
+                <div class="">
+                    <div class="">
+                    <div><label class="createpr-label-font" for="editorial">Editorial: </label></div>
+                    <p>
+                        <select name="genre" id="genre" required>
+                            <option value="" disabled selected>- select Editorial - </option>
+                            <% allEditorials.forEach(editorial => { %>
+                            <option value="<%= editorial.id %>"><%= editorial.title %></option>
+                            <% }); %>
+                        </select>
+                    </p>
+                 </div>
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="size">Tamaño:</label></div>
@@ -88,6 +114,11 @@
                     <div class="">
                     <div><label class="createpr-label-font" for="more">"Mas Información":</label></div>
                     <textarea  name="more" id="more" placeholder="Agregue información adicional sobre el producto"><%= product.more %></textarea> 
+                </div>
+                <div class="">
+                    <div class="">
+                    <div><label class="createpr-label-font" for="stock">"Stock":</label></div>
+                    <input class="box-ingrese-datos" type="number" name="stock" id="stock" value=" <%= product.stock %>"></input> 
                 </div>
                
                 <div class="creatProd-buttom"> 

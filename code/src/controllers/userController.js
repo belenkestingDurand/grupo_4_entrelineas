@@ -113,70 +113,77 @@ const userController =  {
         });
 	},
     profileEdit: (req,res) => {
-        // recibir el parametro para saber que debe renderizar el EJS╬
+        // recibir el parametro para saber que debe renderizar el EJS
+        console.log(req.session.userLogged);
         return res.render('users/editProfile', {
             user: req.session.userLogged,
             field: req.params.field //este campo indicara que formulario se mostrara
         })
     },
     profileEdited: (req,res) => {
+        console.log('EN CONTROLLER');
         let errors = validationResult(req);
-      
-        // 1er intento de devolver en caso de errores
+        let user = req.session.userLogged 
         
-        let userToEdit = User.findByPk(req.params.id);
+        // PREGUNTAR POR FIELD Y SEGUN ESO QUE UPDATEO DE DB.USUARIO BLA BLA
         
-        let userChanges = {
-            firstName: req.body.userFirstName,
-            lastName: req.body.userLastName,
-            oldEmail: req.body.userEmail, 
-            newEmail: req.body.userNewEmail, 
-            oldPassword: bcrypt.hashSync(req.body.userPassword,10),
-            newpassword: bcrypt.hashSync(req.body.userNewPassword,10),
+        if (req.params.field == 'name'){
+            //- update de NAME
+            db.User.update({
+                firstName: req.body.userFirstName,
+                lastName: req.body.userLastName
+            },{
+                where: {email: user.email}
+            })
+        } else if (req.params.field == 'email'){
+            //- update de EMAIL
+            if (req.body.userEmail == user.email){
+                //* ALL OK
+                db.User.update({
+                    email: req.body.userNewEmail
+                },{
+                    where: {email: user.email}
+                })
+            } else {
+                // SI los mails no coinciden =>
+                return res.render('users/editProfile', {
+                    errors:{
+                        userEmail: {
+                            msg: 'Campo completado incorrectamente. '
+                        }
+                    },
+                    user: req.session.userLogged
+                })
+            }
+        } else if (req.params.field == 'password'){
+            //- update de PASSWORD
+            if (req.body.userPassword != "" && bcrypt.compareSync(req.body.userPassword, user.password)){
+                //* ALL OK
+                db.User.update({
+                    password: bcrypt.hashSync(req.body.userNewPassword,10)
+                },{
+                    where: {email: user.email}
+                })
+            } else {
+                // SI las contraseñas no coinciden =>
+                return res.render('users/editProfile', {
+                    errors:{
+                        userPassword: {
+                            msg: 'Campo completado incorrectamente. '
+                        }
+                    },
+                    user: req.session.userLogged
+                })
+            }
         }
-  
-       
+        // * VIEJO
     
         // if (req.file.profilePic){
         //     userChanges["profilePic"] = req.file.profilePic
         // }
 
-        // SI el mail ya existente coincide con la casilla de 'Email actual' =>
-        if (userChanges.oldEmail == userToEdit.email){
-            userToEdit.email = userChanges.newEmail
-        } else {
-            // SI los mails no coinciden =>
-
-            return res.render('users/editProfile', {
-                errors:{
-                    userEmail: {
-                        msg: 'Campo completado incorrectamente. '
-                    }
-                },
-                user: req.session.userLogged
-            })
-        }
         
-        // SI la contraseña ya existente coincide con la casilla de 'Contraseña actual' =>
-        if (userChanges.oldPassword != "" && bcrypt.compareSync(userChanges.oldPassword, userToEdit.password)){
-            userToEdit.password = userChanges.newpassword
-        } else {
- 
-            // SI las contraseñas no coinciden =>
-            return res.render('users/editProfile', {
-                errors:{
-                    userPassword: {
-                        msg: 'Campo completado incorrectamente. '
-                    }
-                },
-                user: req.session.userLogged
-            })
-        }
-        
-        // se agregan Nombre, Apellido e Imagen sin chistar
-        userToEdit.firstName = userChanges.firstName
-        userToEdit.lastName = userChanges.lastName
-        // userToEdit.profilePic = userChanges.profilePic
+        //? userToEdit.profilePic = userChanges.profilePic
 
         if (errors.errors.length > 0) {
             return res.render('users/editProfile', {errors: errors.mapped(), user: req.session.userLogged})
