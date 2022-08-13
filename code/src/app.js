@@ -4,9 +4,10 @@ const cookieParser = require('cookie-parser');
 const app = express();
 const port = 3000;
 const path = require('path');
-const routesMain = require('./routes/home')
-const routesProducts = require('./routes/products')
-const routesUsers = require('./routes/users')
+const routesMain = require('./routes/home');
+const routesProducts = require('./routes/products');
+const routesUsers = require('./routes/users');
+const routesAuthors = require('./routes/authors');
 const publicPath = path.resolve(__dirname,'../public');
 const methodOverride = require('method-override')
 
@@ -53,3 +54,4 @@ app.use(methodOverride('_method'))
 app.use('/', routesMain)
 app.use('/products', routesProducts)
 app.use('/users', routesUsers)
+app.use('/authors', routesAuthors)

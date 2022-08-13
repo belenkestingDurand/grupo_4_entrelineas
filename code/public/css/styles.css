@@ -105,8 +105,31 @@ input{
     width: 100%;
 }
 
-
-
+.centrar-button {
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+.ul-vista-liaut {
+    display: flex;
+    list-style: none;
+    width: 100vw;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.tam-li1 {
+    width: 20%;
+    padding: 10px;
+}
+.tam-li2 {
+    width: 80%;
+    padding: 10px;
+}
+.divsiz-liaut {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
 /*Header*/
 header {
     height: 120px;
@@ -207,8 +230,17 @@ img {
 .nav-link{
     color: #9F1F0E;
 }
-
-
+div h3 {
+    display: flex;
+  /*  box-shadow: 0 4px 2px -2px rgb(100, 100, 100);*/
+}
+.h3-crearautor{
+    margin-top: 140px;
+    text-align: center;
+}
+.width100vw {
+    width: 100%;
+}
 /*Main*/
 main{
     margin-top: 120px;
@@ -683,6 +715,10 @@ box-ingrese-datos.is-invalid {
 
 .centrar-boton {
     text-align: center;
+}
+centrar-button {
+    margin-top:15%;
+    margin-bottom: 15%;
 }
 
 .button-crear-cuenta {
@@ -1272,8 +1308,18 @@ text-align: center;
 .login-ajust-nuevo-cli{
     font-size: 15px;
 }
+.create-au-header {
+    height: 120px;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    Justify-content: space-between;
+    
 
+}
     /*createProduct header*/
+
     .create-pr-header {
         height: 120px;
         width: 100vw;

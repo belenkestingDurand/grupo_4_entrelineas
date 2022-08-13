@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Head -->
+    <%- include('./partials/head.ejs') %>
+    <title>Entre Lineas - Listar Autores</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <%- include('./partials/authorHeader.ejs') %>
+    <h3 class="h3-crearautor">Listado de autores</h1>
+    <ul class="ul-vista-liaut" >
+        <% for (let i=0; i< autores.length; i++) { %>
+        
+        <div class="divsiz-liaut">
+            <li class="tam-li1">
+                <%= autores[i].id + "   " + autores[i].fullName + "   "   %>
+        
+            </li>
+            <li class="tam-li2">
+                <form action = "authors/borrar/<%=autores.id%>" method="POST"> 
+                     <button type="submit">Borrar</button>
+                </form>
+            </li>
+        </div>   
+    
+        <% } %>
+    </ul>
+ 
+   
+    <!-- Footer -->
+    <%- include('./partials/footer.ejs') %>
+</body>
+
+</html>
