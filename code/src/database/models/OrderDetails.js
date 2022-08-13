@@ -33,7 +33,7 @@ module.exports = (sequelize, dataTypes) => {
     const OrderDetail = sequelize.define(alias,cols,config)
 
     // Asociaciones
-    OrderDetail.associate = (models) => {
+   OrderDetail.associate = (models) => {
         
         OrderDetail.belongsTo(models.Product, {
             as: 'products',
