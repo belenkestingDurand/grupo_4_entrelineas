@@ -130,6 +130,13 @@ input{
     flex-direction: row;
     flex-wrap: wrap;
 }
+.botonBorrar{
+    color: white;
+    background-color: #9F1F0E;
+    padding: 3px;
+    border-radius: 10px;
+  }
+
 /*Header*/
 header {
     height: 120px;

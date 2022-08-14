@@ -10,7 +10,8 @@ router.post('/crear', authorsController.procesarCrear);
 router.get('/',authorsController.listar);
 
 // Delete author
-router.delete
+router.get('/delete/:id', authorsController.delete);
+router.post('/delete/:id', authorsController.destroy);
 
 // Search author
 router.post('/search', authorsController.search)

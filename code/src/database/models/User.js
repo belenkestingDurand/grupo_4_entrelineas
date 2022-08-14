@@ -22,8 +22,12 @@ module.exports = (sequelize, dataTypes) => {
         },
         profilePic: { 
             type: dataTypes.STRING(100),
+        },
+        id_userCategory:  {
+            type: dataTypes.INTEGER.UNSIGNED,
+            allowNull: false
+         }
         }
-    };
     let config = {
         tableName: "users",
         timestamps: false
