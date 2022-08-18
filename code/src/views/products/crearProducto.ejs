@@ -86,6 +86,26 @@
                 </div>
                 <div class="">
                     <div class="">
+                    <div><label class="createpr-label-font"  for="price">Precio:</label></div>
+                    <input class="box-ingrese-datos" type="number" name="price" id="price" required>
+                        <% if (locals.errors && errors.price) { %>
+                            <div class="text-red">
+                                <%= errors.price.msg %>
+                            </div>
+                        <% } %>
+                </div>
+                <div class="">
+                    <div class="">
+                    <div><label class="createpr-label-font" for="about">Descripción:</label></div>
+                    <textarea class="texarea-saizing" name="about" id="about" placeholder="Agregue una breve descripcion del libro"></textarea> 
+                    <% if (locals.errors && errors.about) { %>
+                        <div class="text-red">
+                            <%= errors.about.msg %>
+                        </div>
+                    <% } %>
+                </div>
+                <div class="">
+                    <div class="">
                     <div><label class="createpr-label-font" for="genre">Género:</label></div>
                     <p>
                         <select name="genre" id="genre" required>
@@ -118,29 +138,6 @@
                         </div>
                     <% } %>
                  </div>
-                <div class="">
-                    <div class="">
-                    <div><label class="createpr-label-font"  for="price">Precio:</label></div>
-                    <input class="box-ingrese-datos" type="number" name="price" id="price" required>
-                        <% if (locals.errors && errors.price) { %>
-                            <div class="text-red">
-                                <%= errors.price.msg %>
-                            </div>
-                        <% } %>
-                </div>
-                <div class="">
-                    <div class="">
-                    <div><label class="createpr-label-font" for="about">Descripción:</label></div>
-                    <textarea class="texarea-saizing" name="about" id="about" placeholder="Agregue una breve descripcion del libro"></textarea> 
-                    <% if (locals.errors && errors.about) { %>
-                        <div class="text-red">
-                            <%= errors.about.msg %>
-                        </div>
-                    <% } %>
-                </div>
-
-              
-
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="bookSize">Tamaño:</label></div>

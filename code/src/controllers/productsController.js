@@ -39,12 +39,18 @@ const productsController =  {
     },
     
     productoEditado:(req,res) => {
-        console.log(req.params.id);
+        // - crear validador de epxress y retornar vista con errores en caso de que haya
+        const resValidation = validationResult(req)
+        if (resValidation.errors.length > 0) {
+            return res.redirect('products/editarProducto', {
+                errors: resValidation.mapped()
+            }
+        )}
 
         db.Product.update({
             name : req.body.name,
             price : req.body.price,
-            opinion : req.body.opinion,
+            opinion : req.body.about,
             stock: req.body.stock,
             size : req.body.size,
             pages : req.body.pages,
