@@ -17,9 +17,20 @@
                         <label for="userFirstName">Nombre:
                             <input class="box-ingrese-datos" type="text" name="userFirstName" id="userFirstName" value="<%= user.firstName %>">
                         </label>
+                        <% if (locals.errors && errors.userFirstName) { %>
+                            <div class="text-red">
+                                <%= errors.userFirstName.msg %>
+                            </div>
+                        <% } %>
                         <label for="userLastName">Apellido:
-                                <input class="box-ingrese-datos" type="text" name="userLastName" id="userLastName" value="<%= user.lastName %>">
+                            <input class="box-ingrese-datos" type="text" name="userLastName" id="userLastName" value="<%= user.lastName %>">
                         </label>
+                        <% if (locals.errors && errors.userLastName) { %>
+                            <div class="text-red">
+                                <%= errors.userLastName.msg %>
+                            </div>
+                        <% } %>
+                        
                 <% } else if (field == 'email'){ %>
                     <form class="createpr-form-padding-left" action="/users/userProfile/edit/email?_method=PUT"
                         method="post" >
@@ -67,7 +78,8 @@
                                 <%= errors.userNewPassword.msg %>
                             </div>
                             <% } %>
-                <% } else if (field=='adress' ){ %>
+
+                <% } else if (field=='adress'){ %>
                     <form class="createpr-form-padding-left" action="/userProfile/edit/adress?_method=PUT"
                         method="post" ">
                         <br>

@@ -143,8 +143,13 @@ const productsController =  {
 
     // /products proceso de creación por (POST)
     productoCreado: (req,res) =>{
-        // let datos = fs.readFileSync(productosFilePath)
-        // let books = JSON.parse(datos)
+        // - crear validador de epxress y retornar vista con errores en caso de que haya
+        const resValidation = validationResult(req)
+        if (resValidation.errors.length > 0) {
+            return res.redirect('products/crearProducto', {
+                errors: resValidation.mapped()
+            });
+        }
 
         let image = '';
         if (req.file) {
@@ -159,7 +164,7 @@ const productsController =  {
             price: req.body.price,
             size: req.body.size,
             pages: req.body.pages,
-            opinion: req.body.opinion,
+            opinion: req.body.about,
             more: req.body.more,
             picture: "/img/products/"+image,
             stock: req.body.stock,
