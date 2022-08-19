@@ -11,6 +11,7 @@ const fs = require("fs")
 const about = {
     books: "Libros"
     }
+const { validationResult} = require('express-validator');
 //variable con la ruta del archivo products.json
 //let productosFilePath = path.join(__dirname, '../data/products.json');
 
@@ -30,21 +31,32 @@ const productsController =  {
      },
 
     editarProducto: (req,res) => {
-    db.Product.findOne( {include: ["authors", "genres", "editorials", "productsTypes"],
-                        where: {id: req.params.id}})
-    .then(function(prductToShow){
-        res.render('products/editarProducto', {product: prductToShow})
-    })
+        
+        db.Product.findOne( {include: ["authors", "genres", "editorials" , "productsTypes"],
+                            where: {id: req.params.id}})
+        .then(function(prductToShow){
+            db.Editorial.findAll().then(function(todasLasEditoriales){
+                let allEditorials = todasLasEditoriales
+                db.ProductType.findAll().then(todosLosProdTypes => {
+                    let allProductsTypes = todosLosProdTypes
+                    res.render('products/editarProducto', {product: prductToShow, allEditorials, allProductsTypes })
+                })
+            })
+        })
     
     },
     
     productoEditado:(req,res) => {
-        console.log(req.params.id);
+        // - crear validador de epxress y retornar vista con errores en caso de que haya
+        const resValidation = validationResult(req)
+        if (resValidation.errors.length > 0) {
+            return res.redirect('products/editarProducto', {errors: resValidation.mapped()}
+        )}
 
         db.Product.update({
             name : req.body.name,
             price : req.body.price,
-            opinion : req.body.opinion,
+            opinion : req.body.about,
             stock: req.body.stock,
             size : req.body.size,
             pages : req.body.pages,
@@ -143,8 +155,13 @@ const productsController =  {
 
     // /products proceso de creación por (POST)
     productoCreado: (req,res) =>{
-        // let datos = fs.readFileSync(productosFilePath)
-        // let books = JSON.parse(datos)
+        // - crear validador de epxress y retornar vista con errores en caso de que haya
+        const resValidation = validationResult(req)
+        if (resValidation.errors.length > 0) {
+            return res.redirect('products/crearProducto', {
+                errors: resValidation.mapped()
+            });
+        }
 
         let image = '';
         if (req.file) {
@@ -159,7 +176,7 @@ const productsController =  {
             price: req.body.price,
             size: req.body.size,
             pages: req.body.pages,
-            opinion: req.body.opinion,
+            opinion: req.body.about,
             more: req.body.more,
             picture: "/img/products/"+image,
             stock: req.body.stock,
@@ -170,13 +187,10 @@ const productsController =  {
             
         };
         console.log(newProduct);
- //       books.push(newProduct)
-        // let newbooks = JSON.stringify(books)
-        // fs.writeFileSync(productosFilePath, newbooks)
         db.Product.create(newProduct)
-            .then(function(creada){
-                res.redirect('/products')
-            })
+
+        return res.redirect('/products')
+            
     },
     // delete: (req, res) => {
     //     // leer archivo

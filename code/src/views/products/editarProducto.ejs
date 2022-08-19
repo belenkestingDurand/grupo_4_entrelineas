@@ -22,36 +22,39 @@
                     <div class="">
                     <div><label class="createpr-label-font" for="name">Nombre del producto:</label></div>
                     <input class="box-ingrese-datos" type="text" name="name" id="name" value="<%= product.name %>" required >
+                    <% if (locals.errors && errors.name) { %>
+                        <div class="text-red">
+                            <%= errors.name.msg %>
+                        </div>
+                    <% } %>
                 </div>
                 <div>
-                    <!-- ! CAMBIAR A SELECT/OPTION -->
-                    <!--  <div>
+                     <div>
                         <p class="createpr-label-font">Tipo de producto:</p>
-                        <p>
-                            <select name="id_productType" id="" required>
-                                <option value="" disabled selected>- Tipo de producto - </option>
-                                <% allProductsTypes.forEach(tipoProducto => { %>
-                                <option value="<%= tipoProducto.id %>"><%= tipoProducto.title %></option>
+                        <!-- 
+                            <% allEditorials.forEach(editorial => { %>
+                                <% if (product.id_editorial == editorial.id) { %>
+                                    <option value="<%= editorial.id %>" selected><%= editorial.title %></option>
+                                <% }%>
+                            <option value="<%= editorial.id %>"><%= editorial.title %></option>
+                            <% }); %>
+                         -->
+                            <select name="type" id="type" required>
+                                <% allProductsTypes.forEach(tipo => { %>
+                                    <% if (product.id_productType == tipo.id) { %>
+                                        <option value="<%= tipo.id %>" selected><%= tipo.title %></option>
+                                    <% } else { %>
+                                        <option value="<%= tipo.id %>"><%= tipo.title %></option>
+                                    <% } %>
                                 <% }); %>
                             </select>
-                        </p>
-    
-                    </div> -->
-                    <p class="createpr-label-font">Tipo de producto:</p>
-                    <input type="radio" id="Libro" name="type" value="1">
-                    <label class="createpr-label-font" for="center-logo-book">Libro</label><br>
-
-                    <input type="radio" id="Ebook" name="type" value="2">
-                    <label class="createpr-label-font" for="ebook">Ebook</label><br>
-                    <input type="radio" id="Varios" name="type" value="3">
-                    <label class="createpr-label-font" for="varios">Varios</label>
+                            <% if (locals.errors && errors.type) { %>
+                                <div class="text-red">
+                                    <%= errors.type.msg %>
+                                </div>
+                            <% } %>
+                    </div>
                 </div>
-
-                <!-- <div class="">
-                    <div class="">
-                    <div><label class="createpr-label-font" for="productImg">Imagen del producto:</label></div>
-                    <input class="box-ingrese-datos" type="file" name="productImg" multiple accept=".jpg, .png" required value="<%= product.picture %>">
-                </div> -->
 
                 <!--Aquí solicito la imagen-->
                 <div class="">
@@ -60,24 +63,43 @@
                        alt="libro <%= product.name %>">
                     </figure>
                     <input type="file" name="productImg" value="<%= product.picture%>" />
+                    <% if (locals.errors && errors.productImg) { %>
+                        <div class="text-red">
+                            <%= errors.productImg.msg %>
+                        </div>
+                    <% } %>
                 </div>
-
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="author">Autor:</label></div>
                     <input class="box-ingrese-datos" type="text" name="author" id="author" 
                         placeholder="Ingrese el nombre del autor" required value="<%= product.authors.fullName %>">
+                    <% if (locals.errors && errors.author) { %>
+                        <div class="text-red">
+                            <%= errors.author.msg %>
+                        </div>
+                    <% } %>
                 </div>
 
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font"  for="price">Precio:</label></div>
                     <input class="box-ingrese-datos" type="text" name="price" id="price" value="<%= product.price %>" required>
+                    <% if (locals.errors && errors.price) { %>
+                        <div class="text-red">
+                            <%= errors.price.msg %>
+                        </div>
+                    <% } %>
                 </div>
                 <div class="">
                     <div class="">
-                    <div><label class="createpr-label-font" for="opinion">Reseña:</label></div>
-                    <textarea  name="opinion" id="opinion" placeholder="Agregue una breve descripcion del libro" ><%= product.opinion %></textarea> 
+                    <div><label class="createpr-label-font" for="about">Descripción:</label></div>
+                    <textarea  name="about" id="about" placeholder="Agregue una breve descripcion del libro" ><%= product.opinion %></textarea> 
+                    <% if (locals.errors && errors.about) { %>
+                        <div class="text-red">
+                            <%= errors.about.msg %>
+                        </div>
+                    <% } %>
                 </div>
 
                 <div class="">
@@ -85,18 +107,30 @@
                     <div><label class="createpr-label-font" for="genre">Género:</label></div>
                     <input class="box-ingrese-datos" type="text" name="genre" id="genre" 
                     placeholder="Ingrese el género del libro" required value="<%= product.genres.name %>">
+                    <% if (locals.errors && errors.genre) { %>
+                        <div class="text-red">
+                            <%= errors.genre.msg %>
+                        </div>
+                    <% } %>
                 </div>
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="editorial">Editorial: </label></div>
                     <p>
                         <select name="genre" id="genre" required>
-                            <option value="" disabled selected>- select Editorial - </option>
                             <% allEditorials.forEach(editorial => { %>
+                                <% if (product.id_editorial == editorial.id) { %>
+                                    <option value="<%= editorial.id %>" selected><%= editorial.title %></option>
+                                <% }%>
                             <option value="<%= editorial.id %>"><%= editorial.title %></option>
                             <% }); %>
                         </select>
                     </p>
+                    <% if (locals.errors && errors.editorial) { %>
+                        <div class="text-red">
+                            <%= errors.editorial.msg %>
+                        </div>
+                    <% } %>
                  </div>
                 <div class="">
                     <div class="">
@@ -119,6 +153,11 @@
                     <div class="">
                     <div><label class="createpr-label-font" for="stock">"Stock":</label></div>
                     <input class="box-ingrese-datos" type="number" name="stock" id="stock" value=" <%= product.stock %>"></input> 
+                    <% if (locals.errors && errors.stock) { %>
+                        <div class="text-red">
+                            <%= errors.stock.msg %>
+                        </div>
+                    <% } %>
                 </div>
                
                 <div class="creatProd-buttom"> 
