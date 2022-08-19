@@ -31,20 +31,28 @@
                 <div>
                      <div>
                         <p class="createpr-label-font">Tipo de producto:</p>
+                        <!-- 
+                            <% allEditorials.forEach(editorial => { %>
+                                <% if (product.id_editorial == editorial.id) { %>
+                                    <option value="<%= editorial.id %>" selected><%= editorial.title %></option>
+                                <% }%>
+                            <option value="<%= editorial.id %>"><%= editorial.title %></option>
+                            <% }); %>
+                         -->
                             <select name="type" id="type" required>
-                                <option value="" disabled selected>- Tipo de producto - </option>
-                                <option value='1'>Libro</option>
-                                <option value='2'>Ebook</option>
-                                <option value='3'>Varios</option>
+                                <% allProductsTypes.forEach(tipo => { %>
+                                    <% if (product.id_productType == tipo.id) { %>
+                                        <option value="<%= tipo.id %>" selected><%= tipo.title %></option>
+                                    <% } else { %>
+                                        <option value="<%= tipo.id %>"><%= tipo.title %></option>
+                                    <% } %>
+                                <% }); %>
                             </select>
                             <% if (locals.errors && errors.type) { %>
                                 <div class="text-red">
                                     <%= errors.type.msg %>
                                 </div>
                             <% } %>
-                        <!-- <% allProductsTypes.forEach(tipoProducto => { %>
-                        <option value="<%= tipoProducto.id %>"><%= tipoProducto.title %></option>
-                        <% }); %> -->
                     </div>
                 </div>
 
@@ -110,8 +118,10 @@
                     <div><label class="createpr-label-font" for="editorial">Editorial: </label></div>
                     <p>
                         <select name="genre" id="genre" required>
-                            <option value="" disabled selected>- select Editorial - </option>
                             <% allEditorials.forEach(editorial => { %>
+                                <% if (product.id_editorial == editorial.id) { %>
+                                    <option value="<%= editorial.id %>" selected><%= editorial.title %></option>
+                                <% }%>
                             <option value="<%= editorial.id %>"><%= editorial.title %></option>
                             <% }); %>
                         </select>

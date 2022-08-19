@@ -11,6 +11,7 @@ const fs = require("fs")
 const about = {
     books: "Libros"
     }
+const { validationResult} = require('express-validator');
 //variable con la ruta del archivo products.json
 //let productosFilePath = path.join(__dirname, '../data/products.json');
 
@@ -30,11 +31,18 @@ const productsController =  {
      },
 
     editarProducto: (req,res) => {
-    db.Product.findOne( {include: ["authors", "genres", "editorials", "productsTypes"],
-                        where: {id: req.params.id}})
-    .then(function(prductToShow){
-        res.render('products/editarProducto', {product: prductToShow})
-    })
+        
+        db.Product.findOne( {include: ["authors", "genres", "editorials" , "productsTypes"],
+                            where: {id: req.params.id}})
+        .then(function(prductToShow){
+            db.Editorial.findAll().then(function(todasLasEditoriales){
+                let allEditorials = todasLasEditoriales
+                db.ProductType.findAll().then(todosLosProdTypes => {
+                    let allProductsTypes = todosLosProdTypes
+                    res.render('products/editarProducto', {product: prductToShow, allEditorials, allProductsTypes })
+                })
+            })
+        })
     
     },
     
@@ -42,9 +50,7 @@ const productsController =  {
         // - crear validador de epxress y retornar vista con errores en caso de que haya
         const resValidation = validationResult(req)
         if (resValidation.errors.length > 0) {
-            return res.redirect('products/editarProducto', {
-                errors: resValidation.mapped()
-            }
+            return res.redirect('products/editarProducto', {errors: resValidation.mapped()}
         )}
 
         db.Product.update({
@@ -181,13 +187,10 @@ const productsController =  {
             
         };
         console.log(newProduct);
- //       books.push(newProduct)
-        // let newbooks = JSON.stringify(books)
-        // fs.writeFileSync(productosFilePath, newbooks)
         db.Product.create(newProduct)
-            .then(function(creada){
-                res.redirect('/products')
-            })
+
+        return res.redirect('/products')
+            
     },
     // delete: (req, res) => {
     //     // leer archivo

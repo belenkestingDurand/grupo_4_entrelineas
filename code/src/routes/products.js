@@ -18,11 +18,11 @@ router.get('/',authMiddleware, productsCtrl.listarProducto)
 
 //- CREATE PRODUCT 
 router.get('/create', productsCtrl.crearProducto)
-router.post('/create', createProdMW, uploadProd.single('productImg'), productsCtrl.productoCreado)
+router.post('/create'/*, createProdMW */, uploadProd.single('productImg'), productsCtrl.productoCreado)
 
 //- EDIT PRODUCT
 router.get('/:id/edit', productsCtrl.editarProducto)
-router.put('/:id/edit', modifProdMW, uploadProd.single('productImg'), productsCtrl.productoEditado)
+router.put('/:id/edit', /* modifProdMW, */ uploadProd.single('productImg'), productsCtrl.productoEditado)
 
 //- DELETE PRODUCT
 router.delete('/delete/:id', productsCtrl.delete)
