@@ -94,7 +94,8 @@ const userController =  {
                     lastName: req.body.lastName,
                     email: req.body.email,
                     password: bcrypt.hashSync(req.body.confpass,10),
-                    profilePic: req.file.filename
+                    profilePic: req.file.filename,
+                    id_userCategory: 1
                 }
                 
                 // guardo el usuario nuevo en el archivo users.json
