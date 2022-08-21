@@ -15,18 +15,18 @@
     <main>
         <br>
         <h3 class="creatprod-title">EDITAR PRODUCTO</h3>
-        <form class="createpr-form-padding-left" 
+        <form class="editarProductForm createpr-form-padding-left" 
             action="/products/<%= product.id %>/edit?_method=PUT" 
             method="post" enctype="multipart/form-data" >
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="name">Nombre del producto:</label></div>
                     <input class="box-ingrese-datos" type="text" name="name" id="name" value="<%= product.name %>" required >
+                    <div class="text-red errorProductName">
                     <% if (locals.errors && errors.name) { %>
-                        <div class="text-red">
                             <%= errors.name.msg %>
-                        </div>
                     <% } %>
+                    </div>
                 </div>
                 <div>
                      <div>
@@ -48,11 +48,12 @@
                                     <% } %>
                                 <% }); %>
                             </select>
+                            <div class="text-red errorProductType">
                             <% if (locals.errors && errors.type) { %>
-                                <div class="text-red">
+                               
                                     <%= errors.type.msg %>
-                                </div>
                             <% } %>
+                             </div>
                     </div>
                 </div>
 
@@ -63,17 +64,17 @@
                        alt="libro <%= product.name %>">
                     </figure>
                     <input type="file" name="productImg" value="<%= product.picture%>" />
+                    <div class="text-red errorImg">
                     <% if (locals.errors && errors.productImg) { %>
-                        <div class="text-red">
                             <%= errors.productImg.msg %>
-                        </div>
                     <% } %>
+                     </div>
                 </div>
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="author">Autor:</label></div>
                     <input class="box-ingrese-datos" type="text" name="author" id="author" 
-                        placeholder="Ingrese el nombre del autor" required value="<%= product.authors.fullName %>">
+                        placeholder="Ingrese el nombre del autor" value="<%= product.authors.fullName %>">
                     <% if (locals.errors && errors.author) { %>
                         <div class="text-red">
                             <%= errors.author.msg %>
@@ -84,40 +85,41 @@
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font"  for="price">Precio:</label></div>
-                    <input class="box-ingrese-datos" type="text" name="price" id="price" value="<%= product.price %>" required>
+                    <input class="box-ingrese-datos" type="text" name="price" id="price" value="<%= product.price %>">
+                    <div class="text-red errorPrecio">
                     <% if (locals.errors && errors.price) { %>
-                        <div class="text-red">
                             <%= errors.price.msg %>
-                        </div>
                     <% } %>
+                    </div>
                 </div>
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="about">Descripción:</label></div>
                     <textarea  name="about" id="about" placeholder="Agregue una breve descripcion del libro" ><%= product.opinion %></textarea> 
+                    <div class="text-red errorDescripcion">
                     <% if (locals.errors && errors.about) { %>
-                        <div class="text-red">
-                            <%= errors.about.msg %>
-                        </div>
+                            <%= errors.about.msg %> 
                     <% } %>
+                 </div>
                 </div>
 
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="genre">Género:</label></div>
                     <input class="box-ingrese-datos" type="text" name="genre" id="genre" 
-                    placeholder="Ingrese el género del libro" required value="<%= product.genres.name %>">
+                    placeholder="Ingrese el género del libro" value="<%= product.genres.name %>">
+                    <div class="text-red ">
                     <% if (locals.errors && errors.genre) { %>
-                        <div class="text-red">
-                            <%= errors.genre.msg %>
-                        </div>
+                        
+                            <%= errors.genre.msg %>   
                     <% } %>
+                    </div>
                 </div>
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="editorial">Editorial: </label></div>
                     <p>
-                        <select name="genre" id="genre" required>
+                        <select name="genre" id="genre" >
                             <% allEditorials.forEach(editorial => { %>
                                 <% if (product.id_editorial == editorial.id) { %>
                                     <option value="<%= editorial.id %>" selected><%= editorial.title %></option>
@@ -153,16 +155,19 @@
                     <div class="">
                     <div><label class="createpr-label-font" for="stock">"Stock":</label></div>
                     <input class="box-ingrese-datos" type="number" name="stock" id="stock" value=" <%= product.stock %>"></input> 
+                    <div class="text-red errorStock" >
                     <% if (locals.errors && errors.stock) { %>
-                        <div class="text-red">
+                        
                             <%= errors.stock.msg %>
-                        </div>
+                        
                     <% } %>
+                </div>
                 </div>
                
                 <div class="creatProd-buttom"> 
                     <button class="createProd-buttom-centr"><img class="img-buttom" src="/img/agregar-nuevo.png" alt="icon"></button>
                 </div>
+                <script src="/js/editarProducto.js"></script>  
         </form>
                
     </main>
