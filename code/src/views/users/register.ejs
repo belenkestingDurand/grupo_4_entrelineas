@@ -18,7 +18,7 @@
                 <img class="register-logo-chico" src="/img/logo-entre-lineas.jpg" alt="logo">
             </div>
 
-            <form class="form-flex" action="/users/register" method="POST" enctype="multipart/form-data">
+            <form class="form-flex form-register"  action="/users/register" method="POST" enctype="multipart/form-data">
                 <div class="column1"><div class="register-cont-label-input">
                     <div><label for="firstName">Nombre:</label></div>
                     <input 
@@ -29,13 +29,13 @@
                         placeholder="Ingrese su nombre"
                         value="<%= locals.oldData ? oldData.firstName : null %>"
                     />
-                    <% if (locals.errors && errors.firstName) { %>
-                        <div class="text-red">
-                            <%= errors.firstName.msg %>
-                        </div>
-                    
-                    <% } %>
-                    
+                    <div class="divErrorFirstName text-red">
+                        <% if (locals.errors && errors.firstName) { %>
+                            <div class="text-red">
+                                <%= errors.firstName.msg %>
+                            </div>
+                        <% } %>
+                    </div>
                 </div>
                
                 <div class="register-cont-label-input">
@@ -48,13 +48,13 @@
                             placeholder="Ingrese su apellido"
                             value="<%= locals.oldData ? oldData.lastName : null %>"
                         />
-                        <% if (locals.errors && errors.lastName) { %>
-                            <div class="text-red">
-                                <%= errors.lastName.msg %>
-                            </div>
-                        
-                        <% } %>
-
+                        <div class="divErrorLastName text-red">
+                            <% if (locals.errors && errors.lastName) { %>
+                                <div class="text-red">
+                                    <%= errors.lastName.msg %>
+                                </div>
+                            <% } %>
+                        </div>
                 </div>
                
            
@@ -111,11 +111,13 @@
                         id="img"
                         value="<%= locals.oldData ? oldData.img : null %>"
                     >
-                    <% if (locals.errors && errors.img) { %>
-                        <div class="text-red">
-                            <%= errors.img.msg %>
-                        </div>
-                    <% } %>
+                    <div class="divErrorImg text-red">
+                        <% if (locals.errors && errors.img) { %>
+                            <div class="text-red">
+                                <%= errors.img.msg %>
+                            </div>
+                        <% } %>
+                    </div>
                 </div>
 
 
@@ -128,12 +130,14 @@
                         id="email" 
                         placeholder="Ingrese su email" 
                         value="<%= locals.oldData ? oldData.email : null %>"
-                    />    
-                    <% if (locals.errors && errors.email) { %>
-                        <div class="text-red">
-                            <%= errors.email.msg %>
-                        </div>
-                    <% } %>
+                    /> 
+                    <div class="divErrorEmail text-red"> 
+                        <% if (locals.errors && errors.email) { %>
+                            <div class="text-red">
+                                <%= errors.email.msg %>
+                            </div>
+                        <% } %>
+                    </div>  
                 </div>
         </div>
                 
@@ -148,11 +152,13 @@
                  minlength="8"
                  
             />
-            <% if (locals.errors && errors.password) { %>
-                <div class="text-red">
-                    <%= errors.password.msg %>
-                </div>
-            <% } %>
+            <div class="divErrorPassword text-red">
+                <% if (locals.errors && errors.password) { %>
+                    <div class="text-red">
+                        <%= errors.password.msg %>
+                    </div>
+                <% } %>
+            </div>
         </div>
 
         <div class="register-cont-label-input">
@@ -165,11 +171,13 @@
                 placeholder="Min 8 caracteres"
                 minlength="8" 
             />
-            <% if (locals.errors && errors.confpass) { %>
-                <div class="text-red">
-                    <%= errors.confpass.msg %>
-                </div>
-            <% } %>
+            <div class="divErrorConfpass text-red">
+                <% if (locals.errors && errors.confpass) { %>
+                    <div class= "text-red">
+                        <%= errors.confpass.msg %>
+                    </div>
+                <% } %>
+            </div>
         </div>
         <div class="login-h5-centrado"> 
             <button type="submit" class="centrar-boton button-crear-cuenta">Crear nueva Cuenta</button>
@@ -189,6 +197,6 @@
     <footer class="login-footer">
 
     </footer>
-    
+    <script src="/js/register.js"></script>
 </body>
 </html>
