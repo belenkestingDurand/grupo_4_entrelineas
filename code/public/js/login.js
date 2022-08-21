@@ -1,6 +1,5 @@
 window.addEventListener("load", function(){
     let form = document.querySelector(".form-login")
-    let submitbutton = document.querySelector("#login-submit")
     console.log(form)
     form.addEventListener("submit", function(e){
 
@@ -29,7 +28,7 @@ window.addEventListener("load", function(){
         })
     }
     else{
-     alert("Estas logueado")   
+    
     }
 
 })})

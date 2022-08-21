@@ -14,17 +14,18 @@
  
     <main>
         <h3 class="creatprod-title">CREAR PRODUCTO</h3>
-        <form class="createpr-form-padding-left" action="/products/create" method="POST" enctype="multipart/form-data">
+        <form class="crearProductForm createpr-form-padding-left" action="/products/create" method="POST" enctype="multipart/form-data">
+            <ul class="errores"></ul>    
+            <div class="">
                 <div class="">
-                    <div class="">
                     <div><label class="createpr-label-font" for="productName">Nombre del producto:</label></div>
                     <input class="box-ingrese-datos" type="text" name="productName" id="productName" 
                         placeholder="Ingrese el nombre del producto" required>
+                        <div class="errorProductName text-red"></div>
                         <% if (locals.errors && errors.name) { %>
-                            <div class="text-red">
                                 <%= errors.name.msg %>
-                            </div>
                         <% } %>
+                    </div>
                 </div>
                 <div>
                     <p class="createpr-label-font">Tipo de producto:</p>
@@ -34,11 +35,12 @@
                             <option value='2'>Ebook</option>
                             <option value='3'>Varios</option>
                         </select>
+                        <div class="text-red">
+
                         <% if (locals.errors && errors.type) { %>
-                            <div class="text-red">
                                 <%= errors.type.msg %>
-                            </div>
                         <% } %>
+                        </div>
                     <!-- <% allProductsTypes.forEach(tipoProducto => { %>
                     <option value="<%= tipoProducto.id %>"><%= tipoProducto.title %></option>
                     <% }); %> -->
@@ -174,7 +176,7 @@
                     </a>
                 </div>
         </form>
-               
+    <script src="/js/crearProducto.js"></script>          
     </main>
 
 
