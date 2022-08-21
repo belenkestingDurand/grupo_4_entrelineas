@@ -127,3 +127,35 @@ Patear los cambios que tenemos que hacer de CSS.
 **Cometarios extra: **
 Notamos que mejoramos mucho en las reuniones, vamos al punto, las hacemos más cortas. Aprendimos a usar Slack como herramienta de apoyo y comunicación y nos sirve mucho.
 Trello está siendo una herramienta funcional, sobre todo subdividir las tareas.
+
+## 17/08/22
+
+**Comenzar a hacer:**
+
+ Empezar a usar branches de GitHub para trabajar, así podemos sacarle más jugo a la herramienta.
+
+**Hacer más:** 
+
+Repartir las tareas que quedaron viejas (OPCIONALES), tareas de mejora de sprints. Empezar a pulir y cerrar las distintas pantallas.
+
+Comenzar a usar más Git Hub como herramienta de consulta de cambios.
+
+Seguir con un ritmo constante y juntarnos.
+
+**Continuar haciendo:** 
+
+Poner comentarios para que el código sea más entendible para el equipo. 
+
+Apoyar a los miembros del equipo y dividir el trabajo para que todos puedan llevar sus tareas y sus cosas personales.
+
+Hacer un resumen en slack de lo que venimos haciendo para que nuestros compañeros sepan qué hicimos y no hacemos nos pisamos. Dividimos mejor las tareas y revisamos los cambios. Describir las tareas de manera detallada y los errores que surgieron para que todo el equipo este al tanto.
+
+Usar Tello para la organización de tareas, seguir subdividiendo las tareas en tareas chicas pequeñas.
+
+**Hacer menos:**
+
+Patear juntadas o reuniones de equipo.
+
+**Dejar de hacer:**
+
+Patear los cambios que tenemos que hacer de CSS.

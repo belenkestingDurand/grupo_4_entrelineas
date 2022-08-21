@@ -81,7 +81,13 @@
 1. Se mostró lo trabajado en creación de modelos.
 2. Sugerencias y correcciones.
 
-## REunión 27/07/2022
+## Reunión 27/07/2022
 1. Se mostró lo que se hizo.
 2. División de Cruds.
 3. Actualización de Trello.
+
+## Reunión 20/08/22
+1. Se mostró lo trabajado.
+2. Se presentaron problemas de resolución en el código.
+3. Se plantearon posibles soluciones.
+4. Próxima reunión para 22/08/22.
