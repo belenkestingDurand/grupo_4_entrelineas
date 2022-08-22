@@ -28,7 +28,9 @@
                     <h5 class="book-product-name"><%= product.name %></h5>
                     <h5 class="book-product-price">$<%= product.price %></h5>
                 </div>
-                <h6 class="book-product-author"><%= product.authors.fullName %></h6>
+                <% if (product.id_author != null){ %>
+                    <h6 class="book-product-author"><%= product.authors.fullName %></h6>
+                <% } %>
                 <a href="/carrito">
                     <input class="add-cart-button" type="button" value="Agregar al carrito">
                 </a>
@@ -52,7 +54,9 @@
                     <h4 class="detail-title-info">Ficha Tecnica</h4>
                     <img class="detail-info-arrow" src="/img/arrow-down.png" alt="Boton en forma de flecha hacia abajo">
                     <p class="hidden-until-click display-more-tech">
-                        <strong>Genero</strong>: <%= product.genres.name %>
+                        <% if (product.id_genre != null) { %>
+                            <strong>Genero</strong>: <%= product.genres.name %>
+                        <% } %>
                         <br>
                         <strong>Tamaño</strong>: <%= product.size %>
                         <br>

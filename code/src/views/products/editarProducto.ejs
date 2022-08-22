@@ -73,8 +73,14 @@
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="author">Autor:</label></div>
-                    <input class="box-ingrese-datos" type="text" name="author" id="author" 
-                        placeholder="Ingrese el nombre del autor" value="<%= product.authors.fullName %>">
+                    <% if (product.id_author != null){ %>
+                        <input class="box-ingrese-datos" type="text" name="author" id="author" 
+                            placeholder="Ingrese el nombre del autor" value="<%= product.authors.fullName %>">
+                    <% } else { %>
+                        <input class="box-ingrese-datos" type="text" name="author" id="author" 
+                            placeholder="Ingrese el nombre del autor" value="">
+                    <% } %>
+                        
                     <% if (locals.errors && errors.author) { %>
                         <div class="text-red">
                             <%= errors.author.msg %>
@@ -106,8 +112,13 @@
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="genre">Género:</label></div>
-                    <input class="box-ingrese-datos" type="text" name="genre" id="genre" 
-                    placeholder="Ingrese el género del libro" value="<%= product.genres.name %>">
+                    <% if (product.id_genre != null){ %>
+                        <input class="box-ingrese-datos" type="text" name="genre" id="genre" 
+                        placeholder="Ingrese el género del libro" value="<%= product.genres.name %>">
+                    <% } else { %>
+                        <input class="box-ingrese-datos" type="text" name="genre" id="genre" 
+                        placeholder="Ingrese el género del libro" value="">
+                    <% } %>
                     <div class="text-red ">
                     <% if (locals.errors && errors.genre) { %>
                         

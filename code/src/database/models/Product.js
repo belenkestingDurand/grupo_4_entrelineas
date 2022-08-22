@@ -34,12 +34,10 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.SMALLINT
         },
         id_author: {
-            type: dataTypes.INTEGER,
-            allowNull: false
+            type: dataTypes.INTEGER
         },
         id_genre: {
-            type: dataTypes.INTEGER,
-            allowNull: false
+            type: dataTypes.INTEGER
         },
         id_productType:  {
             type: dataTypes.INTEGER.UNSIGNED,
