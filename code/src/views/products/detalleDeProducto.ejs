@@ -5,6 +5,7 @@
     <!-- Head -->
     <%- include('../partials/head.ejs') %>
     <title>Entre Lineas - Detalle</title>
+    <script src="/js/detalleDeProducto.js" defer></script>
 </head>
 
 <body>
@@ -47,28 +48,24 @@
                 </section>
             </section>
             <section class="detail-extra-info">
-                <button class="detail-extra-rect detail-title-info-ficha">
-                    <h4 class="detail-title-info ">Ficha Tecnica</h4>
+                <button class="detail-extra-rect detail-title-info-ficha detail-max-size-ficha">
+                    <h4 class="detail-title-info">Ficha Tecnica</h4>
                     <img class="detail-info-arrow" src="/img/arrow-down.png" alt="Boton en forma de flecha hacia abajo">
-                    <div>
-                        <p class="hidden-until-click display-more-tech">
-                            <strong>Genero</strong>: <%= product.genres.name %>
-                            <br>
-                            <strong>Tamaño</strong>: <%= product.size %>
-                            <br>
-                            <strong>Páginas</strong>: <%= product.pages %>
-                            <br>
-                        </p>
-                    </div>
+                    <p class="hidden-until-click display-more-tech">
+                        <strong>Genero</strong>: <%= product.genres.name %>
+                        <br>
+                        <strong>Tamaño</strong>: <%= product.size %>
+                        <br>
+                        <strong>Páginas</strong>: <%= product.pages %>
+                        <br>
+                    </p>
                 </button>
-                <button class="detail-extra-rect detail-title-info-more">
+                <button class="detail-extra-rect detail-title-info-more detail-max-size-info">
                     <h4 class="detail-title-info ">Más Información</h4>
                     <img class="detail-info-arrow" src="/img/arrow-down.png" alt="Boton en forma de flecha hacia abajo">
-                    <div>
-                        <p class="hidden-until-click display-more-info">
-                            <%= product.more %>
-                        </p>
-                    </div>
+                    <p class="hidden-until-click display-more-info">
+                        <%= product.more %>
+                    </p>
                 </button>
             </section>
         </article>

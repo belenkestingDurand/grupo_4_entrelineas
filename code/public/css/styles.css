@@ -466,9 +466,17 @@ article .add-cart-button {
     width: 80%;
     margin: auto;
 }
+.detail-title-info-ficha{
+    height: 100px;
+}
+.detail-title-info-more{
+    height: 100px;
+}
 
 .display-more-tech{
-    display: none;
+    display: block;
+    background-color: white;
+    height: 100px;
     position: absolute;
     top: 20px;
     left: 20px;
@@ -478,7 +486,9 @@ article .add-cart-button {
 }
 
 .display-more-info{
-    display: none;
+    display: block;
+    background-color: white;
+    height: 100px;
     position: absolute;
     top: 20px;
     left: 20px;
@@ -486,25 +496,9 @@ article .add-cart-button {
     margin-bottom: 100px;
     text-align: left;
 }
-
-
-.detail-title-info-ficha:active .display-more-tech{
-    display: block;
+.hidden-until-click{
+    display: none;
 }
-.detail-title-info-ficha:active{
-    height: 100px;
-    max-height: none;
-}
-
-
-.detail-title-info-more:active .display-more-info{
-    display: block;
-}
-.detail-title-info-more:active{
-    height: 100px;
-    max-height: none;
-}
-
 
 /* .send-mail-description{} */
 
@@ -537,12 +531,16 @@ article .add-cart-button {
     border-top: 1px solid #000;    
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: stretch;
-    max-height: 50px;
     /* max-width: 240px; */
 }
-
+.detail-max-size-info{
+    max-height: 50px;
+}
+.detail-max-size-ficha{
+    max-height: 50px;
+}
 .detail-title-info{
     border: none;
     background-color: transparent;
@@ -584,7 +582,13 @@ article .add-cart-button {
     justify-self: center;
     box-sizing: border-box;
     font-size: 15px;
+}
 
+.form-login{
+    display: flex;
+    /* flex-wrap: wrap; */
+    align-items: stretch;
+    flex-direction: column;
 }
 
 .login-footer {
@@ -594,7 +598,6 @@ article .add-cart-button {
 
 .login-auth-page-card {
     width: 90%;
-    height: 90%;
     box-sizing: border-box;
     margin: auto;
 
@@ -1215,9 +1218,6 @@ footer {
 
     .login-auth-page-card {
         max-width: 450px;
-    }
-    .nav-search{
-       
     }
 
 }
