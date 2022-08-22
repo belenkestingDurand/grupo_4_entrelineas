@@ -1,5 +1,8 @@
+let form = document.querySelector(".crearProductForm")
+
 window.addEventListener("load", function(){
-    let form = document.querySelector(".crearProductForm")
+    //let form = document.querySelector(".crearProductForm")
+    console.log(form.productImg.value)
     form.addEventListener("submit", function(e){
     
         let errors = []
@@ -27,14 +30,16 @@ window.addEventListener("load", function(){
               errors.push(errorImg);
           } 
 
-        /*let file = form.productImg.value;
-        console.log(file)
-        let acceptedExtensions = ['.jpg', '.peg', '.png', '.gif'];      
-        const path = require('path');
-        let fileExtension = path.extname(file.originalname);
-        /* if (acceptedExtensions.includes(fileExtension)) {
+          
+        if (form.productImg.value.endsWith('.jpg') || form.productImg.value.endsWith('.peg') ||
+        form.productImg.value.endsWith('.png') || form.productImg.value.endsWith('.gif') ) {
+           
+            console.log("ok")
+        }
+        else{
             errorImg ='Las extensiones de archivo permitidas son .jpg, .peg, .png, .gif';
-            errors.push(errorImg); }*/
+            errors.push(errorImg); 
+        }
      
 
         let errorProductType

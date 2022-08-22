@@ -1,5 +1,6 @@
 window.addEventListener("load", function(){
     let form = document.querySelector(".editarProductForm")
+    console.log(form.productImg)
     form.addEventListener("submit", function(e){
     
         let errors = []
