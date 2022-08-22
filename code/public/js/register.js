@@ -18,7 +18,7 @@
         let errorFirstName = '';
         let errorLastName = '';
         let errorEmail = '';
-        let errorImg = '';
+        let errorImg ='';
         let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
         let errorPassword = '';
         let errorConfpass = '';
@@ -35,21 +35,22 @@
          }; 
 
           // validar que la imagen tenga extensión correcta
-         
-        //  if (form.img.value == '') {
-        //      errorImg ='*Debes subir una imagen';
-        //      errors.push(errorImg);
-        //  } else {
-         
-        //  let file = form.img.value;
-        //  let acceptedExtensions = ['.jpg', '.peg', '.png', '.gif'];      
-        //  const path = require('path');
-        //  let fileExtension = path.extname(file);
-        //  if (!acceptedExtensions.includes(fileExtension)) {
-        //     errorImg =`*Las extensiones de archivo permitidas son ${acceptedExtensions.join(',')}`;
-        //     errors.push(errorImg);
-        //     }
-        //  };
+
+          
+            if (form.img.value == '') {
+                errorImg ='*Debes subir una imagen';
+                errors.push(errorImg);
+            } else if (form.img.value.endsWith('.jpg') || form.img.value.endsWith('.peg') ||
+         form.img.value.endsWith('.png') || form.img.value.endsWith('.gif') ) {
+            
+             console.log("ok")
+         }
+         else{
+             errorImg ='*Las extensiones de archivo permitidas son .jpg, .peg, .png, .gif';
+             errors.push(errorImg); 
+         }
+       
+       
        
 
          //validar el email
