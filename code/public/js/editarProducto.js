@@ -25,6 +25,7 @@ window.addEventListener("load", function(){
         divImgError.innerHTML = ''
 
         if(form.productImg.value != ''){
+            
             if (form.productImg.value.endsWith('.jpg') || form.productImg.value.endsWith('.peg') ||
             form.productImg.value.endsWith('.png') || form.productImg.value.endsWith('.gif') ) {
                
