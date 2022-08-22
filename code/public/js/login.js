@@ -1,51 +1,59 @@
-window.addEventListener("load", function(){
+window.addEventListener("load", function () {
     let form = document.querySelector(".form-login")
     console.log(form)
-    let errEmail = document.querySelector('.errorLoginEmail')    
-    let errPassword = document.querySelector('.errorLoginPassword')
-    errEmail.style.display = 'none'
-    errPassword.style.display = 'none'
+
     
-    form.addEventListener("submit", function(e){
+    form.addEventListener("submit", function (e) {
+        // e.preventDefault()
         
-        let email = document.querySelector("#email");
-        let password = document.querySelector("#password");
+        let divErrEmail = document.querySelector('.errorLoginEmail')
+        divErrEmail.innerHTML = ''
+        let divErrPassword = document.querySelector('.errorLoginPassword')
+        divErrPassword.innerHTML = ''
+        
         let errors = [];
+        let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
 
-        // let emailRegex =  "/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/iS";
-        if(email.value == ''){
-            e.preventDefault()
-            errEmail.style.display = 'block'
-            errEmail.innerHTML="Campo email no puede estar vacio"
-        } else {
-            errEmail.style.display = 'none'
-            errEmail.innerHTML = ''
-        }
         
-        if(password.value == '' ){
-            e.preventDefault()
-            errPassword.style.display = 'block'
-            errPassword.innerHTML = "Campo contraseña no puede estar vacio"
-        } else {
-            errPassword.style.display = 'none'
-            errPassword.innerHTML = ''
+        // - Validar EMAIL
+        let mensajeErrMail = ''
+        console.log(mailformat.test(form.email.value))
+        if (form.email.value == '') {
+            mensajeErrMail = "Campo EMAIL no puede estar vacio"
+            errors.push(mensajeErrMail)
+        } else if (!mailformat.test(form.email.value)) {
+            mensajeErrMail = 'Debes ingresar un formato válido de EMAIL';
+            errors.push(mensajeErrMail);
         }
 
-        if(length(password.value) > 8 ){
-            errPassword.style.display = 'block'
-            errPassword.innerHTML = "La contraseña tiene que tener 8 caracteres o más"
-        } else {
-            errPassword.style.display = 'none'
-            errPassword.innerHTML = ''
+        // - Validar PASSWORD
+        let mensajeErrPassword = ''
+        if (form.password.value == '') {
+            mensajeErrPassword = "Campo CONTRASEÑA no puede estar vacio"
+            errors.push(mensajeErrPassword)
+        } else if (form.password.value.length < 8) {
+            mensajeErrPassword = "Campo CONTRASEÑA debe tener al menos 8 caracteres"
+            errors.push(mensajeErrPassword)
         }
-        
-        // if(errors.length > 0){
-        //     e.preventDefault()
-        //     let ulerrors = document.querySelector(".errores")
-        //     ulerrors.innerHTML = ''
-        //     errors.forEach(function(error){
-        //         ulerrors.innerHTML += "<li>" + error + "</li>"
-        //     })
-        // }
+        //- En caso de errores se imprimen los errores
+        if (errors.length > 0) {
+            e.preventDefault()
+            console.log('ENTRANDO EN ERRORES');
+
+            if (mensajeErrMail != '') {
+                console.log('ERROR DE EMAIL');
+                console.log(mensajeErrMail);
+                divErrEmail.innerHTML = `<p>${mensajeErrMail}</p>`
+            }
+            if (mensajeErrPassword != '') {
+                console.log('ERROR DE PASSWORD');
+                console.log(mensajeErrPassword);
+                divErrPassword.innerHTML = `<p>${mensajeErrPassword}</p>`
+                
+            }
+        } else {
+            //- CASO CONTRARIO se hace 'submit' del formulario
+            form.submit()
+        }
     })
 })

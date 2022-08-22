@@ -1,7 +1,7 @@
 const path = require('path')
 const { body } = require('express-validator')
 module.exports = [
-    body('name')
+    body('productName')
         .notEmpty()
         .isLength({min:5})
         .withMessage('Ingresar un nombre, minimo 5 caracteres.'),

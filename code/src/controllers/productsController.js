@@ -50,6 +50,7 @@ const productsController =  {
         // - crear validador de epxress y retornar vista con errores en caso de que haya
         const resValidation = validationResult(req)
         if (resValidation.errors.length > 0) {
+            // ! mandar todos los db.model.findAll() para los controladores de crear y modificar?
             return res.redirect('products/editarProducto', {errors: resValidation.mapped()}
         )}
 
