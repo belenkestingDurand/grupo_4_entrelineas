@@ -10,13 +10,13 @@
 
 <body>
    
-    <h1>Estas seguro de querer borrar este autor: <%= Autor.fullName %>???</h1>
+    <h1>Estas seguro de querer borrar este género: <%= genero.name %>???</h1>
     <p>
-        <form action="/authors/delete/<%=Autor.id %>" method="POST">
+        <form action="/genres/delete/<%=genero.id %>" method="POST">
             <br>
-            <p> <button class="botonBorrar" type="submit">Borrar el Autor</button>
+            <p> <button class="botonBorrar" type="submit">Borrar el Género</button>
             
-            <a  class="botonVolver" href="/authors/">Listado de Autores</a></p>
+            <a  class="botonVolver" href="/genres/">Listado de Géneros</a></p>
 
         </form>
     </p>

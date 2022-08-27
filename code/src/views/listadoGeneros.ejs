@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Head -->
+    <%- include('./partials/head.ejs') %>
+    <title>Entre Lineas - Listar Géneros</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <%- include('./partials/genreHeader.ejs') %>
+    <h3 class="h3-crearautor">Listado de géneros</h1>
+    <ul class="ul-vista-liaut" >
+        <% for (let i=0; i< generos.length; i++) { %>
+        
+        <div class="divsiz-liaut">
+            <li class="tam-li1">
+                <%= generos[i].id + "   " + generos[i].name + "   "   %>
+        
+            </li>
+            <li class="tam-li2">
+              
+                <a class="botonBorrar" href="/genres/delete/<%= generos[i].id %>">Borrar</a>
+            </li>
+        </div>   
+    
+        <% } %>
+    </ul>
+ 
+   
+    <!-- Footer -->
+    <%- include('./partials/footer.ejs') %>
+</body>
+
+</html>

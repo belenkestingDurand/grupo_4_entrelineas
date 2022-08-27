@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Head -->
+    <%- include('./partials/head.ejs') %>
+    <title>Entre Lineas - Listar Editoriales</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <%- include('./partials/editorialHeader.ejs') %>
+    <h3 class="h3-crearautor">Listado de editoriales</h1>
+    <ul class="ul-vista-liaut" >
+        <% for (let i=0; i< editoriales.length; i++) { %>
+        
+        <div class="divsiz-liaut">
+            <li class="tam-li1">
+                <%= editoriales[i].id + "   " + editoriales[i].title + "   "   %>
+        
+            </li>
+            <li class="tam-li2">
+              
+                <a class="botonBorrar" href="/editorials/delete/<%= editoriales[i].id %>">Borrar</a>
+            </li>
+        </div>   
+    
+        <% } %>
+    </ul>
+ 
+   
+    <!-- Footer -->
+    <%- include('./partials/footer.ejs') %>
+</body>
+
+</html>

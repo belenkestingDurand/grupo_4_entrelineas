@@ -8,6 +8,8 @@ const routesMain = require('./routes/home');
 const routesProducts = require('./routes/products');
 const routesUsers = require('./routes/users');
 const routesAuthors = require('./routes/authors');
+const routesEditorials = require('./routes/editorials');
+const routesGenres = require('./routes/genres');
 const publicPath = path.resolve(__dirname,'../public');
 const methodOverride = require('method-override')
 
@@ -55,3 +57,5 @@ app.use('/', routesMain)
 app.use('/products', routesProducts)
 app.use('/users', routesUsers)
 app.use('/authors', routesAuthors)
+app.use('/editorials', routesEditorials)
+app.use('/genres', routesGenres)

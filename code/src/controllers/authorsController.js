@@ -3,7 +3,7 @@ const sequelize = db.sequelize;
 const { Op } = require("sequelize");
 const authorsController = {
   search: function(req, res){
-    //db.Movie.findOne({where: {title: {[Op.like]:'%'+req.body.titulo+'%'} }})
+    
     db.Author.findAll({
                          where: {fullName: {[Op.like]:'%'+req.body.search+'%'} }})
     .then((autores) => {
@@ -15,8 +15,8 @@ const authorsController = {
         res.render("crearAutores")
     },
     
-    procesarCrear: function(req,res) {
-        db.Author.create({
+    procesarCrear: async function(req,res) {
+        await db.Author.create({
            fullName: req.body.fullName 
         });
         res.redirect('/authors');
@@ -41,8 +41,8 @@ const authorsController = {
             return res.render('../views/authorsDelete',{Autor})
           })
       },
-      destroy: function(req, res) {
-        db.Author.destroy({
+      destroy: async function(req, res) {
+        await db.Author.destroy({
           where: {
             id : req.params.id
             }

@@ -4,17 +4,17 @@
 <head>
     <!-- Head -->
     <%- include('./partials/head.ejs') %>
-    <title>Entre Lineas - Crear Autores</title>
+    <title>Entre Lineas - Listar Editoriales</title>
 </head>
 
 <body>
     <!-- Header -->
-    <%- include('./partials/authorHeader.ejs') %>
-    <h3 class="h3-crearautor">Ingresar nuevo Autor</h1>
+    <%- include('./partials/editorialHeader.ejs') %>
+    <h3 class="h3-crearautor">Ingresar nueva Editorial</h1>
     <form class="createpr-form-padding-left" action="crear" method="POST">
         <div>
-            <label for="fullName"></label>Nombre del autor</label>
-            <input class="box-ingrese-datos" type="text" name="fullName" id="fullName"/>
+            <label for="title"></label>Nombre de la Editorial</label>
+            <input class="box-ingrese-datos" type="text" name="title" id="title"/>
         </div>
         <button class="centrar-button" type="submit">Enviar</button>
     </form>
