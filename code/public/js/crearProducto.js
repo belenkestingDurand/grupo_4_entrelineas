@@ -36,6 +36,9 @@ window.addEventListener("load", function(){
            
             console.log("ok")
         }
+        else if (form.productImg.value = ''){
+            console.log("ok")  
+        }
         else{
             errorImg ='Las extensiones de archivo permitidas son .jpg, .peg, .png, .gif';
             errors.push(errorImg); 

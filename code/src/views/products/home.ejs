@@ -31,7 +31,9 @@
                         <h5 class="book-product-name"><%= product.name %></h5>
                         <h5 class="book-product-price">$<%= product.price %></h5>
                     </div>
-                    <h6 class="book-product-author"><%= product.author %></h6>
+                    <% if (product.id_author != null){ &>
+                        <h6 class="book-product-author"><%= product.author %></h6>
+                    <% } %>
                 </section>
                 <input class="home-add-cart-button" type="button" value="Agregar al carrito">
             </article>

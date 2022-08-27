@@ -5,6 +5,7 @@
     <!-- Head -->
     <%- include('../partials/head.ejs') %>
     <title>Entre Lineas - Detalle</title>
+    <script src="/js/detalleDeProducto.js" defer></script>
 </head>
 
 <body>
@@ -27,7 +28,9 @@
                     <h5 class="book-product-name"><%= product.name %></h5>
                     <h5 class="book-product-price">$<%= product.price %></h5>
                 </div>
-                <h6 class="book-product-author"><%= product.authors.fullName %></h6>
+                <% if (product.id_author != null){ %>
+                    <h6 class="book-product-author"><%= product.authors.fullName %></h6>
+                <% } %>
                 <a href="/carrito">
                     <input class="add-cart-button" type="button" value="Agregar al carrito">
                 </a>
@@ -47,28 +50,26 @@
                 </section>
             </section>
             <section class="detail-extra-info">
-                <button class="detail-extra-rect detail-title-info-ficha">
-                    <h4 class="detail-title-info ">Ficha Tecnica</h4>
+                <button class="detail-extra-rect detail-title-info-ficha detail-max-size-ficha">
+                    <h4 class="detail-title-info">Ficha Tecnica</h4>
                     <img class="detail-info-arrow" src="/img/arrow-down.png" alt="Boton en forma de flecha hacia abajo">
-                    <div>
-                        <p class="hidden-until-click display-more-tech">
+                    <p class="hidden-until-click display-more-tech">
+                        <% if (product.id_genre != null) { %>
                             <strong>Genero</strong>: <%= product.genres.name %>
-                            <br>
-                            <strong>Tamaño</strong>: <%= product.size %>
-                            <br>
-                            <strong>Páginas</strong>: <%= product.pages %>
-                            <br>
-                        </p>
-                    </div>
+                        <% } %>
+                        <br>
+                        <strong>Tamaño</strong>: <%= product.size %>
+                        <br>
+                        <strong>Páginas</strong>: <%= product.pages %>
+                        <br>
+                    </p>
                 </button>
-                <button class="detail-extra-rect detail-title-info-more">
+                <button class="detail-extra-rect detail-title-info-more detail-max-size-info">
                     <h4 class="detail-title-info ">Más Información</h4>
                     <img class="detail-info-arrow" src="/img/arrow-down.png" alt="Boton en forma de flecha hacia abajo">
-                    <div>
-                        <p class="hidden-until-click display-more-info">
-                            <%= product.more %>
-                        </p>
-                    </div>
+                    <p class="hidden-until-click display-more-info">
+                        <%= product.more %>
+                    </p>
                 </button>
             </section>
         </article>

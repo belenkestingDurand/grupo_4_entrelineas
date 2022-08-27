@@ -1,34 +1,59 @@
-window.addEventListener("load", function(){
+window.addEventListener("load", function () {
     let form = document.querySelector(".form-login")
     console.log(form)
-    form.addEventListener("submit", function(e){
 
-    let email = document.querySelector("#email")
-    let password = document.querySelector("#password")
-    let errors = []
-
-    if(email.value == ''){
-      errors.push("Campo email no puede estar vacio")
-    }
     
-    /*if(password.value == '' ){
-       errors.push("Campo contraseña no puede estar vacio")
-    }
+    form.addEventListener("submit", function (e) {
+        // e.preventDefault()
+        
+        let divErrEmail = document.querySelector('.errorLoginEmail')
+        divErrEmail.innerHTML = ''
+        let divErrPassword = document.querySelector('.errorLoginPassword')
+        divErrPassword.innerHTML = ''
+        
+        let errors = [];
+        let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
 
-    if(length(password.value) >= 8 ){
-       errors.push("La contraseña tiene que tener 8 caracteres o más")
-    }*/
+        
+        // - Validar EMAIL
+        let mensajeErrMail = ''
+        console.log(mailformat.test(form.email.value))
+        if (form.email.value == '') {
+            mensajeErrMail = "Campo EMAIL no puede estar vacio"
+            errors.push(mensajeErrMail)
+        } else if (!mailformat.test(form.email.value)) {
+            mensajeErrMail = 'Debes ingresar un formato válido de EMAIL';
+            errors.push(mensajeErrMail);
+        }
 
-    if(errors.length > 0){
-        e.preventDefault()
-        let ulerrors = document.querySelector(".errores")
-        ulerrors.innerHTML = ''
-        errors.forEach(function(error){
-            ulerrors.innerHTML += "<li>" + error + "</li>"
-        })
-    }
-    else{
-    
-    }
+        // - Validar PASSWORD
+        let mensajeErrPassword = ''
+        if (form.password.value == '') {
+            mensajeErrPassword = "Campo CONTRASEÑA no puede estar vacio"
+            errors.push(mensajeErrPassword)
+        } else if (form.password.value.length < 8) {
+            mensajeErrPassword = "Campo CONTRASEÑA debe tener al menos 8 caracteres"
+            errors.push(mensajeErrPassword)
+        }
+        //- En caso de errores se imprimen los errores
+        if (errors.length > 0) {
+            e.preventDefault()
+            console.log('ENTRANDO EN ERRORES');
 
-})})
+            if (mensajeErrMail != '') {
+                console.log('ERROR DE EMAIL');
+                console.log(mensajeErrMail);
+                divErrEmail.innerHTML = `<p>${mensajeErrMail}</p>`
+            }
+            if (mensajeErrPassword != '') {
+                console.log('ERROR DE PASSWORD');
+                console.log(mensajeErrPassword);
+                divErrPassword.innerHTML = `<p>${mensajeErrPassword}</p>`
+                
+            }
+        } else {
+            //- CASO CONTRARIO se hace 'submit' del formulario
+            form.submit()
+        }
+    })
+})

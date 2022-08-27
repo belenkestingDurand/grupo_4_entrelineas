@@ -34,6 +34,7 @@
                                     id="email"
                                     placeholder="Ingrese su email"
                                 />
+                                <div class="errorLoginEmail text-red"></div>
                                 <% if (locals.errors && errors.email) { %>
                                     <div class="text-red">
                                         <%= errors.email.msg %>
@@ -53,6 +54,7 @@
                                     id="password"
                                     placeholder="Ingrese su contraseña" 
                                 />
+                                <div class="errorLoginPassword text-red"></div>
                                 <% if (locals.errors && errors.password) { %>
                                     <div class="text-red">
                                         <%= errors.password.msg %>
@@ -88,27 +90,13 @@
                     </div>
                     <div>
                         <a href="/users/register"><h5 class="login-h5-centrado"> <button class="button-crear-cuenta">Crear nueva Cuenta</button></h5></a>
-                      <!--  -->
                     </div>
-                
-                
-                
-
-                
-            
             </div>
-
-               
-                
-                
-                
-            
         </div>
     </main>
     <footer class="login-footer">
-
     </footer>
-<script src="/js/login.js"></script>
+    <script src="/js/login.js"></script>
 </body>
 
 </html>

@@ -50,8 +50,22 @@ const productsController =  {
         // - crear validador de epxress y retornar vista con errores en caso de que haya
         const resValidation = validationResult(req)
         if (resValidation.errors.length > 0) {
-            return res.redirect('products/editarProducto', {errors: resValidation.mapped()}
-        )}
+            // ! mandar todos los db.model.findAll() 
+            // return res.redirect('products/editarProducto', {errors: resValidation.mapped()})
+            db.Product.findOne({
+                include: ["authors", "genres", "editorials", "productsTypes"],
+                where: { id: req.params.id }
+            })
+                .then(function (prductToShow) {
+                    db.Editorial.findAll().then(function (todasLasEditoriales) {
+                        let allEditorials = todasLasEditoriales
+                        db.ProductType.findAll().then(todosLosProdTypes => {
+                            let allProductsTypes = todosLosProdTypes
+                            res.render('products/editarProducto', { product: prductToShow, allEditorials, allProductsTypes, errors: resValidation.mapped() })
+                        })
+                    })
+                })
+        }
 
         db.Product.update({
             name : req.body.name,
@@ -156,12 +170,32 @@ const productsController =  {
     // /products proceso de creación por (POST)
     productoCreado: (req,res) =>{
         // - crear validador de epxress y retornar vista con errores en caso de que haya
+        // res.render("products/crearProducto", { allGenres, allAuthors, allEditorials, allProductsTypes});
+        // ! mandar todos los db.model.findAll() para de crear 
         const resValidation = validationResult(req)
         if (resValidation.errors.length > 0) {
-            return res.redirect('products/crearProducto', {
-                errors: resValidation.mapped()
-            });
-        }
+            // return res.redirect('products/crearProducto',  errors: resValidation.mapped() });
+            console.log('----------------ERRORES MAPEADOS------------------');
+            console.log(resValidation.mapped().genre);
+            console.log('----------------ERRORES MAPEADOS FIN------------------');
+            db.Genre.findAll()
+            .then(function(todosLosGeneros){
+                let allGenres = todosLosGeneros
+                db.Author.findAll()
+                    .then(function(todosLosAutores){
+                        let allAuthors = todosLosAutores
+                        db.Editorial.findAll()
+                        .then(function(todasLasEditoriales){
+                            let allEditorials = todasLasEditoriales
+                            db.ProductType.findAll()
+                            .then(function(todosLosProductTypes){
+                                let allProductsTypes = todosLosProductTypes
+                                res.render("products/crearProducto", { allGenres, allAuthors, allEditorials, allProductsTypes, errors: resValidation.mapped()});
+                            })
+                        })
+                    })
+                })
+            }
 
         let image = '';
         if (req.file) {
@@ -192,50 +226,29 @@ const productsController =  {
         return res.redirect('/products')
             
     },
-    // delete: (req, res) => {
-    //     // leer archivo
-    //     let datos = fs.readFileSync(productosFilePath, "utf-8")
-    //     let books = JSON.parse(datos)
+    delete: async function (req, res) {
+        db.Product.destroy({
+        where: {id: req.params.id}
+    });
 
-    //     // ubicar el libro a borrar y hacer un array con el resto mediante filter
-    //     let id = req.params.id;
+    // await db.Movie.destroy({
+    //     where:{id:req.params.id,force:true}
+    // })
 
-    //     let booksToKeep = books.filter((book) => book.id !=id);
-    //     //lo vuelvo a formato json
-    //     let jsonBooksToKeep = JSON.stringify(booksToKeep, null, 2);
-    //     // lo reescribo en el archivo
-    //     fs.writeFileSync(productosFilePath, jsonBooksToKeep, "utf-8");
-        
-    //     //redirecciona a listado de libros
-    //     return res.redirect('/products');
-        // delete: async function (req, res) {
-        //     let productoABorrar = await db.Product.findByPk(req.params.id);
-        //     res.render("moviesDelete", { Movie });
-        //   },
-        
-          delete: async function (req, res) {
-             db.Product.destroy({
-                where: {id: req.params.id}
-            });
-        
-            // await db.Movie.destroy({
-            //     where:{id:req.params.id,force:true}
-            // })
-        
-            res.redirect("/products");
-          },
+    res.redirect("/products");
+    },
 
-          search: function(req, res){
-            //db.Movie.findOne({where: {title: {[Op.like]:'%'+req.body.titulo+'%'} }})
-            db.Product.findAll({ include: ["authors", "genres", "editorials", "productsTypes"],
-                                 where: {name: {[Op.like]:'%'+req.body.search+'%'} }})
-            .then((productos) => {
+    search: function(req, res){
+    //db.Movie.findOne({where: {title: {[Op.like]:'%'+req.body.titulo+'%'} }})
+    db.Product.findAll({ include: ["authors", "genres", "editorials", "productsTypes"],
+                            where: {name: {[Op.like]:'%'+req.body.search+'%'} }})
+    .then((productos) => {
 
-            res.render("products/listarProducto", { books: productos });
-            });
-          }
-        }
-    
+    res.render("products/listarProducto", { books: productos });
+    });
+    }
+}
+
 
 
 
