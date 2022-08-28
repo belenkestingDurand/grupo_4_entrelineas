@@ -7,11 +7,11 @@ window.addEventListener("load", function () {
  
         
         let divErrorFirstName = document.querySelector('.divErrorFirstName');
-        console.log(divErrorFirstName);
+
         divErrorFirstName.innerHTML = '';
         let errors = [];
         let errorfullName = '';
-    // - Validar firstName entre 3 y 60
+    // - Validar fullname entre 3 y 60
         if (form.fullName.value.length < 3 || form.fullName.value.length > 60) {
             errorfullName = "*Debes ingresar entre 3 y 60 caracteres"
             errors.push(errorfullName)
