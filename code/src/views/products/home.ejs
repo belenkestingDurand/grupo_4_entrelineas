@@ -21,6 +21,7 @@
             <% books.forEach(product => { %>
             <article class="product">
                 <div class="img-more">
+                    <div class="home-etiqueta-product-type"><%= product.productsTypes.title%></div>
                     <img class="home-book-product-img" src="<%= product.picture %>" alt="libro de prueba">
                     <div class="position-ver-mas"><a href="/detalle/<%= product.id %>"><input class="see-more home-prod-btm" type="button" value="Ver más"></a></div>
                     <div class="position-button-comprar"><input class="comprar home-prod-btm" type="button" value="Comprar"></div>
