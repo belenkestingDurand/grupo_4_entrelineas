@@ -1,3 +1,4 @@
+const {validationResult} = require('express-validator');
 const db = require('../database/models');
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
@@ -16,13 +17,26 @@ const authorsController = {
     },
     
     procesarCrear: async function(req,res) {
-        await db.Author.create({
-           fullName: req.body.fullName 
-        });
-        res.redirect('/authors');
+        const resultValidation = validationResult(req);
+
+        if (resultValidation.errors.length> 0) {
+          return res.render("crearAutores", {
+            errors: resultValidation.mapped(),
+            oldData: req.body
+          });
+
+          }
+          await db.Author.create({
+            fullName: req.body.fullName 
+         });
+         
+         res.redirect('/authors');
+
+        },
+       
         
         
-      },
+      
       listar: function(req, res) {
         db.Author.findAll({
           order : [

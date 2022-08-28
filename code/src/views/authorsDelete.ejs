@@ -5,19 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Borrado del Autor</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 
-<body>
+<body class="body-confborrar">
    
-    <h3>Estas seguro de querer borrar este autor: <%= Autor.fullName %>???</h1>
+    <h3 class="mens-confborrar">Estas seguro de querer borrar este autor: <%= Autor.fullName %>???</h3>
     <p>
-        <form action="/authors/delete/<%=Autor.id %>" method="POST">
-            <br>
-            <p> <button class="botonBorrar" type="submit">Borrar el Autor</button>
-            
-            <a  class="botonVolver" href="/authors/">Listado de Autores</a></p>
-
+        <form action="/authors/destroy/<%=Autor.id %>" method="POST">
+            <div class="tamaño-linea">
+                <div class="linea-de-botones-confborrar">
+                
+                    <div>
+                       <button class="botonBorrar" type="submit">Borrar el Autor</button>
+                    </div>
+                
+                    <div class="boton-volver">
+                        <a class="link-list-aut"  href="/authors/">  Listado de Autores</a>
+                    </div>
+                </div>
+            </div>
         </form>
     </p>
     

@@ -13,8 +13,22 @@
     <h3 class="h3-crearautor">Ingresar nuevo Autor</h1>
     <form class="createpr-form-padding-left" action="crear" method="POST">
         <div>
-            <label for="fullName"></label>Nombre del autor</label>
-            <input class="box-ingrese-datos" type="text" name="fullName" id="fullName"/>
+            <div><label for="fullName">Nombre del autor</label></div>
+                <input 
+                    class="box-ingrese-datos" 
+                    type="text" 
+                    name="fullName" 
+                    id="fullName"
+                    placeholder="Ingrese un nombre entre 3 y  60 caracteres"
+                />
+            
+            <div class="divErrorFirstName text-red">
+                <% if (locals.errors && errors.fullName) { %>
+                    <div class="text-red">
+                        <%= errors.fullName.msg %>
+                    </div>
+                <% } %>
+            </div>
         </div>
         <button class="centrar-button" type="submit">Enviar</button>
     </form>
