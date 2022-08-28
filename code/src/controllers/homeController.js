@@ -13,7 +13,8 @@ const homeController =  {
     //'home.ejs' IN 'views/products' FOLDER
     home: (req, res) => {
 
-     db.Product.findAll({ include: ["authors", "genres", "editorials", "productsTypes"] })
+     db.Product.findAll({ include: ["authors", "genres", "editorials", "productsTypes"], 
+                          order: [["name", "ASC"]] })
      .then((productos) => {
         res.render('products/home',{books: productos})
      });  
@@ -32,6 +33,15 @@ const homeController =  {
     listarEbooks: function(req,res){
         db.Product.findAll({ include: ["authors", "genres", "editorials", "productsTypes"],
                              where: {id_productType: 2 }
+                          })
+     .then((productos) => {
+        res.render('products/home',{books: productos})
+     });  
+    },
+
+    listarMerch: function(req,res){
+        db.Product.findAll({ include: ["authors", "genres", "editorials", "productsTypes"],
+                             where: {id_productType: 3 }
                           })
      .then((productos) => {
         res.render('products/home',{books: productos})

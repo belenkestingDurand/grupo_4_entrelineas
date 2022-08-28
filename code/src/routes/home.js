@@ -10,6 +10,7 @@ router.get('/',homeCtrl.home)
 router.get('/home',homeCtrl.home)
 router.get('/books', homeCtrl.listarLibros)
 router.get('/ebooks', homeCtrl.listarEbooks)
+router.get('/merch', homeCtrl.listarMerch)
 
 //- PRODUCT DETAIL
 

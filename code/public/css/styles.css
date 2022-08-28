@@ -102,6 +102,14 @@ input{
     background-attachment: fixed;
 }
 
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
 /*#52c4df, #ad55ad*/
 .login-body-background-img:before {
     content: "";
@@ -321,7 +329,7 @@ img {
     border-radius: 30px;
     padding: 10px;
     display: none;
-    margin-right: 20px;
+    margin-right: 10px;
     
 }
 .nav-link{
@@ -1188,6 +1196,9 @@ footer {
   'GRAD' 0,
   'opsz' 48
 }
+.settings{
+    display: none;
+}
 .img-buttom {
     border-radius: 45px;
 }
@@ -1562,6 +1573,10 @@ text-align: center;
     .nav-search{
         width: 40%;
         order: 0;
+    }
+
+    .settings{
+        display: block;
     }
 
    /* .ordenar-carrito {
