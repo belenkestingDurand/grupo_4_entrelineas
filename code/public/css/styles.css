@@ -1,8 +1,18 @@
 /*
 GRIS OSCURO: #938C8C;
-ROJO: #9F1FOE;
+ROJO: #9F1F0E;
 GRIS CLARO: #F4F3F3;
 */
+.gris-oscuro {
+    color: #938C8C ;
+}
+
+.rojo {
+    color: #9F1F0E;
+}
+.gris-claro {
+    color: #F4F3F3;
+}
 
 * {
     box-sizing: border-box;
