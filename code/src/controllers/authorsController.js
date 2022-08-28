@@ -20,7 +20,7 @@ const authorsController = {
         const resultValidation = validationResult(req);
 
         if (resultValidation.errors.length> 0) {
-          return res.render("crearAutor", {
+          return res.render("crearAutores", {
             errors: resultValidation.mapped(),
             oldData: req.body
           });
