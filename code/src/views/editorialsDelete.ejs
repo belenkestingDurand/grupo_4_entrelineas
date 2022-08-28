@@ -5,19 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Borrado de la Editorial</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 
-<body>
+<body class="body-confborrar">
    
-    <h1>Estas seguro de querer borrar esta Editorial: <%= Editorial.title %>???</h1>
+    <h3>Estas seguro de querer borrar esta Editorial: <%= Editorial.title %>???</h3>
     <p>
-        <form action="/editorials/delete/<%=Editorial.id %>" method="POST">
-            <br>
-            <p> <button class="botonBorrar" type="submit">Borrar la Editorial</button>
-            
-            <a  class="botonVolver" href="/editorials/">Listado de Editoriales</a></p>
+        <form action="/editorials/destroy/<%=Editorial.id %>" method="POST">
+            <div class="tamaño-linea">
+                <div class="linea-de-botones-confborrar"> 
+                    
+                    <div>
+                         <button class="botonBorrar" type="submit">Borrar la Editorial</button>
+                    </div>
 
+                    <div class="boton-volver">
+                        <a  class="link-list-aut" href="/editorials/">Listado de Editoriales</a>
+                    </div>
+                </div>
+            </div>
         </form>
     </p>
     
