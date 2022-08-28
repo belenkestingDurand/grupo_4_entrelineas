@@ -20,7 +20,7 @@ const authorsController = {
         const resultValidation = validationResult(req);
 
         if (resultValidation.errors.length> 0) {
-          return res.render("crearAutores", {
+          return res.render("crearAutor", {
             errors: resultValidation.mapped(),
             oldData: req.body
           });
@@ -29,7 +29,6 @@ const authorsController = {
           await db.Author.create({
             fullName: req.body.fullName 
          });
-         
          res.redirect('/authors');
 
         },

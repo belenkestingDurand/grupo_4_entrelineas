@@ -7,7 +7,6 @@ module.exports = [
     // validaciones de author
     // fullname obligatorios y entre 3 y 60 caracteres
     body('fullName')
-        .notEmpty().withMessage('Tienes que escribir un nombre').bail()
         .isLength({min:3, max:60}).withMessage('La longitud tiene que tener entre 3 y 60 caracteres.'),
    
 ]
