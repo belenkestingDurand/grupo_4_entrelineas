@@ -10,11 +10,24 @@
 <body>
     <!-- Header -->
     <%- include('./partials/genreHeader.ejs') %>
-    <h3 class="h3-crearautor">Ingresar nuevo Género</h1>
+    <h3 class="h3-crearautor">Ingresar nuevo Género</h3>
     <form class="createpr-form-padding-left" action="crear" method="POST">
         <div>
             <label for="name"></label>Nombre del género</label>
-            <input class="box-ingrese-datos" type="text" name="name" id="name"/>
+            <input
+                class="box-ingrese-datos"
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Ingrese un género con nombre entre 3 y 40 caracteres"
+            />
+            <div class="divErrorFirstName text-red">
+                <% if (locals.errors && errors.name) { %>
+                    <div class="text-red">
+                        <%= errors.name.msg %>
+                    </div>
+                <% } %>
+            </div>           
         </div>
         <button class="centrar-button" type="submit">Enviar</button>
     </form>

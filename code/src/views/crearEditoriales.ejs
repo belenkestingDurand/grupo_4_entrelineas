@@ -10,11 +10,24 @@
 <body>
     <!-- Header -->
     <%- include('./partials/editorialHeader.ejs') %>
-    <h3 class="h3-crearautor">Ingresar nueva Editorial</h1>
+    <h3 class="h3-crearautor">Ingresar nueva Editorial</h3>
     <form class="createpr-form-padding-left" action="crear" method="POST">
         <div>
             <label for="title"></label>Nombre de la Editorial</label>
-            <input class="box-ingrese-datos" type="text" name="title" id="title"/>
+            <input 
+                class="box-ingrese-datos"
+                type="text"
+                name="title"
+                id="title"
+                placeholder="Ingrese una editorial con nombre entre 3 y 40 caracteres"
+            />
+            <div class="divErrorFirstName text-red">
+                <% if (locals.errors && errors.title) { %>
+                    <div class="text-red">
+                        <%= errors.title.msg %>
+                    </div>
+                <% } %>
+            </div>               
         </div>
         <button class="centrar-button" type="submit">Enviar</button>
     </form>

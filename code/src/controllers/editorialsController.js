@@ -1,3 +1,4 @@
+const {validationResult} = require('express-validator');
 const db = require('../database/models');
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
@@ -16,7 +17,16 @@ const editorialsController = {
     },
     
     procesarCrear: async function(req,res) {
-        await db.Editorial.create({
+      const resultValidation = validationResult(req);
+
+      if (resultValidation.errors.length> 0) {
+        return res.render("crearEditoriales", {
+          errors: resultValidation.mapped(),
+          oldData: req.body
+        });
+
+        }
+      await db.Editorial.create({
            title: req.body.title
         });
         res.redirect('/editorials');

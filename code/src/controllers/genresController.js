@@ -1,3 +1,4 @@
+const {validationResult} = require('express-validator');
 const db = require('../database/models');
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
@@ -16,7 +17,16 @@ const genresController = {
     },
     
     procesarCrear: async function(req,res) {
-        await db.Genre.create({
+        const resultValidation = validationResult(req);
+
+        if (resultValidation.errors.length> 0) {
+          return res.render("crearGeneros", {
+            errors: resultValidation.mapped(),
+            oldData: req.body
+          });
+
+        } 
+      await db.Genre.create({
            name: req.body.name
         });
         res.redirect('/genres');
