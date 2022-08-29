@@ -62,5 +62,7 @@ INSERT INTO entrelineas.products VALUES
 (default,'Psicología Social de la Educación',1500,'540mg',130,'ta bueno','BUEN LIBRO','/img/products/book-psicologia-social.jpeg',2,7,3,2,null),
 (default,'Dump it!',2900,'670mg',180,'ta bueno','BUEN LIBRO','/img/products/book-dump-it.jpg',6,9,3,2,null),
 (default,'El Capitalismo explicado a mi nieta',4200,'780mg',280,'ta bueno','BUEN LIBRO','/img/products/book-el-capitalismo.jpeg',8,10,5,2,null),
-(default,'Recursos educativos',1200,'500mg',150,'ta bueno','BUEN LIBRO','/img/products/book-recursos-educativos.png',9,11,5,2,null);
+(default,'Recursos educativos',1200,'500mg',150,'ta bueno','BUEN LIBRO','/img/products/book-recursos-educativos.png',9,11,5,2,null),
+(default,'Taza Entre Lineas',400,'400ml',null,'Taza de 400 ml color blanca, excelente para el cafe de la mañana junto a un libro',null,'/img/products/merch-taza.jpeg',20,null,null,3,null);
+
 -- id,name.price,size,pages,opinion,more,picture,stock,idAu,idGen,idProdT,idEditproducts

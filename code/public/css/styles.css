@@ -102,6 +102,14 @@ input{
     background-attachment: fixed;
 }
 
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
 /*#52c4df, #ad55ad*/
 .login-body-background-img:before {
     content: "";
@@ -321,7 +329,7 @@ img {
     border-radius: 30px;
     padding: 10px;
     display: none;
-    margin-right: 20px;
+    margin-right: 10px;
     
 }
 .nav-link{
@@ -440,10 +448,24 @@ article .img-more {
     padding-right: 5%;
 }
 
+.home-etiqueta-product-type{
+    background-color: #f1f1f1;
+    opacity: 80%;
+    padding: 10px;
+    height: 40px;
+    color: black;
+    border: solid #000 1px;
+    border-radius: 30px;
+    position: absolute;
+    left: 0px;
+}
+
+
 .img-more{
     /* display: flex; */
     position: relative;
     justify-content: space-between;
+    display: flex;
 }
 
 .buy-item {
@@ -464,6 +486,8 @@ input.see-more {
     padding: 13px 21px;
     border-radius: 15px;
     margin-bottom: 10%;
+    cursor: pointer;
+
 }
 .comprar{
     display: none;
@@ -473,6 +497,7 @@ input.see-more {
     margin-bottom: 10%;
     background-color: black;
     color: white;
+    cursor: pointer;
     
 }
 
@@ -493,9 +518,11 @@ input.see-more {
 
 .book-name-price {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
     margin: auto;
     min-height: 30px;
+    text-align: center;
 }
 
 article .add-cart-button {
@@ -523,10 +550,14 @@ article .add-cart-button {
 .book-product-name{
     margin-top: 5%;
     font-weight: 300;
+    width: 100%;
+    text-align: center;
 }
 
 .book-product-price{
   margin-top: 8%;
+  width: 100%;
+  text-align: center;
 }
 
 .book-product-author{
@@ -1165,6 +1196,9 @@ footer {
   'GRAD' 0,
   'opsz' 48
 }
+.settings{
+    display: none;
+}
 .img-buttom {
     border-radius: 45px;
 }
@@ -1539,6 +1573,10 @@ text-align: center;
     .nav-search{
         width: 40%;
         order: 0;
+    }
+
+    .settings{
+        display: block;
     }
 
    /* .ordenar-carrito {
