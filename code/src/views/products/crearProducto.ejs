@@ -19,48 +19,50 @@
             <div class="">
                 <div class="">
                     <div><label class="createpr-label-font" for="productName">Nombre del producto:</label></div>
-                    <input class="box-ingrese-datos" type="text" name="productName" id="productName" 
-                        placeholder="Ingrese el nombre del producto">
+                    <input 
+                    class="box-ingrese-datos <%= locals.errors && errors.productName ? 'is-invalid' : null %>"
+                    type="text" 
+                    name="productName" 
+                    id="productName" 
+                    placeholder="Ingrese el nombre del producto"
+                    value="<%= locals.oldData ? oldData.productName : null %>"
+                    />
                     <div class="errorProductName text-red"></div>
-                        <% if (locals.errors && errors.name) { %>
-                                <%= errors.name.msg %>
+                        <% if (locals.errors && errors.productName) { %>
+                                <%= errors.productName.msg %>
                         <% } %>
                     </div>
                 </div>
                 <div>
                     <p class="createpr-label-font">Tipo de producto:</p>
-                        <select name="type" id="type" >
-                            <option value="" disabled selected>- Tipo de producto - </option>
+                        <select 
+                            name="type" 
+                            class=" <%= locals.errors && errors.type ? 'is-invalid' : null %>"
+                            id="type" >
+                            <option value="" >- Tipo de producto - </option>
                             <option value='1'>Libro</option>
                             <option value='2'>Ebook</option>
                             <option value='3'>Varios</option>
+                            
                         </select>
                         <div class="text-red errorProductType">
                         <% if (locals.errors && errors.type) { %>
                                 <%= errors.type.msg %>
                         <% } %>
                         </div>
-                    <!-- <% allProductsTypes.forEach(tipoProducto => { %>
-                    <option value="<%= tipoProducto.id %>"><%= tipoProducto.title %></option>
-                    <% }); %> -->
+                   
                 </div>
-                <!-- <div>
-                    <p class="createpr-label-font">Tipo de producto:</p>
-                    <p>
-                        <select name="id_productType" id="" required>
-                            <option value="" disabled selected>- Tipo de producto - </option>
-                            <% allProductsTypes.forEach(tipoProducto => { %>
-                            <option value="<%= tipoProducto.id %>"><%= tipoProducto.title %></option>
-                            <% }); %>
-                        </select>
-                    </p>
-
-                </div> -->
+              
 
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="name">Imagen del producto:</label></div>
-                    <input class="box-ingrese-datos" type="file" name="productImg"  accept=".jpg, .png">
+                    <input 
+                    class="box-ingrese-datos <%= locals.errors && errors.productImg ? 'is-invalid' : null %>"
+                    type="file" 
+                    name="productImg"  
+                    accept=".jpg, .png"
+                    />
                     <div class="text-red errorImg"></div>
                     <% if (locals.errors && errors.productImg) { %>   
                             <%= errors.productImg.msg %>
@@ -88,7 +90,13 @@
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font"  for="price">Precio:</label></div>
-                    <input class="box-ingrese-datos" type="number" name="price" id="price">
+                    <input 
+                    class="box-ingrese-datos <%= locals.errors && errors.price ? 'is-invalid' : null %>" 
+                    type="number" 
+                    name="price" 
+                    id="price"
+                    value="<%= locals.oldData ? oldData.price : null %>"
+                    />
                     <div class="text-red errorPrecio">
                         <% if (locals.errors && errors.price) { %>
                             
@@ -99,7 +107,13 @@
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="about">Descripción:</label></div>
-                    <textarea class="texarea-saizing" name="about" id="about" placeholder="Agregue una breve descripcion del libro"></textarea> 
+                    <textarea 
+                    class="texarea-saizing <%= locals.errors && errors.about ? 'is-invalid' : null %>" 
+                    name="about" 
+                    id="about" 
+                    placeholder="Agregue una breve descripcion del libro"
+                    value="<%= locals.oldData ? oldData.about : null %>"
+                    ></textarea> 
                     <div class="text-red errorDescripcion"></div>
                     <% if (locals.errors && errors.about) { %>
                         
@@ -145,8 +159,14 @@
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="bookSize">Tamaño:</label></div>
-                    <input class="box-ingrese-datos" type="text" name="size" id="bookSize" 
-                    placeholder="Ingrese el tamaño del libro (ancho x alto, en cm)" >
+                    <input 
+                    class="box-ingrese-datos <%= locals.errors && errors.size ? 'is-invalid' : null %>"  
+                    type="text" 
+                    name="size" 
+                    id="bookSize" 
+                    placeholder="Ingrese el tamaño del libro (ancho x alto, en cm)" 
+                    value="<%= locals.oldData ? oldData.size : null %>"
+                    />
                 </div>
                 <div class="text-red errorEditorial errorTamaño">
                    
@@ -155,8 +175,14 @@
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="pages">Paginas:</label></div>
-                    <input class="box-ingrese-datos" type="number" name="pages" id="pages" 
-                    placeholder="Ingrese el número de páginas que contiene el libro" >
+                    <input 
+                    class="box-ingrese-datos <%= locals.errors && errors.pages ? 'is-invalid' : null %>" 
+                    type="number" 
+                    name="pages" 
+                    id="pages" 
+                    placeholder="Ingrese el número de páginas que contiene el libro" 
+                    value="<%= locals.oldData ? oldData.pages : null %>"
+                    />
                 </div>
                 <div class="text-red errorEditorial errorPaginas">
                    
@@ -165,13 +191,26 @@
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="more">"Mas Información":</label></div>
-                    <textarea class="texarea-saizing" name="more" id="more" placeholder="Agregue información adicional sobre el producto"></textarea> 
+                    <textarea 
+                    class="texarea-saizing <%= locals.errors && errors.more ? 'is-invalid' : null %>" 
+                    name="more" 
+                    id="more" 
+                    placeholder="Agregue información adicional sobre el producto"
+                    value="<%= locals.oldData ? oldData.more : null %>"
+                    ></textarea> 
                 </div>
 
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="stock">"Stock":</label></div>
-                    <input class="box-ingrese-datos" type="number" name="stock" id="stock" placeholder="Ingrese stock"></input> 
+                    <input 
+                    class="box-ingrese-datos <%= locals.errors && errors.stock ? 'is-invalid' : null %>" 
+                    type="number" 
+                    name="stock" 
+                    id="stock" 
+                    placeholder="Ingrese stock"
+                    value="<%= locals.oldData ? oldData.stock : null %>"
+                    /></input> 
                     <div class="text-red errorStock">
                     <% if (locals.errors && errors.stock) { %>
                             <%= errors.stock.msg %>

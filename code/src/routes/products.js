@@ -18,7 +18,7 @@ router.get('/',authMiddleware, productsCtrl.listarProducto)
 
 //- CREATE PRODUCT 
 router.get('/create', productsCtrl.crearProducto)
-router.post('/create'/*, createProdMW */, uploadProd.single('productImg'), productsCtrl.productoCreado)
+router.post('/create', uploadProd.single('productImg'), createProdMW , productsCtrl.productoCreado)
 
 //- EDIT PRODUCT
 router.get('/:id/edit', productsCtrl.editarProducto)

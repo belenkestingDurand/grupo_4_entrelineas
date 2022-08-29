@@ -41,7 +41,7 @@
                 <div class="register-cont-label-input">
                     <div><label for="lastName">Apellido:</label></div>
                         <input 
-                            class="box-ingrese-datos" 
+                            class="box-ingrese-datos <%= locals.errors && errors.lastName ? 'is-invalid' : null %>" 
                             type="text" 
                             name="lastName" 
                             id="lastName"

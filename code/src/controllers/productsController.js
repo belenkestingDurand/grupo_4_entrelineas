@@ -2,11 +2,7 @@ const path = require("path");
 const db = require("../database/models");
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
-const Product = require("../database/models/Product");
-const Author = require("../database/models/Author");
-const Editorial = require("../database/models/Editorial");
-const Genre= require("../database/models/Genre");
-const ProductType= require("../database/models/ProductType");
+
 const fs = require("fs")
 const about = {
     books: "Libros"
@@ -174,10 +170,6 @@ const productsController =  {
         // ! mandar todos los db.model.findAll() para de crear 
         const resValidation = validationResult(req)
         if (resValidation.errors.length > 0) {
-            // return res.redirect('products/crearProducto',  errors: resValidation.mapped() });
-            console.log('----------------ERRORES MAPEADOS------------------');
-            console.log(resValidation.mapped().genre);
-            console.log('----------------ERRORES MAPEADOS FIN------------------');
             db.Genre.findAll()
             .then(function(todosLosGeneros){
                 let allGenres = todosLosGeneros
@@ -190,14 +182,20 @@ const productsController =  {
                             db.ProductType.findAll()
                             .then(function(todosLosProductTypes){
                                 let allProductsTypes = todosLosProductTypes
-                                res.render("products/crearProducto", { allGenres, allAuthors, allEditorials, allProductsTypes, errors: resValidation.mapped()});
+                                return res.render('products/crearProducto',{
+                                    errors: resValidation.mapped(),
+                                    oldData: req.body,
+                                    allGenres: allGenres,
+                                    allAuthors: allAuthors,
+                                    allEditorials: allEditorials,
+                                    allProductsTypes: allProductsTypes
+                                });
                             })
                         })
                     })
-                })
-            }
-
-        let image = '';
+                })         
+             }    
+        else {  let image = '';
         if (req.file) {
             //le saco la palabra public para que sea a partir
           image = req.file.filename;
@@ -205,8 +203,7 @@ const productsController =  {
         }
 
         let newProduct = {
- 
-            name: req.body.productName,
+             name: req.body.productName,
             price: req.body.price,
             size: req.body.size,
             pages: req.body.pages,
@@ -220,10 +217,13 @@ const productsController =  {
             id_editorial: req.body.editorial
             
         };
-        console.log(newProduct);
+       
         db.Product.create(newProduct)
-
-        return res.redirect('/products')
+            .then(function(product){
+                return res.redirect('/products')
+            })}
+       
+        
             
     },
     delete: async function (req, res) {

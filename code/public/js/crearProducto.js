@@ -65,7 +65,7 @@ window.addEventListener("load", function(){
         }
         //Precio no puede ser menor que 100
         if(form.price.value <= 100){
-            errorPrecio = 'Hay un error en el precio.'
+            errorPrecio = 'El precio no puede ser menor a 100.'
             errors.push(errorPrecio)
         }
 
@@ -117,6 +117,6 @@ window.addEventListener("load", function(){
 
         }
 
-    })
+    }) 
 
 })
