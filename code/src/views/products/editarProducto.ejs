@@ -21,7 +21,13 @@
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="name">Nombre del producto:</label></div>
-                    <input class="box-ingrese-datos" type="text" name="name" id="name" value="<%= product.name %>" required >
+                    <input 
+                    class="box-ingrese-datos <%= locals.errors && errors.productName ? 'is-invalid' : null %>" 
+                    type="text" 
+                    name="name" 
+                    id="name" 
+                    value="<%= product.name %>" required 
+                    />
                     <div class="text-red errorProductName">
                     <% if (locals.errors && errors.name) { %>
                             <%= errors.name.msg %>
@@ -31,15 +37,10 @@
                 <div>
                      <div>
                         <p class="createpr-label-font">Tipo de producto:</p>
-                        <!-- 
-                            <% allEditorials.forEach(editorial => { %>
-                                <% if (product.id_editorial == editorial.id) { %>
-                                    <option value="<%= editorial.id %>" selected><%= editorial.title %></option>
-                                <% }%>
-                            <option value="<%= editorial.id %>"><%= editorial.title %></option>
-                            <% }); %>
-                         -->
-                            <select name="type" id="type" required>
+                            <select
+                                name="type" 
+                                class=" <%= locals.errors && errors.type ? 'is-invalid' : null %>"
+                                id="type" required>
                                 <% allProductsTypes.forEach(tipo => { %>
                                     <% if (product.id_productType == tipo.id) { %>
                                         <option value="<%= tipo.id %>" selected><%= tipo.title %></option>
@@ -60,10 +61,16 @@
                 <!--Aquí solicito la imagen-->
                 <div class="">
                     <figure class="">
+                        <div><label class="createpr-label-font" for="productImg">Imagen del producto:</label></div>
                       <img class="editproduct-img" src="../../../<%= product.picture%>"
                        alt="libro <%= product.name %>">
                     </figure>
-                    <input type="file" name="productImg" value="<%= product.picture%>" />
+                    <input 
+                    class="box-ingrese-datos <%= locals.errors && errors.productImg ? 'is-invalid' : null %>"
+                    type="file" 
+                    name="productImg" 
+                    value="<%= product.picture%>" 
+                    />
                     <div class="text-red errorImg">
                     <% if (locals.errors && errors.productImg) { %>
                             <%= errors.productImg.msg %>
@@ -73,13 +80,25 @@
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="author">Autor:</label></div>
-                    <% if (product.id_author != null){ %>
-                        <input class="box-ingrese-datos" type="text" name="author" id="author" 
-                            placeholder="Ingrese el nombre del autor" value="<%= product.authors.fullName %>">
-                    <% } else { %>
-                        <input class="box-ingrese-datos" type="text" name="author" id="author" 
-                            placeholder="Ingrese el nombre del autor" value="">
-                    <% } %>
+                    <p>
+                        <select name="author" id="author">
+                            <% if (product.id_author != null){ %>
+                                <option value="" disabled>- select Autor -</option>
+                                <% allAuthors.forEach(autor => { %>
+                                    <% if (product.id_author != autor.id){ %>
+                                        <option value="<%= autor.id %>"><%= autor.fullName %></option>
+                                    <% } else { %>
+                                        <option value="<%= autor.id %>" selected><%= autor.fullName %></option>
+                                    <% } %>
+                                <% }); %>
+                            <% } else { %>
+                                <option value="" disabled selected>- select Autor -</option>
+                                <% allAuthors.forEach(autor => { %>
+                                <option value="<%= autor.id %>"><%= autor.fullName %></option>
+                                <% }); %>
+                            <% } %>
+                        </select>
+                    </p>
                         
                     <% if (locals.errors && errors.author) { %>
                         <div class="text-red">
@@ -91,7 +110,13 @@
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font"  for="price">Precio:</label></div>
-                    <input class="box-ingrese-datos" type="text" name="price" id="price" value="<%= product.price %>">
+                    <input 
+                    class="box-ingrese-datos <%= locals.errors && errors.price ? 'is-invalid' : null %>" 
+                    type="text" 
+                    name="price" 
+                    id="price" 
+                    value="<%= product.price %>"
+                    />
                     <div class="text-red errorPrecio">
                     <% if (locals.errors && errors.price) { %>
                             <%= errors.price.msg %>
@@ -101,7 +126,12 @@
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="about">Descripción:</label></div>
-                    <textarea  name="about" id="about" placeholder="Agregue una breve descripcion del libro" ><%= product.opinion %></textarea> 
+                    <textarea 
+                    class="texarea-saizing <%= locals.errors && errors.about ? 'is-invalid' : null %>"  
+                    name="about" 
+                    id="about" 
+                    placeholder="Agregue una breve descripcion del libro" 
+                    ><%= product.opinion %></textarea> 
                     <div class="text-red errorDescripcion">
                     <% if (locals.errors && errors.about) { %>
                             <%= errors.about.msg %> 
@@ -112,13 +142,25 @@
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="genre">Género:</label></div>
-                    <% if (product.id_genre != null){ %>
-                        <input class="box-ingrese-datos" type="text" name="genre" id="genre" 
-                        placeholder="Ingrese el género del libro" value="<%= product.genres.name %>">
-                    <% } else { %>
-                        <input class="box-ingrese-datos" type="text" name="genre" id="genre" 
-                        placeholder="Ingrese el género del libro" value="">
-                    <% } %>
+                    <p>
+                        <select name="genre" id="genre" >
+                            <% if (product.id_genre != null){ %>
+                                <option value="" disabled>- select Genre - </option>
+                                <% allGenres.forEach(genero => { %>
+                                    <% if (product.id_genre != genero.id) { %>
+                                        <option value="<%= genero.id %>"><%= genero.name %></option>
+                                    <% } else { %>
+                                        <option value="<%= genero.id %>" selected><%= genero.name %></option>
+                                    <% } %>
+                                <% }); %>                                
+                            <% } else { %>
+                                <option value="" disabled selected>- select Genre - </option>
+                                <% allGenres.forEach(genero => { %>
+                                <option value="<%= genero.id %>"><%= genero.name %></option>
+                                <% }); %>
+                            <% } %>
+                        </select>
+                    </p>
                     <div class="text-red ">
                     <% if (locals.errors && errors.genre) { %>
                         
@@ -130,13 +172,22 @@
                     <div class="">
                     <div><label class="createpr-label-font" for="editorial">Editorial: </label></div>
                     <p>
-                        <select name="genre" id="genre" >
-                            <% allEditorials.forEach(editorial => { %>
-                                <% if (product.id_editorial == editorial.id) { %>
-                                    <option value="<%= editorial.id %>" selected><%= editorial.title %></option>
-                                <% }%>
-                            <option value="<%= editorial.id %>"><%= editorial.title %></option>
-                            <% }); %>
+                        <select name="editorial" id="editorial" >
+                            <% if (product.id_editorial != null){ %>
+                                <option value="" disabled>- select Editorial -</option>
+                                <% allEditorials.forEach(editorial => { %>
+                                    <% if (product.id_editorial == editorial.id) { %>
+                                        <option value="<%= editorial.id %>"><%= editorial.title %></option>
+                                    <% } else { %>
+                                        <option value="<%= editorial.id %>" selected><%= editorial.title %></option>
+                                    <% } %>
+                                <% }); %>
+                            <% } else { %>
+                                <option value="" disabled selected>- select Editorial -</option>
+                                <% allEditorials.forEach(editorial => { %>
+                                        <option value="<%= editorial.id %>"><%= editorial.title %></option>
+                                <% }); %>
+                            <% } %>
                         </select>
                     </p>
                     <% if (locals.errors && errors.editorial) { %>
@@ -148,24 +199,46 @@
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="size">Tamaño:</label></div>
-                    <input class="box-ingrese-datos" type="text" name="size" id="size" 
-                    placeholder="Ingrese el tamaño del libro (ancho x alto, en cm)" value="<%= product.size %>">
+                    <input 
+                    class="box-ingrese-datos <%= locals.errors && errors.size ? 'is-invalid' : null %>" 
+                    type="text" 
+                    name="size" 
+                    id="size" 
+                    placeholder="Ingrese el tamaño del libro (ancho x alto, en cm)" 
+                    value="<%= product.size %>"
+                    />
                 </div>
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="pages">Paginas:</label></div>
-                    <input class="box-ingrese-datos" type="text" name="pages" id="pages" 
-                    placeholder="Ingrese el número de páginas que contiene el libro" value="<%= product.pages %>">
+                    <input 
+                    class="box-ingrese-datos <%= locals.errors && errors.pages ? 'is-invalid' : null %>"
+                    type="number" 
+                    name="pages" 
+                    id="pages" 
+                    placeholder="Ingrese el número de páginas que contiene el libro" 
+                    value="<%= product.pages %>">
                 </div>
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="more">"Mas Información":</label></div>
-                    <textarea  name="more" id="more" placeholder="Agregue información adicional sobre el producto"><%= product.more %></textarea> 
+                    <textarea 
+                    class="texarea-saizing <%= locals.errors && errors.more ? 'is-invalid' : null %>" 
+                    name="more" 
+                    id="more" 
+                    placeholder="Agregue información adicional sobre el producto"
+                    ><%= product.more %></textarea> 
                 </div>
                 <div class="">
                     <div class="">
                     <div><label class="createpr-label-font" for="stock">"Stock":</label></div>
-                    <input class="box-ingrese-datos" type="number" name="stock" id="stock" value="<%= product.stock %>"><%= product.stock %></input> 
+                    <input 
+                    class="box-ingrese-datos <%= locals.errors && errors.stock ? 'is-invalid' : null %>"
+                    type="number" 
+                    name="stock" 
+                    id="stock" 
+                    value="<%= product.stock %>"
+                    ><%= product.stock %></input> 
                     <div class="text-red errorStock" >
                     <% if (locals.errors && errors.stock) { %>
                         

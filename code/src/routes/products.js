@@ -22,7 +22,7 @@ router.post('/create', uploadProd.single('productImg'), createProdMW , productsC
 
 //- EDIT PRODUCT
 router.get('/:id/edit', productsCtrl.editarProducto)
-router.put('/:id/edit',  modifProdMW, uploadProd.single('productImg'), productsCtrl.productoEditado)
+router.put('/:id/edit', uploadProd.single('productImg'), modifProdMW, productsCtrl.productoEditado)
 
 //- DELETE PRODUCT
 router.delete('/delete/:id', productsCtrl.delete)
