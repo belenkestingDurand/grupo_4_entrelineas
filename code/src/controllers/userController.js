@@ -72,7 +72,7 @@ const userController =  {
                 oldData: req.body
             });
         }
-        db.User.findOne({where: {email: req.body.email}})
+        else { db.User.findOne({where: {email: req.body.email}})
         .then(function(existUser){
             // chequeo que no se registre dos veces el mismo email
                 if (existUser) {
@@ -106,7 +106,8 @@ const userController =  {
                 })
                 }
     }) 
-
+}
+        
     },
     profile: (req, res) => {
         return res.render('users/userProfile', {

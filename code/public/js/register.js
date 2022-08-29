@@ -99,7 +99,7 @@
              };
 
         } else{
-            alert('Formulario Validado');
+         
             form.submit();
         }
        
