@@ -483,21 +483,28 @@ article .img-more {
 }
 input.see-more {
     align-self: flex-end;
-    padding: 13px 21px;
-    border-radius: 15px;
+    padding: 10px;
+    border-radius: 12px;
     margin-bottom: 10%;
     cursor: pointer;
-
+    padding: 10px;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    letter-spacing: 0.5px;
+    font-family: arvo;
+    border: none;
 }
 .comprar{
     display: none;
     align-self: flex-end;
-    padding: 13px 21px;
-    border-radius: 15px;
-    margin-bottom: 10%;
+    padding: 10px;
+    border-radius: 12px;
     background-color: black;
     color: white;
     cursor: pointer;
+    border: none;
+    font-family: arvo;
+    letter-spacing: 0.5px;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
     
 }
 
@@ -545,6 +552,8 @@ article .add-cart-button {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 12px;
     letter-spacing: 0.5px;
+    font-family: arvo;
+    border: none;
 }
 
 .book-product-name{
@@ -761,7 +770,7 @@ article .add-cart-button {
     color: #938C8C;
     border: 1px;
 }
-box-ingrese-datos.is-invalid {
+.box-ingrese-datos.is-invalid {
     border-color: #9F1F0E;
 }
 .nav-search-btn{
