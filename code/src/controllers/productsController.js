@@ -221,18 +221,37 @@ const productsController =  {
         
             
     },
-    delete: async function (req, res) {
-        db.Product.destroy({
-        where: {id: req.params.id}
-    });
+
+    // delete: async function (req, res) {
+    //     db.Product.destroy({
+    //     where: {id: req.params.id}
+    // });
 
     // await db.Movie.destroy({
     //     where:{id:req.params.id,force:true}
     // })
 
-    res.redirect("/products");
-    },
+    // res.redirect("/products");
+    // },
 
+    delete: function(req, res) {
+        let productId= req.params.id
+    db.Product.findByPk(productId)
+        .then(product => {
+            return res.render ('../views/products/productsDelete.ejs', {product}
+        )
+    })
+    },
+    destroy: async function(req, res) {
+        await db.Product.destroy({
+          where: {
+            id : req.params.id
+            }
+        });
+         res.redirect('/products');
+      
+        
+      },
     search: function(req, res){
     //db.Movie.findOne({where: {title: {[Op.like]:'%'+req.body.titulo+'%'} }})
     db.Product.findAll({ include: ["authors", "genres", "editorials", "productsTypes"],

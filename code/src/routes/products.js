@@ -25,7 +25,8 @@ router.get('/:id/edit', productsCtrl.editarProducto)
 router.put('/:id/edit', uploadProd.single('productImg'), modifProdMW, productsCtrl.productoEditado)
 
 //- DELETE PRODUCT
-router.delete('/delete/:id', productsCtrl.delete)
+router.get('/delete/:id',productsCtrl.delete)
+router.post('/destroy/:id', productsCtrl.destroy)
 
 //- SEARCH PRODUCT
 router.post('/search', productsCtrl.search)
