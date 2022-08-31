@@ -178,6 +178,7 @@ input{
   }
     .mens-confborrar{
         width: 100vw;
+        margin-top: 20vw;
     }
   .body-confborrar{
     flex-wrap: wrap;
@@ -1197,6 +1198,19 @@ footer {
     letter-spacing: 0.5px;
     font-size: 15px;
 
+}
+
+.editProd-buttom{
+    display:flex;
+    padding: 10px;
+    border-radius: 12px;
+    background: #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: none;
+    color: white;
+    font-family: Arvo;
+    letter-spacing: 0.5px;
+    font-size: 15px;  
 }
 .material-symbols-outlined {
   font-variation-settings:

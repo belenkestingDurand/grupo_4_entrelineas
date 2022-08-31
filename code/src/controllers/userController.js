@@ -89,15 +89,27 @@ const userController =  {
                 else{
                     // asigno los datos cargados por el usuario en register y validados
                 // a variable userToCreate
-                let userToCreate = {
-                    firstName: req.body.firstName,
-                    lastName: req.body.lastName,
-                    email: req.body.email,
-                    password: bcrypt.hashSync(req.body.confpass,10),
-                    profilePic: req.file.filename,
-                    id_userCategory: 1
-                }
                 
+                    if (req.body.filename === undefined) {
+                        userToCreate = {
+                            firstName: req.body.firstName,
+                            lastName: req.body.lastName,
+                            email: req.body.email,
+                            password: bcrypt.hashSync(req.body.confpass,10),
+                            profilePic: "",
+                            id_userCategory: 1
+                        }
+                    } else {
+                        userToCreate = {
+                            firstName: req.body.firstName,
+                            lastName: req.body.lastName,
+                            email: req.body.email,
+                            password: bcrypt.hashSync(req.body.confpass,10),
+                            profilePic: req.file.filename,
+                            id_userCategory: 1
+                            }
+                        }
+                }   
                 // guardo el usuario nuevo en el archivo users.json
                 db.User.create(userToCreate)
                 .then(function(resp){
@@ -105,7 +117,7 @@ const userController =  {
                     return res.render('users/login')
                 })
                 }
-    }) 
+    ) 
 }
         
     },

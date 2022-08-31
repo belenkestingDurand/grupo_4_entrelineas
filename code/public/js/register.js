@@ -37,11 +37,8 @@
           // validar que la imagen tenga extensión correcta
 
           
-            if (form.img.value == '') {
-                errorImg ='*Debes subir una imagen';
-                errors.push(errorImg);
-            } else if (form.img.value.endsWith('.jpg') || form.img.value.endsWith('.peg') ||
-         form.img.value.endsWith('.png') || form.img.value.endsWith('.gif') ) {
+          if (form.img.value.endsWith('.jpg') || form.img.value.endsWith('.peg') ||
+         form.img.value.endsWith('.png') || form.img.value.endsWith('.gif') || form.img.value == "") {
             
              console.log("ok")
          }

@@ -45,9 +45,8 @@ module.exports = [
         let file = req.file;
         let acceptedExtensions = ['.jpg', '.peg', '.png', '.gif'];
 
-        if (!file) {
-            throw new Error('Tienes que subir una imagen');
-        } else {
+        if (file) {
+           
             let fileExtension = path.extname(file.originalname);
             if (!acceptedExtensions.includes(fileExtension)) {
                 throw new Error (`Las extensiones de archivo permitidas son ${acceptedExtensions.join(',')}`);

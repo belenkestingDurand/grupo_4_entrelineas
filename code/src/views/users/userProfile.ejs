@@ -10,8 +10,14 @@
 	</div>
 	<section>	
 		<section class="up-profilePicture">
-			<div class = "up-porfilePicture-div">
-				<img class = "up-porfilePicture-img" src="/img/users/<%= user.profilePic %>" alt="profile picture" >
+			<div class = "up-porfilePicture-div">´
+				<% if (locals.userLogged.profilePic) { %>
+					<img class="up-porfilePicture-img" src="/img/users/<%=locals.userLogged.profilePic%>"/>
+				<% } else { %>    
+				  <img class="up-porfilePicture-img" src="/img/users/default.png" />
+				  <% } %>
+
+				
 			</div>
 		</section>
 		<section class = "up-data">
