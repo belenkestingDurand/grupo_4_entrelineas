@@ -1364,6 +1364,7 @@ footer {
     color: white;
     background-color: #9F1F0E;
     font-family: arvo;
+    border: none;
 }
 .add-buttom {
     width: 30px;
