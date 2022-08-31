@@ -1145,7 +1145,7 @@ footer {
 }
 
 .createpr-form-padding-left {
-    padding-left: 20%;
+    padding-left: 10%;
 }
 
 .creatpr-desap-Mobile {
@@ -1198,6 +1198,12 @@ footer {
     letter-spacing: 0.5px;
     font-size: 15px;
 
+}
+
+.editProfile-mobile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .editProd-buttom{
@@ -1411,13 +1417,16 @@ footer {
     max-width: 600px;
 
 }
+.up-colorBackground-littleSize{
+    max-height: 20px;
+}
 
 .up-colorBackgrownd-style{
     width: 100%;
     height: 100px;
     background-color: #9F1F0E;
-    
 }
+
 
 .up-porfilePicture-div{
     width: 150px;
@@ -1449,8 +1458,9 @@ footer {
 }
 
 .up-email-style{
-    width: 100%;
+    width: 90%;
     text-align: center;
+    font-size: 1.2em;
 }
 
 .up-main{
@@ -1483,7 +1493,15 @@ text-align: center;
     justify-content: space-around;
 }
 
+.up-spacing{
+    margin-top: 15px;
+}
 
+.prof-button-aligned{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
 
 
 
@@ -1504,8 +1522,6 @@ text-align: center;
     flex-direction: row;
     flex-wrap: wrap;
     Justify-content: space-between;
-    
-
 }
     /*createProduct header*/
 
@@ -1717,6 +1733,7 @@ text-align: center;
     .box-ingrese-datos-corto {
         height: 30px;
     }
+
 
     /*Footer*/
     footer {
@@ -2104,6 +2121,13 @@ text-align: center;
         padding-left: 30px;
         width: 50vw;
         
+    }
+    .prof-button-aligned{
+        flex-direction: row;
+        padding-left: 0%;
+        width: 100%;
+        align-items: center;
+        justify-content: space-around;
     }
 
 
