@@ -57,7 +57,6 @@ INSERT INTO entrelineas.products VALUES
 (default,'Harry Potter',5200,'',null,'','','/img/products/book-harry-potter.jpeg',9,4,1,1,null),
 (default,'Las Vidas dentro De tu cabeza',5400,'',null,'','','/img/products/book-las-vidas-dentro-de-tu-cabeza.webp',9,1,1,1,null),
 (default,'El Buen Cirujano',5400,'',null,'','','/img/products/book-el-buen-cirujano.webp',9,5,1,1,null),
-(default,'Como educar a tu bebe',10000,'10 x 30',150,'ta bueno','BUEN LIBRO','/img/products/productImg-1657459177808.jpg',9,6,3,1,null),
 (default,'#TresTipsenTIC',1200,'500mg',150,'ta bueno','BUEN LIBRO','/img/products/book-TresTipsenTic.webp',9,7,4,2,null),
 (default,'Psicología Social de la Educación',1500,'540mg',130,'ta bueno','BUEN LIBRO','/img/products/book-psicologia-social.jpeg',2,7,3,2,null),
 (default,'Dump it!',2900,'670mg',180,'ta bueno','BUEN LIBRO','/img/products/book-dump-it.jpg',6,9,3,2,null),

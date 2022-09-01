@@ -110,6 +110,18 @@ input{
   'opsz' 48
 }
 
+.nav-products{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+
+}
+
 /*#52c4df, #ad55ad*/
 .login-body-background-img:before {
     content: "";
@@ -350,6 +362,9 @@ div h3 {
 /*Main*/
 main{
     margin-top: 120px;
+}
+.products-main{
+    margin-top: 160px;
 }
 
 .home-main {
@@ -1126,7 +1141,8 @@ footer {
 
 
 .creatprod-title {
-    font-size: 1.5 em;
+    padding-top: 10px;
+    font-size: 1.5em;
     text-align: center;
 }
 .creatpr-footer {
@@ -1146,6 +1162,7 @@ footer {
 
 .createpr-form-padding-left {
     padding-left: 10%;
+    padding-right: 10%;
 }
 
 .creatpr-desap-Mobile {
@@ -1172,8 +1189,10 @@ footer {
     display: none;
 }
 .texarea-saizing{
-    width: 75%;
+    width: 70%;
     height: 90px;
+    margin: 1px 0px 3px 10px;
+
 }
 .nav-search{
     width: 100vw;
@@ -1259,17 +1278,21 @@ footer {
     margin-left: 10px;
     margin-right: 10px;
     border: solid 1px #EEEEEE ;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
 }
 .lp-div-titulo-producto{
     width: 100%;
+    display: flex;
     background-color: #EEEEEE;
-    height: 40px;
+    height: 70px;
+    justify-content: center;
+    align-items: center;
+
 }
 .lp-h5-titulo{
     font-size: 20px;
     text-align: center;
-    margin-top: 10px;
-    
+    margin-top: 10px;   
 }
 .lp-div-img{
   width: 50%;
@@ -1365,6 +1388,7 @@ footer {
     background-color: #9F1F0E;
     font-family: arvo;
     border: none;
+    text-align: center;
 }
 .add-buttom {
     width: 30px;
@@ -1525,17 +1549,22 @@ text-align: center;
     Justify-content: space-between;
 }
     /*createProduct header*/
+.product-header{
+    height: 150px;
+    width: 100vw;
+}
 
-    .create-pr-header {
-        height: 120px;
-        width: 100vw;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        Justify-content: space-between;
-        box-shadow: 0 4px 2px -2px rgb(100, 100, 100);
+.create-pr-header {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    Justify-content: space-between;
+    box-shadow: 0px 0.3px 4px rgb(0 0 0 / 15%);
+    align-items: center;
+    z-index: 2;
 
-    }
+}
 
     /*Body*/
     h4 {
@@ -1619,8 +1648,13 @@ text-align: center;
         justify-content: space-around;
     }
 
+    .products_hed_logos_login{
+        width:150px;
+    }
+
+
     .nav-search{
-        width: 40%;
+        width: 35%;
         order: 0;
     }
 

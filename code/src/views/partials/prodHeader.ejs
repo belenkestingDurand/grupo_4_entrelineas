@@ -1,5 +1,5 @@
-<header class="create-pr-header">
-
+<header class="product-header">
+<section class="create-pr-header">
     <div class=" carrousel-size carrousel-style ">
         <h5 class="line-height lp-color"> OFERTA: Envíos 50% OFF </h5>
     </div>
@@ -21,7 +21,7 @@
         <a href ='/products/create'><button class="create-buttom">Agregar nuevo</button></a>
     </div>
       
-    <div class="head_logos_login">
+    <div class="head_logos_login products_hed_logos_login">
          
                 <% if (locals.isLogged) { %>
                   
@@ -39,6 +39,6 @@
                 <% } %>
         
     </div>
-
-
+</section>
+    <%- include('../partials/navbar.ejs') %>
 </header>
