@@ -65,17 +65,17 @@ CREATE TABLE entrelineas.users (
     FOREIGN KEY (id_userCategory) REFERENCES userCategory(id)
 );
 -- Table structure for table 'usersAdress'
-DROP TABLE IF EXISTS entrelineas.usersAdress;
-CREATE TABLE entrelineas.usersAdress (
+DROP TABLE IF EXISTS entrelineas.usersAddress;
+CREATE TABLE entrelineas.usersAddress (
     id INT UNSIGNED  NOT NULL auto_increment,
+    id_user INT UNSIGNED NOT NULL,
     county VARCHAR(100) NOT NULL,
     province VARCHAR(100) NOT NULL,
     city VARCHAR(100) NOT NULL,
     street VARCHAR(50) NOT NULL,
     number VARCHAR(100) NOT NULL,
-    flor INTEGER,
-    dto VARCHAR(100),
-    id_user int UNSIGNED,
+    postalCode VARCHAR(50),
+    infoExtra TEXT,
     PRIMARY KEY (id),
     FOREIGN KEY (id_user) REFERENCES users(id)
 );
