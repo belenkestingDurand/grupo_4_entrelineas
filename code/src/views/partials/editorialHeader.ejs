@@ -45,3 +45,27 @@
     </section>
         <%- include('../partials/navbar.ejs') %>
     </header>
+    <% if (locals.isLogged) { %>
+        <div class='burger-menu-backgrwound-admin burger-menu-display-none'>
+            <div class='div-content-bm'>
+                <img class="login-img" src="/img/users/<%=locals.userLogged.profilePic%>"/>
+                <a class="left-margin-email-burger-manu" href="/users/userProfile"><%=locals.userLogged.email%></a>
+            </div>
+            <div class='div-content-bm'>
+                <a href='/'>Vista previa home</a>
+            </div>
+            <div class='div-content-bm-types-admin'><p>Gestionar:</p>
+                <div class='subdiv-content-bm'><a href='/products'>Productos</a></div>
+                <div class='subdiv-content-bm'><a href='/authors'>Autores</a></div>
+                <div class='subdiv-content-bm'><a href='/editorials'>Editoriales</a></div>
+                <div class='subdiv-content-bm'><a href='/genres'>Generos</a></div>
+                <div class='subdiv-content-bm'><a href='/users'>Usurios</a></div>
+            </div>
+            <div class='div-content-bm'>
+                <a class='login-out-bt' href='/users/logout'>Logout</a>
+            </div>
+            
+        </div>
+        <% } %>
+    
+        <script src="/js/productHeader.js"></script>
