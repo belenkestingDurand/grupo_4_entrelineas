@@ -15,6 +15,37 @@ const authorsController = {
     crear : function (req, res) {
         res.render("crearAutores")
     },
+    edit: function (req, res) {
+      db.Author.findByPk(req.params.id)
+        .then((autor) => {
+            res.render("editarAutor", {autor : autor})
+        })
+
+    },
+    update: function (req, res) {
+      console.log(req.params.id)
+      const resultValidation = validationResult(req);
+
+      if (resultValidation.errors.length> 0) {
+        return res.render("editarAutor", {
+          errors: resultValidation.mapped(),
+          oldData: req.body
+        });
+
+        }
+        db.Author.update({
+          fullName: req.body.fullName 
+       }, {
+            where: {
+              id: req. params.id
+            }
+       })
+       .then(resultados => {
+          res.redirect('/authors');
+
+
+    })
+  },
     
     procesarCrear: async function(req,res) {
         const resultValidation = validationResult(req);

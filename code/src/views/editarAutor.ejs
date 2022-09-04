@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Head -->
+    <%- include('./partials/head.ejs') %>
+    <title>Entre Lineas - Editar Autores</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <%- include('./partials/authorHeader.ejs') %>
+<main class="products-main">
+    <h2 class="h3-crearautor">Editar Autor</h2>
+        <form class="createpr-form-padding-left" action="/authors/update/<%=autor.id%>" method="POST">
+            <div>
+                <label for="fullName">Nombre del autor</label>
+                    <input 
+                        class="box-ingrese-datos" 
+                        type="text" 
+                        name="fullName" 
+                        id="fullName"
+                        value="<%=autor.fullName%>"
+                    />
+                
+                <div class="divErrorFirstName text-red">
+                    <% if (locals.errors && errors.fullName) { %>
+                        <div class="text-red">
+                            <%= errors.fullName.msg %>
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+            <div class="center-button-editar"><button class="enviar-nuevo" type="submit">Enviar</button></div>
+        </form>
+</main>
+    
+    <!-- Footer -->
+    <%- include('./partials/footer.ejs') %>
+    <script src="/js/createAuthor.js"></script>
+</body>
+
+</html>

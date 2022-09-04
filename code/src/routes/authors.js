@@ -19,6 +19,10 @@ router.get('/delete/:id', authorsController.delete);
 router.post('/destroy/:id', authorsController.destroy);
 
 // Search author
-router.post('/search', authorsController.search)
+router.post('/search', authorsController.search);
+
+// Edit author
+router.get('/edit/:id', authorsController.edit);
+router.post('/update/:id',valAuthor, authorsController.update);
 
 module.exports = router;

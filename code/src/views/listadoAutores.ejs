@@ -12,7 +12,7 @@
     <%- include('./partials/authorHeader.ejs') %>
 
  <main class="products-main">
-    <h2 class="h3-crearautor">Listado de autores</h2>
+    <h2 class="h3-crearautor">Listado de Autores</h2>
         <div class="cont-list-aut">   
             <ul class="ul-vista-liaut" >
                 <% for (let i=0; i< autores.length; i++) { %>
@@ -23,6 +23,10 @@
             
                     </li>
                     <li class="tam-li2">
+                     
+                        <a class="botonEditar" href="/authors/edit/<%= autores[i].id %>">Editar</a>
+                    </li>
+                    <li class="tam-li3">
                      
                         <a class="botonBorrar" href="/authors/delete/<%= autores[i].id %>">Borrar</a>
                     </li>
