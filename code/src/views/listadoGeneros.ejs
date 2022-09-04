@@ -12,7 +12,7 @@
     <%- include('./partials/genreHeader.ejs') %>
 
     <main class="products-main">
-        <h2 class="h3-crearautor">Listado de géneros</h2>
+        <h2 class="h3-crearautor">Listado de Géneros</h2>
         <div class="cont-list-aut">
             <ul class="ul-vista-liaut" >
                 <% for (let i=0; i< generos.length; i++) { %>
@@ -23,6 +23,10 @@
             
                     </li>
                     <li class="tam-li2">
+                     
+                        <a class="botonEditar" href="/genres/edit/<%= generos[i].id %>">Editar</a>
+                    </li>
+                    <li class="tam-li3">
                 
                         <a class="botonBorrar" href="/genres/delete/<%= generos[i].id %>">Borrar</a>
                     </li>

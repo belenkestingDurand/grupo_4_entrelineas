@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Head -->
+    <%- include('./partials/head.ejs') %>
+    <title>Entre Lineas - Editar Género</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <%- include('./partials/genreHeader.ejs') %>
+<main class="products-main">
+    <h2 class="h3-crearautor">Editar Género</h2>
+        <form class="createpr-form-padding-left" action="/genres/update/<%=genero.id%>" method="POST">
+            <div>
+                <label for="name">Nombre del género</label>
+                    <input 
+                        class="box-ingrese-datos" 
+                        type="text" 
+                        name="name" 
+                        id="name"
+                        value="<%=genero.name%>"
+                    />
+                
+                <div class="divErrorFirstName text-red">
+                    <% if (locals.errors && errors.name) { %>
+                        <div class="text-red">
+                            <%= errors.name.msg %>
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+            <div class="center-button-editar"><button class="enviar-nuevo" type="submit">Enviar</button></div>
+        </form>
+</main>
+    
+    <!-- Footer -->
+    <%- include('./partials/footer.ejs') %>
+    <script src="/js/createGenre.js"></script>
+</body>
+
+</html>

@@ -43,6 +43,37 @@ const genresController = {
             res.render('listadoGeneros', {generos})
           })
       },
+      edit: function (req, res) {
+        db.Genre.findByPk(req.params.id)
+          .then((genero) => {
+              res.render("editarGenero", {genero : genero})
+          })
+  
+      },
+      update: function (req, res) {
+
+        const resultValidation = validationResult(req);
+  
+        if (resultValidation.errors.length> 0) {
+          return res.render("editarGenero", {
+            errors: resultValidation.mapped(),
+            oldData: req.body
+          });
+  
+          }
+          db.Genre.update({
+            name: req.body.name 
+         }, {
+              where: {
+                id: req. params.id
+              }
+         })
+         .then(resultados => {
+            res.redirect('/genres');
+  
+  
+      })
+    },
       delete: function(req, res){
         let genreId = req.params.id
         db.Genre.findByPk(genreId)

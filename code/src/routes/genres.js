@@ -13,6 +13,12 @@ router.post('/crear',valGenre, genresController.procesarCrear);
 // List genre
 router.get('/',genresController.listar);
 
+
+// Edit genres
+router.get('/edit/:id', genresController.edit);
+router.post('/update/:id',valGenre, genresController.update);
+
+
 // Delete genre
 router.get('/delete/:id', genresController.delete);
 router.post('/destroy/:id', genresController.destroy);
