@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Head -->
+    <%- include('../partials/head.ejs') %>
+    <title>Entre Lineas - Listar Usuarios</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <%- include('../partials/userHeader.ejs') %>
+    <h3 class="h3-crearautor">Listado de Usuarios</h1>
+    <div class="cont-list-aut">
+        <ul class="ul-vista-liaut" >
+            <% for (let i=0; i< usuarios.length; i++) { %>
+        
+            <div class="divsiz-liaut">
+                <li class="tam-li1">
+                    <%= usuarios[i].id + "   " + usuarios[i].lastName + "   " + usuarios[i].firstName + "   " + usuarios[i].email   %>
+        
+                </li>
+                <li class="tam-li2">
+              
+                    <a class="botonBorrar" href="/users/delete/<%= usuarios[i].id %>">Borrar</a>
+
+            </div>   
+    
+            <% } %>
+        </ul>
+    </div>
+   
+    <!-- Footer -->
+    <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>

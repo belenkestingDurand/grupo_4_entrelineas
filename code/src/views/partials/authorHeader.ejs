@@ -1,5 +1,5 @@
 <header class="create-au-header">
-
+<section class="create-pr-header">
     <div class=" carrousel-size carrousel-style ">
         <h5 class="line-height lp-color"> OFERTA: Envíos 50% OFF </h5>
     </div>
@@ -26,10 +26,18 @@
          
                 <% if (locals.isLogged) { %>
                   
-                        <div class="cont-pic-name">
-                            <a class="user_profile_picture_nav" href="/users/userProfile" >
-                                <img class= "login-img" src="/img/users/<%=locals.userLogged.profilePic %>">
-                            </a>
+                    <div class="cont-pic-name">
+                      
+
+                        <a class="user_profile_picture_nav" href="/users/userProfile" >
+                            <% if (locals.userLogged.profilePic) { %>
+                                 <img class="login-img" src="/img/users/<%=locals.userLogged.profilePic%>"/>
+                             <% } else { %>    
+                               <img class="login-img" src="/img/users/default.png" />
+                               <% } %>
+                        </a>
+
+                    </div>
                         </div>
                         <div class="nav-bot-header">
                             <a class="nav-link" href="/users/logout">Logout</a>
@@ -41,6 +49,7 @@
         
     </div>
     <br>
- 
+</section>
+<%- include('../partials/navbar.ejs') %> 
 
 </header>

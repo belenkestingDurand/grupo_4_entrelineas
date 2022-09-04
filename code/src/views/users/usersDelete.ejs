@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borrado del Usuario</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body class="body-confborrar">
+   
+    <h3 class="mens-confborrar">Estas seguro de querer borrar este usuario: <%= User.lastName %>  <%=User.firstName %> <%= User.email %> ???</h3>
+    <p>
+        <form action="/users/destroy/<%=User.id %>" method="POST">
+            <div class="tamaño-linea">
+                <div class="linea-de-botones-confborrar">
+                
+                    <div>
+                       <button class="botonBorrar" type="submit">Borrar el Usuario</button>
+                    </div>
+                
+                    <div class="boton-volver">
+                        <a class="link-list-aut"  href="/users/">  Listado de Usuarios</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </p>
+    
+</body>
+
+</html>

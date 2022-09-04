@@ -1,13 +1,37 @@
 const { validationResult} = require('express-validator');
-const User = require('../modelo/User');
+
 const bcrypt = require('bcryptjs');
 const db = require('../database/models');
-
+const sequelize = db.sequelize;
+const { Op } = require("sequelize");
 
 // OBJECT WITH DETAILED HTML DIRECTIONS
 
 
 const userController =  {
+    //   'listadoUsers.ejs'   in 'views/users' FOLDER
+    list:  (req, res) => {
+       
+            db.User.findAll({
+              order : [
+                ["lastName", "ASC"]
+              ]
+            })
+              .then(function(usuarios) {
+                res.render('users/listadoUsers', {usuarios})
+              })
+    },  
+
+    search: function(req, res){
+    
+            db.User.findAll({
+                    where: {lastName: {[Op.like]:'%'+req.body.search+'%'} }})
+            .then((usuarios) => {
+        
+            res.render("users/listadoUsers", { usuarios: usuarios });
+            });
+    },      
+
     //'login.ejs' IN 'views/users' FOLDER
     showLogin: (req, res) => {
  //       db.Users.findAll
@@ -210,7 +234,24 @@ const userController =  {
     logout: (req, res) => {
             req.session.destroy();
             return res.redirect('/'); 
-    }
+    },
+    delete: function(req, res){
+        let userId = req.params.id
+        db.User.findByPk(userId)
+          .then(User =>{
+            return res.render('../views/users/usersDelete.ejs',{User})
+          })
+      },
+      destroy: async function(req, res) {
+        await db.User.destroy({
+          where: {
+            id : req.params.id
+            }
+        });
+         res.redirect('/users');
+      
+        
+      }
 }
 
 // exports
