@@ -6,7 +6,7 @@ const sequelize = db.sequelize;
 const { Op } = require("sequelize");
 
 // OBJECT WITH DETAILED HTML DIRECTIONS
-
+let isLogged = false
 
 const userController =  {
     //   'listadoUsers.ejs'   in 'views/users' FOLDER
@@ -57,7 +57,6 @@ const userController =  {
                 if (bcrypt.compareSync(req.body.password, userToLogin.password)){
                     delete userToLogin.password
                     req.session.userLogged = userToLogin
-    
                     return res.redirect('/users/userProfile');
                 }
                 return res.render('users/login',{

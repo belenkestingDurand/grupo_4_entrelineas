@@ -11,6 +11,7 @@ const upload = require('../middlewares/multerM');
 const valRegM = require('../middlewares/valRegM');
 const valLogM = require('../middlewares/valLogM');
 
+
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 const valEditProfM = require('../middlewares/valEditProfM');

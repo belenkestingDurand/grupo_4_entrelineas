@@ -10,12 +10,16 @@ const routesUsers = require('./routes/users');
 const routesAuthors = require('./routes/authors');
 const routesEditorials = require('./routes/editorials');
 const routesGenres = require('./routes/genres');
+const routesApi = require('./apis/routes/apiRoutes')
+
+
 const publicPath = path.resolve(__dirname,'../public');
 const methodOverride = require('method-override')
 
 //middleware de a nivel de app para chequear usuario logueado
 const userLoggedMiddleware = require('./middlewares/userLogedMiddleware');
 const recodameMiddleware = require('./middlewares/rememberme');
+
 
 // middleware de session
 app.use(session({ 
@@ -43,7 +47,7 @@ app.use(express.urlencoded({ extended: false}));
 app.use(express.json());
 app.use(cookieParser());
 app.use(userLoggedMiddleware);
-app.use(recodameMiddleware)
+app.use(recodameMiddleware);
 
 
 // para implementar metodos HTTP: Put & Delete
@@ -59,3 +63,4 @@ app.use('/users', routesUsers)
 app.use('/authors', routesAuthors)
 app.use('/editorials', routesEditorials)
 app.use('/genres', routesGenres)
+app.use('/api', routesApi)

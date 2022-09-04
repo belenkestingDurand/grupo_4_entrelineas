@@ -55,6 +55,39 @@
     
         </div>
     
-      
+    <script src="/js/header.js"></script>
     
 </header>
+<% if (locals.isLogged) { %>
+<div class='burger-menu-backgrwound burger-menu-display-none'>
+    <div class='div-content-bm'>
+        <img class="login-img" src="/img/users/<%=locals.userLogged.profilePic%>"/>
+        <a class="left-margin-email-burger-manu" href="/users/userProfile"><%=locals.userLogged.email%></a>
+    </div>
+    <div class='div-content-bm'>
+        <a href='/products'>Admin</a>
+    </div>
+    <div class='div-content-bm-types'><p>Tipos:</p>
+        <div class='subdiv-content-bm'><a href='/books'>Libros</a></div>
+        <div class='subdiv-content-bm'><a href='/ebooks'>E-books</a></div>
+        <div class='subdiv-content-bm'><a href='/merch'>Products</a></div>
+    </div>
+    <div class='div-content-bm'>
+        <a class='login-out-bt' href='/users/logout'>Logout</a>
+    </div>
+    
+</div>
+<% } else { %> 
+    <div class='burger-menu-backgrwound burger-menu-display-none'>
+        <div class='div-content-bm'>
+            <a class='login-out-bt' href='/users/login'>Login</a>
+        </div>
+        <div class='div-content-bm-types'><p>Tipos:</p>
+            <div class='subdiv-content-bm'><a href='/books'>Libros</a></div>
+            <div class='subdiv-content-bm'><a href='/ebooks'>E-books</a></div>
+            <div class='subdiv-content-bm'><a href='/merch'>Products</a></div>
+        </div>
+        
+        
+    </div>
+<% } %>
