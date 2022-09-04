@@ -10,7 +10,7 @@ const routesUsers = require('./routes/users');
 const routesAuthors = require('./routes/authors');
 const routesEditorials = require('./routes/editorials');
 const routesGenres = require('./routes/genres');
-const routesApi = require('./apis/routes/apiRoutes')
+
 
 
 const publicPath = path.resolve(__dirname,'../public');
@@ -63,4 +63,4 @@ app.use('/users', routesUsers)
 app.use('/authors', routesAuthors)
 app.use('/editorials', routesEditorials)
 app.use('/genres', routesGenres)
-app.use('/api', routesApi)
+
