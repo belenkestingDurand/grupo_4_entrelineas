@@ -10,7 +10,8 @@
 <body>
     <!-- Header -->
     <%- include('./partials/editorialHeader.ejs') %>
-    <h3 class="h3-crearautor">Ingresar nueva Editorial</h3>
+<main class="products-main">
+    <h2 class="h3-crearautor">Ingresar nueva Editorial</h2>
     <form class="createpr-form-padding-left" action="crear" method="POST">
         <div>
             <label for="title"></label>Nombre de la Editorial</label>
@@ -29,9 +30,10 @@
                 <% } %>
             </div>               
         </div>
-        <button class="enviar-nuevo" type="submit">Enviar</button>
+        <div class="center-button-editar"><button class="enviar-nuevo" type="submit">Enviar</button></div>
     </form>
- 
+</main>
+    
    
     <!-- Footer -->
     <%- include('./partials/footer.ejs') %>

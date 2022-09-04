@@ -10,26 +10,29 @@
 <body>
     <!-- Header -->
     <%- include('./partials/genreHeader.ejs') %>
-    <h3 class="h3-crearautor">Listado de Géneros</h1>
-    <div class="cont-list-aut">
-        <ul class="ul-vista-liaut" >
-            <% for (let i=0; i< generos.length; i++) { %>
+
+    <main class="products-main">
+        <h2 class="h3-crearautor">Listado de géneros</h2>
+        <div class="cont-list-aut">
+            <ul class="ul-vista-liaut" >
+                <% for (let i=0; i< generos.length; i++) { %>
+            
+                <div class="divsiz-liaut">
+                    <li class="tam-li1">
+                        <%= generos[i].id + "   " + generos[i].name + "   "   %>
+            
+                    </li>
+                    <li class="tam-li2">
+                
+                        <a class="botonBorrar" href="/genres/delete/<%= generos[i].id %>">Borrar</a>
+                    </li>
+                </div>   
         
-            <div class="divsiz-liaut">
-                <li class="tam-li1">
-                    <%= generos[i].id + "   " + generos[i].name + "   "   %>
-        
-                </li>
-                <li class="tam-li2">
-              
-                    <a class="botonBorrar" href="/genres/delete/<%= generos[i].id %>">Borrar</a>
-                </li>
-            </div>   
+                <% } %>
+            </ul>
+        </div>
+    </main>
     
-            <% } %>
-        </ul>
-    </div>
-   
     <!-- Footer -->
     <%- include('./partials/footer.ejs') %>
 </body>

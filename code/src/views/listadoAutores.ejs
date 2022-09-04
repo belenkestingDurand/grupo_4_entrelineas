@@ -10,26 +10,29 @@
 <body>
     <!-- Header -->
     <%- include('./partials/authorHeader.ejs') %>
-    <h3 class="h3-crearautor">Listado de Autores</h1>
-    <div class="cont-list-aut">   
-        <ul class="ul-vista-liaut" >
-            <% for (let i=0; i< autores.length; i++) { %>
+
+ <main class="products-main">
+    <h2 class="h3-crearautor">Listado de autores</h2>
+        <div class="cont-list-aut">   
+            <ul class="ul-vista-liaut" >
+                <% for (let i=0; i< autores.length; i++) { %>
+            
+                <div class="divsiz-liaut">
+                    <li class="tam-li1">
+                        <%= autores[i].id + "   " + autores[i].fullName + "   "   %>
+            
+                    </li>
+                    <li class="tam-li2">
+                     
+                        <a class="botonBorrar" href="/authors/delete/<%= autores[i].id %>">Borrar</a>
+                    </li>
+                </div>   
         
-            <div class="divsiz-liaut">
-                <li class="tam-li1">
-                    <%= autores[i].id + "   " + autores[i].fullName + "   "   %>
-        
-                </li>
-                <li class="tam-li2">
-                 
-                    <a class="botonBorrar" href="/authors/delete/<%= autores[i].id %>">Borrar</a>
-                </li>
-            </div>   
+                 <% } %>
+            </ul>
+        </div>
+ </main>
     
-             <% } %>
-        </ul>
-    </div>
-   
     <!-- Footer -->
     <%- include('./partials/footer.ejs') %>
 </body>

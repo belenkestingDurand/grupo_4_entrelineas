@@ -10,25 +10,28 @@
 <body>
     <!-- Header -->
     <%- include('./partials/editorialHeader.ejs') %>
-    <h3 class="h3-crearautor">Listado de Editoriales</h1>
-    <div class="cont-list-aut">
-           <ul class="ul-vista-liaut" >
-                <% for (let i=0; i< editoriales.length; i++) { %>
-                
-                <div class="divsiz-liaut">
-                    <li class="tam-li1">
-                        <%= editoriales[i].id + "   " + editoriales[i].title + "   "   %>
-                    
-                    </li>
-                    <li class="tam-li2">
+
+    <main class="products-main">
+        <h2 class="h3-crearautor">Listado de editoriales</h2>
+            <div class="cont-list-aut">
+                   <ul class="ul-vista-liaut" >
+                        <% for (let i=0; i< editoriales.length; i++) { %>
                         
-                            <a class="botonBorrar" href="/editorials/delete/<%= editoriales[i].id %>">Borrar</a>
-                </li>
-                </div>   
-            
-                <% } %>
-            </ul>
-    </div>
+                        <div class="divsiz-liaut">
+                            <li class="tam-li1">
+                                <%= editoriales[i].id + "   " + editoriales[i].title + "   "   %>
+                            
+                            </li>
+                            <li class="tam-li2">
+                                
+                                    <a class="botonBorrar" href="/editorials/delete/<%= editoriales[i].id %>">Borrar</a>
+                        </li>
+                        </div>   
+                    
+                        <% } %>
+                    </ul>
+            </div>
+    </main>
    
     <!-- Footer -->
     <%- include('./partials/footer.ejs') %>

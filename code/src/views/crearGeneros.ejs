@@ -10,7 +10,8 @@
 <body>
     <!-- Header -->
     <%- include('./partials/genreHeader.ejs') %>
-    <h3 class="h3-crearautor">Ingresar nuevo Género</h3>
+    <main class="products-main">
+        <h3 class="h3-crearautor">Ingresar nuevo Género</h3>
     <form class="createpr-form-padding-left" action="crear" method="POST">
         <div>
             <label for="name"></label>Nombre del género</label>
@@ -29,10 +30,11 @@
                 <% } %>
             </div>           
         </div>
-        <button class="enviar-nuevo" type="submit">Enviar</button>
+        <div class="center-button-editar"><button class="enviar-nuevo" type="submit">Enviar</button></div>
     </form>
  
-   
+    </main>
+    
     <!-- Footer -->
     <%- include('./partials/footer.ejs') %>
     <script src="/js/createGenre.js"></script>

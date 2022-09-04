@@ -10,30 +10,31 @@
 <body>
     <!-- Header -->
     <%- include('./partials/authorHeader.ejs') %>
-    <h3 class="h3-crearautor">Ingresar nuevo Autor</h1>
-    <form class="createpr-form-padding-left" action="crear" method="POST">
-        <div>
-            <label for="fullName">Nombre del autor</label>
-                <input 
-                    class="box-ingrese-datos" 
-                    type="text" 
-                    name="fullName" 
-                    id="fullName"
-                    placeholder="Ingrese un nombre de autor entre 3 y  60 caracteres"
-                />
-            
-            <div class="divErrorFirstName text-red">
-                <% if (locals.errors && errors.fullName) { %>
-                    <div class="text-red">
-                        <%= errors.fullName.msg %>
-                    </div>
-                <% } %>
+<main class="products-main">
+    <h2 class="h3-crearautor">Ingresar nuevo Autor</h2>
+        <form class="createpr-form-padding-left" action="crear" method="POST">
+            <div>
+                <label for="fullName">Nombre del autor</label>
+                    <input 
+                        class="box-ingrese-datos" 
+                        type="text" 
+                        name="fullName" 
+                        id="fullName"
+                        placeholder="Ingrese un nombre de autor entre 3 y  60 caracteres"
+                    />
+                
+                <div class="divErrorFirstName text-red">
+                    <% if (locals.errors && errors.fullName) { %>
+                        <div class="text-red">
+                            <%= errors.fullName.msg %>
+                        </div>
+                    <% } %>
+                </div>
             </div>
-        </div>
-        <button class="enviar-nuevo" type="submit">Enviar</button>
-    </form>
- 
-   
+            <div class="center-button-editar"><button class="enviar-nuevo" type="submit">Enviar</button></div>
+        </form>
+</main>
+    
     <!-- Footer -->
     <%- include('./partials/footer.ejs') %>
     <script src="/js/createAuthor.js"></script>
