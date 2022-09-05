@@ -1294,6 +1294,14 @@ footer {
     justify-content: center;
     align-items: center;
 }
+.error-buttons-desktop{
+    font-size: 15px;
+    margin-right: 10px;
+    margin-left: 5px;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+}
 .creatProd-buttom-desktop {
     font-size: 15px;
     margin-right: 10px;
@@ -1526,11 +1534,11 @@ footer {
 .button-error {
     margin: 10px;
     padding: 8px 60px;
-    /* width: 200px; */
+    width: 250px;
     height: 35px;
     border-radius: 10px;
     background-color: #9f1f0e;
-    color: #938C8C;
+    /* color: #938C8C; */
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -1549,6 +1557,12 @@ footer {
 /* TABLETS*/
 @media (min-width: 480px) {
 
+    .error-buttons-desktop{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
     /*Header*/
     
     .login-main {
@@ -1823,6 +1837,7 @@ text-align: center;
     .creatProd-buttom-desktop{
         display: block;
     }
+    
     .nav-products{
         display: block;
         width: 100%;
