@@ -19,6 +19,7 @@ const methodOverride = require('method-override')
 //middleware de a nivel de app para chequear usuario logueado
 const userLoggedMiddleware = require('./middlewares/userLogedMiddleware');
 const recodameMiddleware = require('./middlewares/rememberme');
+const { allowedNodeEnvironmentFlags } = require('process');
 
 
 // middleware de session
@@ -64,3 +65,8 @@ app.use('/authors', routesAuthors)
 app.use('/editorials', routesEditorials)
 app.use('/genres', routesGenres)
 
+// PAGINA 404
+app.use((req,res,next) => {
+    res.status(404).render('error404')
+    next()
+})
