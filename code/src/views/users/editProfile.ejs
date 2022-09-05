@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <%- include('../partials/head.ejs'); %>
-
+<title>Entre Lineas - <%= user.firstName + ' ' + user.lastName %></title>
 <body>
     <!-- Header-->
     <%- include('../partials/header.ejs'); %>
@@ -80,7 +80,7 @@
                             </div>
                             <% } %>
 
-                <% } else if (field=='adress'){ %>
+                <% } else if (field=='address'){ %>
                     <form class="createpr-form-padding-left" action="/userProfile/edit/adress?_method=PUT"
                         method="post" ">
                         <br>
@@ -99,34 +99,34 @@
                             <input class="box-ingrese-datos" type="text" name="userCountry" id="userCountry">
                         </label> -->
                 <% } %>
-                <div class="prof-button-aligned">
-                    <div class="creatProd-buttom listarProducts-section up-spacing">
-                        <button type="submit" class="create-buttom">Editar datos</button>
-                        <a href="/users/userProfile"><input class="edit-button" type="button" value="Volver al perfil"></a>
-                    </div>
-                </div>
-            </form>
+                        <div class="profConfirm-button-aligned">
+                            <div class="listarProducts-section up-spacing">
+                                <button type="submit" class="create-buttom">Editar datos</button>
+                                <a href="/users/userProfile"><input class="edit-button" type="button" value="Volver al perfil"></a>
+                            </div>
+                        </div>
+                    </form>
         </section>
             
-            <!-- - CAMBIAR IMAGEN? -->
-            <!-- <section class="up-profilePicture">
-                <div class = "up-porfilePicture-div">
-                    <img class = "up-porfilePicture-img" src="/img/users/<%= user.profilePic %>" alt="profile picture" >
-                </div>
-                <input type="file" name="profilePic" value="<%= user.profilePic%>" />
-            </section>
-            <!-- <figure class=""> -->
-                <!-- <img 
-                    class="up-porfilePicture-img" 
-                    src="/img/users/<%= user.profilePic %>""
-                    alt="profile picture">
-                </figure>
-                <br>--> 
-                <!-- <label for="profilePic">Cambiar imagen de perfil:
-                    <input type="file" name="profilePic" value="<%= user.profilePic %>" />
-            </label> -->
     </main>
     <%- include('../partials/footer.ejs'); %>
+    <!-- - CAMBIAR IMAGEN? -->
+    <!-- <section class="up-profilePicture">
+        <div class = "up-porfilePicture-div">
+            <img class = "up-porfilePicture-img" src="/img/users/<%= user.profilePic %>" alt="profile picture" >
+        </div>
+        <input type="file" name="profilePic" value="<%= user.profilePic%>" />
+    </section>
+    <!-- <figure class=""> -->
+        <!-- <img 
+            class="up-porfilePicture-img" 
+            src="/img/users/<%= user.profilePic %>""
+            alt="profile picture">
+        </figure>
+        <br>--> 
+        <!-- <label for="profilePic">Cambiar imagen de perfil:
+            <input type="file" name="profilePic" value="<%= user.profilePic %>" />
+    </label> -->
 </body>
 
 </html>

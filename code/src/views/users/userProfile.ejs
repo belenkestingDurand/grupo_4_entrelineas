@@ -4,13 +4,14 @@
 <body>
 	<!-- Header-->
 	<%- include('../partials/header.ejs'); %>
+	<title>Entre Lineas - <%= user.firstName + ' ' + user.lastName %></title>
 <main class="up-main">
 	<!-- main -->
 	<div class="up-colorBackgrownd-style">
 	</div>
 	<section>	
 		<section class="up-profilePicture">
-			<div class = "up-porfilePicture-div">´
+			<div class = "up-porfilePicture-div">
 				<% if (locals.userLogged.profilePic) { %>
 					<img class="up-porfilePicture-img" src="/img/users/<%=locals.userLogged.profilePic%>"/>
 				<% } else { %>    

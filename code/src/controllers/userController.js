@@ -158,10 +158,17 @@ const userController =  {
         })
     },
     profileEdited: (req,res) => {
-        console.log('EN CONTROLLER');
         let errors = validationResult(req);
         let user = req.session.userLogged 
+        console.log('--- REQ.SESSION.USERLOGGED  init---');
+        console.log('USER ID: '+ user.id);
+        console.log('------');
+        console.log(user);
+        console.log('--- REQ.SESSION.USERLOGGED ceFin---');
         
+        if (errors.errors.length > 0) {
+            return res.render('users/editProfile', {errors: errors.mapped(), user: req.session.userLogged})
+        }
         // PREGUNTAR POR FIELD Y SEGUN ESO QUE UPDATEO DE DB.USUARIO BLA BLA
         
         if (req.params.field == 'name'){
@@ -170,8 +177,13 @@ const userController =  {
                 firstName: req.body.userFirstName,
                 lastName: req.body.userLastName
             },{
-                where: {email: user.email}
+                where: {id: user.id}
             })
+                .then( () => {
+                    return res.render('users/userProfile', {
+                            user: req.session.userLogged
+                        })
+                })
         } else if (req.params.field == 'email'){
             //- update de EMAIL
             if (req.body.userEmail == user.email){
@@ -181,6 +193,11 @@ const userController =  {
                 },{
                     where: {email: user.email}
                 })
+                    .then( () => {
+                        return res.render('users/userProfile', {
+                                user: req.session.userLogged
+                            })
+                    })
             } else {
                 // SI los mails no coinciden =>
                 return res.render('users/editProfile', {
@@ -201,6 +218,11 @@ const userController =  {
                 },{
                     where: {email: user.email}
                 })
+                    .then( () => {
+                        return res.render('users/userProfile', {
+                                user: req.session.userLogged
+                            })
+                    })
             } else {
                 // SI las contraseñas no coinciden =>
                 return res.render('users/editProfile', {
@@ -213,22 +235,10 @@ const userController =  {
                 })
             }
         }
-        // * VIEJO
-    
-        // if (req.file.profilePic){
-        //     userChanges["profilePic"] = req.file.profilePic
-        // }
-
-        
-        //? userToEdit.profilePic = userChanges.profilePic
-
-        if (errors.errors.length > 0) {
-            return res.render('users/editProfile', {errors: errors.mapped(), user: req.session.userLogged})
-        }
         // Luego de todo, si las VALIDACIONES dieron BIEN, RENDERIZA Y REDIRECCIONA
-        return res.render('users/userProfile', {
-            user: req.session.userLogged
-        });
+        // return res.render('users/userProfile', {
+        //     user: req.session.userLogged
+        // });
     },
     logout: (req, res) => {
             req.session.destroy();

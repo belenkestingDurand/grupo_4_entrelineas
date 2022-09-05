@@ -10,7 +10,7 @@ INSERT INTO entrelineas.usercategory VALUES
 -- Data for table 'users' 
 INSERT INTO entrelineas.users VALUES 
 (default,'María Isolina','Durand Figueroa','isolinadurand@gmail.com','$2a$10$hp5ztx.IxeN1Snf29ic.dOUUDJIbNov4Qx1Vc2oJT32rj/oIWIzJG','img-1656894481277-785793624.jpg',1),
-(default,'Manuel','Gago','manuelmeg96@gmail.com','$2a$10$u76NAPtWZbuvPTVjXHJtke6L0wy5gi0/cGRYphp0xu3f98AtswuGS','img-1656894481277-785793624.jpg',1),
+(default,'Manuel','Gago','manuelmeg96@gmail.com','$2a$10$u76NAPtWZbuvPTVjXHJtke6L0wy5gi0/cGRYphp0xu3f98AtswuGS','img-1657054974695-787462444.jpg',1),
 (default,'Bronco','Kesting','bronco@gmail.com','$2a$10$uN/ndZg8axVVBagbEukWNO1ft4VNzn0GivFuOJvHxphX0r2T5nH76','img-1657195760992-497204755.jpg',1);
 
 -- Data for table 'producttypes'

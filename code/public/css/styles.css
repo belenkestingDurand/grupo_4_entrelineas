@@ -1673,6 +1673,11 @@ text-align: center;
     flex-direction: column;
     align-items: stretch;
 }
+.profConfirm-button-aligned{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
 
 
 
@@ -2325,6 +2330,13 @@ text-align: center;
         padding-left: 0%;
         width: 100%;
         align-items: center;
+        justify-content: space-around;
+    }
+    .profConfirm-button-aligned{
+        /* flex-direction: row; */
+        padding-left: 0%;
+        width: 100%;
+        /* align-items: center; */
         justify-content: space-around;
     }
 
