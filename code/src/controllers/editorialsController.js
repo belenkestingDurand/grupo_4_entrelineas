@@ -43,6 +43,37 @@ const editorialsController = {
             res.render('listadoEditoriales', {editoriales})
           })
       },
+      edit: function (req, res) {
+        db.Editorial.findByPk(req.params.id)
+          .then((editorial) => {
+              res.render("editarEditorial", {editorial : editorial})
+          })
+  
+      },
+      update: function (req, res) {
+
+        const resultValidation = validationResult(req);
+  
+        if (resultValidation.errors.length> 0) {
+          return res.render("editarEditorial", {
+            errors: resultValidation.mapped(),
+            oldData: req.body
+          });
+  
+          }
+          db.Editorial.update({
+            title: req.body.title
+         }, {
+              where: {
+                id: req. params.id
+              }
+         })
+         .then(resultados => {
+            res.redirect('/editorials');
+  
+  
+      })
+    },
       delete: function(req, res){
         let editorialId = req.params.id
         db.Editorial.findByPk(editorialId)

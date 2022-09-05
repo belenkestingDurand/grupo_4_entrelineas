@@ -69,9 +69,7 @@ const genresController = {
               }
          })
          .then(resultados => {
-            res.redirect('/genres');
-  
-  
+            res.redirect('/genres');  
       })
     },
       delete: function(req, res){

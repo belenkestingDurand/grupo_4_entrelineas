@@ -13,6 +13,10 @@ router.post('/crear', valEditorial, editorialsController.procesarCrear);
 // List editorial
 router.get('/',editorialsController.listar);
 
+// Edit editorial
+router.get('/edit/:id', editorialsController.edit);
+router.post('/update/:id',valEditorial, editorialsController.update);
+
 // Delete editorial
 router.get('/delete/:id', editorialsController.delete);
 router.post('/destroy/:id', editorialsController.destroy);

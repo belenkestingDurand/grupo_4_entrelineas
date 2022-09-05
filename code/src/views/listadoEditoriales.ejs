@@ -12,7 +12,7 @@
     <%- include('./partials/editorialHeader.ejs') %>
 
     <main class="products-main">
-        <h2 class="h3-crearautor">Listado de editoriales</h2>
+        <h2 class="h3-crearautor">Listado de Editoriales</h2>
             <div class="cont-list-aut">
                    <ul class="ul-vista-liaut" >
                         <% for (let i=0; i< editoriales.length; i++) { %>
@@ -24,7 +24,11 @@
                             </li>
                             <li class="tam-li2">
                                 
-                                    <a class="botonBorrar" href="/editorials/delete/<%= editoriales[i].id %>">Borrar</a>
+                                    <a class="botonEditar" href="/editorials/edit/<%= editoriales[i].id %>">Editar</a>
+                            </li>
+                            <li class="tam-li3">
+                                
+                                <a class="botonBorrar" href="/editorials/delete/<%= editoriales[i].id %>">Borrar</a>
                         </li>
                         </div>   
                     

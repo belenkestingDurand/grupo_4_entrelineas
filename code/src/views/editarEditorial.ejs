@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Head -->
+    <%- include('./partials/head.ejs') %>
+    <title>Entre Lineas - Editar Editorial</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <%- include('./partials/editorialHeader.ejs') %>
+<main class="products-main">
+    <h2 class="h3-crearautor">Editar Editorial</h2>
+        <form class="createpr-form-padding-left" action="/editorials/update/<%=editorial.id%>" method="POST">
+            <div>
+                <label for="title">Nombre de la Editorial</label>
+                    <input 
+                        class="box-ingrese-datos" 
+                        type="text" 
+                        name="title" 
+                        id="title"
+                        value="<%=editorial.title%>"
+                    />
+                
+                <div class="divErrorFirstName text-red">
+                    <% if (locals.errors && errors.title) { %>
+                        <div class="text-red">
+                            <%= errors.title.msg %>
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+            <div class="center-button-editar"><button class="enviar-nuevo" type="submit">Enviar</button></div>
+        </form>
+</main>
+    
+    <!-- Footer -->
+    <%- include('./partials/footer.ejs') %>
+    <script src="/js/createEditorial.js"></script>
+</body>
+
+</html>
