@@ -81,23 +81,51 @@
                             <% } %>
 
                 <% } else if (field=='address'){ %>
-                    <form class="createpr-form-padding-left" action="/userProfile/edit/adress?_method=PUT"
-                        method="post" ">
+                    <form class="createpr-form-padding-left" action="/users/userProfile/edit/address?_method=PUT"
+                        method="post">
                         <br>
-                    <!-- ! DIRECCION DE ENVIO -->
+                    <!-- ? mostrar form de ADDRESS -->
                     <!-- - enlazar el CRUD con la base de datos -->
-                        <!-- <label for="userFirstname">Calle
-                            <input class="box-ingrese-datos" type="text" name="userSreet" id="userSreet">
-                        </label> <br>
-                        <label for="userAdressNumber">Numero
-                            <input class="box-ingrese-datos" type="number" name="userAdressNumber" id="userAdressNumber">
-                        </label> <br>
-                        <label for="userCP">Codigo Postal
-                            <input class="box-ingrese-datos" type="text" name="userCP" id="userCP">
-                        </label> <br>
-                        <label for="userCountry">Pais de residencia
-                            <input class="box-ingrese-datos" type="text" name="userCountry" id="userCountry">
-                        </label> -->
+                    <p>Ingrese sus datos de direccion para poder recibir los pedidos que realice</p>
+                    <label for="country">Pais de residencia:
+                        <input class="box-ingrese-datos" type="text" name="country" id="country"
+                        value="<%= user.country != '---' ? user.country : '' %>"
+                        placeholder="Ingrese el pais donde vive">
+                    </label>
+                    <label for="province">Provincia:
+                        <input class="box-ingrese-datos" type="text" name="province" id="province"
+                        value="<%= user.province != '---' ? user.province : '' %>"
+                        placeholder="Ingrese la provincia donde vive">
+                    </label>
+                    <label for="city">Ciudad:
+                        <input class="box-ingrese-datos" type="text" name="city" id="city"
+                        value="<%=  user.city != '---' ? user.city : ''  %>"
+                        placeholder="Ingrese la ciudad donde vive">
+                    </label>
+                    <label for="street">Calle:
+                        <input class="box-ingrese-datos" type="text" name="street" id="street"
+                        value="<%= user.street != '---' ? user.street : '' %>"
+                        placeholder="Ingrese la calle donde vive">
+                    </label>
+                    <label for="number">Numero:
+                        <input class="box-ingrese-datos" type="number" name="number" id="number"
+                        value="<%= user.number == 000 ? user.number : '' %>"
+                        placeholder="Ingrese su numero de vivienda">
+                    </label>
+                    <label for="postalCode">Codigo Postal:
+                        <input class="box-ingrese-datos" type="text" name="postalCode" id="postalCode"
+                        value="<%= user.postalCode %>"
+                        placeholder="Ingrese su numero postal">
+                    </label>
+                    <label for="infoExtra">Agregue informacion extra que nos pueda ayudar para enviarle su pedido
+                        <textarea 
+                        class="texarea-saizing" 
+                        name="infoExtra" 
+                        id="infoExtra" 
+                        placeholder="Departamento: 123, piso 1A"
+                        value="<%= user.infoExtra %>">
+                        </textarea>
+                    </label>
                 <% } %>
                         <div class="profConfirm-button-aligned">
                             <div class="listarProducts-section up-spacing">

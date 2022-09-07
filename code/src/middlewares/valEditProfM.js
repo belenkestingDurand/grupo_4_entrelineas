@@ -4,7 +4,6 @@ const { body } = require('express-validator');
 function validationMW(req, res, next) {
     // preguntar por parametro field y de ahi ver que IF usar
     const validationErrors = []
-    console.log('EN MIDDLEWARE');
     // - En caso de que se este modificando el nombre y apellido
     if(req.params.field == 'name'){
         validationErrors.push(
@@ -18,6 +17,8 @@ function validationMW(req, res, next) {
                 .withMessage('Inserte un apellido entre 3 y 100 caracteres'),
         )
     }
+    // - En caso que se este modificando la direccion de envio
+
     // - En caso de que se este modificando el email
     if (req.params.field == 'email') {
         if (body('userEmail') != "") {
@@ -49,11 +50,8 @@ function validationMW(req, res, next) {
             )
         }
     }
-    // - En caso que se este modificando la direccion de envio
-    // ! FALTA HACER LA VINCULACION EN EL CONTROLADOR Y EN EL .ejs
 
     // else if (req.paramas.field == 'adress')
-    console.log(validationErrors);
     next()
 }
 module.exports = validationMW

@@ -1,7 +1,7 @@
 
 module.exports = (sequelize, dataTypes) => {
 
-    let alias = 'UserAddress';
+    let alias = 'UsersAddress';
     let cols = {
         id: {
             type: dataTypes.INTEGER,
@@ -14,18 +14,23 @@ module.exports = (sequelize, dataTypes) => {
         },
         country: { 
             type: dataTypes.STRING(100),
+            allowNull: false
         },
         province: { 
             type: dataTypes.STRING(100),
+            allowNull: false
         },
         city: { 
             type: dataTypes.STRING(100),
+            allowNull: false
         },
         street: { 
             type: dataTypes.STRING(50),
+            allowNull: false
         },
         number: { 
             type: dataTypes.STRING(100),
+            allowNull: false
         },
         
         postalCode: {
@@ -41,14 +46,14 @@ module.exports = (sequelize, dataTypes) => {
     
     };
     
-    const UserAddress = sequelize.define(alias, cols, config);
-    UserAddress.associate = function(models) {
-        UserAddress.belongsTo(models.User, {
-            as: "Users", 
+    const UsersAddress = sequelize.define(alias, cols, config);
+    UsersAddress.associate = function(models) {
+        UsersAddress.belongsTo(models.User, {
+            as: "addresses", 
             foreignKey: "id_user"
         })
     }
     
     
-    return UserAddress;
+    return UsersAddress;
     }
