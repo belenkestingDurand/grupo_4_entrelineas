@@ -36,7 +36,7 @@
                         <h6 class="book-product-author"><%= product.author %></h6>
                     <% } %>
                 </section>
-                <input class="home-add-cart-button" data-id="<%= product.id %>" type="button" value="Agregar al carrito">
+                <input class="home-add-cart-button comprar_cart" data-id="<%= product.id %>" type="button" value="Agregar al carrito">
             </article>
             <% }) %>
         </section>
@@ -45,7 +45,7 @@
 
     <!-- Footer -->
     <%- include('../partials/footer.ejs') %>
-    <script src="/js/cart.js"></script>
+    <script src="/js/cart-home.js"></script>
 </body>
 
 </html>
