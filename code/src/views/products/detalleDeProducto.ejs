@@ -32,7 +32,7 @@
                     <h6 class="book-product-author"><%= product.authors.fullName %></h6>
                 <% } %>
                 <a href="/carrito">
-                    <input class="add-cart-button" type="button" value="Agregar al carrito">
+                    <input class="add-cart-button" data-id="<%= product.id %>" type="button" value="Agregar al carrito">
                 </a>
             </section>
             <section class="send-mail-description">

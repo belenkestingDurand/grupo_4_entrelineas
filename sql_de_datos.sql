@@ -65,3 +65,5 @@ INSERT INTO entrelineas.products VALUES
 (default,'Taza Entre Lineas',400,'400ml',null,'Taza de 400 ml color blanca, excelente para el cafe de la mañana junto a un libro',null,'/img/products/merch-taza.jpeg',20,null,null,3,null);
 
 -- id,name.price,size,pages,opinion,more,picture,stock,idAu,idGen,idProdT,idEditproducts
+
+
