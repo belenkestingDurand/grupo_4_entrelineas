@@ -12,7 +12,6 @@
                 <% if (field == 'name'){ %>
                     <form class="createpr-form-padding-left" action="/users/userProfile/edit/name?_method=PUT"
                         method="post" >
-                        <br>
                         <!-- ? mostrar form de NOMBRE Y APELLIDO -->
                         <p>Ingrese en los campos los datos que desee ver en su perfil</p>
                         <label for="userFirstName">Nombre:
@@ -35,7 +34,6 @@
                 <% } else if (field == 'email'){ %>
                     <form class="createpr-form-padding-left" action="/users/userProfile/edit/email?_method=PUT"
                         method="post" >
-                        <br>
                         <!-- ? mostar form de EMAIL -->
                         <p>Para cambiar el email, primero ingrear la actual y luego el nuevo email deseado</p>
                         <label for="userEmail">Email actual:
@@ -60,7 +58,6 @@
                 <% } else if (field== 'password'){ %>
                     <form class="createpr-form-padding-left" action="/users/userProfile/edit/password?_method=PUT"
                         method="post">
-                        <br>
                     <!-- ? mostar form de PASSWORD -->
                     <p>Para cambiar la contraseña, primero ingresar la actual y luego la nueva contraseña deseada</p>
                     <label for="userPassword">Contraseña actual:
@@ -89,43 +86,61 @@
                     <p>Ingrese sus datos de direccion para poder recibir los pedidos que realice</p>
                     <label for="country">Pais de residencia:
                         <input class="box-ingrese-datos" type="text" name="country" id="country"
-                        value="<%= user.country != '---' ? user.country : '' %>"
+                        value="<%= user.addresses[0].country %>"
                         placeholder="Ingrese el pais donde vive">
                     </label>
                     <label for="province">Provincia:
                         <input class="box-ingrese-datos" type="text" name="province" id="province"
-                        value="<%= user.province != '---' ? user.province : '' %>"
+                        value="<%= user.addresses[0].province %>"
                         placeholder="Ingrese la provincia donde vive">
                     </label>
                     <label for="city">Ciudad:
                         <input class="box-ingrese-datos" type="text" name="city" id="city"
-                        value="<%=  user.city != '---' ? user.city : ''  %>"
+                        value="<%=  user.addresses[0].city %>"
                         placeholder="Ingrese la ciudad donde vive">
                     </label>
                     <label for="street">Calle:
                         <input class="box-ingrese-datos" type="text" name="street" id="street"
-                        value="<%= user.street != '---' ? user.street : '' %>"
+                        value="<%= user.addresses[0].street %>"
                         placeholder="Ingrese la calle donde vive">
                     </label>
                     <label for="number">Numero:
                         <input class="box-ingrese-datos" type="number" name="number" id="number"
-                        value="<%= user.number == 000 ? user.number : '' %>"
+                        value="<%= user.addresses[0].number %>"
                         placeholder="Ingrese su numero de vivienda">
                     </label>
                     <label for="postalCode">Codigo Postal:
                         <input class="box-ingrese-datos" type="text" name="postalCode" id="postalCode"
-                        value="<%= user.postalCode %>"
+                        value="<%= user.addresses[0].postalCode %>"
                         placeholder="Ingrese su numero postal">
                     </label>
+                    <br>
                     <label for="infoExtra">Agregue informacion extra que nos pueda ayudar para enviarle su pedido
-                        <textarea 
+                        <br><textarea 
                         class="texarea-saizing" 
                         name="infoExtra" 
                         id="infoExtra" 
-                        placeholder="Departamento: 123, piso 1A"
-                        value="<%= user.infoExtra %>">
-                        </textarea>
+                        placeholder="Por ejemplo: Departamento: 123, piso 1A"
+                        value="<%= user.addresses[0].infoExtra %>"></textarea>
                     </label>
+                <% } else if (field == 'imagen'){ %>
+                    <!-- - CAMBIAR IMAGEN? -->
+                    <!-- <section class="up-profilePicture">
+                        <div class = "up-porfilePicture-div">
+                            <img class = "up-porfilePicture-img" src="/img/users/<%= user.profilePic %>" alt="profile picture" >
+                        </div>
+                        <input type="file" name="profilePic" value="<%= user.profilePic%>" />
+                    </section>
+                    <!-- <figure class=""> -->
+                        <!-- <img 
+                            class="up-porfilePicture-img" 
+                            src="/img/users/<%= user.profilePic %>""
+                            alt="profile picture">
+                        </figure>
+                        <br>--> 
+                        <!-- <label for="profilePic">Cambiar imagen de perfil:
+                            <input type="file" name="profilePic" value="<%= user.profilePic %>" />
+                    </label> -->
                 <% } %>
                         <div class="profConfirm-button-aligned">
                             <div class="listarProducts-section up-spacing">
@@ -135,26 +150,8 @@
                         </div>
                     </form>
         </section>
-            
     </main>
     <%- include('../partials/footer.ejs'); %>
-    <!-- - CAMBIAR IMAGEN? -->
-    <!-- <section class="up-profilePicture">
-        <div class = "up-porfilePicture-div">
-            <img class = "up-porfilePicture-img" src="/img/users/<%= user.profilePic %>" alt="profile picture" >
-        </div>
-        <input type="file" name="profilePic" value="<%= user.profilePic%>" />
-    </section>
-    <!-- <figure class=""> -->
-        <!-- <img 
-            class="up-porfilePicture-img" 
-            src="/img/users/<%= user.profilePic %>""
-            alt="profile picture">
-        </figure>
-        <br>--> 
-        <!-- <label for="profilePic">Cambiar imagen de perfil:
-            <input type="file" name="profilePic" value="<%= user.profilePic %>" />
-    </label> -->
 </body>
 
 </html>

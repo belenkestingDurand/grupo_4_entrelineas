@@ -181,9 +181,9 @@ const userController =  {
                             include: ["addresses"],
                             where: {id: user.id}
                         })
-                            .then( () => {
+                            .then( user => {
                                 return res.render('users/editProfile', {
-                                    user: req.session.userLogged,
+                                    user: user,
                                     field: req.params.field //este campo indicara que formulario se mostrara
                             })
                         })
@@ -232,8 +232,8 @@ const userController =  {
                          })
         } else if (req.params.field == 'address') {
             //- update de ADDRESS
-            let userAddress = await db.UsersAddress.findOne({where: {id_user: user}})
-            let addressUpdated = await userAddress.update({
+            let addressUpdated = await db.UsersAddress.findOne({where: {id_user: user.id}})
+            await addressUpdated.update({
                 country: req.body.country,
                 province: req.body.province,
                 city: req.body.city,
@@ -242,9 +242,8 @@ const userController =  {
                 postalCode: req.body.postalCode,
                 infoExtra: req.body.infoExtra
             })
-            let userUpdated = await db.User.findByPk(user)
             return res.render('users/userProfile', {
-                            user: userUpdated
+                            user: user
                         })
         } else if (req.params.field == 'email'){
             //- update de EMAIL
