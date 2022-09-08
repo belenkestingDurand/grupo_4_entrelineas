@@ -1217,6 +1217,13 @@ text-align: center;
 .carrito-body-sizing{
     width: 100%;
 }
+.no-product-cart{
+    width: 100vw;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 /*Authors, Genres, Editorials*/
 .center-button-editar{
