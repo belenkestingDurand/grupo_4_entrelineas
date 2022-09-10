@@ -1322,6 +1322,16 @@ footer {
     padding-left: 10%;
     padding-right: 10%;
 }
+.profileEdit-form{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+}
+.profileEdit-form label, .profileEdit-form input, .profileEdit-form textarea{
+    width: 100%;
+}
 
 .creatpr-desap-Mobile {
     display: none;
