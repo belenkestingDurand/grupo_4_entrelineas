@@ -1711,17 +1711,41 @@ footer {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .up-100{
-    width: 90%;
+    width: 100%;
     text-align: center;
 }
 .up-0-5{
-width: 45%;
-text-align: center;
+    height: 100px;
+    margin-left: auto;
+    width: 47%;
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+    align-items: center;
+    justify-content: center;
 }
+.up-0-5-value {
+    min-height: 100px;
+    font-size: large;
+    width: 53%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.addressesWvalues{
+    min-height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
 .listarProducts-section{
     display: flex;
     flex-wrap: wrap;
@@ -1745,43 +1769,48 @@ text-align: center;
 }
 
 
-
+.red-border{
+    border: 1px dotted red;
+}
 /*Desktop*/
 @media (min-width: 769px) {
+    
+    /* .addressesWvalues{
+    
+    } */
+    /*login*/
+    .h5-titulo-box {
+        font-size: 15px;
+    }
+    .login-ajust-nuevo-cli{
+        font-size: 15px;
+    }
+    .create-au-header {
+        height: 120px;
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        Justify-content: space-between;
+    }
+        /*createProduct header*/
+    .product-header{
+        height: 150px;
+        width: 100vw;
+    }
 
-/*login*/
-.h5-titulo-box {
-    font-size: 15px;
-}
-.login-ajust-nuevo-cli{
-    font-size: 15px;
-}
-.create-au-header {
-    height: 120px;
-    width: 100vw;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    Justify-content: space-between;
-}
-    /*createProduct header*/
-.product-header{
-    height: 150px;
-    width: 100vw;
-}
+    .create-pr-header {
+        width: 100vw;
+        height: 110px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        Justify-content: space-between;
+        box-shadow: 0px 0.3px 4px rgb(0 0 0 / 25%);
+        align-items: center;
+        z-index: 2;
 
-.create-pr-header {
-    width: 100vw;
-    height: 110px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    Justify-content: space-between;
-    box-shadow: 0px 0.3px 4px rgb(0 0 0 / 25%);
-    align-items: center;
-    z-index: 2;
-
-}
+    }
 
     /*Body*/
     h4 {

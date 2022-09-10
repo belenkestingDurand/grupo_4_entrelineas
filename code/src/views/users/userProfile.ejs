@@ -29,21 +29,38 @@
 			</div>
 			<div class = "user-address-section up-direction">
 				<h6 class="up-100">Dirección de envio</h6>
-					<!-- VALOR -->
+				<% if(locals.user.addresses == undefined){ %>
+					<h6 class="up-100 gris-oscuro">No se encontro informacion de direccion de envio</h6>							
+				<% } else { %>
+					<div class="addressesWvalues">
 					<h4 class="up-0-5">Pais:</h4>
-					<!-- VALOR -->
-					<h4 class="up-0-5">Provincia:</h4>
-					<!-- VALOR -->
-					<h4 class="up-0-5">Ciudad:</h4>
-					<!-- VALOR -->
-					<h4 class="up-0-5"">Calle:</h4>
-					<!-- VALOR -->
-					<h4 class="up-0-5">Numero de residencia:</h4>
-					<!-- VALOR -->
-					<h4 class="up-0-5">Codigo Postal:</h4>
-					<!-- VALOR -->
-					<h4 class="up-0-5">Información extra:</h4>
-					<!-- VALOR▬ -->
+						<h4 class="up-0-5-value gris-oscuro"><%= user.addresses[0].country %></h4>
+					</div>
+					<div class="addressesWvalues">
+						<h4 class="up-0-5">Provincia:</h4>
+						<h4 class="up-0-5-value gris-oscuro"><%= user.addresses[0].province %></h4>
+					</div>
+					<div class="addressesWvalues">
+						<h4 class="up-0-5">Ciudad:</h4>
+						<h4 class="up-0-5-value gris-oscuro"><%= user.addresses[0].city %></h4>
+					</div>
+					<div class="addressesWvalues">
+						<h4 class="up-0-5">Calle:</h4>
+						<h4 class="up-0-5-value gris-oscuro"><%= user.addresses[0].street %></h4>
+					</div>
+					<div class="addressesWvalues">
+						<h4 class="up-0-5">N° de residencia:</h4>
+						<h4 class="up-0-5-value gris-oscuro"><%= user.addresses[0].number %></h4>
+					</div>
+					<div class="addressesWvalues">
+						<h4 class="up-0-5">Codigo postal:</h4>
+						<h4 class="up-0-5-value gris-oscuro"><%= user.addresses[0].postalCode %></h4>
+					</div>
+					<div class="addressesWvalues">
+						<h4 class="up-0-5">Detalles:</h4>
+						<h6 class="up-0-5-value gris-oscuro"><%= user.addresses[0].infoExtra %></h6>
+					</div>
+				<% } %>
 			</div>
 		</section>
 		<section class="user-edits-buttons">

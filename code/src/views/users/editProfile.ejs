@@ -86,32 +86,32 @@
                     <p>Ingrese sus datos de direccion para poder recibir los pedidos que realice</p>
                     <label for="country">Pais de residencia:
                         <input class="box-ingrese-datos" type="text" name="country" id="country"
-                        value="<%= user.addresses[0].country %>"
+                        value="<%= locals.user.addresses ? user.addresses[0].country : '---' %>"
                         placeholder="Ingrese el pais donde vive">
                     </label>
                     <label for="province">Provincia:
                         <input class="box-ingrese-datos" type="text" name="province" id="province"
-                        value="<%= user.addresses[0].province %>"
+                        value="<%= locals.user.addresses ? user.addresses[0].province : '---' %>"
                         placeholder="Ingrese la provincia donde vive">
                     </label>
                     <label for="city">Ciudad:
                         <input class="box-ingrese-datos" type="text" name="city" id="city"
-                        value="<%=  user.addresses[0].city %>"
+                        value="<%=  locals.user.addresses ? user.addresses[0].city : '---' %>"
                         placeholder="Ingrese la ciudad donde vive">
                     </label>
                     <label for="street">Calle:
                         <input class="box-ingrese-datos" type="text" name="street" id="street"
-                        value="<%= user.addresses[0].street %>"
+                        value="<%= locals.user.addresses ? user.addresses[0].street : '---' %>"
                         placeholder="Ingrese la calle donde vive">
                     </label>
                     <label for="number">Numero:
                         <input class="box-ingrese-datos" type="number" name="number" id="number"
-                        value="<%= user.addresses[0].number %>"
+                        value="<%= locals.user.addresses ? user.addresses[0].number : '000' %>"
                         placeholder="Ingrese su numero de vivienda">
                     </label>
                     <label for="postalCode">Codigo Postal:
                         <input class="box-ingrese-datos" type="text" name="postalCode" id="postalCode"
-                        value="<%= user.addresses[0].postalCode %>"
+                        value="<%= locals.user.addresses ? user.addresses[0].postalCode : '---' %>"
                         placeholder="Ingrese su numero postal">
                     </label>
                     <br>
@@ -121,7 +121,7 @@
                         name="infoExtra" 
                         id="infoExtra" 
                         placeholder="Por ejemplo: Departamento: 123, piso 1A"
-                        value="<%= user.addresses[0].infoExtra %>"></textarea>
+                        value="<%= locals.user.addresses ? user.addresses[0].infoExtra : null %>"></textarea>
                     </label>
                 <% } else if (field == 'imagen'){ %>
                     <!-- - CAMBIAR IMAGEN? -->

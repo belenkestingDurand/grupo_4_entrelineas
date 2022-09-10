@@ -153,63 +153,73 @@ const userController =  {
 }
         
     },
-    profile: (req, res) => {
-        return res.render('users/userProfile', {
-            user: req.session.userLogged
-        });
+    profile: async (req, res) => {
+        // hay que buscar si existe en primerr lugar un registro
+        let userWithAddressExist = await db.UsersAddress.findOne({where: {id_user: req.session.userLogged.id}})
+        // return res.send( userWithAddressExist )
+        if(userWithAddressExist != undefined){
+            let user = await db.User.findOne({
+                include: ["addresses"],
+                where: {id: req.session.userLogged.id}
+                })
+            return res.render('users/userProfile', {
+                user: user
+            })
+        } else {
+            let user = await db.User.findOne({where: {id: req.session.userLogged.id}})
+            return res.render('users/userProfile', {
+                user: user
+            })
+        }
 	},
-    profileEdit: (req,res) => {
+    profileEdit: async (req,res) => {
         // recibir el parametro para saber que debe renderizar el EJS
         let user = req.session.userLogged
         if(req.params.field != 'address'){
-            db.User.findOne({
-                where: {id: user.id}
-            })
-                .then( () => {
-                    return res.render('users/editProfile', {
-                        user: req.session.userLogged,
-                        field: req.params.field //este campo indicara que formulario se mostrara
-                })
+            // Si NO entra a 'Editar direccion de envio'
+            let user = await db.User.findByPk(req.session.userLogged.id)
+            return res.render('users/editProfile', {
+                    user: user,
+                    field: req.params.field
             })
         } else {
-            db.UsersAddress.findOne({
-                where: {id_user: user.id}
-            })
-                .then(existAddress => {
-                    if (existAddress){
-                        db.User.findOne({ 
+            // Si -entra- a 'Editar direccion de envio'
+            let userWithAddressExist = await db.UsersAddress.findOne({where: {id_user: req.session.userLogged.id}})
+            
+            if (userWithAddressExist != undefined){
+                //* si EXISTE
+                let user = await db.User.findOne({ 
+                    include: ["addresses"],
+                    where: {id: req.session.userLogged.id}
+                    })
+                return res.render('users/editProfile', {
+                    user: user,
+                    field: req.params.field //este campo indicara que formulario se mostrara
+                })
+            } else {
+                //- crear el registro de Base de datos y usar eso para la vista
+                //? si NO EXISTE
+
+                await db.UsersAddress.create({
+                    id_user: user.id,
+                    country: '---',
+                    province: '---',
+                    city: '---',
+                    street: '---',
+                    number: '000',
+                    postalCode: '---'
+                })
+                    .then( () => {
+                        let user = db.User.findOne({ 
                             include: ["addresses"],
-                            where: {id: user.id}
-                        })
-                            .then( user => {
-                                return res.render('users/editProfile', {
-                                    user: user,
-                                    field: req.params.field //este campo indicara que formulario se mostrara
-                            })
-                        })
-                    } else {
-                        db.UsersAddress.create({
-                            id_user: user.id,
-                            country: '---',
-                            province: '---',
-                            city: '---',
-                            street: '---',
-                            number: '000',
-                        })
-                            .then( () => {
-                                db.User.findOne({ 
-                                    include: ["addresses"],
-                                    where: {id: user.id}
+                            where: {id: req.session.userLogged.id}
                                 })
-                                    .then( () => {
-                                        return res.render('users/editProfile', {
-                                            user: req.session.userLogged,
-                                            field: req.params.field //este campo indicara que formulario se mostrara
-                                    })
-                                })
-                            })
-                    }
-                })   
+                        return res.render('users/editProfile', {
+                            user: user,
+                            field: req.params.field //este campo indicara que formulario se mostrara
+                        })
+                    })
+            }   
         }        
     },
     profileEdited: async (req,res) => {
@@ -232,7 +242,7 @@ const userController =  {
                          })
         } else if (req.params.field == 'address') {
             //- update de ADDRESS
-            let addressUpdated = await db.UsersAddress.findOne({where: {id_user: user.id}})
+            let addressUpdated = await db.UsersAddress.findOne({where: {id_user: req.session.userLogged.id}})
             await addressUpdated.update({
                 country: req.body.country,
                 province: req.body.province,
@@ -242,6 +252,10 @@ const userController =  {
                 postalCode: req.body.postalCode,
                 infoExtra: req.body.infoExtra
             })
+            let user = await db.User.findOne({ 
+                include: ["addresses"],
+                where: {id: req.session.userLogged.id}
+                    })
             return res.render('users/userProfile', {
                             user: user
                         })
