@@ -14,6 +14,7 @@ window.addEventListener("load", function(){
         })
         p.innerHTML = contador
 
+        
     }
     else{
         p.innerHTML = contador
