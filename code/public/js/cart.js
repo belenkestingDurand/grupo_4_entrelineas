@@ -56,7 +56,29 @@ window.addEventListener('load', function(){
     
                 let boton_restar = document.querySelectorAll(".boton-restar")
                     boton_restar.forEach(function(boton){
-    
+                     boton.addEventListener('click', function(event){
+                        console.log(boton)
+                        //Traigo el carrito 
+                        let carrito = JSON.parse(localStorage.carrito)
+                        let index = carrito.findIndex(function(prod){
+                            return prod.id == event.target.dataset.id
+                        })
+                        
+                        if(carrito[index].quantity == 1){
+                            let new_carrito = carrito.filter(function(producto){
+                                return producto.id != carrito[index].id
+                            })
+                            localStorage.setItem('carrito', JSON.stringify(new_carrito))
+                            location. reload()
+                            
+                        }
+                        else{
+                            carrito[index].quantity = carrito[index].quantity - 1
+                            localStorage.setItem('carrito', JSON.stringify(carrito))
+                            location. reload()
+                        }
+
+                     })
                     })
                 //Declaro el boton de agregar + productos al carrito
                 let boton_agregar = document.querySelectorAll(".boton-agregar")

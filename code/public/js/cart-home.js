@@ -1,7 +1,6 @@
 window.addEventListener("load", function(){
     let button_comprar = document.querySelectorAll(".comprar_cart")
     let p = document.querySelector(".products-in-cart")
-    let button_borrar = this.document.querySelector(".carrito-botton-style-borrar")
     let contador = 0
  
     //localStorage.removeItem('carrito')

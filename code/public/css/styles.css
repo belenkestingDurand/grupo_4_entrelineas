@@ -309,6 +309,12 @@ header {
     width: 30px;
     margin-right: 15px;
 }
+.boton-restar{
+    cursor: pointer;
+}
+.boton-agregar{
+    cursor: pointer;
+}
 .cart-products{
     background-color: rgb(219, 79, 79);
     color: white;
