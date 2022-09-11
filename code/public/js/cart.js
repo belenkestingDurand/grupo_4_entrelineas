@@ -159,14 +159,29 @@ window.addEventListener('load', function(){
                             .then(function(res){
                                 res.json()
                                 .then(function(userData){
-                                
+                                    if(userData.id != null){
                                         fetch('http://localhost:3000/products/crearOrden', {method: 'POST', body: JSON.stringify({total: total, id_user: userData.id, created_at: Date.now(), carrito: carrito }), headers:{
-                                        'Content-Type': 'application/json'}})
-                                        .then(function(res){
-                                        })
-                                    p.innerHTML = 0
-                                    main.innerHTML = "<div class='no-product-cart'><p>" + "Felicidades, realizaste tu compra!" + "</p></div>"
-                                    localStorage.removeItem("carrito")   
+                                            'Content-Type': 'application/json'}})
+                                            .then(function(res){
+                                            })
+                                        p.innerHTML = 0
+                                        main.innerHTML = "<div class='no-product-cart'>"
+                                                         +"<div><img style='width: 280px; height: auto!important;margin-bottom: -50px;' src='/img/icono-camion.gif'>"
+                                                         +"<div><p> Felicidades, realizaste tu compra! </p></div>"
+                                                         +"<div><p> En muy poco tiempo la resivirás en tu casa </p></div>"
+                                                         +"</div>"
+                                        localStorage.removeItem("carrito") 
+                                    }
+                                    else{
+
+                                        main.innerHTML = "<div class='no-product-cart'>" 
+                                                                + "<div><p>Para hacer una compra debes iniciar sesión" + "</p></div>"
+                                                                + "<div class='nav-bot-header'><a class='nav-link' href='/users/login'>Login</a></div>"
+                                                         + "</div>"
+
+                                    }
+                                
+                                         
                                     
                                 })
                             })

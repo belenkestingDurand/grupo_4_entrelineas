@@ -694,6 +694,7 @@ article .add-cart-button {
     letter-spacing: 0.5px;
 }
 
+
 .home-add-cart-button{
     padding: 10px;
     width: 100%;
@@ -1223,12 +1224,17 @@ text-align: center;
 .carrito-body-sizing{
     width: 100%;
 }
+.camion-carrito{
+    height: 40%;
+}
 .no-product-cart{
     width: 100vw;
     height: 40vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    text-align: center;
 }
 
 .mje-comprado{
@@ -1983,6 +1989,7 @@ footer {
         bottom: 56px;
         right: 160px;
     }
+    
 
    /* .ordenar-carrito {
         order: 1;
