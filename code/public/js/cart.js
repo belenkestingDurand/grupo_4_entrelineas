@@ -1,3 +1,4 @@
+
 window.addEventListener('load', function(){
     //Declaro los botones y elementos de html
         let button_borrar = document.querySelector('.carrito-botton-style-borrar')
@@ -6,9 +7,11 @@ window.addEventListener('load', function(){
         let boton_restar = document.querySelectorAll(".boton-restar")
         let boton_agregar = document.querySelectorAll(".boton-agregar")
         let ir_a_pagar = document.querySelector('.boton-ir-a-pagar')
+        let main = document.querySelector("main")
     
         var total_a_pagar = 0
         
+    // LOGICA PARA IMPRIMIR EL CARRITO
     //Si existe el carrito en localStorage
        if(localStorage.carrito){
         //Hago una llamada a la api que me trae todos los productos de la base
@@ -108,6 +111,10 @@ window.addEventListener('load', function(){
             section.innerHTML = "<div class='no-product-cart'><p>" + "No sumaste nada en el carrito aun :(" + "</p></div>"
             ir_a_pagar.innerHTML = 'Subtotal $' + 0
         }
+
+
+
+        //LOGICA PARA BORRAR EL CARRITO
     
         //Escuchamos el click en el boton borrar
            button_borrar.addEventListener('click',function(){
@@ -119,6 +126,64 @@ window.addEventListener('load', function(){
             section.innerHTML = "<div class='no-product-cart'><p>" + "No sumaste nada en el carrito aun :(" + "</p></div>"
             ir_a_pagar.innerHTML = 'Subtotal $' + 0
             })
+        
+           /* const response = await fetch('https://httpbin.org/post', {
+                method: 'post',
+                body: JSON.stringify(body),
+                headers: {'Content-Type': 'application/json'}*/
+        
+       //LOGICA PARA CREAR LA ORDEN Y CONFIRMAR LA COMPRA
+        //Creo la orden cuando el cliente confirma
+        let crear_orden_boton = document.querySelector('.crear-orden')
+        crear_orden_boton.addEventListener('click', function(){
+            //Si hay productos en el carrito
+            if(localStorage.carrito){
+                let carrito = JSON.parse(localStorage.carrito)
+                fetch('http://localhost:3000/api/showCart')
+                .then (function (resp){ 
+                        resp.json()
+                        .then(function(data){
+                            let products_de_la_orden = data.filter(function(productos){
+                                return (carrito.findIndex(function(item){return item.id == productos.id})) != -1
+
+                            })
+                            let total = 0
+                            products_de_la_orden.forEach(function(producto){
+                                let index = carrito.findIndex(function(prod){
+                                    return prod.id =  producto.id
+                                })
+                                total += carrito[index].quantity * producto.price
+                            })
+                            
+                            fetch('http://localhost:3000/api/userLogged')
+                            .then(function(res){
+                                res.json()
+                                .then(function(userData){
+                                
+                                        fetch('http://localhost:3000/products/crearOrden', {method: 'POST', body: JSON.stringify({total: total, id_user: userData.id, created_at: Date.now(), carrito: carrito }), headers:{
+                                        'Content-Type': 'application/json'}})
+                                        .then(function(res){
+                                        })
+                                    p.innerHTML = 0
+                                    main.innerHTML = "<div class='no-product-cart'><p>" + "Felicidades, realizaste tu compra!" + "</p></div>"
+                                    localStorage.removeItem("carrito")   
+                                    
+                                })
+                            })
+                            
+                        })
+                    })
+
+            }
+            //Si no hay
+            else{
+                p.innerHTML = 0
+            //Ponemos en cero el carrito
+            section.innerHTML = "<div class='no-product-cart'><p>" + "Agrega algunos productos para hacer una compra!" + "</p></div>"
+            ir_a_pagar.innerHTML = 'Subtotal $' + 0    
+
+            }
+        })
          
             
        })

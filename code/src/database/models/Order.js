@@ -17,14 +17,14 @@ module.exports = (sequelize, dataTypes) => {
         id_payment: {
             type: dataTypes.INTEGER,
         },
-        created_at:{
+        createdAt:{
             type: dataTypes.DATE,
             allowNull:false
         }
     }
     let config = {
         tableName: 'orders',
-        timestamps: true
+        timestamps: false
     }
 
     const Order = sequelize.define(alias,cols,config)

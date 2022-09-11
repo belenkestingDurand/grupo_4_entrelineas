@@ -26,25 +26,25 @@ module.exports = (sequelize, dataTypes) => {
         }
     }
     let config = {
-        tableName: 'ordersdetails',
+        tableName: 'orderDetails',
         timestamps: false
     }
 
-    const OrderDetail = sequelize.define(alias,cols,config)
+    const OrderDetails = sequelize.define(alias,cols,config)
 
     // Asociaciones
-   OrderDetail.associate = (models) => {
+    OrderDetails.associate = (models) => {
         
-        OrderDetail.belongsTo(models.Product, {
+        OrderDetails.belongsTo(models.Product, {
             as: 'products',
             foreignKey: 'id_product'
         })
 
-        OrderDetail.belongsTo(models.Order, {
+        OrderDetails.belongsTo(models.Order, {
             as:'orders',
             foreignKey:'id_order'
         })
 
     }
-    return OrderDetail
+    return OrderDetails
 }

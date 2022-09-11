@@ -8,6 +8,7 @@ const about = {
     books: "Libros"
     }
 const { validationResult} = require('express-validator');
+const Order = require("../database/models/Order");
 //variable con la ruta del archivo products.json
 //let productosFilePath = path.join(__dirname, '../data/products.json');
 
@@ -260,7 +261,44 @@ const productsController =  {
 
     res.render("products/listarProducto", { books: productos });
     });
+    },
+
+    crearOrden: function(req, res){
+        let orden = {total: req.body.total,
+                     id_user: req.body.id_user,
+                     id_payment: null,
+                     createdAt: req.body.created_at}
+
+        db.Order.create(orden)
+        .then(function(data){
+          let carrito = req.body.carrito
+
+          db.Product.findAll()
+          .then(function(result){
+            let productos_cargar = result.filter(function(product){
+                return (carrito.findIndex(function(item){return item.id == product.id})) != -1
+                })
+            
+             productos_cargar.forEach(function(product){
+                    let index = carrito.findIndex(function(item){return item.id == product.id})
+                    let ordenDetalle = {id_product: product.id,
+                                        item: product.name,
+                                        description: 'quantity ' + carrito[index].quantity,
+                                        price: carrito[index].quantity * product.price,
+                                        id_order: data.dataValues.id
+                                    }
+                        db.OrderDetails.create(ordenDetalle)
+            
+                  })
+                
+            })
+          })
+        
+        
     }
+
+   
+
 }
 
 
