@@ -3,7 +3,6 @@ window.addEventListener("load", function(){
     let p = document.querySelector(".products-in-cart")
     let contador = 0
  
-    //localStorage.removeItem('carrito')
 
     if(localStorage.carrito){
         let carrito1 = JSON.parse(localStorage.carrito)
