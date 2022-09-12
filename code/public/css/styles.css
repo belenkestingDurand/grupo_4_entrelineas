@@ -1549,6 +1549,9 @@ footer {
     margin-bottom: 8px;
     color:grey;
     font-size: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .lp-div-buttoms{
     width: 100%;
