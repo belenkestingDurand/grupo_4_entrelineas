@@ -4,6 +4,7 @@ const about = {
                 }
 const db = require('../database/models');
 const sequelize = require('sequelize')
+const { Op } = require("sequelize");
 const fs = require("fs")
 //let datos = fs.readFileSync('./data/products.json')
         
@@ -65,7 +66,17 @@ const homeController =  {
     //'carritoDeCompras.ejs' IN 'views/prodcuts' FOLDER
     carrito: (req,res) => {
         res.render('products/carritoDeCompras')
-    }
+    },
+
+    search2: function(req, res){
+      //db.Movie.findOne({where: {title: {[Op.like]:'%'+req.body.titulo+'%'} }})
+      db.Product.findAll({ include: ["authors", "genres", "editorials", "productsTypes"],
+                              where: {name: {[Op.like]:'%'+req.body.search+'%'} }})
+      .then((productos) => {
+  
+      res.render("products/home", { books: productos });
+      });
+  },
 }
 
 // exports

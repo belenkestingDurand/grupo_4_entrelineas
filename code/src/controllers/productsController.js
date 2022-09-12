@@ -253,6 +253,7 @@ const productsController =  {
       
         
       },
+
     search: function(req, res){
     //db.Movie.findOne({where: {title: {[Op.like]:'%'+req.body.titulo+'%'} }})
     db.Product.findAll({ include: ["authors", "genres", "editorials", "productsTypes"],
