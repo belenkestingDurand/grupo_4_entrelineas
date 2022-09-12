@@ -18,12 +18,8 @@ window.addEventListener('load', () => {
         console.log('hiciste click en FICHA TECNICA');
         if (displayFichaTecnica.classList.contains('hidden-until-click-tech')) {
             displayFichaTecnica.classList.remove('hidden-until-click-tech')
-            // btFichaTecnica.classList.toggle('detail-max-size-ficha')
-            // sectionFichaTech.classList.toggle('detail-max-size-ficha')
         } else {
             displayFichaTecnica.classList.add('hidden-until-click-tech')
-            // btFichaTecnica.classList.toggle('detail-max-size-ficha')
-            // sectionFichaTech.classList.toggle('detail-max-size-ficha')
         }
     })  
 })

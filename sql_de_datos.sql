@@ -39,6 +39,7 @@ INSERT INTO entrelineas.authors VALUES
 (default,'Anastacio ovejero bernal'),
 (default,'Michael W. Malone'),
 (default,'Jean Ziegler'),
+(default, 'Quino'),
 (default,'María V. Rosas');
 
 -- Data for table 'genres'
