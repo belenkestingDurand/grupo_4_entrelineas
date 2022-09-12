@@ -748,37 +748,41 @@ article .add-cart-button {
     width: 80%;
     margin: auto;
 }
+/* .detail-title-info-more{
+    height: 100px;
+} */
 .detail-title-info-ficha{
-    height: 100px;
+    margin-top: 10px;
 }
-.detail-title-info-more{
-    height: 100px;
+.detail-description-p{
+    width: 100%;
 }
 
 .display-more-tech{
     display: block;
     background-color: white;
-    height: 100px;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    margin-top: 15px;
-    margin-bottom: 100px;
+    width: 100%;
+    padding-left: 12%;
     text-align: left;
+    font-size: small;
+    margin-top: 0%;
+    margin-bottom: 10px;
 }
 
 .display-more-info{
     display: block;
     background-color: white;
-    height: 100px;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    margin-top: 15px;
-    margin-bottom: 100px;
+    width: 100%;
+    padding-left: 12%;
+    margin-top: 0%;
+    margin-bottom: 10px;
     text-align: left;
+    font-size: small;
 }
-.hidden-until-click{
+.hidden-until-click-tech{
+    display: none;
+}
+.hidden-until-click-info{
     display: none;
 }
 
@@ -815,13 +819,12 @@ article .add-cart-button {
     flex-direction: row;
     justify-content: space-between;
     align-items: stretch;
-    /* max-width: 240px; */
 }
 .detail-max-size-info{
-    max-height: 50px;
+    min-height: max-content;
 }
 .detail-max-size-ficha{
-    max-height: 50px;
+    height: max-content;
 }
 .detail-title-info{
     border: none;
@@ -2307,7 +2310,7 @@ footer {
     /* detalle.html */
 
     .detail-main{
-        /* width: auto; */
+        height: max-content;
         justify-content: space-around;
     }
 

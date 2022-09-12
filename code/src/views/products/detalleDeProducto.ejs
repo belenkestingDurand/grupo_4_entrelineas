@@ -46,14 +46,29 @@
                 </div>
                 <section class="detail-description-text">
                     <h5>Reseña libro</h5>
-                    <p><%= product.opinion %></p>
+                    <p class="detail-description-p"><%= product.opinion %></p>
                 </section>
             </section>
             <section class="detail-extra-info">
-                <button class="detail-extra-rect detail-title-info-ficha detail-max-size-ficha">
-                    <h4 class="detail-title-info">Ficha Tecnica</h4>
-                    <img class="detail-info-arrow" src="/img/arrow-down.png" alt="Boton en forma de flecha hacia abajo">
-                    <p class="hidden-until-click display-more-tech">
+                <div>
+                    <button class="detail-extra-rect detail-title-info-more ">
+                        <h4 class="detail-title-info ">Más Información</h4>
+                        <img class="detail-info-arrow" src="/img/arrow-down.png" alt="Boton en forma de flecha hacia abajo">
+                    </button>
+                    <p class="hidden-until-click-info display-more-info ">
+                        <% if(product.more){ %>
+                            <%= product.more %>
+                        <% } else { %>
+                            <spam class="gris-oscuro">No hay mas detalles sobre este libro</spam>
+                        <% } %>
+                    </p>
+                </div>
+                <div>
+                    <button class="detail-extra-rect detail-title-info-ficha">
+                        <h4 class="detail-title-info">Ficha Tecnica</h4>
+                        <img class="detail-info-arrow" src="/img/arrow-down.png" alt="Boton en forma de flecha hacia abajo">
+                    </button>
+                    <p class="hidden-until-click-tech display-more-tech">
                         <% if (product.id_genre != null) { %>
                             <strong>Genero</strong>: <%= product.genres.name %>
                         <% } %>
@@ -63,14 +78,7 @@
                         <strong>Páginas</strong>: <%= product.pages %>
                         <br>
                     </p>
-                </button>
-                <button class="detail-extra-rect detail-title-info-more detail-max-size-info">
-                    <h4 class="detail-title-info ">Más Información</h4>
-                    <img class="detail-info-arrow" src="/img/arrow-down.png" alt="Boton en forma de flecha hacia abajo">
-                    <p class="hidden-until-click display-more-info">
-                        <%= product.more %>
-                    </p>
-                </button>
+                </div>
             </section>
         </article>
     <script src="/js/cart-detalle.js"></script>
