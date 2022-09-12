@@ -19,5 +19,8 @@ router.get('/detalle/:bookId', homeCtrl.detalle)
 //- CARRITO
 router.get('/carrito', homeCtrl.carrito)
 
+//- SEARCH
+router.post('/search2', homeCtrl.search2)
+
 // exports
 module.exports = router

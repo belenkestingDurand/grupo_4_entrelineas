@@ -31,6 +31,7 @@ router.post('/destroy/:id', productsCtrl.destroy)
 //- SEARCH PRODUCT
 router.post('/search', productsCtrl.search)
 
+
 //- ORDERNES
 router.post('/crearOrden',productsCtrl.crearOrden)
 

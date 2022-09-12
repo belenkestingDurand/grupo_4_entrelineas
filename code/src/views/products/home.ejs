@@ -16,6 +16,18 @@
         <img class="home-banner" src="/img/Banner.jpg" alt="Estanteria con Libros">
         <img class="home-banner2" src="/img/Banner2.jpeg" alt="Estanteria con Libros">
     </div>
+    <section clase="home-section-search" style="
+    width: 100%;
+    display: flex;
+    justify-content: center;"><div class="div-nav-search">
+        <form class="nav-search" action="/search2" method="POST" role="search2" >
+            <input  class="box-ingrese-datos" type="text" placeholder="Buscar" name="search">
+            <button type="submit" class="nav-search-btn" tabindex="3">
+                <span class="material-symbols-outlined"><img src="/img/outline_search_white_24dp.png" alt="search"></span>
+            </button>
+        </form>
+    </div></section>
+    
         
         <section class="product-showcase">
             <% books.forEach(product => { %>
