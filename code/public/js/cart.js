@@ -168,7 +168,7 @@ window.addEventListener('load', function(){
                                         main.innerHTML = "<div class='no-product-cart'>"
                                                          +"<div><img style='width: 280px; height: auto!important;margin-bottom: -50px;' src='/img/icono-camion.gif'>"
                                                          +"<div><p> Felicidades, realizaste tu compra! </p></div>"
-                                                         +"<div><p> En muy poco tiempo la resivirás en tu casa </p></div>"
+                                                         +"<div><p> En muy poco tiempo la recibirás en tu casa </p></div>"
                                                          +"</div>"
                                         localStorage.removeItem("carrito") 
                                     }
