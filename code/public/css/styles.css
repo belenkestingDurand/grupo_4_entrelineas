@@ -723,7 +723,8 @@ article .add-cart-button {
 }
 
 .book-product-author{
-  margin-top: 3px;
+    color:rgb(100, 100, 100);
+    margin-top: 3px;
 }
 
 /* Detalle.html */
@@ -844,9 +845,7 @@ article .add-cart-button {
     /* top: 6px; */
 }
 
-.book-product-author{
-    color:rgb(100, 100, 100);
-}
+
 
 .book-product-name{
     font-weight: bolder;
@@ -2380,10 +2379,12 @@ footer {
     .book-product-price{
         margin-top: 10%;
         margin-left: 10px;
+        margin-bottom: 15px;
     }
     .book-product-author{
-        margin-top: 3px;
+        margin-top: 10px;
         width: 100%;
+        margin-bottom: 20px;
     }
     .add-cart-button{
         align-self: center;
