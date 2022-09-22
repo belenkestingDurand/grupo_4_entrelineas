@@ -36,7 +36,7 @@ INSERT INTO entrelineas.authors VALUES
 (default,'Ricardo García'),
 (default,'Doctora Fany Lopez'),
 (default,'Diana Rodriguez Palchevich'),
-(default,'Anastacio ovejero bernal'),
+(default,'Anastacio Ovejero Bernal'),
 (default,'Michael W. Malone'),
 (default,'Jean Ziegler'),
 (default, 'Quino'),

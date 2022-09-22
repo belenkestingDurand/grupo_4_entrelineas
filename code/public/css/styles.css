@@ -552,6 +552,7 @@ main .home-banner2{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    overflow: hidden;
     position: relative;
     width: 100%;
 }
