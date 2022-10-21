@@ -55,13 +55,3 @@ function validationMW(req, res, next) {
     next()
 }
 module.exports = validationMW
-
-/*
-    OPCIONAL: campo extra de 'Confirmar nueva contraseña
-body('userNewPasswordConfirm').custom((value, {req}) => {
-    if (value != req.body.userNewPassword) {
-        throw new Error('La clave no coincide con la de arriba');
-    }
-    return true;
-})
-*/
