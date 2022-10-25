@@ -2,32 +2,34 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Borrado del Autor</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <!-- Head -->
+    <%- include('./partials/head.ejs') %>
+    <title>Borrado de un Género</title>
 </head>
 
 <body class="body-confborrar">
-   
-    <h3 class="mens-confborrar">Estas seguro de querer borrar este género: <%= genero.name %>???</h3>
-    <p>
-        <form action="/genres/destroy/<%=genero.id %>" method="POST">
-            <div class="tamaño-linea">            
-                <div class="linea-de-botones-confborrar">    
-                    
-                    <div>
-                     <button class="botonBorrar" type="submit">Borrar el Género</button>
-                    </div>
-
-                    <div class="boton-volver">
-                        <a  class="link-list-aut" href="/genres/">Listado de Géneros</a>
-                    </div>
-                </div>
-
-        </form>
-    </p>
+    <!-- Header -->
+    <%- include('./partials/genreHeader.ejs') %>   
+    <main>
+        <h3 class="mens-confborrar">Estas seguro de querer borrar este género: <%= genero.name %>???</h3>
+        <p>
+            <form action="/genres/destroy/<%=genero.id %>" method="POST">
+                <div class="tamaño-linea">        
+                    <div class="linea-de-botones-confborrar">    
+                        <div>
+                         <button class="botonBorrar" type="submit">Borrar el Género</button>
+                        </div>
     
+                        <div class="boton-volver">
+                            <a  class="link-list-aut" href="/genres/">Listado de Géneros</a>
+                        </div>
+                    </div>
+            </form>
+        </p>
+
+    </main>
+<!-- Footer -->
+<%- include('./partials/footer.ejs') %>
 </body>
 
 </html>

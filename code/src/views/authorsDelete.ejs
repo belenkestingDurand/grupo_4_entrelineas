@@ -2,32 +2,34 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Borrado del Autor</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <!-- Head -->
+    <%- include('./partials/head.ejs') %>
+    <title>Borrado de un Autor</title>  
 </head>
 
 <body class="body-confborrar">
-   
+   <!-- Header -->
+   <%- include('./partials/authorHeader.ejs') %>
+
     <h3 class="mens-confborrar">Estas seguro de querer borrar este autor: <%= Autor.fullName %>???</h3>
     <p>
-        <form action="/authors/destroy/<%=Autor.id %>" method="POST">
-            <div class="tamaño-linea">
-                <div class="linea-de-botones-confborrar">
-                
-                    <div>
-                       <button class="botonBorrar" type="submit">Borrar el Autor</button>
-                    </div>
-                
-                    <div class="boton-volver">
-                        <a class="link-list-aut"  href="/authors/">  Listado de Autores</a>
-                    </div>
+    <form action="/authors/destroy/<%=Autor.id %>" method="POST">
+        <div class="tamaño-linea">
+            <div class="linea-de-botones-confborrar">    
+                <div>
+                    <button class="botonBorrar" type="submit">Borrar el Autor</button>
+                </div>
+                <div class="boton-volver">
+                    <a class="link-list-aut"  href="/authors/">  Listado de Autores</a>
                 </div>
             </div>
-        </form>
+        </div>
+    </form>
+    <!-- !CSS PARA CREAR MAS ESPACIO  -->
     </p>
-    
+
+<!-- Footer -->
+<%- include('./partials/footer.ejs') %>
 </body>
 
 </html>
