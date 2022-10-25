@@ -2,14 +2,14 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Borrado del Autor</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <!-- Head -->
+    <%- include('../partials/head.ejs') %>
+    <title>Borrado del Producto</title>
 </head>
 
 <body class="body-confborrar">
-   
+    <!-- Header -->
+    <%- include('../partials/prodHeader.ejs') %>
     <h3 class="mens-confborrar">Estas seguro de querer borrar este producto: <%= product.name %>???</h3>
     <p>
         <form action="/products/destroy/<%=product.id %>" method="POST">
@@ -27,7 +27,8 @@
             </div>
         </form>
     </p>
-    
+<!-- Footer -->
+<%- include('../partials/footer.ejs') %>
 </body>
 
 </html>

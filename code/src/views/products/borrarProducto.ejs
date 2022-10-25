@@ -7,14 +7,14 @@
     <title>Entre Lineas - Listar Producto</title>
 </head>
 
-<body>
+<body class="body-confborrar">
     <!-- Header -->
     <%- include('../partials/prodHeader.ejs') %>
 
  
     <main>
    
-        <h1>Estas seguro de querer borrar este producto: <%= Product.name %>???</h1>
+        <h1 class="mens-confborrar">Estas seguro de querer borrar este producto: <%= Product.name %>???</h1>
         <p>
             <form action="/movies/delete/<%= Movie.id %>" method="POST">
                 <br>
